@@ -77,3 +77,4 @@ https://github.com/NicoHood/HoodLoader2
 - button numbering (genesis C as select)
 - changing maximum buttons from joystick library (maybe pointless)
 - joystick library instructions
+- some words of analog controllers?
