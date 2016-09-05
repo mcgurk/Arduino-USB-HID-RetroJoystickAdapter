@@ -76,3 +76,4 @@ https://github.com/NicoHood/HoodLoader2
 - structure of code
 - button numbering (genesis C as select)
 - changing maximum buttons from joystick library (maybe pointless)
+- joystick library instructions
