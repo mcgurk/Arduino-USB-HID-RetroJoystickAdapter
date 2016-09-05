@@ -5,3 +5,9 @@ Every one uses same button numbering, so if you make multiple adapters for diffe
 You can also enable or disable Konami-code-shortcut (works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)) and SNES-controller (X+Y+R1+UP (or DOWN)).
 
 https://github.com/MHeironimus/ArduinoJoystickLibrary
+
+
+ATmega32U4 Arduino Board. There is two versions of ATmega32U4, IO-logic with 5V or 3.3V. Many controllers (like basic Atari-controller) doesn't include any logic, so 5V and 3.3V versions are fine. Most of controllers with some logic needs 5V (NES, SNES, Genesis) and some rare ones needs 3.3V (Gamecube).
+
+Arduino UNO R3 includes ATmega16U2 and it can be used too, but it needs some extra work.
+https://github.com/NicoHood/HoodLoader2
