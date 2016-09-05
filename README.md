@@ -38,8 +38,14 @@ https://github.com/MHeironimus/ArduinoJoystickLibrary
 ## Code
 This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
 Every one uses same button numbering, so if you make multiple adapters for different controllers, you have to teach buttons to RetrOrangePi only once. (of course this is also handy with every other emulators and platforms than RetrOrangePi)
+
+
+### Konami code
 You can also enable or disable Konami-code-shortcut (works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)) and SNES-controller (X+Y+R1+UP (or DOWN)).
 
+https://en.wikipedia.org/wiki/Konami_Code
+https://en.wikipedia.org/wiki/List_of_Konami_code_games
 
+## Misc
 Arduino UNO R3 includes ATmega16U2 (along with ATmega328P) and it can be used too, but it needs some extra work:
 https://github.com/NicoHood/HoodLoader2
