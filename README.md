@@ -25,6 +25,12 @@ Some joystick/gamepads uses their own connectors and original connectors can be 
 Download and install Arduino IDE:
 https://www.arduino.cc/en/Main/Software
 
+- Tools->Board->Arduino Leonardo
+In Arduino IDE you have to select board. On my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring.
+
+- Tools->Port->COMx
+In Windows Arduino IDE shows only available com-ports. In most cases it's biggest numbered COM-port. When I tested with RetrOrangePi (Raspbian Linux), port was ttyACM0.
+
 Install joystick library (instructions for installing library: todo):
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
