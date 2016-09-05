@@ -19,5 +19,5 @@ Example of Arduino Pro Micro:
 
 ![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Arduino_ProMicro.jpg)
 
-Arduino UNO R3 includes ATmega16U2 and it can be used too, but it needs some extra work:
+Arduino UNO R3 includes ATmega16U2 (along with ATmega328P) and it can be used too, but it needs some extra work:
 https://github.com/NicoHood/HoodLoader2
