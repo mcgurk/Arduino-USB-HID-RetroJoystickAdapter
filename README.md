@@ -7,6 +7,7 @@
 - Select controller and edit pin-numbers (if needed) from source
 - Upload
 
+## Long version
 ## What you need
 
 ### Arduino board
