@@ -48,6 +48,8 @@ In Arduino IDE you have to select board. On my case some reason "Arduino Leonard
 
 In Windows Arduino IDE shows only available com-ports. In most cases it's biggest numbered COM-port. COM-port number can change when you start to upload program first time (COM-port number can be different after joystick-features are enabled). If this happens, just change COM-port and start upload again. When I tested with RetrOrangePi (Raspbian Linux), port was ttyACM0.
 
+- Test your programming environment and upload
+
 You can now test your setup. One basic example is "blink". With this board, it doesn't blink, because there is no led in pin 13. Nevertheless you can use it as a test that your IDE and Arduino works. 
 Select File->Examples->01.Basics->Blink and press Upload (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
 
