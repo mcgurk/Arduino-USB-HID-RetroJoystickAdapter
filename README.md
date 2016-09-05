@@ -7,6 +7,8 @@ You can also enable or disable Konami-code-shortcut (works only with Genesis 6-b
 Download and install Arduino IDE:
 https://www.arduino.cc/en/Main/Software
 
+Arduino IDE works with Windows, OS X and Linux and ARM (beta). If you use small card computer like Rasperry Pi or OrangePi, you can program adapter even with them (tested with Orange Pi PC and RetrOrangePi 2.0).
+
 Install joystick library (instructions for installing library: todo)
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
