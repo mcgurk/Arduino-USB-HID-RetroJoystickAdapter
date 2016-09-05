@@ -6,7 +6,7 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 
 ## Short version
-- ATmega32U4 Arduino Board
+- ATmega32u4 Arduino Board
 - Arduino IDE
 - Joystick library
 - Select controller and edit pin-numbers (if needed) from source
@@ -60,5 +60,5 @@ https://en.wikipedia.org/wiki/Konami_Code
 https://en.wikipedia.org/wiki/List_of_Konami_code_games
 
 ## Misc
-Arduino UNO R3 includes ATmega16U2 (along with ATmega328P) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
+Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
