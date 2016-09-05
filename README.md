@@ -47,5 +47,5 @@ https://en.wikipedia.org/wiki/Konami_Code
 https://en.wikipedia.org/wiki/List_of_Konami_code_games
 
 ## Misc
-Arduino UNO R3 includes ATmega16U2 (along with ATmega328P) and it can be used too, but it needs some extra work:
+Arduino UNO R3 includes ATmega16U2 (along with ATmega328P) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
