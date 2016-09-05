@@ -1,4 +1,7 @@
 # Arduino-USB-HID-RetroJoystickAdapter
+## What is this?
+Very cheap and quite easy way to connect non-USB joysticks and gamepads to almost any machine with USB-port. Arduino Board with ATmega32u4 chip with help of Joystick-library does all the USB-work.
+Tested with Windows and Linux desktop computers and ARM based computers like Raspberry Pi and Orange Pi. Also worked without a hitch with Samsung Galaxy S4 Android phone and Samguns Galaxy Tab 10.1 Android tablet with OTG-USB cable.
 
 ## Short version
 - ATmega32U4 Arduino Board
@@ -11,7 +14,7 @@
 ### What you need
 
 #### Arduino board
-ATmega32U4 Arduino Board. There is two versions of ATmega32U4, IO-logic with 5V or 3.3V. Many controllers (like basic Atari-controller) doesn't include any logic, so 5V and 3.3V versions are fine. Most of controllers with some logic needs 5V (NES, SNES, Genesis) and some rare ones needs 3.3V (Gamecube). Make sure that Arduino includes USB-port. There are some versions which doesn't include USB-port and then you have to add USB-connector for it. Arduino Leonardo includes ATmega32U4, but cheapest and smallest ones are named Pro Micro. Arduino Pro Micro and ATmega32U4 are good words to use when searching from Ebay etc. Cheapest starts from about $4.
+ATmega32u4 Arduino Board. There is two versions of ATmega32U4, IO-logic with 5V or 3.3V. Many controllers (like basic Atari-controller) doesn't include any logic, so 5V and 3.3V versions are fine. Most of controllers with some logic needs 5V (NES, SNES, Genesis) and some rare ones needs 3.3V (Gamecube). Make sure that Arduino includes USB-port. There are some versions which doesn't include USB-port and then you have to add USB-connector for it. Arduino Leonardo includes ATmega32U4, but cheapest and smallest ones are named Pro Micro. Arduino Pro Micro and ATmega32U4 are good words to use when searching from Ebay etc. Cheapest starts from about $4.
 
 Example of Arduino Pro Micro:
 
