@@ -18,14 +18,14 @@ Install joystick library (instructions for installing library: todo)
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
 ### Joystick(s) or gamepad(s) and way to connect them to Arduino
-
+Some joystick/gamepads uses their own connectors and original connectors can be very pricey. Sometimes you can find extension cord cheaper than plain connector and you can take cable and plug from that.
 
 ## Setup
 
 Download and install Arduino IDE:
 https://www.arduino.cc/en/Main/Software
 
-Install joystick library (instructions for installing library: todo)
+Install joystick library (instructions for installing library: todo):
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
 ## Code
