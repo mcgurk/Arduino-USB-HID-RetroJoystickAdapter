@@ -11,6 +11,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 - Joystick library
 - Select controller and edit pin-numbers (if needed) from source
 - Upload
+- Done
 
 ## Long version
 ### What you need
