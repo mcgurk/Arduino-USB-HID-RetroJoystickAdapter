@@ -41,7 +41,7 @@ Every one uses same button numbering, so if you make multiple adapters for diffe
 
 
 ### Konami code
-You can also enable or disable Konami-code-shortcut (works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)) and SNES-controller (X+Y+R1+UP (or DOWN)).
+You can also enable or disable Konami-code-shortcut. For now it works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)) and SNES-controller (X+Y+R1+UP (or DOWN)). Some games demands that not other buttons are pressed before code and that's why only last pressed button can be button which have some function in emulator.
 
 https://en.wikipedia.org/wiki/Konami_Code
 https://en.wikipedia.org/wiki/List_of_Konami_code_games
