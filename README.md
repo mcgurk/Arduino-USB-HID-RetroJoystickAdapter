@@ -73,7 +73,7 @@ https://github.com/NicoHood/HoodLoader2
 
 ## Todo (writing)
 - example (D-connectors straight to Arduino)
-- structure of code
+- structure of code, sends only when something changes
 - button numbering (genesis C as select)
 - changing maximum buttons from joystick library (maybe pointless)
 - joystick library instructions
