@@ -1,5 +1,12 @@
 # Arduino-USB-HID-RetroJoystickAdapter
 
+## Short version
+-ATmega32U4 Arduino Board
+-Arduino IDE
+-Joystick library
+-Select controller and edit pin-numbers (if needed) from source
+-Upload
+
 ## What you need
 
 ### Arduino board
