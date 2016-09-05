@@ -29,7 +29,7 @@ https://www.arduino.cc/en/Main/Software
 In Arduino IDE you have to select board. On my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring.
 
 - Tools->Port->COMx
-In Windows Arduino IDE shows only available com-ports. In most cases it's biggest numbered COM-port. When I tested with RetrOrangePi (Raspbian Linux), port was ttyACM0.
+In Windows Arduino IDE shows only available com-ports. In most cases it's biggest numbered COM-port. COM-port number can change when you start to programming first time (COM-port number can be different after joystick-features are enabled). When I tested with RetrOrangePi (Raspbian Linux), port was ttyACM0.
 
 Install joystick library (instructions for installing library: todo):
 https://github.com/MHeironimus/ArduinoJoystickLibrary
