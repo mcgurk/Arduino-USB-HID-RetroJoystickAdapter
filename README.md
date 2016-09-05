@@ -78,3 +78,4 @@ https://github.com/NicoHood/HoodLoader2
 - changing maximum buttons from joystick library (maybe pointless)
 - joystick library instructions
 - some words of analog controllers?
+- some words of Arduino acting same time as serial port
