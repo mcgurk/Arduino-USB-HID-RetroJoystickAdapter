@@ -1,6 +1,6 @@
 # Arduino-USB-HID-RetroJoystickAdapter
 ## What is this?
-Very cheap and quite easy way to connect many non-USB joysticks and gamepads or DIY arcade cabinet panel to almost any machine with USB-port. Arduino board with ATmega32u4 chip with help of Joystick-library does all the USB-work.
+Very cheap and quite easy way to connect many non-USB joysticks and gamepads or DIY arcade cabinet controller to almost any machine with USB-port. Arduino board with ATmega32u4 chip with help of Joystick-library does all the USB-work.
 Tested with Windows and Linux desktop computers and ARM based computers like Raspberry Pi and Orange Pi. Also worked with Samsung Galaxy S4 Android phone and Samsung Galaxy Tab 10.1 Android tablet with OTG-USB cable.
 
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
