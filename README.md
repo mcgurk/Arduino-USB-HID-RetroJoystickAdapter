@@ -11,7 +11,7 @@ Install joystick library (instructions for installing library: todo)
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
 
-ATmega32U4 Arduino Board. There is two versions of ATmega32U4, IO-logic with 5V or 3.3V. Many controllers (like basic Atari-controller) doesn't include any logic, so 5V and 3.3V versions are fine. Most of controllers with some logic needs 5V (NES, SNES, Genesis) and some rare ones needs 3.3V (Gamecube). Make sure that Arduino includes USB-port. There are some versions which doesn't include USB-port and then you have to add USB-connector for it.
+ATmega32U4 Arduino Board. There is two versions of ATmega32U4, IO-logic with 5V or 3.3V. Many controllers (like basic Atari-controller) doesn't include any logic, so 5V and 3.3V versions are fine. Most of controllers with some logic needs 5V (NES, SNES, Genesis) and some rare ones needs 3.3V (Gamecube). Make sure that Arduino includes USB-port. There are some versions which doesn't include USB-port and then you have to add USB-connector for it. Arduino Leonardo includes ATmega32U4, but cheapest and smallest are named Pro Micro. Arduino Pro Micro and ATmega32U4 are good words to use when searching from Ebay etc.
 
 Arduino UNO R3 includes ATmega16U2 and it can be used too, but it needs some extra work.
 https://github.com/NicoHood/HoodLoader2
