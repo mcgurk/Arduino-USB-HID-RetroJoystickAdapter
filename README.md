@@ -79,3 +79,4 @@ https://github.com/NicoHood/HoodLoader2
 - joystick library instructions
 - some words of analog controllers?
 - some words of Arduino acting same time as serial port
+- very simple test. test without joystick and test to connect one IO-pin to GND.
