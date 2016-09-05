@@ -10,7 +10,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 - Arduino IDE
 - Joystick library
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
-- Select controller and edit pin-numbers (if needed) from source
+- Open sourcecode to Arduino IDE and Select controller and edit pin-numbers (if needed)
 - Upload
 - Done
 
