@@ -4,6 +4,10 @@ This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controller
 Every one uses same button numbering, so if you make multiple adapters for different controllers, you have to teach buttons to RetrOrangePi only once. (of course this is also handy with every other emulators and platforms than RetrOrangePi)
 You can also enable or disable Konami-code-shortcut (works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)) and SNES-controller (X+Y+R1+UP (or DOWN)).
 
+Download and install Arduino IDE:
+https://www.arduino.cc/en/Main/Software
+
+Install joystick library (instructions for installing library: todo)
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
 
