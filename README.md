@@ -67,7 +67,7 @@ Linux:
 
 After extraction check that you have folder %HOMEPATH%\Documents\Arduino\libraries\Joystick2 or ~/Arduino/libraries/Joystick2.
 
-Close and start Arduino IDE again so it searches and finds just added library.
+Close and start Arduino IDE again so it searches and finds library.
 
 ### Code
 This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
@@ -88,7 +88,6 @@ https://github.com/NicoHood/HoodLoader2
 - structure of code, sends only when something changes
 - button numbering (genesis C as select)
 - changing maximum buttons from joystick library (maybe pointless)
-- joystick library instructions
 - some words of analog controllers?
 - some words of Arduino acting same time as serial port
 - very simple test. test without joystick and test to connect one IO-pin to GND.
