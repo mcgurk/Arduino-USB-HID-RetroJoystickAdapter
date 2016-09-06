@@ -55,18 +55,18 @@ Select File->Examples->01.Basics->Blink and press Upload (Arrow to right -symbol
 
 - Install joystick library
 
-Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press Clone or download -> Download ZIP.
-Extract Joystick2 folder from zip to
+  Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press Clone or download -> Download ZIP.
+  Extract Joystick2 folder from zip to
 
-Windows:
-%HOMEPATH%\Documents\Arduino\libraries
+  Windows:
+  %HOMEPATH%\Documents\Arduino\libraries
 
-Linux:
-~/Arduino/libraries
+  Linux:
+  ~/Arduino/libraries
 
-After extraction check that you have folder %HOMEPATH%\Documents\Arduino\libraries\Joystick2 or ~/Arduino/libraries/Joystick2.
+  After extraction check that you have folder %HOMEPATH%\Documents\Arduino\libraries\Joystick2 or ~/Arduino/libraries/Joystick2.
 
-Close and start Arduino IDE again so it searches and finds library.
+  Close and start Arduino IDE again so it searches and finds library.
 
 - Load RetroJoystickAdapter.ino to Arduino IDE
 
