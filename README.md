@@ -29,7 +29,6 @@ Example of Arduino Pro Micro:
 Arduino IDE works with Windows, OS X and Linux and ARM (beta). If you use small card computer like Rasperry Pi or Orange Pi, you can program adapter even with them (tested with Orange Pi PC and RetrOrangePi 2.0). That way you don't even have to unplug adapter from your emulator/game-platform if you want reprogram adapter.
 
 #### Joystick library for Arduino IDE
-Install joystick library (instructions for installing library: todo)
 https://github.com/MHeironimus/ArduinoJoystickLibrary
 
 #### Joystick(s) or gamepad(s) and way to connect them to Arduino
