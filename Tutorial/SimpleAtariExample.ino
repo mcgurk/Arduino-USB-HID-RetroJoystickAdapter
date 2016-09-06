@@ -1,5 +1,5 @@
 /*
- * Simple Atari joystick adapter for learning purposes
+ * Simple Atari joystick adapter (joystick HID) for learning purposes
  * McGurk 6.9.2016
  */
 
