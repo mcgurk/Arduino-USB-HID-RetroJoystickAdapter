@@ -5,15 +5,14 @@
 
 #include "Joystick2.h"
 
-// Here we define pins we used. Along with these we have to connect joystick ground to Arduino GND.
-// Because of Arduino internal pullup resistor off state is 1. Moving joystick switches that to ground and then it is 0.
-// 9-pin D-connector:
-#define UP 2 // D-connector pin 1
-#define DOWN 3 // D-connector pin 2
-#define LEFT 4 // D-connector pin 3
-#define RIGHT 5 // D-connector pin 4
-#define BUTTON 6 // D-connector pin 6
-// D-connector pin 8 to GND
+// Here we define Arduino pins we use. Along with these we have to connect joystick ground to Arduino GND.
+// Because of Arduino internal pullup resistor off state is 1. Moving joystick switches corresponding pin to ground and then it is 0.
+#define UP 2 // 9-pin D-connector pin 1
+#define DOWN 3 // 9-pin D-connector pin 2
+#define LEFT 4 // 9-pin D-connector pin 3
+#define RIGHT 5 // 9-pin D-connector pin 4
+#define BUTTON 6 // 9-pin D-connector pin 6
+// 9-pin D-connector pin 8 to GND
 
 
 // We keep record how everything was last time, so we can compare if anything have changed.
