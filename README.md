@@ -6,7 +6,7 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 
 ## Short version
-- Get ATmega32u4 Arduino Board
+- Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
 - Install Arduino IDE
 - Install Joystick library (https://github.com/MHeironimus/ArduinoJoystickLibrary)
