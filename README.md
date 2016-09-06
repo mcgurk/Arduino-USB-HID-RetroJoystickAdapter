@@ -56,16 +56,8 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 - Install joystick library
 
   Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press Clone or download -> Download ZIP.
-  Extract Joystick2 folder from zip to
-
-  Windows:
-  %HOMEPATH%\Documents\Arduino\libraries
-
-  Linux:
-  ~/Arduino/libraries
-
-  After extraction check that you have folder %HOMEPATH%\Documents\Arduino\libraries\Joystick2 or ~/Arduino/libraries/Joystick2.
-
+  Extract Joystick2 folder from zip to '%HOMEPATH%\Documents\Arduino\libraries' (Windows) or '~/Arduino/libraries' (Linux
+  After extraction check that you have folder '%HOMEPATH%\Documents\Arduino\libraries\Joystick2' or '~/Arduino/libraries/Joystick2'.
   Close and start Arduino IDE again so it searches and finds library.
 
 - Load RetroJoystickAdapter.ino to Arduino IDE
