@@ -3,6 +3,8 @@
 ### JoystickBlink.ino
 Blinks button 0 in 1 second interval.
 
+![Windows Game Controller Properties](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/Windows_Game_Controller_properties.jpg)
+
 ### SimpleAtariExample.ino
 Simple 1-joystick Atari adapter for learning purposes.
 
