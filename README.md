@@ -42,7 +42,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 - Tools->Board->Arduino Leonardo
 
-  In Arduino IDE you have to select board. On my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring.
+  In Arduino IDE you have to select board. In my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring.
 
 - Tools->Port->COMx
 
