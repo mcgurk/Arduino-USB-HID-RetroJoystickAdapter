@@ -68,6 +68,14 @@ After extraction check that you have folder %HOMEPATH%\Documents\Arduino\librari
 
 Close and start Arduino IDE again so it searches and finds library.
 
+- Load RetroJoystickAdapter.ino to Arduino IDE
+
+Select controller by commenting and uncommenting and edit pin-numbers (if needed).
+
+- Press Upload
+
+- Test in Windows with Control Panel -> Game Controllers or in Linux (todo)
+
 ### Code
 This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
 Every one uses same button numbering, so if you make multiple adapters for different controllers, you have to teach buttons to emulator/game (or whole emulation system like RetroPie or RetrOrangePi) only once.
