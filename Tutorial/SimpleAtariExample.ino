@@ -83,7 +83,7 @@ void loop()
     flag = 1;
   }
 
-  // If anythings changed, send new state.
+  // If anythings changed, build and send new state.
   if (flag) {
     
     // Clear directions and buttons before start building new state.
