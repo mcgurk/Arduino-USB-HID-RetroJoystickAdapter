@@ -38,8 +38,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 ### Setup
 
-Download and install Arduino IDE:
-https://www.arduino.cc/en/Main/Software
+- Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
 - Tools->Board->Arduino Leonardo
 
