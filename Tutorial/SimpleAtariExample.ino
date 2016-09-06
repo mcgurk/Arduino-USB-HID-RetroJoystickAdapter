@@ -41,9 +41,9 @@ void setup() {
   
 }
 
+
 // We use this flag to indicate if anything changes.
 byte flag = 0;
-
 
 void loop()
 {
