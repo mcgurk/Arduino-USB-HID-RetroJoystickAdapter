@@ -70,7 +70,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 - Load RetroJoystickAdapter.ino to Arduino IDE
 
-Select controller by commenting and uncommenting and edit pin-numbers (if needed).
+  Select controller by commenting and uncommenting and edit pin-numbers (if needed).
 
 - Press Upload
 
