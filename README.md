@@ -82,6 +82,8 @@ https://en.wikipedia.org/wiki/List_of_Konami_code_games
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
 
+There is simple tutorial in tutorial folder (https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial). I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
+
 ## Todo
 - example (D-connectors straight to Arduino)
 - structure of code, sends only when something changes
@@ -91,4 +93,3 @@ https://github.com/NicoHood/HoodLoader2
 - some words of Arduino acting same time as serial port
 - very simple test. test without joystick and test to connect one IO-pin to GND.
 - other ideas - PIR example to misc
-- link to tutorial
