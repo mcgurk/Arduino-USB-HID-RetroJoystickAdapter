@@ -91,3 +91,4 @@ https://github.com/NicoHood/HoodLoader2
 - some words of Arduino acting same time as serial port
 - very simple test. test without joystick and test to connect one IO-pin to GND.
 - other ideas - PIR example to misc
+- link to tutorial
