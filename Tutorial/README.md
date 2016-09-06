@@ -1,9 +1,14 @@
 ## Tutorial
 
+### JoystickBlink.ino
+Blinks button 0 in 1 second interval.
+
+### SimpleAtariExample.ino
 Simple 1-joystick Atari adapter for learning purposes.
 
 Easy to modify for your own DIY-joystick (like arcade cabinet) which based on on/off-switches.
 
+### SimpleAtariExample_keyboard.ino
 There is also keyboard version, which acts like USB keyboard.
 
 For testing you don't have to have real joystick connected. You can just connect IO-pin to GND with piece of wire or something.
