@@ -37,6 +37,8 @@ void setup() {
   pinMode(RIGHT, INPUT_PULLUP);
   pinMode(BUTTON, INPUT_PULLUP);
 
+  Keyboard.begin();
+
 }
 
 // We use this flag to indicate if anything changes.
