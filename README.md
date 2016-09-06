@@ -54,8 +54,20 @@ In Windows Arduino IDE shows only available com-ports. In most cases it's bigges
 You can now test your setup. One basic example is "blink". With this board, it doesn't blink, because there is no led in pin 13. Nevertheless you can use it as a test that your IDE and Arduino works. 
 Select File->Examples->01.Basics->Blink and press Upload (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
 
-- Install joystick library (instructions for installing library: todo):
-https://github.com/MHeironimus/ArduinoJoystickLibrary
+- Install joystick library
+
+Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press Clone or download -> Download ZIP.
+Extract Joystick2 folder from zip to
+
+Windows:
+%HOMEPATH%\Documents\Arduino\libraries
+
+Linux:
+~/Arduino/libraries
+
+After extraction check that you have folder %HOMEPATH%\Documents\Arduino\libraries\Joystick2 or ~/Arduino/libraries/Joystick2.
+
+Close and start Arduino IDE again so it searches and finds just added library.
 
 ### Code
 This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
