@@ -2,7 +2,7 @@
 
 Simple 1-joystick Atari adapter for learning purposes.
 
-Easy to modify to your own DIY-joystick (like arcade cabinet) which based on on/off-switches.
+Easy to modify for your own DIY-joystick (like arcade cabinet) which based on on/off-switches.
 
 There is also keyboard version, which acts like USB keyboard.
 
