@@ -15,7 +15,7 @@
 // 9-pin D-connector pin 8 to GND
 
 
-// We keep record how everything was last time, so we can compare if anything have changed.
+// We keep record how everything was last time, so we can compare if anything have changed. (1 = off, 0 = on)
 byte lastUP = 1;
 byte lastDOWN = 1;
 byte lastLEFT = 1;
