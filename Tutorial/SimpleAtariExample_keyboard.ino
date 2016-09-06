@@ -4,6 +4,7 @@
  */
 
 #include <Keyboard.h>;
+// List of special keys: https://www.arduino.cc/en/Reference/KeyboardModifiers
 
 // Here we define Arduino pins we use. Along with these we have to connect joystick ground to Arduino GND.
 // Because of Arduino internal pullup resistor off state is 1. Moving joystick switches corresponding pin to ground and then it is 0.
