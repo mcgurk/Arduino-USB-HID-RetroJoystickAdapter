@@ -65,7 +65,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 - Press Upload
 
-- If you got no errors, test in Windows with `Control Panel -> Game Controllers` or in Linux with `jstest`
+- If you got no errors, test in Windows with `Control Panel -> Game Controllers` or in Linux with `jstest /dev/input/js0`
 
 ### Code
 This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
