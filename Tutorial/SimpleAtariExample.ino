@@ -56,7 +56,7 @@ void loop()
   newBUTTON = digitalRead(BUTTON);
 
 
-  // Check if anything changed. This way we don't have to send anything to USB, if nothing changes.
+  // Check if anything changed. This way we don't have to send anything to USB if nothing changes.
   
   if (newUP != lastUP) {
     lastUP = newUP;
