@@ -83,7 +83,7 @@ https://en.wikipedia.org/wiki/List_of_Konami_code_games
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
 
-## Todo (writing)
+## Todo
 - example (D-connectors straight to Arduino)
 - structure of code, sends only when something changes
 - button numbering (genesis C as select)
