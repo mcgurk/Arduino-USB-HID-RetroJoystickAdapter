@@ -50,8 +50,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 - Test your programming environment and upload
 
-  You can now test your setup. One basic example is "blink". With this board, it doesn't blink, because there is no led in pin 13. Nevertheless you can use it as a test that your IDE and Arduino works. 
-  Select `File->Examples->01.Basics->Blink` and press `Upload` (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
+  You can now test your setup. One basic example is "blink". With this board, it doesn't blink, because there is no led in pin 13. Nevertheless you can use it as a test that your IDE and Arduino works. Select `File -> Examples -> 01.Basics -> Blink` and press `Upload` (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
 
 - Install joystick library
 
