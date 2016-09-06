@@ -40,22 +40,22 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
-- Tools->Board->Arduino Leonardo
+- `Tools->Board->Arduino Leonardo`
 
   In Arduino IDE you have to select board. In my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring.
 
-- Tools->Port->COMx
+- `Tools->Port->COMx`
 
-  Arduino IDE shows available COM-ports. In most cases it's biggest numbered COM-port. COM-port number can change when you start to upload program first time (COM-port number can be different after joystick-features are enabled). If this happens, just change COM-port and start upload again. When I tested with RetrOrangePi (Raspbian Linux), port was ttyACM0.
+  Arduino IDE shows available COM-ports. In most cases it's biggest numbered COM-port. COM-port number can change when you start to upload program first time (COM-port number can be different after joystick-features are enabled). If this happens, just change COM-port and start upload again. When I tested with RetrOrangePi (Raspbian Linux), port was `/dev/ttyACM0`.
 
 - Test your programming environment and upload
 
   You can now test your setup. One basic example is "blink". With this board, it doesn't blink, because there is no led in pin 13. Nevertheless you can use it as a test that your IDE and Arduino works. 
-  Select File->Examples->01.Basics->Blink and press Upload (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
+  Select `File->Examples->01.Basics->Blink` and press `Upload` (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
 
 - Install joystick library
 
-  Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press Clone or download -> Download ZIP.
+  Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press `Clone or download -> Download ZIP`.
   Extract Joystick2 folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows) or `~/Arduino/libraries` (Linux).
   
   After extraction check that you have files `%HOMEPATH%\Documents\Arduino\libraries\Joystick2\Joystick2.h and Joystick2.cpp` or `~/Arduino/libraries/Joystick2/Joystick2.h and Joystick2.cpp`.
@@ -67,7 +67,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 
 - Press Upload
 
-- If you got no errors, test in Windows with Control Panel -> Game Controllers or in Linux (todo)
+- If you got no errors, test in Windows with `Control Panel -> Game Controllers` or in Linux (todo)
 
 ### Code
 This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
