@@ -22,7 +22,7 @@ Starting point is ATmega32u4 based Arduino board. There is two versions of ATmeg
 
 Example of Arduino Pro Micro:
 
-![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/Images/raw/master/Arduino_ProMicro.jpg)
+![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/Arduino_ProMicro.jpg)
 
 
 #### Computer with Arduino IDE
