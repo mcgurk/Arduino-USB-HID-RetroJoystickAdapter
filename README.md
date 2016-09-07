@@ -10,6 +10,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 - Nintendo Entertainment System controllers (NES)
 - Super Nintendo controllers (SNES)
 - Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6)
+- Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features)
 
 ## Short version
 - Get ATmega32u4 Arduino board
