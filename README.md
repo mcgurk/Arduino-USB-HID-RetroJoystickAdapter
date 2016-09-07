@@ -7,7 +7,6 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 
 ### Supported controllers
 - Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI)
-- Sega Master System controllers (SMS)
 - Nintendo Entertainment System controllers (NES)
 - Super Nintendo controllers (SNES)
 - Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6)
