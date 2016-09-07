@@ -30,7 +30,7 @@ const uint8_t inputPinsPort2[] =  {   6,   7,   8,   9 };
 
 
 
-//#define KONAMI
+#define KONAMI
 
 
 uint8_t lastStatusPort1[20]; //4 directions + 16 buttons
@@ -116,6 +116,18 @@ void readJoysticks() {
 }
 
 void interpretJoystickState(uint8_t j, uint8_t *status) {
+  
+  #ifdef KONAMI
+  if (!status[13] && !status[15] && !status[12] && !status[4]) { //rectangle+circle+triangle+UP
+    KonamiCode(0,0);
+    return;
+  }
+  if (!status[13] && !status[15] && !status[12] && !status[6]) { //rectangle+circle+triangle+DOWN
+    KonamiCode(0,1);
+    return;
+  }
+  #endif
+  
   Joystick[j].setYAxis(0);
   Joystick[j].setXAxis(0);
   if (!status[4]) Joystick[j].setYAxis(-127); //UP
