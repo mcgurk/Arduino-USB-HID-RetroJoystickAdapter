@@ -6,7 +6,7 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 
 ### Supported controllers
-- Atari-joysticks (supports Sega Master System controller 2-fire buttons) (ATARI)
+- Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI)
 - Sega Master System controllers (SMS)
 - Nintendo Entertainment System controllers (NES)
 - Super Nintendo controllers (SNES)
