@@ -1,6 +1,5 @@
 #include "Joystick2.h"
 
-
 /*
 #define ATARI
 //DB9 (8=GND):                      1   2   3   4   5   6   7   8   9
@@ -8,26 +7,133 @@ const uint8_t inputPinsPort1[] =  {10, 16, 14, 15, A1,  0,  0,  0,  3};
 const uint8_t inputPinsPort2[] =  { 5,  6,  7,  8, A2,  0,  0,  0,  4};
 */
 
-
+/*
 //#define NES
 #define SNES
 //Connector (Connect also GND and 5V):  CUP, OUT0,     D1
 const uint8_t inputPinsPort1[] =       {  7,     8,     9 };
 const uint8_t inputPinsPort2[] =       {  2,     3,     4 };
-
+*/
 
 /*
-//#define GENESIS_3
-#define GENESIS_6
+#define GENESIS_3
+//#define GENESIS_6
 //DB9 (8=GND, 5=VCC):               1   2   3   4   5   6   7   8   9
 const uint8_t inputPinsPort1[] =  {10, 16, 14, 15, A0,  3, A3,  0, A1};
 const uint8_t inputPinsPort2[] =  { 5,  6,  7,  8,  9,  4,  2,  0, A2};
 */
 
+#define PSX
+//PSX:                             DATA  CMD  ATT  CLK
+const uint8_t inputPinsPort1[] =  {   2,   3,   4,   5 };
+const uint8_t inputPinsPort2[] =  {   6,   7,   8,   9 };
+
+
+
 //#define KONAMI
 
 
+uint8_t lastStatusPort1[20]; //4 directions + 16 buttons
+uint8_t newStatusPort1[20];
+uint8_t lastStatusPort2[20];
+uint8_t newStatusPort2[20];
 void KonamiCode(uint8_t j, uint8_t swap_ab = 0);
+
+//-----PSX/PLAYSTATION (DualShock and Analog not supported)-----
+//http://playground.arduino.cc/Main/PSXLibrary
+#ifdef PSX
+
+#define DATA1 inputPinsPort1[0]
+#define CMD1 inputPinsPort1[1]
+#define ATT1 inputPinsPort1[2]
+#define CLK1 inputPinsPort1[3]
+
+#define DATA2 inputPinsPort2[0]
+#define CMD2 inputPinsPort2[1]
+#define ATT2 inputPinsPort2[2]
+#define CLK2 inputPinsPort2[3]
+
+//#define EVENTS_TOTAL 4+4+2+4 //4 directions, 2 fire-buttons, select+start, 4 shoulder buttons
+#define BITS 16
+#define EVENTS_TOTAL BITS
+
+uint8_t p;
+
+byte shift(byte _dataOut, uint8_t readmode = 0) { // Does the actual shifting, both in and out
+  boolean _temp = 0;
+  byte _dataIn = 0;
+  byte _delay = 10;
+  for (uint8_t i = 0; i <= 7; i++) {
+    if ( _dataOut & (1 << i) ) {
+      digitalWrite(CMD1, HIGH); // Writes out the _dataOut bits
+      digitalWrite(CMD2, HIGH);
+    } else {
+      digitalWrite(CMD1, LOW);
+      digitalWrite(CMD2, LOW);
+    }
+    digitalWrite(CLK1, LOW);
+    digitalWrite(CLK2, LOW);
+    delayMicroseconds(_delay);
+    if (readmode) {
+      newStatusPort1[p] = digitalRead(DATA1);          // Reads the data pin
+      newStatusPort2[p] = digitalRead(DATA2);
+      p++;
+    }
+    digitalWrite(CLK1, HIGH);
+    digitalWrite(CLK2, HIGH);
+    delayMicroseconds(_delay);
+  }
+}
+
+void setupJoysticks() {
+  pinMode(DATA1, INPUT_PULLUP);
+  pinMode(CMD1, OUTPUT);
+  pinMode(ATT1, OUTPUT);
+  pinMode(CLK1, OUTPUT);
+
+  pinMode(DATA2, INPUT_PULLUP);
+  pinMode(CMD2, OUTPUT);
+  pinMode(ATT2, OUTPUT);
+  pinMode(CLK2, OUTPUT);
+}
+
+void readJoysticks() {
+  p = 0;
+  
+  digitalWrite(ATT1, LOW);
+  digitalWrite(ATT2, LOW);
+  shift(0x01);
+  shift(0x42);
+  shift(0xFF);
+
+  shift(0xFF, 1); //read
+  shift(0xFF, 1);
+
+  digitalWrite(ATT1, HIGH);
+  digitalWrite(ATT2, HIGH);
+
+  delayMicroseconds(1000);
+}
+
+void interpretJoystickState(uint8_t j, uint8_t *status) {
+  Joystick[j].setYAxis(0);
+  Joystick[j].setXAxis(0);
+  if (!status[4]) Joystick[j].setYAxis(-127); //UP
+  if (!status[6]) Joystick[j].setYAxis(127); //DOWN
+  if (!status[7]) Joystick[j].setXAxis(-127); //LEFT
+  if (!status[5]) Joystick[j].setXAxis(127); //RIGHT
+  Joystick[j].setButton(0, !status[3]); //BUTTON1 (Start)
+  Joystick[j].setButton(1, !status[0]); //BUTTON2 (Select)
+  Joystick[j].setButton(2, !status[14]); //BUTTON3 (A)
+  Joystick[j].setButton(3, !status[13]); //BUTTON4 (B)
+  Joystick[j].setButton(4, !status[15]); //BUTTON5 (X)
+  Joystick[j].setButton(5, !status[12]); //BUTTON6 (Y)
+  Joystick[j].setButton(6, !status[8]); //BUTTON7 (LB)  
+  Joystick[j].setButton(7, !status[9]); //BUTTON8 (RB)
+  Joystick[j].setButton(8, !status[10]); //BUTTON9 (LT)
+  Joystick[j].setButton(9, !status[11]); //BUTTON10 (RT)
+}
+#endif
 
 
 //--------ATARI/SMS--------
@@ -42,15 +148,16 @@ void setupJoysticks() {
   }
 }
 
-void readJoysticks(uint8_t *status1, uint8_t *status2) {
+void readJoysticks() {
   for (uint8_t i=0; i < 4; i++) {
-    status1[i] = digitalRead(inputPinsPort1[i]); //AXES1
-    status2[i] = digitalRead(inputPinsPort2[i]); //AXES2
+    newStatusPort1[i] = digitalRead(inputPinsPort1[i]); //AXES1
+    newStatusPort2[i] = digitalRead(inputPinsPort2[i]); //AXES2
   }
-  status1[4] = digitalRead(inputPinsPort1[8]); //A1
-  status1[5] = digitalRead(inputPinsPort1[4]); //B1
-  status2[4] = digitalRead(inputPinsPort2[8]); //A2
-  status2[5] = digitalRead(inputPinsPort2[4]); //B2
+  newStatusPort1[4] = digitalRead(inputPinsPort1[8]); //A1
+  newStatusPort1[5] = digitalRead(inputPinsPort1[4]); //B1
+  newStatusPort2[4] = digitalRead(inputPinsPort2[8]); //A2
+  newStatusPort2[5] = digitalRead(inputPinsPort2[4]); //B2
+  delayMicroseconds(1000);
 }
 
 void interpretJoystickState(uint8_t j, uint8_t *status) {
@@ -99,8 +206,8 @@ void setupJoysticks() {
 
   const uint8_t inputlist[] = {0,1,2,3,5,8};
   for (int i=0; i < 6; i++) {
-    pinMode(inputPinsPort1[inputlist[i]], INPUT_PULLUP);
-    pinMode(inputPinsPort2[inputlist[i]], INPUT_PULLUP);
+    pinMode(inputPinsPort1[inputlist[i]], INPUT);
+    pinMode(inputPinsPort2[inputlist[i]], INPUT);
   }
   
   pinMode(MODE_SELECT_PORT1, OUTPUT);
@@ -108,24 +215,24 @@ void setupJoysticks() {
   modeSelect(HIGH);
 }
 
-void readJoysticks(uint8_t *status1, uint8_t *status2) {
+void readJoysticks() {
   modeSelect(LOW);
   
-  status1[4] = digitalRead(inputPinsPort1[5]); //A1
-  status1[5] = digitalRead(inputPinsPort1[8]); //Start1
-  status2[4] = digitalRead(inputPinsPort2[5]); //A2
-  status2[5] = digitalRead(inputPinsPort2[8]); //Start2  
+  newStatusPort1[4] = digitalRead(inputPinsPort1[5]); //A1
+  newStatusPort1[5] = digitalRead(inputPinsPort1[8]); //Start1
+  newStatusPort2[4] = digitalRead(inputPinsPort2[5]); //A2
+  newStatusPort2[5] = digitalRead(inputPinsPort2[8]); //Start2  
 
   modeSelect(HIGH);
 
   for (uint8_t i=0; i < 4; i++) {
-    status1[i] = digitalRead(inputPinsPort1[i]); //AXES1
-    status2[i] = digitalRead(inputPinsPort2[i]); //AXES2
+    newStatusPort1[i] = digitalRead(inputPinsPort1[i]); //AXES1
+    newStatusPort2[i] = digitalRead(inputPinsPort2[i]); //AXES2
   }
-  status1[6] = digitalRead(inputPinsPort1[5]); //B1
-  status1[7] = digitalRead(inputPinsPort1[8]); //C1
-  status2[6] = digitalRead(inputPinsPort2[5]); //B2
-  status2[7] = digitalRead(inputPinsPort2[8]); //C2
+  newStatusPort1[6] = digitalRead(inputPinsPort1[5]); //B1
+  newStatusPort1[7] = digitalRead(inputPinsPort1[8]); //C1
+  newStatusPort2[6] = digitalRead(inputPinsPort2[5]); //B2
+  newStatusPort2[7] = digitalRead(inputPinsPort2[8]); //C2
 
   #ifdef GENESIS_6
   //read X,Y,Z
@@ -133,12 +240,12 @@ void readJoysticks(uint8_t *status1, uint8_t *status2) {
   modeSelect(HIGH);
   modeSelect(LOW);
   modeSelect(HIGH);
-  status1[8] = digitalRead(inputPinsPort1[2]); //X1
-  status1[9] = digitalRead(inputPinsPort1[1]); //Y1
-  status1[10] = digitalRead(inputPinsPort1[0]); //Z1
-  status2[8] = digitalRead(inputPinsPort2[2]); //X2
-  status2[9] = digitalRead(inputPinsPort2[1]); //Y2
-  status2[10] = digitalRead(inputPinsPort2[0]); //Z2
+  newStatusPort1[8] = digitalRead(inputPinsPort1[2]); //X1
+  newStatusPort1[9] = digitalRead(inputPinsPort1[1]); //Y1
+  newStatusPort1[10] = digitalRead(inputPinsPort1[0]); //Z1
+  newStatusPort2[8] = digitalRead(inputPinsPort2[2]); //X2
+  newStatusPort2[9] = digitalRead(inputPinsPort2[1]); //Y2
+  newStatusPort2[10] = digitalRead(inputPinsPort2[0]); //Z2
   #endif
   
   delayMicroseconds(1000);
@@ -213,7 +320,7 @@ void setupJoysticks() {
 #define wait delayMicroseconds(12)
 
 
-void readJoysticks(uint8_t *status1, uint8_t *status2) {
+void readJoysticks() {
   latchlow;
   clocklow;
   latchhigh;
@@ -221,8 +328,8 @@ void readJoysticks(uint8_t *status1, uint8_t *status2) {
   latchlow;
 
   for (int i = 0; i < BITS; i++) {
-    status1[i] = digitalRead(DATA1);
-    status2[i] = digitalRead(DATA2);
+    newStatusPort1[i] = digitalRead(DATA1);
+    newStatusPort2[i] = digitalRead(DATA2);
     clockhigh;
     wait;
     clocklow;
@@ -330,10 +437,6 @@ void KonamiCode(uint8_t j, uint8_t swap_ab = 0) {
 
 
 
-uint8_t lastStatusPort1[EVENTS_TOTAL];
-uint8_t newStatusPort1[EVENTS_TOTAL];
-uint8_t lastStatusPort2[EVENTS_TOTAL];
-uint8_t newStatusPort2[EVENTS_TOTAL];
 
 
 void setup() {
@@ -358,7 +461,7 @@ uint8_t flag2 = 0;
 
 void loop() {
 
-  readJoysticks(newStatusPort1, newStatusPort2);
+  readJoysticks();
 
   //check for changes - do not raise a flag if nothing changes
   for (uint8_t i=0; i < EVENTS_TOTAL; i++) {
