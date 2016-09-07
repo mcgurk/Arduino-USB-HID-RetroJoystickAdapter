@@ -5,6 +5,13 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
 
+### Supported controllers
+- Atari-joysticks (supports Sega Master System controller 2-fire buttons) (ATARI)
+- Sega Master System controllers (SMS)
+- Nintendo Entertainment System controllers (NES)
+- Super Nintendo controllers (SNES)
+- Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6)
+
 ## Short version
 - Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
