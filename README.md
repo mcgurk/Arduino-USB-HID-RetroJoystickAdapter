@@ -41,7 +41,7 @@ https://github.com/MHeironimus/ArduinoJoystickLibrary
 #### Joystick(s) or gamepad(s) and way to connect them to Arduino
 Some joystick/gamepads uses their own connectors and original connectors can be very pricey. Sometimes you can find extension cord cheaper than plain connector and you can take cable and plug from that.
 You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX and RX pins and even though they are not used right now, they are handy for debugging and other uses.
-Example in [Hardware-folder](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Hardware).
+Example in [Hardware](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Hardware) folder.
 
 ### Setup
 
@@ -90,7 +90,7 @@ Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used to
 https://github.com/NicoHood/HoodLoader2
 
 ## Tutorial
-There is simple tutorial in [Tutorial-folder](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial). I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
+There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
 ## Todo
 - example (D-connectors straight to Arduino)
