@@ -85,12 +85,12 @@ You can also enable or disable Konami-code-shortcut. For now it works only with 
 https://en.wikipedia.org/wiki/Konami_Code
 https://en.wikipedia.org/wiki/List_of_Konami_code_games
 
+## Tutorial
+There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
+
 ## Misc
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
-
-## Tutorial
-There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
 ## Todo
 - example (D-connectors straight to Arduino)
