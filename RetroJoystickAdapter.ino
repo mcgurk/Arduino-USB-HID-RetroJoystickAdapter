@@ -24,7 +24,7 @@ const uint8_t inputPinsPort2[] =  { 5,  6,  7,  8,  9,  4,  2,  0, A2};
 */
 
 #define PSX
-//PSX:                             DATA  CMD  ATT  CLK
+//PSX: (Connect also GND and 5V)   DATA  CMD  ATT  CLK
 const uint8_t inputPinsPort1[] =  {   2,   3,   4,   5 };
 const uint8_t inputPinsPort2[] =  {   6,   7,   8,   9 };
 
