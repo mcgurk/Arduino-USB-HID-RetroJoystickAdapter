@@ -68,6 +68,8 @@ Example in [Hardware](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAda
   After extraction check that you have files `%HOMEPATH%\Documents\Arduino\libraries\Joystick2\Joystick2.h and Joystick2.cpp` or `~/Arduino/libraries/Joystick2/Joystick2.h and Joystick2.cpp`.
   Close and start Arduino IDE again so it searches and finds library.
 
+  Playstation Analog controller RetroJoystickAdapter_PlaystationAnalog.ino nees `Joystick\Joystick.h` and `Joystick\Joystick.cpp`.
+  
 - Load RetroJoystickAdapter.ino to Arduino IDE
 
   Select controller by commenting and uncommenting and edit pin-numbers (if needed).
