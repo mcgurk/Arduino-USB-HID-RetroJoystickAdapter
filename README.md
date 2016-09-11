@@ -1,9 +1,9 @@
 # Arduino-USB-HID-RetroJoystickAdapter
 ## What is this?
 Very cheap and quite easy way to connect many non-USB joysticks and gamepads or DIY arcade cabinet controller to almost any machine with USB-port and HID-support. Arduino board with ATmega32u4 chip with help of Joystick-library does all the USB-work.
-Tested with Windows and Linux desktop computers and ARM based computers like Raspberry Pi and Orange Pi. Also worked with Samsung Galaxy S4 Android phone and Samsung Galaxy Tab 10.1 Android tablet with OTG-USB cable.
+Tested with Windows and Linux desktop computers and ARM based computers like Raspberry Pi and Orange Pi.
 
-ATmega32u4 can be easily changed to act as keyboard and/or mouse too.
+ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keyboard device it is easy to make adapter for many mobile devices which don't have gamepad-support out of box. I have tested it with Samsung Galaxy S4 Android phone and Samsung Galaxy Tab 10.1 Android tablet with OTG-USB cable.
 
 ### Supported controllers
 - Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI)
