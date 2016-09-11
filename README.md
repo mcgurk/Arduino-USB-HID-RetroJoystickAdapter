@@ -95,11 +95,3 @@ There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
 
-## Todo
-- example (D-connectors straight to Arduino)
-- structure of code, sends only when something changes
-- button numbering (genesis C as select)
-- changing maximum buttons from joystick library (maybe pointless)
-- some words of analog controllers?
-- some words of Arduino acting same time as serial port
-- other ideas - PIR example to misc
