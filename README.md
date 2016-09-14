@@ -96,11 +96,12 @@ Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used to
 https://github.com/NicoHood/HoodLoader2
 
 PS/2-keyboard can be connected directly to Arduino and there is library for that.
+
 http://playground.arduino.cc/Main/PS2Keyboard
 
-You can also use Arduino vice versa. You cannot read USB with normal Arduino, but there is shields to make Arduino as USB host.
+You can also use Arduino vice versa. You cannot read USB with normal Arduino, but there is shields to make Arduino as USB host. With that you can connect modern USB-joysticks and gamepads to old consoles.
+
 https://github.com/felis/USB_Host_Shield_2.0
-With that you can connect modern USB-joysticks and gamepads to old consoles.
 
 
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
