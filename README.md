@@ -92,13 +92,17 @@ https://en.wikipedia.org/wiki/List_of_Konami_code_games
 There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
 ## Misc
+
+### Arduino Uno R3
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
 
+### PS/2
 PS/2-keyboard can be connected directly to Arduino and there is library for that.
 
 http://playground.arduino.cc/Main/PS2Keyboard
 
+### USB host
 You can also use Arduino vice versa. You cannot read USB with normal Arduino, but there is shields to make Arduino as USB host. With that you can connect modern USB-joysticks and gamepads to old consoles.
 
 https://github.com/felis/USB_Host_Shield_2.0
