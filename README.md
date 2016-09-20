@@ -118,6 +118,8 @@ http://www.mit.edu/~tarvizo/nes-controller.html
 #### SNES
 http://wiki.superfamicom.org/snes/show/Schematics,+Ports,+and+Pinouts
 
+https://github.com/burks10/Arduino-SNES-Controller
+
 #### Sega Megadrive / Genesis
 https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
 
