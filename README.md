@@ -122,6 +122,7 @@ https://github.com/burks10/Arduino-SNES-Controller
 
 #### Sega Megadrive / Genesis
 https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
+
 https://jonthysell.com/2014/07/26/reading-sega-genesis-controllers-with-arduino/
 
 #### Playstation
