@@ -124,6 +124,12 @@ void interpretJoystickState_analog() {
   if ( !(btngrp1&DOWN) ) Joystick.setHatSwitch(0,180); //DOWN
   if ( !(btngrp1&LEFT) ) Joystick.setHatSwitch(0,270); //LEFT
   if ( !(btngrp1&RIGHT) ) Joystick.setHatSwitch(0,90); //RIGHT
+
+  if ( !(btngrp1&UP) && !(btngrp1&RIGHT) ) Joystick.setHatSwitch(0,45); //UP-RIGHT
+  if ( !(btngrp1&RIGHT) && !(btngrp1&DOWN) ) Joystick.setHatSwitch(0,135); //RIGHT-DOWN
+  if ( !(btngrp1&DOWN) && !(btngrp1&LEFT) ) Joystick.setHatSwitch(0,225); //DOWN-LEFT
+  if ( !(btngrp1&LEFT) && !(btngrp1&UP) ) Joystick.setHatSwitch(0,315); //LEFT-UP
+
 }
 
 
