@@ -2,6 +2,7 @@
  * Gamecube controller to Nintendo 64 adapter
  * by Andrew Brown
  * Rewritten for N64 to HID by Peter Den Hartog
+ * http://www.instructables.com/id/Use-an-Arduino-with-an-N64-controller/?ALLSTEPS
  * Modified for Atmega32u4 USB-HID by Jarno Lehtinen
  */
 
