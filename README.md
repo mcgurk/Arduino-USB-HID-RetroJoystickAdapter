@@ -109,3 +109,27 @@ https://github.com/felis/USB_Host_Shield_2.0
 
 ### Other ideas
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
+
+## Links
+
+#### NES
+http://www.mit.edu/~tarvizo/nes-controller.html
+
+#### Sega Megadrive / Genesis
+https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
+
+#### Playstation
+
+http://playground.arduino.cc/Main/PSXLibrary
+
+http://www.gamesx.com/controldata/psxcont/psxcont.htm
+
+#### Playstation Dualshock:
+
+https://gist.github.com/scanlime/5042071
+
+#### Nintendo 64 / Gamecube:
+
+https://github.com/NicoHood/Nintendo
+
+https://github.com/brownan/Gamecube-N64-Controller
