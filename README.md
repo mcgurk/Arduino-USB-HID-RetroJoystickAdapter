@@ -115,6 +115,9 @@ Of course Arduino can be used many other ways. Add a PIR motion detector module 
 #### NES
 http://www.mit.edu/~tarvizo/nes-controller.html
 
+#### SNES
+http://wiki.superfamicom.org/snes/show/Schematics,+Ports,+and+Pinouts
+
 #### Sega Megadrive / Genesis
 https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
 
