@@ -12,7 +12,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6)
 - Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX)
 - Sony Playstation 1/2 analog controller (only 1 controller) (RetroJoystickAdapter_PlaystationAnalog.ino)
-- Nintendo 64 (RetroJoystickAdapter_N64.ino) (3.3V!)
+- Nintendo 64 controller (only 1 controller) (RetroJoystickAdapter_N64.ino) (3.3V!)
 
 ## Short version
 - Get ATmega32u4 Arduino board
