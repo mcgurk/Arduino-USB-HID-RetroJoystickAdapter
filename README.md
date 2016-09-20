@@ -127,9 +127,9 @@ https://jonthysell.com/2014/07/26/reading-sega-genesis-controllers-with-arduino/
 
 #### Playstation
 
-http://playground.arduino.cc/Main/PSXLibrary
-
 http://www.gamesx.com/controldata/psxcont/psxcont.htm
+
+http://playground.arduino.cc/Main/PSXLibrary
 
 #### Playstation Dualshock:
 
