@@ -109,7 +109,7 @@ You can also use Arduino vice versa. You cannot read USB with normal Arduino, bu
 https://github.com/felis/USB_Host_Shield_2.0
 
 ### Software USB
-USB-device without ATmega16u2/32u4. Needs 3 resistors and 2 zender diodes.
+USB-device without ATmega16u2/32u4. Needs 3 resistors and 2 zener diodes.
 
 https://www.obdev.at/products/vusb/index.html
 
