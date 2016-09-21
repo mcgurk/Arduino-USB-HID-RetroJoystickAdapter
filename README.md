@@ -98,6 +98,11 @@ There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
 
+### Software USB
+USB-device without ATmega16u2/32u4. Needs 3 resistors and 2 zener diodes.
+
+https://www.obdev.at/products/vusb/index.html
+
 ### PS/2
 PS/2-keyboard can be connected directly to Arduino and there is library for that.
 
@@ -107,11 +112,6 @@ http://playground.arduino.cc/Main/PS2Keyboard
 You can also use Arduino vice versa. You cannot read USB with normal Arduino, but there is shields to make Arduino as USB host. With that you can connect modern USB-joysticks and gamepads to old consoles.
 
 https://github.com/felis/USB_Host_Shield_2.0
-
-### Software USB
-USB-device without ATmega16u2/32u4. Needs 3 resistors and 2 zener diodes.
-
-https://www.obdev.at/products/vusb/index.html
 
 ### Other ideas
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
