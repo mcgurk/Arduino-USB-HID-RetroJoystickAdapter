@@ -18,7 +18,7 @@
 
 //USE PIN 4 FOR DATA PIN!
 //USE ONLY 3.3V FOR VCC AND DATA!
-
+//TIMINGS ARE FOR 16MHz ATmega! (ATmega32u4 3.3V is 8MHz)
 
 
 #include "pins_arduino.h"
