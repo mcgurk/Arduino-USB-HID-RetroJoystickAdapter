@@ -85,7 +85,7 @@ Example of NES-controller wiring:
 - If you got no errors, test in Windows with `Control Panel -> Game Controllers` or in Linux with `jstest /dev/input/js0`
 
 ### Code
-This code supports Atari, SMS, NES, SNES and Genesis (3 and 6 button) controllers. Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
+Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
 Every one uses same button numbering, so if you make multiple adapters for different controllers, you have to teach buttons to emulator/game (or whole emulation system like RetroPie or RetrOrangePi) only once.
 
 #### Konami code
