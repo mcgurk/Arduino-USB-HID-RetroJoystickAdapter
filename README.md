@@ -6,7 +6,7 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keyboard device it is easy to make adapter for many mobile devices which don't have gamepad-support out of box. I have tested it with Samsung Galaxy S4 Android phone and Samsung Galaxy Tab 10.1 Android tablet with OTG-USB cable.
 
 ### Supported controllers
-(2 controller supported with one Arduino in same time if not said something other)
+(2 controller supported with one Arduino same time if not said something other)
 - Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI)
 - Nintendo Entertainment System controllers (NES)
 - Super Nintendo controllers (SNES)
