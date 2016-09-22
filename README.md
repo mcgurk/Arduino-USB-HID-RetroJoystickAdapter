@@ -46,6 +46,7 @@ You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX 
 Example in [Hardware](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Hardware) folder.
 
 Example of NES-controller wiring:
+
 ![NES wiring](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Hardware/nes.png)
 
 ### Setup
