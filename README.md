@@ -18,7 +18,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 ## Short version
 - Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
-- Install Arduino IDE
+- Install Arduino [IDE](https://www.arduino.cc/en/Main/Software)
 - Install Joystick [library](https://github.com/MHeironimus/ArduinoJoystickLibrary)
 - Open sourcecode to Arduino IDE and select controller by commenting and uncommenting and edit pin-numbers (if needed)
 - Upload
