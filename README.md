@@ -122,6 +122,8 @@ Of course Arduino can be used many other ways. Add a PIR motion detector module 
 
 ## Links
 
+http://playground.arduino.cc/Main/InterfacingWithHardware
+
 #### NES
 http://www.mit.edu/~tarvizo/nes-controller.html
 
