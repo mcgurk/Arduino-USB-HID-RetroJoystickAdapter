@@ -45,6 +45,9 @@ Some joystick/gamepads uses their own connectors and original connectors can be 
 You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX and RX pins and even though they are not used right now, they are handy for debugging and other uses.
 Example in [Hardware](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Hardware) folder.
 
+Example of NES-controller wiring:
+![NES wiring](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Hardware/nes.png)
+
 ### Setup
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
