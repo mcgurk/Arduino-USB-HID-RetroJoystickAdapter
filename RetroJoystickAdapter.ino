@@ -218,9 +218,9 @@ void setupJoysticks() {
 
   const uint8_t inputlist[] = {0,1,2,3,5,8};
   for (int i=0; i < 6; i++) {
-    pinMode(inputPinsPort1[inputlist[i]], INPUT);
-    pinMode(inputPinsPort2[inputlist[i]], INPUT);
-  }
+    pinMode(inputPinsPort1[inputlist[i]], INPUT_PULLUP);
+    pinMode(inputPinsPort2[inputlist[i]], INPUT_PULLUP);
+  } //without PULLUP every button are read as pressed down if controller is not connected.
   
   pinMode(MODE_SELECT_PORT1, OUTPUT);
   pinMode(MODE_SELECT_PORT2, OUTPUT);
