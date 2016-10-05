@@ -97,6 +97,25 @@ https://en.wikipedia.org/wiki/List_of_Konami_code_games
 ## Tutorial
 There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
+## Polishing
+If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new file after that, because all libraries are not recompiled every time.
+
+Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt`. You can even add sub menu to tools-menu by adding these lines:
+
+```
+menu.usb_name=USB Product Name
+leonardo.menu.usb_name.leonardo="Leonardo"
+leonardo.menu.usb_name.leonardo.build.usb_product="Arduino Leonardo"
+leonardo.menu.usb_name.leonardo_1="Genesis 6"
+leonardo.menu.usb_name.leonardo_1.build.usb_product="Genesis 6-button adapter"
+leonardo.menu.usb_name.leonardo_2="Genesis 3"
+leonardo.menu.usb_name.leonardo_2.build.usb_product="Genesis 3-button adapter"
+leonardo.menu.usb_name.leonardo_3="NES"
+leonardo.menu.usb_name.leonardo_3.build.usb_product="NES-adapter"
+leonardo.menu.usb_name.leonardo_4="SNES"
+leonardo.menu.usb_name.leonardo_4.build.usb_product="SNES-adapter"
+```
+
 ## Misc
 
 ### Arduino Uno R3
