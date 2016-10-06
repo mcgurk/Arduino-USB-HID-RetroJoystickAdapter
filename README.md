@@ -164,7 +164,7 @@ http://www.gamesx.com/controldata/psxcont/psxcont.htm
 
 http://playground.arduino.cc/Main/PSXLibrary
 
-http://problemkaputt.de/psx-spx.htm
+http://problemkaputt.de/psx-spx.htm#controllersandmemorycards
 
 #### Playstation Dualshock:
 
