@@ -14,7 +14,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX)
 - Sony Playstation 1/2 Dualshock controller (without rumble) (only 1 controller) (RetroJoystickAdapter_PlaystationAnalog.ino)
 - Nintendo 64 controller (only 1 controller) (RetroJoystickAdapter_N64.ino) (3.3V!)
-- Sony Playstation with Multitap support BETA! (RetroJoystickAdapter_Playstation_beta.ino)
+- (Sony Playstation with Multitap support BETA (RetroJoystickAdapter_Playstation_beta.ino))
 
 ## Short version
 - Get ATmega32u4 Arduino board
