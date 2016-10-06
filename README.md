@@ -164,6 +164,8 @@ http://www.gamesx.com/controldata/psxcont/psxcont.htm
 
 http://playground.arduino.cc/Main/PSXLibrary
 
+http://problemkaputt.de/psx-spx.htm
+
 #### Playstation Dualshock:
 
 https://gist.github.com/scanlime/5042071
