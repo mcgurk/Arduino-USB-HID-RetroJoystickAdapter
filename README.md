@@ -18,6 +18,8 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 \* = 4 controllers supported with Multitap, doesn't need Joystick-library
 
+If you use Linux and want to get more than 1 controller with Arduino, check "Linux and more than one controller with one Arduino".
+
 ## Short version
 - Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
@@ -86,6 +88,13 @@ Example of NES-controller wiring:
 - Press Upload
 
 - If you got no errors, test in Windows with `Control Panel -> Game Controllers` or in Linux with `jstest /dev/input/js0`
+
+### Linux and more than one controller with one Arduino
+Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this). You have to give parameter 
+quirks=0x2341:0x8036:0x40 to usbhid-module. Here is example what to do with RetrOrangePi 2.5.2:
+0. Make backup of /boot/boot-retro.cmd and /boot/boot.scr
+1. Edit /boot/boot-retro.cmd setenv bootargs -line and add usbhid.quirks=0x2341:0x8036:0x40 to kernel parameters.
+2. sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr
 
 ### Code
 Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
