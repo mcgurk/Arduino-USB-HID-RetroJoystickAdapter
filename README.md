@@ -18,7 +18,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 \* = 4 controllers supported with Multitap, doesn't need Joystick-library
 
-If you use Linux and want to get more than 1 controller with one Arduino, check "Linux and more than one controller with one Arduino".
+If you use Linux and want to get more than 1 controller with one Arduino, check "Linux and more than one controller with one Arduino"-topic in this same page.
 
 ## Short version
 - Get ATmega32u4 Arduino board
