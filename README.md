@@ -6,15 +6,17 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keyboard device it is easy to make adapter for many mobile devices which don't have gamepad-support out of box. I have tested it with Samsung Galaxy S4 Android phone and Samsung Galaxy Tab 10.1 Android tablet with OTG-USB cable.
 
 ### Supported controllers
-(2 controllers supported with one Arduino if not said something other)
-- Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI)
-- Nintendo Entertainment System controllers (NES)
-- Super Nintendo controllers (SNES)
-- Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6)
-- Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX)
-- Sony Playstation 1/2 Dualshock controller (without rumble) (only 1 controller) (RetroJoystickAdapter_PlaystationAnalog.ino)
-- Nintendo 64 controller (only 1 controller) (RetroJoystickAdapter_N64.ino) (3.3V!)
-- (Sony Playstation with Multitap support BETA (RetroJoystickAdapter_Playstation_beta.ino))
+- Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²
+- Nintendo Entertainment System controllers (NES) ²
+- Super Nintendo controllers (SNES) ²
+- Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6) ²
+- Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²
+- Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
+- Sony Playstation with Analog and Multitap support (RetroJoystickAdapter_Playstation.ino) \*
+
+² = 2 controllers supported
+
+\* = 4 controllers supported
 
 ## Short version
 - Get ATmega32u4 Arduino board
