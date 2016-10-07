@@ -1,3 +1,15 @@
+
+#define DATA1 2
+#define CMD1 3
+#define ATT1 4
+#define CLK1 5
+
+/*#define DATA2 6
+#define CMD2 7
+#define ATT2 8
+#define CLK2 9 */
+
+
 #include "HID.h"
 
 #if ARDUINO < 10606
@@ -9,7 +21,7 @@
 #endif
 
 #if !defined(_USING_HID)
-#error "Using legacy HID core (non pluggable)"
+#error "legacy HID core (non pluggable)"
 #endif
 
 #define JOYSTICK_REPORT_ID  0x03
@@ -17,43 +29,14 @@
 #define JOYSTICK3_REPORT_ID 0x05
 #define JOYSTICK4_REPORT_ID 0x06
 
+#define JOYSTICK_STATE_SIZE 6
+
 //#define DEBUG
 
 //================================================================================
 //================================================================================
 //  Joystick (Gamepad)
 
-class Joystick_ {
-
-private:
-  uint8_t joystickId;
-  uint8_t reportId;
-
-public:
-  Joystick_(uint8_t initJoystickId, uint8_t initReportId);
-
-  void sendState();
-
-  int8_t xAxis;
-  int8_t yAxis;
-  int8_t xAxis2;
-  int8_t yAxis2;
-  uint16_t buttons;
-
-  //void begin(bool initAutoSendState = true);
-  //void end();
-
-  //void setXAxis(int8_t value);
-  //void setYAxis(int8_t value);
-
-  //void setButton(uint8_t button, uint8_t value);
-  //void pressButton(uint8_t button);
-  //void releaseButton(uint8_t button);
-
-};
-
-
-#define JOYSTICK_STATE_SIZE 6
 
 #define HIDDESC_MACRO(REPORT_ID) \
     /* Joystick # */ \
@@ -99,54 +82,70 @@ static const uint8_t hidReportDescriptor[] PROGMEM = {
 };
 
 
-Joystick_::Joystick_(uint8_t initJoystickId, uint8_t initReportId)
-{
-  // Setup HID report structure
-  static bool usbSetup = false;
+class Joystick_ {
+
+private:
+  uint8_t joystickId;
+  uint8_t reportId;
+  int8_t olddata[JOYSTICK_STATE_SIZE];
+  int8_t flag;
+
+public:
+  int8_t type;
+  int8_t data[JOYSTICK_STATE_SIZE];
+
+  Joystick_(uint8_t initJoystickId, uint8_t initReportId) {
+    // Setup HID report structure
+    static bool usbSetup = false;
   
-  if (!usbSetup)
-  {
-    static HIDSubDescriptor node(hidReportDescriptor, sizeof(hidReportDescriptor));
-    HID().AppendDescriptor(&node);
-    usbSetup = true;
-  }
+    if (!usbSetup) {
+      static HIDSubDescriptor node(hidReportDescriptor, sizeof(hidReportDescriptor));
+      HID().AppendDescriptor(&node);
+      usbSetup = true;
+    }
     
-  // Initalize State
-  joystickId = initJoystickId;
-  reportId = initReportId;
-  xAxis = 127;
-  yAxis = 127;
-  xAxis2 = 127;
-  yAxis2 = 127;
-  buttons = 0;
+    // Initalize State
+    joystickId = initJoystickId;
+    reportId = initReportId;
   
-  sendState();
-}
+    data[0] = 0;
+    data[1] = 0;
+    data[2] = 127;
+    data[3] = 127;
+    data[4] = 127;
+    data[5] = 127;
+    memcpy(olddata, data, JOYSTICK_STATE_SIZE);
+    sendState(1);
+  }
 
-void Joystick_::sendState()
-{
-    int8_t data[JOYSTICK_STATE_SIZE];
-    uint16_t buttonTmp = buttons;
+  void updateState() {
+    if (type != 0x73 && type != 0x53) {
+      data[2] = 127;
+      data[3] = 127;
+      data[4] = 127;
+      data[5] = 127;
+    }
+    if (type == 0x41 || type == 0x73 || type == 0x53) {
+      if (memcmp(olddata, data, JOYSTICK_STATE_SIZE)) {    
+        memcpy(olddata, data, JOYSTICK_STATE_SIZE);
+        flag = 1;
+      }
+    }
+    //sendState();
+  }
 
-    // Split 16 bit button-state into 2 bytes
-    data[0] = buttonTmp & 0xFF;        
-    buttonTmp >>= 8;
-    data[1] = buttonTmp & 0xFF;
+  void sendState(uint8_t force = 0) {
+    if (flag || force) {
+      // HID().SendReport(Report number, array of values in same order as HID descriptor, length)
+      HID().SendReport(reportId, data, JOYSTICK_STATE_SIZE);
+      flag = 0;
+    }
+  }
 
-    data[2] = xAxis;
-    data[3] = yAxis;
-    data[4] = xAxis2;
-    data[5] = yAxis2;
-    //data[2] = 127;//xAxis;
-    //data[3] = 127;//yAxis;
+};
 
-    // HID().SendReport(Report number, array of values in same order as HID descriptor, length)
-    HID().SendReport(reportId, data, JOYSTICK_STATE_SIZE);
-}
 
 Joystick_ Joystick[4] =
-//Joystick_ Joystick[3] =
-//Joystick_ Joystick[2] =
 {
     Joystick_(0, JOYSTICK_REPORT_ID),
     Joystick_(1, JOYSTICK2_REPORT_ID),
@@ -159,21 +158,15 @@ Joystick_ Joystick[4] =
 
 
 
-#define DATA1 2
-#define CMD1 3
-#define ATT1 4
-#define CLK1 5
 
-/*#define DATA2 6
-#define CMD2 7
-#define ATT2 8
-#define CLK2 9 */
 
 uint8_t shift(uint8_t _dataOut) // Does the actual shifting, both in and out simultaneously
 {
   uint8_t _temp = 0;
   uint8_t _dataIn = 0;
-  uint8_t _delay = 25;//25;//20; //10; //4; //10; //with 15 unstable. meni epävakaaks 20:lläkin... //testaa kunnon kaapelilla uudestaan
+  uint8_t _delay = 2; //clock 250kHz
+
+  delayMicroseconds(100); //max acknowledge waiting time 100us
   for (uint8_t _i = 0; _i <= 7; _i++) {
     
     if ( _dataOut & (1 << _i) ) // write bit
@@ -213,76 +206,49 @@ void setup() {
 
 void loop() {
   // http://problemkaputt.de/psx-spx.htm#controllerandmemorycardsignals
-  uint8_t head, type, padding, multitap, data1, data2, data3, data4, data5, data6;
-  uint8_t data[100];
-
-  delayMicroseconds(20);
-  digitalWrite(ATT1, LOW);
-  //digitalWrite(ATT2, LOW);
-  delayMicroseconds(50);
-  head = shift(0x01);
-  type = shift(0x42);
-  padding = shift(0x01); //read multitap in next read
-  data1 = shift(0x00); //read
-  data2 = shift(0x00);
-  data3 = shift(0x00);
-  data4 = shift(0x00);
-  data5 = shift(0x00);
-  data6 = shift(0x00);
-  digitalWrite(ATT1, HIGH);
-  //digitalWrite(ATT2, HIGH);
-  Joystick[0].buttons = ~( (data1) | (data2 << 8) );
-  //delayMicroseconds(160);
-  //delay(16);
-
+  uint8_t head, padding, multitap;
   #ifdef DEBUG
-  /*Serial.print("head: 0x"); Serial.print(head, HEX); Serial.print(" type: 0x"); Serial.print(type, HEX); Serial.print(" padding: 0x"); Serial.print(padding, HEX); 
-  Serial.print(" data1: 0x"); Serial.print(data1, HEX); Serial.print(" "), Serial.print(data1, BIN);
-  Serial.print(" data2: 0x"); Serial.print(data2, HEX); Serial.print(" "), Serial.print(data2, BIN);
-  Serial.print(" rest: "); Serial.print(data3, DEC); Serial.print(" "); Serial.print(data4, DEC); Serial.print(" "); Serial.print(data5, DEC); Serial.print(" "); Serial.print(data6, DEC);
-  Serial.println();*/
+  uint8_t data[100];
   #endif
 
-  // check and read multitap
-  delayMicroseconds(20);
+  // first: read gamepad normally
   digitalWrite(ATT1, LOW);
-  delayMicroseconds(50);
+  //digitalWrite(ATT2, LOW);
+  head = shift(0x01);
+  Joystick[0].type = shift(0x42);
+  padding = shift(0x01); //read multitap in next command
+  Joystick[0].data[0] = shift(0x00); //buttons
+  Joystick[0].data[1] = shift(0x00); //buttons
+  Joystick[0].data[2] = shift(0x00); //right analog
+  Joystick[0].data[3] = shift(0x00); //right analog
+  Joystick[0].data[4] = shift(0x00); //left analog
+  Joystick[0].data[5] = shift(0x00); //left analog
+  digitalWrite(ATT1, HIGH);
+  //digitalWrite(ATT2, HIGH);
+
+
+  // second: check and read multitap
+  digitalWrite(ATT1, LOW);
   head = shift(0x01);
   multitap = shift(0x42);
   padding = shift(0x00); //next time normal read
-  //padding = shift(0x01);
-  //padding = shift(0x01);
   if (multitap == 0x80) {
     for (uint8_t i = 0; i < 4; i++) {
-    //for (uint8_t i = 0; i < 2; i++) {
-      type = shift(0x00); //controller ID
-      padding = shift(0x00); //controller ID
-      //type = shift(0x00); //controller ID
-      //padding = shift(0x00); //controller ID
-      data1 = shift(0x00); //buttons
-      data2 = shift(0x00); //buttons
-      data3 = shift(0x00); //right analog
-      data4 = shift(0x00); //right analog
-      data5 = shift(0x00); //left analog
-      data6 = shift(0x00); //left analog
-      if (type != 0x41) {
-        Joystick[i].xAxis = data3;
-        Joystick[i].yAxis = data4;
-        Joystick[i].xAxis2 = data5;
-        Joystick[i].yAxis2 = data6;
-       } else {
-        Joystick[i].xAxis = 127;//0;
-        Joystick[i].yAxis = 127;//0;
-        Joystick[i].xAxis2 = 127;//0;
-        Joystick[i].yAxis2 = 127;//0;
-       } /*
+      Joystick[i].type = shift(0x00);
+      padding = shift(0x00);
+      Joystick[i].data[0] = ~shift(0x00); //buttons
+      Joystick[i].data[1] = ~shift(0x00); //buttons
+      Joystick[i].data[2] = shift(0x00); //right analog
+      Joystick[i].data[3] = shift(0x00); //right analog
+      Joystick[i].data[4] = shift(0x00); //left analog
+      Joystick[i].data[5] = shift(0x00); //left analog
+      /*
         if (!bitRead(data1,4)) Joystick[i].yAxis2 = 0;
         if (!bitRead(data1,5)) Joystick[i].xAxis2 = 255;
         if (!bitRead(data1,6)) Joystick[i].yAxis2 = 255;
         if (!bitRead(data1,7)) Joystick[i].xAxis2 = 0;
         data1 = data1 | B11110000;
       }*/
-      Joystick[i].buttons = ~( (data1) | (data2 << 8) );
     }
   }
   /*for (uint8_t i = 0; i < 8*4; i++) {
@@ -312,14 +278,17 @@ void loop() {
   Serial.print(" rest: "); Serial.print(data3, DEC); Serial.print(" "); Serial.print(data4, DEC); Serial.print(" "); Serial.print(data5, DEC); Serial.print(" "); Serial.print(data6, DEC);*/
   Serial.println();
   Serial.flush();
-  //Serial.print(" type2: "); Serial.print(type, HEX);
-  //Serial.println();
   #endif
 
-  //delayMicroseconds(50);
+  Joystick[0].updateState();
+  Joystick[1].updateState();
+  Joystick[2].updateState();
+  Joystick[3].updateState();
   Joystick[0].sendState();
   Joystick[1].sendState();
   Joystick[2].sendState();
-  Joystick[3].sendState();
-  delay(50);}
+  Joystick[3].sendState();  
+  delayMicroseconds(1000);
+
+}
 
