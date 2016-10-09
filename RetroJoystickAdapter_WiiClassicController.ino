@@ -198,6 +198,10 @@ void setup() {
 
 void loop() {
 
+  #ifdef DEBUG
+  unsigned long t = micros();
+  #endif
+  
   Wire.requestFrom(ADDRESS, 6); //request data from wii classic
   /*Serial.print(Wire.read(), HEX);Serial.print(" ");
   Serial.print(Wire.read(), HEX);Serial.print(" ");
@@ -215,7 +219,7 @@ void loop() {
   }
 
   //detect if init is needed
-  if (i < 5) {
+  if (i < 6) {
     delay(100);
     sendByte(0x55, 0xF0);
     sendByte(0x00, 0xFB);
@@ -224,7 +228,10 @@ void loop() {
     #endif
     delay(100);
   } else sendByte(0x00, 0x00);
-
+  
+  #ifdef DEBUG
+  Serial.println(micros()-t);
+  #endif
 
   /*for (uint8_t i = 0; i < 6; i++) {
     Joystick[0].data[i] = Wire.read();
@@ -284,6 +291,8 @@ void loop() {
 
   Joystick[0].updateState();
   Joystick[0].sendState();
-  //delay(100); // used to see changes in the serial monitor easier.
+  #ifdef DEBUG
+  delay(100); // used to see changes in the serial monitor easier.
+  #endif
   delayMicroseconds(1000);
 }
