@@ -64,7 +64,7 @@
     0x09, 0x30,               /*     USAGE (x) */ \
     0x09, 0x31,               /*     USAGE (y) */ \
     0x15, 0x00,               /*     LOGICAL_MINIMUM (0) */ \
-    0x25, 0xff,               /*     LOGICAL_MAXIMUM (255) */ \
+    0x26, 0xff, 0x00,         /*     LOGICAL_MAXIMUM (255) */ \
     0x75, 0x08,               /*     REPORT_SIZE (8) */ \
     0x95, 0x04,               /*     REPORT_COUNT (4) */ \
     0x81, 0x02,               /*     INPUT (Data,Var,Abs) */ \
