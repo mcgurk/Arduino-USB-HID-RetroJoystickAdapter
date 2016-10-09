@@ -192,3 +192,9 @@ https://gist.github.com/scanlime/5042071
 https://github.com/NicoHood/Nintendo
 
 https://github.com/brownan/Gamecube-N64-Controller
+
+#### Wii Classic Controller:
+
+https://github.com/robotgeek/WiiClassy
+
+http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Classic_Controller
