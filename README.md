@@ -12,11 +12,12 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6) ²
 - Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
-- Sony Playstation with Analog and Multitap support (RetroJoystickAdapter_Playstation.ino) \*
+- Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
+- Wii Classic Controller (and maybe Pro, not tested) (3.3V!) \*
 
 ² = 2 controllers supported
 
-\* = 4 controllers supported with Multitap, doesn't need Joystick-library
+\* = doesn't need Joystick-library
 
 If you use Linux and want to get more than 1 controller with one Arduino, check "Linux and more than one controller with one Arduino"-topic in this same page.
 
