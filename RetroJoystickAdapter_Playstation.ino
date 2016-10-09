@@ -87,12 +87,12 @@ class Joystick_ {
 private:
   uint8_t joystickId;
   uint8_t reportId;
-  int8_t olddata[JOYSTICK_STATE_SIZE];
-  int8_t flag;
+  uint8_t olddata[JOYSTICK_STATE_SIZE];
+  uint8_t flag;
 
 public:
-  int8_t type;
-  int8_t data[JOYSTICK_STATE_SIZE];
+  uint8_t type;
+  uint8_t data[JOYSTICK_STATE_SIZE];
 
   Joystick_(uint8_t initJoystickId, uint8_t initReportId) {
     // Setup HID report structure
