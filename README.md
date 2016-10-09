@@ -13,7 +13,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
 - Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
-- Wii Classic Controller (and maybe Pro, not tested) (3.3V!) \*
+- Wii Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiClassicController.ino) (3.3V!) \*
 
 ² = 2 controllers supported
 
