@@ -106,7 +106,7 @@ Another possibility is change VID and PID to something that already has HID_QUIR
 Here you can see what quirks are activated to different VID/PIDs:
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
 
-Edit VID/PID from `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (after editgin boards.txt, you have to close and reopen Arduino IDE). Example:
+Edit VID/PID from `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (after editgin boards.txt, you have to close and reopen Arduino IDE). Example USB_VENDOR_ID_MOJO 0x8282, USB_DEVICE_ID_RETRO_ADAPTER 0x3201:
 ```
 leonardo.build.vid=0x8282
 leonardo.build.pid=0x3201
