@@ -98,6 +98,17 @@ Linux usbhid-module doesn't support out of box multiple controllers with one USB
 - `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
 - Reboot
 
+Another possibility is change VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
+Here you can see what quirks are activated to different VID/PIDs:
+
+https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
+
+Edit VID/PID from `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt`. Example:
+```
+leonardo.build.vid=0x8282
+leonardo.build.pid=0x3201
+```
+
 ### Code
 Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
 Every one uses same button numbering, so if you make multiple adapters for different controllers, you have to teach buttons to emulator/game (or whole emulation system like RetroPie or RetrOrangePi) only once.
