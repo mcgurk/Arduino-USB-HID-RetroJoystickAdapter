@@ -91,13 +91,17 @@ Example of NES-controller wiring:
 - If you got no errors, test in Windows with `Control Panel -> Game Controllers` or in Linux with `jstest /dev/input/js0`
 
 ### Linux and more than one controller with one Arduino
-Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). You have to give parameter 
+Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
+
+#### Solution 1
+You have to give parameter 
 `quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of adapter) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
 - Make backup of `/boot/boot-retro.cmd` and `/boot/boot.scr`
 - Edit `/boot/boot-retro.cmd` setenv bootargs -line and add `usbhid.quirks=0x2341:0x8036:0x40` to kernel parameters.
 - `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
 - Reboot
 
+#### Solution 2
 Another possibility is change VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
 Here you can see what quirks are activated to different VID/PIDs:
 
