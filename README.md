@@ -104,7 +104,6 @@ You have to give parameter
 #### Solution 2
 Another possibility is change VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
 Here you can see what quirks are activated to different VID/PIDs:
-
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
 
 Edit VID/PID from `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt`. Example:
