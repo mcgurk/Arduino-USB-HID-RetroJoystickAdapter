@@ -95,7 +95,7 @@ Linux usbhid-module doesn't support out of box multiple controllers with one USB
 
 #### Solution 1
 You have to give parameter 
-`quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of adapter) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
+`quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
 - Make backup of `/boot/boot-retro.cmd` and `/boot/boot.scr`
 - Edit `/boot/boot-retro.cmd` setenv bootargs -line and add `usbhid.quirks=0x2341:0x8036:0x40` to kernel parameters.
 - `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
