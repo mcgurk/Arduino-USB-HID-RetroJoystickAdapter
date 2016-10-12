@@ -164,7 +164,7 @@ uint8_t shift(uint8_t _dataOut) // Does the actual shifting, both in and out sim
 {
   uint8_t _temp = 0;
   uint8_t _dataIn = 0;
-  uint8_t _delay = 2; //clock 250kHz
+  uint8_t _delay = 6; //2 unstable; //clock 250kHz
 
   delayMicroseconds(100); //max acknowledge waiting time 100us
   for (uint8_t _i = 0; _i <= 7; _i++) {
@@ -217,8 +217,8 @@ void loop() {
   head = shift(0x01);
   Joystick[0].type = shift(0x42);
   padding = shift(0x01); //read multitap in next command
-  Joystick[0].data[0] = shift(0x00); //buttons
-  Joystick[0].data[1] = shift(0x00); //buttons
+  Joystick[0].data[0] = ~shift(0x00); //buttons
+  Joystick[0].data[1] = ~shift(0x00); //buttons
   Joystick[0].data[2] = shift(0x00); //right analog
   Joystick[0].data[3] = shift(0x00); //right analog
   Joystick[0].data[4] = shift(0x00); //left analog
@@ -226,6 +226,7 @@ void loop() {
   digitalWrite(ATT1, HIGH);
   //digitalWrite(ATT2, HIGH);
 
+  //delay(100);
 
   // second: check and read multitap
   digitalWrite(ATT1, LOW);
@@ -242,41 +243,30 @@ void loop() {
       Joystick[i].data[3] = shift(0x00); //right analog
       Joystick[i].data[4] = shift(0x00); //left analog
       Joystick[i].data[5] = shift(0x00); //left analog
-      /*
-        if (!bitRead(data1,4)) Joystick[i].yAxis2 = 0;
-        if (!bitRead(data1,5)) Joystick[i].xAxis2 = 255;
-        if (!bitRead(data1,6)) Joystick[i].yAxis2 = 255;
-        if (!bitRead(data1,7)) Joystick[i].xAxis2 = 0;
-        data1 = data1 | B11110000;
-      }*/
     }
   }
-  /*for (uint8_t i = 0; i < 8*4; i++) {
-    data[i] = shift(0x00);
-  }*/
   digitalWrite(ATT1, HIGH);
 
   #ifdef DEBUG
-  /*Serial.print(" head/type/padding: 0x"); Serial.print(head, HEX);
-  Serial.print(" 0x"); Serial.print(type, HEX);
-  Serial.print(" 0x"); Serial.print(padding, HEX);
-  Serial.print(" -  ");
-  for (uint8_t i = 0; i < 8*4; i++) {
-    Serial.print(data[i], HEX); Serial.print(" ");
-  }*/
-  Serial.print(" data: 0x"); Serial.print(data1, HEX);
-  Serial.print(" 0x"); Serial.print(data2, HEX);
-  Serial.print(" 0x"); Serial.print(data3, HEX);
-  Serial.print(" 0x"); Serial.print(data4, HEX);
-  Serial.print(" 0x"); Serial.print(data5, HEX);
-  Serial.print(" 0x"); Serial.print(data6, HEX);
-  //Serial.print(" 0x"); Serial.print(data7, HEX);
-  //Serial.print(" 0x"); Serial.print(data8, HEX);
-  /*Serial.print("--head: 0x"); Serial.print(head, HEX); Serial.print(" type: 0x"); Serial.print(type, HEX); Serial.print(" padding: 0x"); Serial.print(padding, HEX); 
-  Serial.print(" data1: 0x"); Serial.print(data1, HEX); Serial.print(" "), Serial.print(data1, BIN);
-  Serial.print(" data2: 0x"); Serial.print(data2, HEX); Serial.print(" "), Serial.print(data2, BIN);
-  Serial.print(" rest: "); Serial.print(data3, DEC); Serial.print(" "); Serial.print(data4, DEC); Serial.print(" "); Serial.print(data5, DEC); Serial.print(" "); Serial.print(data6, DEC);*/
-  Serial.println();
+  for (uint8_t i = 0; i < 4; i++) {
+    Serial.print(" multitap: "); Serial.println(multitap, HEX);
+    Serial.print(" type: 0x"); Serial.print(Joystick[i].type, HEX);
+    Serial.print(" data: 0x"); Serial.print(Joystick[i].data[0], HEX);
+    Serial.print(" 0x"); Serial.print(Joystick[i].data[1], HEX);
+    Serial.print(" 0x"); Serial.print(Joystick[i].data[2], HEX);
+    Serial.print(" 0x"); Serial.print(Joystick[i].data[3], HEX);
+    Serial.print(" 0x"); Serial.print(Joystick[i].data[4], HEX);
+    Serial.print(" 0x"); Serial.print(Joystick[i].data[5], HEX);
+    Serial.println();
+  }
+  /*Serial.print(" type: 0x"); Serial.print(Joystick[0].type, HEX);
+  Serial.print(" data: 0x"); Serial.print(Joystick[0].data[0], HEX);
+  Serial.print(" 0x"); Serial.print(Joystick[0].data[1], HEX);
+  Serial.print(" 0x"); Serial.print(Joystick[0].data[2], HEX);
+  Serial.print(" 0x"); Serial.print(Joystick[0].data[3], HEX);
+  Serial.print(" 0x"); Serial.print(Joystick[0].data[4], HEX);
+  Serial.print(" 0x"); Serial.print(Joystick[0].data[5], HEX);
+  Serial.println();*/
   Serial.flush();
   #endif
 
@@ -290,5 +280,5 @@ void loop() {
   Joystick[3].sendState();  
   delayMicroseconds(1000);
 
-}
 
+}
