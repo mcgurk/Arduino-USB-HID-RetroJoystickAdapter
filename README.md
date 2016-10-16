@@ -9,8 +9,8 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²
 - Nintendo Entertainment System controllers (NES) ²
 - Super Nintendo controllers (SNES) ²
-- Sega Genesis / Megadrive 3 and 6-button controllers (GENESIS_3 / GENESIS_6) ²
 - Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²
+- Sega Genesis / Megadrive controllers (3 and 6-button versions) (RetroJoystickAdapter_Megadrive.ino) ² \*
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
 - Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
 - Wii Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiClassicController.ino) (3.3V!) \*
