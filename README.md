@@ -100,6 +100,7 @@ You have to give parameter
 - Edit `/boot/boot-retro.cmd` setenv bootargs -line and add `usbhid.quirks=0x2341:0x8036:0x40` to kernel parameters.
 - `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
 - Reboot
+- Check with `cat /proc/cmdline`
 
 #### Solution 2
 Another possibility is change VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
