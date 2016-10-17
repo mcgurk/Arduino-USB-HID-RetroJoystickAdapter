@@ -172,6 +172,8 @@ There is contradictory data about Playstation controller voltages. I have one co
 ### Other ideas
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
 
+(#test)
+
 ## Links
 
 #### Arduino
