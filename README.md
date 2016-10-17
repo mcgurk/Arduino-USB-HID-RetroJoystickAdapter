@@ -93,7 +93,7 @@ Example of NES-controller wiring:
 ### Linux and more than one controller with one Arduino
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
 
-[create an anchor](#anchors-in-markdown)#### Solution 1
+[#### Solution 1](#ropi_quirks)
 You have to give parameter 
 `quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
 - Make backup of `/boot/boot-retro.cmd` and `/boot/boot.scr`
