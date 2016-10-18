@@ -167,7 +167,7 @@ You can also use Arduino vice versa. You cannot read USB with normal Arduino, bu
 https://github.com/felis/USB_Host_Shield_2.0
 
 ### Playstation, 3.3V, 3.7V or 5V?
-There is contradictory data about Playstation controller voltages. I have one commercial adapter and it's 5V. I haven't measured official Playstation, but it is propably 3.3V.
+There is contradictory data about Playstation controller voltages. I have one commercial adapter and it's 5V. I haven't measured official Playstation, but it is probably 3.3V.
 
 ### Other ideas
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
