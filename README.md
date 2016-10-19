@@ -213,3 +213,11 @@ https://github.com/brownan/Gamecube-N64-Controller
 https://github.com/robotgeek/WiiClassy
 
 http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Classic_Controller
+
+#### Gamecube / N64
+
+http://www.int03.co.uk/crema/hardware/gamecube/gc-control.htm
+
+https://github.com/NicoHood/Nintendo/wiki/Gamecube
+
+
