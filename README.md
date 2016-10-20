@@ -166,6 +166,11 @@ You can also use Arduino vice versa. You cannot read USB with normal Arduino, bu
 
 https://github.com/felis/USB_Host_Shield_2.0
 
+### Level shifting
+Very handy level converter with 3.3V AMS1117 regulator. Search from Ebay with `Logic Level Converter Module AMS1117 DC 5V to 3.3V`
+
+![Level converter with AMS1117](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Images/Levelconverter_with_AMS1117.jpg)
+
 ### Playstation, 3.3V, 3.7V or 5V?
 There is contradictory data about Playstation controller voltages. I have one commercial adapter and it's 5V. I haven't measured official Playstation, but it is probably 3.3V.
 
