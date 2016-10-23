@@ -8,6 +8,22 @@ Needs custom ps2-library (PS2Keyboard_mcgurk.zip, unzip to libraries-folder).
 
 Clock-signal must be in pin 2 (because of interrupts).
 
+Edit button assignments manually.
+
+Joystick 1:
+arrows = up/down/left/right
+R-ctrl = a
+alt gr = b
+enter = start
+R-shift = select
+
+Joystick 2:
+W/S/A/D = up/down/left/right
+L-ctrl = a
+L-alt = b
+tab = start
+L-shift = select
+
 ## Links
 
 http://playground.arduino.cc/Main/PS2Keyboard
