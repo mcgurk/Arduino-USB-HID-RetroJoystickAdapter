@@ -189,7 +189,8 @@ void loop() {
     Serial.println(code, HEX);
     #endif
 
-    //code, joystick, data, bit
+    //set function parameters: code, joystick (0-3), data (0 or 1), bit (0-7)
+    // if e is 1, it means codes with E0 prefix
     if (e == 1 && c == 0x75) set(code, 0, 1, 0); // up
     if (e == 1 && c == 0x72) set(code, 0, 1, 1); // down
     if (e == 1 && c == 0x6B) set(code, 0, 1, 2); // left
@@ -198,6 +199,10 @@ void loop() {
     if (e == 1 && c == 0x11) set(code, 0, 0, 1); // alt gr = b
     if (e == 0 && c == 0x5A) set(code, 0, 0, 2); // enter = start
     if (e == 0 && c == 0x59) set(code, 0, 0, 3); // r-shift = select
+    //if (e == x && c == 0xXX) set(code, 0, 0, 4); //  = x
+    //if (e == x && c == 0xXX) set(code, 0, 0, 5); //  = y
+    //if (e == x && c == 0xXX) set(code, 0, 0, 6); //  = left shoulder
+    //if (e == x && c == 0xXX) set(code, 0, 0, 7); //  = right shoulder
 
     if (e == 0 && c == 0x1D) set(code, 1, 1, 0); // w = up
     if (e == 0 && c == 0x1B) set(code, 1, 1, 1); // s = down
