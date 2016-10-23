@@ -41,7 +41,7 @@ PS2Keyboard keyboard;
     0x09, 0x04,               /* USAGE (Joystick) */ \
     0xa1, 0x01,               /* COLLECTION (Application) */ \
     0x85, REPORT_ID,          /* REPORT_ID */ \
-    /* 16 Buttons */ \
+    /* 8 Buttons */ \
     0x05, 0x09,               /*   USAGE_PAGE (Button) */ \
     0x19, 0x01,               /*   USAGE_MINIMUM (Button 1) */ \
     0x29, 0x08,               /*   USAGE_MAXIMUM (Button 8) */ \
