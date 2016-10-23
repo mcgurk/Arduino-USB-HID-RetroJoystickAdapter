@@ -189,7 +189,7 @@ void loop() {
     Serial.println(code, HEX);
     #endif
 
-    //set function parameters: code, joystick (0-3), data (0 or 1), bit (0-7)
+    //set-function parameters: code, joystick (0-3), data (0 or 1), bit (0-7)
     // if e is 1, it means codes with E0 prefix
     if (e == 1 && c == 0x75) set(code, 0, 1, 0); // up
     if (e == 1 && c == 0x72) set(code, 0, 1, 1); // down
