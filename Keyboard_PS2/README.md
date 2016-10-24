@@ -4,6 +4,8 @@
 
 Needs Atmega32u4 (e.g. Arduino Leonardo).
 
+PS/2 is 5V.
+
 Needs custom ps2-library (PS2Keyboard_mcgurk.zip, unzip to libraries-folder).
 
 Clock-signal must be in pin 2 (because of interrupts).
