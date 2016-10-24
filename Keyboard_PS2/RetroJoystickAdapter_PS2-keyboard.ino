@@ -23,8 +23,8 @@
 
 #include <PS2Keyboard.h>
 
-const int DataPin = 3;
-const int IRQpin =  2;
+const int DataPin = 3; // PS/2 pin 1
+const int IRQpin =  2; // PS/2 pin 5
 
 PS2Keyboard keyboard;
 
@@ -82,7 +82,6 @@ class Joystick_ {
 private:
   uint8_t joystickId;
   uint8_t reportId;
-  uint8_t olddata[JOYSTICK_DATA_SIZE];
   uint8_t state[JOYSTICK_STATE_SIZE];
   uint8_t flag;
 
@@ -106,10 +105,7 @@ public:
   
     data[0] = 0;
     data[1] = 0;
-    memcpy(olddata, data, JOYSTICK_DATA_SIZE);
-    state[0] = 0;
-    state[1] = 127; 
-    state[2] = 127;
+    updateState();
     sendState(1);
   }
 
@@ -121,12 +117,6 @@ public:
     if (bitRead(data[1], 1)) state[2] = 255; /* down */
     if (bitRead(data[1], 2)) state[1] = 0; /* left */
     if (bitRead(data[1], 3)) state[1] = 255; /* right */
-
-    /*if (memcmp(olddata, data, JOYSTICK_DATA_SIZE)) {    
-      memcpy(olddata, data, JOYSTICK_DATA_SIZE);
-      flag = 1;
-    }*/
-    
   }
 
   void sendState(uint8_t force = 0) {
@@ -163,12 +153,9 @@ void setup() {
 }
 
 
-//http://www.computer-engineering.org/ps2keyboard/scancodes2.html
-
 void set(uint32_t code, uint8_t j, uint8_t d, uint8_t b) {
   uint8_t is_break = 0;
   if ( (code >> 8 & 0xff) == 0xF0 ) is_break = 1;
-  //Serial.print(" break: "); Serial.print(is_break);
   if (is_break) bitClear(Joystick[j].data[d], b);
   if (!is_break) bitSet(Joystick[j].data[d], b);
   Joystick[j].updateState();
@@ -180,40 +167,77 @@ void loop() {
     
     // read whole code at once
     int32_t code = keyboard.read();
-    uint8_t c = code;
-    uint8_t e = 0;
-    if ( (code & 0xff) == 0xE0 || (code >> 8 & 0xff) == 0xE0 || (code >> 16 & 0xff) == 0xE0 || (code >> 24 & 0xff) == 0xE0 ) e = 1;
+    uint8_t c = code & 0xff;
+    uint8_t e;
+    //if ( (code & 0xff) == 0xE0 || (code >> 8 & 0xff) == 0xE0 || (code >> 16 & 0xff) == 0xE0 || (code >> 24 & 0xff) == 0xE0 ) e = 1;
+    if ( (code >> 8 & 0xff) == 0xE0 || (code >> 16 & 0xff) == 0xE0 ) e = 1; else e = 0;
+    //if (code^0xE000 || code^0xE00000) e = 1;
     
     #ifdef DEBUG
     Serial.print("e:");Serial.print(e);Serial.print(" ");
     Serial.println(code, HEX);
     #endif
 
+    //http://www.computer-engineering.org/ps2keyboard/scancodes2.html
     //set-function parameters: code, joystick (0-3), data (0 or 1), bit (0-7)
     // if e is 1, it means codes with E0 prefix
+
+    //Joystick 0
     if (e == 1 && c == 0x75) set(code, 0, 1, 0); // up
     if (e == 1 && c == 0x72) set(code, 0, 1, 1); // down
     if (e == 1 && c == 0x6B) set(code, 0, 1, 2); // left
     if (e == 1 && c == 0x74) set(code, 0, 1, 3); // right
-    if (e == 1 && c == 0x14) set(code, 0, 0, 0); // r-ctrl = a
+    if (e == 1 && c == 0x14) set(code, 0, 0, 0); // R-ctrl = a
     if (e == 1 && c == 0x11) set(code, 0, 0, 1); // alt gr = b
     if (e == 0 && c == 0x5A) set(code, 0, 0, 2); // enter = start
-    if (e == 0 && c == 0x59) set(code, 0, 0, 3); // r-shift = select
+    if (e == 0 && c == 0x59) set(code, 0, 0, 3); // R-shift = select
     //if (e == x && c == 0xXX) set(code, 0, 0, 4); //  = x
     //if (e == x && c == 0xXX) set(code, 0, 0, 5); //  = y
     //if (e == x && c == 0xXX) set(code, 0, 0, 6); //  = left shoulder
     //if (e == x && c == 0xXX) set(code, 0, 0, 7); //  = right shoulder
 
+    //Joystick 1
     if (e == 0 && c == 0x1D) set(code, 1, 1, 0); // w = up
     if (e == 0 && c == 0x1B) set(code, 1, 1, 1); // s = down
     if (e == 0 && c == 0x1C) set(code, 1, 1, 2); // a = left
     if (e == 0 && c == 0x23) set(code, 1, 1, 3); // d = right
-    if (e == 0 && c == 0x14) set(code, 1, 0, 0); // l-ctrl = a
-    if (e == 0 && c == 0x11) set(code, 1, 0, 1); // l-alt = b
+    if (e == 0 && c == 0x14) set(code, 1, 0, 0); // L-ctrl = a
+    if (e == 0 && c == 0x11) set(code, 1, 0, 1); // L-alt = b
     if (e == 0 && c == 0x0D) set(code, 1, 0, 2); // tab = start
-    if (e == 0 && c == 0x12) set(code, 1, 0, 3); // l-shift = select
-  
-  }
+    if (e == 0 && c == 0x12) set(code, 1, 0, 3); // L-shift = select
+    //if (e == x && c == 0xXX) set(code, 1, 0, 4); //  = x
+    //if (e == x && c == 0xXX) set(code, 1, 0, 5); //  = y
+    //if (e == x && c == 0xXX) set(code, 1, 0, 6); //  = left shoulder
+    //if (e == x && c == 0xXX) set(code, 1, 0, 7); //  = right shoulder
 
+    //Joystick 2
+    if (e == 0 && c == 0x43) set(code, 2, 1, 0); // i = up
+    if (e == 0 && c == 0x42) set(code, 2, 1, 1); // k = down
+    if (e == 0 && c == 0x3B) set(code, 2, 1, 2); // j = left
+    if (e == 0 && c == 0x4B) set(code, 2, 1, 3); // l = right
+    if (e == 0 && c == 0x3A) set(code, 2, 0, 0); // m = a
+    if (e == 0 && c == 0x31) set(code, 2, 0, 1); // n = b
+    if (e == 0 && c == 0x44) set(code, 2, 0, 2); // o = start
+    if (e == 0 && c == 0x3C) set(code, 2, 0, 3); // u = select
+    //if (e == x && c == 0xXX) set(code, 2, 0, 4); //  = x
+    //if (e == x && c == 0xXX) set(code, 2, 0, 5); //  = y
+    //if (e == x && c == 0xXX) set(code, 2, 0, 6); //  = left shoulder
+    //if (e == x && c == 0xXX) set(code, 2, 0, 7); //  = right shoulder
+
+    //Joystick 3
+    if (e == 0 && c == 0x75) set(code, 3, 1, 0); // keypad 8
+    if (e == 0 && c == 0x73) set(code, 3, 1, 1); // keypad 5
+    if (e == 0 && c == 0x6B) set(code, 3, 1, 2); // keypad 4
+    if (e == 0 && c == 0x74) set(code, 3, 1, 3); // keypad 6
+    if (e == 0 && c == 0x70) set(code, 3, 0, 0); // keypad 0 = a
+    if (e == 0 && c == 0x71) set(code, 3, 0, 1); // keypad , = b
+    if (e == 1 && c == 0x5A) set(code, 3, 0, 2); // keypad enter = start
+    if (e == 0 && c == 0x79) set(code, 3, 0, 3); // keypad + = select
+    //if (e == x && c == 0xXX) set(code, 3, 0, 4); //  = x
+    //if (e == x && c == 0xXX) set(code, 3, 0, 5); //  = y
+    //if (e == x && c == 0xXX) set(code, 3, 0, 6); //  = left shoulder
+    //if (e == x && c == 0xXX) set(code, 3, 0, 7); //  = right shoulder
+      
+  }
   
 }
