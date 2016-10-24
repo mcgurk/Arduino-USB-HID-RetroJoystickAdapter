@@ -8,7 +8,7 @@ Needs custom ps2-library (PS2Keyboard_mcgurk.zip, unzip to libraries-folder).
 
 Clock-signal must be in pin 2 (because of interrupts).
 
-Edit button assignments manually.
+Edit button assignments manually. Assignments are in the end of source file.
 
 `#define DEBUG` if you want to see codes in console.
 
