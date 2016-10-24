@@ -10,6 +10,8 @@ Clock-signal must be in pin 2 (because of interrupts).
 
 Edit button assignments manually.
 
+`#define DEBUG` if you want to see codes in console.
+
 Joystick 1:
 ```
 arrows = up/down/left/right
