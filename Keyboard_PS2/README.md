@@ -12,7 +12,7 @@ Edit button assignments manually. Assignments are in the end of source file.
 
 `#define DEBUG` if you want to see codes in console.
 
-Joystick 1:
+Joystick 0:
 ```
 arrows = up/down/left/right
 R-ctrl = a
@@ -21,13 +21,31 @@ enter = start
 R-shift = select
 ```
 
-Joystick 2:
+Joystick 1:
 ```
 W/S/A/D = up/down/left/right
 L-ctrl = a
 L-alt = b
 tab = start
 L-shift = select
+```
+
+Joystick 2:
+```
+I/K/J/L = up/down/left/right
+M = a
+N = b
+O = start
+U = select
+```
+
+Joystick 3:
+```
+keypad 8/5/4/6 = up/down/left/right
+keypad 0 = a
+keypad , = b
+keypad enter = start
+keypad + = select
 ```
 
 ## Links
