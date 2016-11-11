@@ -15,7 +15,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
 - Wii Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiClassicController.ino) (3.3V!) \*
 - Wii Nunchuck Controller (RetroJoystickAdapter_Nunchuck.ino) (3.3V!) \*
-- [PC and PS/2 Keyboard](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Keyboard_PS2)
+- [AT and PS/2 Keyboard](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Keyboard_PS2)
 
 ² = 2 controllers supported
 
