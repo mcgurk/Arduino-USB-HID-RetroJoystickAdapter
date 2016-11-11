@@ -167,17 +167,17 @@ You can also use Arduino vice versa. You cannot read USB with normal Arduino, bu
 
 https://github.com/felis/USB_Host_Shield_2.0
 
-### Level shifting
+### Level shifting and voltage levels
+
+#### Converter
 Very handy level converter with 3.3V AMS1117 regulator. Search from Ebay with `Logic Level Converter Module AMS1117 DC 5V to 3.3V`
 
 ![Level converter with AMS1117](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Images/Levelconverter_with_AMS1117.jpg)
 
-#### Voltage levels
-
-##### Playstation, 3.3V, 3.7V or 5V?
+#### Playstation, 3.3V, 3.7V or 5V?
 There is contradictory data about Playstation controller voltages. I have one commercial adapter and it's 5V. I haven't measured official Playstation, but it is probably 3.3V.
 
-##### Wii extension controllers
+#### Wii extension controllers
 Wii extensions are 3.3V, byt I have used Wii Nunchuck and Classic Controller with 5V (VCC and signals) without problems.
 
 ### Other ideas
