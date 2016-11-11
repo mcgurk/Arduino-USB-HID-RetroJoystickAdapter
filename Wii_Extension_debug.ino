@@ -98,12 +98,7 @@ void loop() {
     delay(10);
   }
 
-  #ifdef DEBUG
-  unsigned long d = micros()-t;
-  Serial.print(d);
-  #endif
-  
-  
+ 
   // Nunchuck
   uint8_t SX = data[0];
   uint8_t SY = ~data[1];
@@ -138,6 +133,11 @@ void loop() {
   uint8_t RT = (data[3] & 0x1f);
   //http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Classic_Controller
   
+
+  #ifdef DEBUG
+  unsigned long d = micros()-t;
+  Serial.print(d);
+  #endif
 
   
   #ifdef DEBUG
