@@ -183,7 +183,7 @@ void loop() {
   while(Wire.available()) {
     Joystick[0].data[i] = Wire.read();
     i++;
-    if (i > JOYSTICK_DATA_SIZE) break;
+    if (i >= JOYSTICK_DATA_SIZE) break;
   }
 
   //detect if init is needed
