@@ -89,7 +89,7 @@ Example of NES-controller wiring:
 
 - Press Upload
 
-- If you got the message "all done" and no errors, test in Windows with `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find 'Arduino Leonardo' or in Linux with `jstest /dev/input/js0`
+- If you got the message "all done" and no errors, test in Windows with `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device or in Linux with `jstest /dev/input/js0`
 
 ### Linux and more than one controller with one Arduino
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
