@@ -4,6 +4,9 @@
 //DB9 (8=GND, 5=VCC):               1   2   3   4   5   6   7   8   9
 const uint8_t inputPinsPort1[] =  { 2,  3,  4,  5,  6,  7,  8,  0,  9};
 const uint8_t inputPinsPort2[] =  {10, 16, 14, 15, A0, A1, A2,  0, A3};
+// if you use two DB9 connectors solded back to back on your ATmega32u4, you should use this inputs
+//const uint8_t inputPinsPort2[] =  {15, A0, A1, A2, A3, 14, 16,  0, 10};
+
 
 //#define DEBUG
 
