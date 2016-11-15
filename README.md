@@ -111,36 +111,6 @@ Restart Arduino IDE
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
 
-### Windows needs Arduino drivers to work with USB-adapter
-
-#### Solution A
-Install Arduino drivers
-
-#### Solution B
-https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter#solution-2
-
-### Linux and more than one controller with one Arduino
-Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
-
-#### [Solution 1](#solution-1)
-You have to give parameter 
-`quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
-- Make backup of `/boot/boot-retro.cmd` and `/boot/boot.scr`
-- Edit `/boot/boot-retro.cmd` setenv bootargs -line and add `usbhid.quirks=0x2341:0x8036:0x40` to kernel parameters.
-- `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
-- Reboot
-- Check with `cat /proc/cmdline`
-
-#### [Solution 2](#solution-2)
-Another possibility is change VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
-Here you can see what quirks are activated to different VID/PIDs:
-https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
-
-Edit VID/PID from `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (after editing boards.txt, you have to close and reopen Arduino IDE). Example USB_VENDOR_ID_MOJO 0x8282, USB_DEVICE_ID_RETRO_ADAPTER 0x3201:
-```
-leonardo.build.vid=0x8282
-leonardo.build.pid=0x3201
-```
 
 ### Code
 Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
@@ -155,9 +125,33 @@ https://en.wikipedia.org/wiki/List_of_Konami_code_games
 ## Tutorial
 There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
-## Polishing
+## Misc
+
+### Using Arduino Leonardo in Windows with Arduino Leonardo VID/PID
+Install Arduino drivers
+
+### Using Arduino Leonardo in Linux with Arduino Leonardo VID/PID
+Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
+
+You have to give parameter 
+`quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
+- Make backup of `/boot/boot-retro.cmd` and `/boot/boot.scr`
+- Edit `/boot/boot-retro.cmd` setenv bootargs -line and add `usbhid.quirks=0x2341:0x8036:0x40` to kernel parameters.
+- `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
+- Reboot
+- Check with `cat /proc/cmdline`
+
+### What are VID/PID numbers in boards.txt
+Linux problem with multiple controllers are solved with changing VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
+Here you can see what quirks are activated to different VID/PIDs:
+https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
+
+In these instructions, USB_VENDOR_ID_MOJO 0x8282, USB_DEVICE_ID_RETRO_ADAPTER 0x3201 are used.
+
+### Changing number of buttons in joystick-library
 If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and I don't know how to force full recompile.
 
+### Menu for multiple adapter names
 Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt`. You can even add sub menu to tools-menu by adding these lines (after editing boards.txt, you have to close and reopen Arduino IDE):
 
 ```
@@ -173,8 +167,6 @@ leonardo.menu.usb_name.leonardo_3.build.usb_product="NES-adapter"
 leonardo.menu.usb_name.leonardo_4="SNES"
 leonardo.menu.usb_name.leonardo_4.build.usb_product="SNES-adapter"
 ```
-
-## Misc
 
 ### Arduino Uno R3
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
