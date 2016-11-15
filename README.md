@@ -109,17 +109,6 @@ leonardo.build.usb_product="Retro Joystick Adapter"
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
 
-
-### Code
-Select your controller by commenting and uncommenting stuff from beginning of source code and give your IO-pin numbers.
-Every one uses same button numbering, so if you make multiple adapters for different controllers, you have to teach buttons to emulator/game (or whole emulation system like RetroPie or RetrOrangePi) only once.
-
-#### Konami code
-You can also enable or disable Konami-code-shortcut. For now it works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)), SNES-controller (X+Y+R1+UP (or DOWN)) and PSX-controller (rectangle+circle+triangle+UP (or DOWN)). "UP"-version is normal and "DOWN"-version swaps A and B. Some games demands that not other buttons are pressed before code and that's why only last pressed button can be button which have some function in emulator.
-
-https://en.wikipedia.org/wiki/Konami_Code
-https://en.wikipedia.org/wiki/List_of_Konami_code_games
-
 ## Tutorial
 There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
@@ -197,6 +186,12 @@ There is contradictory data about Playstation controller voltages. I have one co
 
 #### Wii extension controllers
 Wii extensions are 3.3V, but I have used Wii Nunchuck and Classic Controller with 5V (VCC and signals) without problems.
+
+#### Konami code
+You can also enable or disable Konami-code-shortcut with some controllers. For now it works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)), SNES-controller (X+Y+R1+UP (or DOWN)) and PSX-controller (rectangle+circle+triangle+UP (or DOWN)). "UP"-version is normal and "DOWN"-version swaps A and B. Some games demands that not other buttons are pressed before code and that's why only last pressed button can be button which have some function in emulator.
+
+https://en.wikipedia.org/wiki/Konami_Code
+https://en.wikipedia.org/wiki/List_of_Konami_code_games
 
 ### Other ideas
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
