@@ -100,6 +100,14 @@ Example of NES-controller wiring:
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
 
+### Windows needs Arduino drivers to work with USB-adapter
+
+#### Solution 1
+Install Arduino drivers
+
+#### Solution 2
+https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter#solution-2
+
 ### Linux and more than one controller with one Arduino
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
 
@@ -112,7 +120,7 @@ You have to give parameter
 - Reboot
 - Check with `cat /proc/cmdline`
 
-#### Solution 2
+#### [Solution 2](#solution-2)
 Another possibility is change VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
 Here you can see what quirks are activated to different VID/PIDs:
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
