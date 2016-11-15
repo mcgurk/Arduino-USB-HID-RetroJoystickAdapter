@@ -137,6 +137,8 @@ leonardo.build.pid=0x3201
 # leonardo.build.usb_product="Arduino Leonardo"
 leonardo.build.usb_product="Retro Joystick Adapter"
 ```
+#### WARNING!
+There is possibility that serial port is not recognized after VID/PID change. I have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting (RST->GND) it rapidly two times in a row and then upload sketch (example blink.ino) with normal Arduino VID/PID.
 
 ### Changing number of buttons in joystick-library
 If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and I don't know how to force full recompile.
