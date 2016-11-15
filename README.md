@@ -96,7 +96,7 @@ Example of NES-controller wiring:
 #### MS Windows
 - You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device. Right click on `Gamepad controller definitions` > double click in one of the options (1st is the controller one, and the 2nd is the controller two) and you can now test the buttons.
 
-##### Notice!:
+##### Notice With Windows!
 If you move adapter to other Windows machine, you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Unknown devices` > right click > `Update software controller > Find on my computer > Search` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
 
 #### Linux
@@ -107,20 +107,8 @@ There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID
 
 ## Misc
 
-- Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
-```
-# leonardo.build.vid=0x2341
-# leonardo.build.pid=0x8036
-leonardo.build.vid=0x8282
-leonardo.build.pid=0x3201
-# leonardo.build.usb_product="Arduino Leonardo"
-leonardo.build.usb_product="Retro Joystick Adapter"
-```
-
-### Using Arduino Leonardo in Windows with Arduino Leonardo VID/PID
-
-
 ### Using Arduino Leonardo in Linux with Arduino Leonardo VID/PID
+
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
 
 You have to give parameter 
@@ -131,12 +119,23 @@ You have to give parameter
 - Reboot
 - Check with `cat /proc/cmdline`
 
-### What are VID/PID numbers in boards.txt?
+### Changing VID/PID so Windows and Linux works without drivers or quirks
+
 Linux problem with multiple controllers are solved with changing VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
 Here you can see what quirks are activated to different VID/PIDs:
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
 
 In these instructions, USB_VENDOR_ID_MOJO 0x8282, USB_DEVICE_ID_RETRO_ADAPTER 0x3201 are used.
+
+Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
+```
+# leonardo.build.vid=0x2341
+# leonardo.build.pid=0x8036
+leonardo.build.vid=0x8282
+leonardo.build.pid=0x3201
+# leonardo.build.usb_product="Arduino Leonardo"
+leonardo.build.usb_product="Retro Joystick Adapter"
+```
 
 ### Changing number of buttons in joystick-library
 If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and I don't know how to force full recompile.
