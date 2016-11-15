@@ -62,7 +62,6 @@ Example of NES-controller wiring:
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
 - Prepare `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (or in linux arduino-x.x.xx/hardware/arduino/avr/boards.txt):
-Change these lines:
 ```
 # leonardo.build.vid=0x2341
 # leonardo.build.pid=0x8036
@@ -71,6 +70,7 @@ leonardo.build.pid=0x3201
 # leonardo.build.usb_product="Arduino Leonardo"
 leonardo.build.usb_product="Retro Joystick Adapter"
 ```
+Restart Arduino IDE
 
 - `Tools->Board->Arduino Leonardo`
 
