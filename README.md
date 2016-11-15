@@ -140,7 +140,7 @@ You have to give parameter
 - Reboot
 - Check with `cat /proc/cmdline`
 
-### What are VID/PID numbers in boards.txt
+### What are VID/PID numbers in boards.txt?
 Linux problem with multiple controllers are solved with changing VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
 Here you can see what quirks are activated to different VID/PIDs:
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
