@@ -89,7 +89,16 @@ Example of NES-controller wiring:
 
 - Press Upload
 
-- If you got the message "all done" and no errors, test in Windows with `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device or in Linux with `jstest /dev/input/js0`
+- If you got the message "all done" and no errors, your done here.
+
+### Time to Enjoy
+
+#### MS Windows
+- On any other MS Windows platforms you may have to install the arduino drivers. To have the last updated ones, just download the `Windows ZIP file for non admin install` format from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage` > `Unknown devices` > right click > `Update software controller` > `Find on my computer` > `Search` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
+- You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device.
+
+#### Linux
+- Just connect, open your command line and test whit `jstest /dev/input/js0`.
 
 ### Linux and more than one controller with one Arduino
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
