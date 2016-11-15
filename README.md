@@ -102,10 +102,10 @@ Example of NES-controller wiring:
 
 ### Windows needs Arduino drivers to work with USB-adapter
 
-#### Solution 1
+#### Solution A
 Install Arduino drivers
 
-#### Solution 2
+#### Solution B
 https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter#solution-2
 
 ### Linux and more than one controller with one Arduino
