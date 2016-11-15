@@ -4,8 +4,14 @@
 //DB9 (8=GND, 5=VCC):               1   2   3   4   5   6   7   8   9
 const uint8_t inputPinsPort1[] =  { 2,  3,  4,  5,  6,  7,  8,  0,  9};
 const uint8_t inputPinsPort2[] =  {10, 16, 14, 15, A0, A1, A2,  0, A3};
+
 // if you use two DB9 connectors solded back to back on your ATmega32u4, you should use this inputs
+//const uint8_t inputPinsPort1[] =  { 2,  3,  4,  5,  6,  7,  8,  0,  9};
 //const uint8_t inputPinsPort2[] =  {15, A0, A1, A2, A3, 14, 16,  0, 10};
+
+// yet another version (like in Image/sega_genesis_adapter)
+//const uint8_t inputPinsPort1[] =  { 5,  6,  7,  8,  9,  4,  2,  0, A2};
+//const uint8_t inputPinsPort2[] =  {10, 16, 14, 15, A0,  3, A3,  0, A1};
 
 
 //#define DEBUG
@@ -66,8 +72,6 @@ uint8_t plugged2 = 0;
     0x25, 0x01,               /*   LOGICAL_MAXIMUM (1) */ \
     0x75, 0x01,               /*   REPORT_SIZE (1) */ \
     0x95, 0x08,               /*   REPORT_COUNT (8) */ \
-    0x55, 0x00,               /*   UNIT_EXPONENT (0) */ \
-    0x65, 0x00,               /*   UNIT (None) */ \
     0x81, 0x02,               /*   INPUT (Data,Var,Abs) */ \
     /* X and Y Axis */ \
     0x05, 0x01,               /*   USAGE_PAGE (Generic Desktop) */ \
