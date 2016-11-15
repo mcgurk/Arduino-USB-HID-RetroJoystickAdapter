@@ -94,8 +94,8 @@ Example of NES-controller wiring:
 ### Time to Enjoy
 
 #### MS Windows
-- On any other MS Windows platforms you may have to install the arduino drivers. To have the last updated ones, just download the `Windows ZIP file for non admin install` format from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage` > `Unknown devices` > right click > `Update software controller` > `Find on my computer` > `Search` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
-- You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device.
+- On any other MS Windows platforms you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Unknown devices` > right click > `Update software controller > Find on my computer > Search` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
+- You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device. Right click on `Gamepad controller definitions` > double click in one of the options (1st is the controller one, and the 2nd is the controller two) and you can now test the buttons.
 
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
