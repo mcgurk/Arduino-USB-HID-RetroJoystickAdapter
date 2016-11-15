@@ -61,7 +61,7 @@ Example of NES-controller wiring:
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
-- Prepare `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (or in linux arduino-x.x.xx/hardware/arduino/avr/boards.txt):
+- Prepare `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt`):
 ```
 # leonardo.build.vid=0x2341
 # leonardo.build.pid=0x8036
