@@ -102,14 +102,8 @@ If you move adapter to other Windows machine, you may have to install the arduin
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
 
-## Tutorial
-There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
-
-## Misc
-
-### Using Arduino Leonardo in Linux with Arduino Leonardo VID/PID
-
-Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features (I'm not sure about this, but I didn't manage to get multiple /dev/js-devices without this). 
+##### Notice With Linux!
+Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features.
 
 You have to give parameter 
 `quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module. Here is example how to do it with RetrOrangePi 2.5.2:
@@ -118,6 +112,11 @@ You have to give parameter
 - `sudo mkimage -C none -A arm -T script -d /boot/boot-retro.cmd /boot/boot.scr`
 - Reboot
 - Check with `cat /proc/cmdline`
+
+## Tutorial
+There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
+
+## Misc
 
 ### Changing VID/PID so Windows and Linux works without drivers or quirks
 
