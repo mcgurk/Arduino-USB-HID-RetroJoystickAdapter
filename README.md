@@ -61,6 +61,17 @@ Example of NES-controller wiring:
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
+- Prepare `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (or in linux arduino-x.x.xx/hardware/arduino/avr/boards.txt):
+Change these lines:
+```
+# leonardo.build.vid=0x2341
+# leonardo.build.pid=0x8036
+leonardo.build.vid=0x8282
+leonardo.build.pid=0x3201
+# leonardo.build.usb_product="Arduino Leonardo"
+leonardo.build.usb_product="Retro Joystick Adapter"
+```
+
 - `Tools->Board->Arduino Leonardo`
 
   In Arduino IDE you have to select board. In my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring. Connect now your board ATmega32u4 through USB, the RX and TX leds should blink (if not, try another USB port).
