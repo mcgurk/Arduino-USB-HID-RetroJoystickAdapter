@@ -77,7 +77,7 @@ leonardo.build.usb_product="Retro Joystick Adapter"
 
 - `Tools->Port->COMx`
 
-  Arduino IDE shows available COM-ports. In most cases it's biggest numbered COM-port. COM-port number can change when you start to upload program first time (COM-port number can be different after joystick-features are enabled). If this happens, just change COM-port and start upload again. When I tested with RetrOrangePi (Armbian Linux), port was `/dev/ttyACM0`. In Windows envoirement, do not use any USB HUB, it may interfere whit the comunication whit ATmega32u4 board.
+  Arduino IDE shows available COM-ports. In most cases it's biggest numbered COM-port. COM-port number can change when you start to upload program first time (COM-port number can be different after joystick-features are enabled). If this happens, just change COM-port and start upload again. When I tested with RetrOrangePi (Armbian Linux), port was `/dev/ttyACM0`. In Windows environment, do not use any USB HUB, it may interfere with the comunication with ATmega32u4 board.
 
 - Test your programming environment and upload
 
