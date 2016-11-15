@@ -70,7 +70,6 @@ leonardo.build.pid=0x3201
 # leonardo.build.usb_product="Arduino Leonardo"
 leonardo.build.usb_product="Retro Joystick Adapter"
 ```
-Restart Arduino IDE
 
 - `Tools->Board->Arduino Leonardo`
 
