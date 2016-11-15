@@ -9,7 +9,7 @@ const uint8_t inputPinsPort2[] =  {10, 16, 14, 15, A0, A1, A2,  0, A3};
 //const uint8_t inputPinsPort1[] =  { 2,  3,  4,  5,  6,  7,  8,  0,  9};
 //const uint8_t inputPinsPort2[] =  {15, A0, A1, A2, A3, 14, 16,  0, 10};
 
-// yet another version (like in Image/sega_genesis_adapter)
+// yet another version (Images/sega_genesis_adapter.jpg)
 //const uint8_t inputPinsPort1[] =  { 5,  6,  7,  8,  9,  4,  2,  0, A2};
 //const uint8_t inputPinsPort2[] =  {10, 16, 14, 15, A0,  3, A3,  0, A1};
 
