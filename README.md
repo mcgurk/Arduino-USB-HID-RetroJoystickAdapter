@@ -93,7 +93,7 @@ leonardo.build.usb_product="Retro Joystick Adapter"
 
   Playstation analog controller `RetroJoystickAdapter_PlaystationAnalog.ino` needs `Joystick\Joystick.h` and `Joystick\Joystick.cpp`.
   
-- Load `RetroJoystickAdapter.ino` to Arduino IDE
+- Load `RetroJoystickAdapter.ino` to Arduino IDE (check right filename from list at top of this page)
 
   Select controller by commenting and uncommenting and edit pin-numbers (if needed).
 
