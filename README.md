@@ -245,3 +245,7 @@ http://www.int03.co.uk/crema/hardware/gamecube/gc-control.htm
 https://github.com/NicoHood/Nintendo/wiki/Gamecube
 
 
+#### How to reset Arduino (in case of emergency)
+
+https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq#ts-revive
+
