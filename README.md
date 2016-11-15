@@ -26,7 +26,8 @@ If you use Linux and want to get more than 1 controller with one Arduino, check 
 - Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
 - Install Arduino [IDE](https://www.arduino.cc/en/Main/Software)
-- Install Joystick [library](https://github.com/MHeironimus/ArduinoJoystickLibrary)
+- Edit boards.txt
+- Install Joystick [library](https://github.com/MHeironimus/ArduinoJoystickLibrary) (if needed)
 - Open sourcecode to Arduino IDE and select controller by commenting and uncommenting and edit pin-numbers (if needed)
 - Upload
 - Done
