@@ -26,7 +26,6 @@ If you use Linux and want to get more than 1 controller with one Arduino, check 
 - Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
 - Install Arduino [IDE](https://www.arduino.cc/en/Main/Software)
-- Edit boards.txt
 - Install Joystick [library](https://github.com/MHeironimus/ArduinoJoystickLibrary) (if needed)
 - Open sourcecode to Arduino IDE and select controller by commenting and uncommenting and edit pin-numbers (if needed)
 - Upload
@@ -61,16 +60,6 @@ Example of NES-controller wiring:
 ### Setup
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
-
-- Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
-```
-# leonardo.build.vid=0x2341
-# leonardo.build.pid=0x8036
-leonardo.build.vid=0x8282
-leonardo.build.pid=0x3201
-# leonardo.build.usb_product="Arduino Leonardo"
-leonardo.build.usb_product="Retro Joystick Adapter"
-```
 
 - `Tools->Board->Arduino Leonardo`
 
@@ -114,6 +103,16 @@ leonardo.build.usb_product="Retro Joystick Adapter"
 There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
 ## Misc
+
+- Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
+```
+# leonardo.build.vid=0x2341
+# leonardo.build.pid=0x8036
+leonardo.build.vid=0x8282
+leonardo.build.pid=0x3201
+# leonardo.build.usb_product="Arduino Leonardo"
+leonardo.build.usb_product="Retro Joystick Adapter"
+```
 
 ### Using Arduino Leonardo in Windows with Arduino Leonardo VID/PID
 On any other MS Windows platforms you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Unknown devices` > right click > `Update software controller > Find on my computer > Search` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
