@@ -83,7 +83,7 @@ leonardo.build.usb_product="Retro Joystick Adapter"
 
   You can now test your setup. One basic example is "blink". With this board, it doesn't blink, because there is no led in pin 13. Nevertheless you can use it as a test that your IDE and Arduino works. Select `File -> Examples -> 01.Basics -> Blink` and press `Upload` (Arrow to right -symbol top of code windows). If you get no errors, you are good to go.
 
-- Install joystick library
+- Install joystick library (needed only in some adapters. check list at start of this page)
 
   Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press `Clone or download -> Download ZIP`.
   Extract Joystick2 folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows) or `~/Arduino/libraries` (Linux).
