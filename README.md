@@ -187,7 +187,7 @@ There is contradictory data about Playstation controller voltages. I have one co
 #### Wii extension controllers
 Wii extensions are 3.3V, but I have used Wii Nunchuck and Classic Controller with 5V (VCC and signals) without problems.
 
-#### Konami code
+### Konami code
 You can also enable or disable Konami-code-shortcut with some controllers. For now it works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)), SNES-controller (X+Y+R1+UP (or DOWN)) and PSX-controller (rectangle+circle+triangle+UP (or DOWN)). "UP"-version is normal and "DOWN"-version swaps A and B. Some games demands that not other buttons are pressed before code and that's why only last pressed button can be button which have some function in emulator.
 
 https://en.wikipedia.org/wiki/Konami_Code
