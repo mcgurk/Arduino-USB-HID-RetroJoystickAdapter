@@ -116,7 +116,7 @@ Here is example how to do it with RetrOrangePi 2.5.2:
 - Check with `cat /proc/cmdline`
 
 ## Tutorial
-There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. I tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
+There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. We tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
 ## Misc
 
@@ -138,10 +138,10 @@ leonardo.build.pid=0x3201
 leonardo.build.usb_product="Retro Joystick Adapter"
 ```
 #### WARNING!
-There is possibility that serial port is not recognized after VID/PID change. I have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting (RST->GND) it rapidly two times in a row and then upload sketch (example blink.ino) with normal Arduino VID/PID. Be quick, because you have only 8 seconds to start uploading.
+There is possibility that serial port is not recognized after VID/PID change. We have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting it rapidly two times in a row (grab a wire and make a shunt with RST->GND, they are located between A3, VCC and RAW) and then upload sketch (example blink.ino) with '''normal Arduino VID/PID'''. Be quick, because you have only 8 seconds to start uploading.
 
 ### Changing number of buttons in joystick-library
-If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and I don't know how to force full recompile.
+If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and we don't know how to force full recompile.
 
 ### Menu for multiple adapter names
 Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt`. You can even add sub menu to tools-menu by adding these lines (after editing boards.txt, you have to close and reopen Arduino IDE):
