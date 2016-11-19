@@ -17,8 +17,13 @@ You sholud print this schema to guide you during the soldering process.
 
 ## Final product
 
-Here are Adriano examples of his assembly.
+Here are Adriano's examples of his assembly.
 
 ![solded-adapter](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/megadrive/atmega_solded.jpg)
 ![solded-back-adapter](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/megadrive/atmega_solded_back.jpg)
 ![testing-adapter](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/megadrive/atmega_testing.jpg)
+
+Here are the Jarno's examples of his assembly.
+
+![Hardware_Atari-SMS-Genesis](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Hardware/Hardware_Atari-SMS-Genesis.jpg)
+![sega_genesis_adapter](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Images/sega_genesis_adapter.jpg)
