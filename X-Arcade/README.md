@@ -10,7 +10,7 @@ D9-connector -> Arduino
 1 -> Vcc (5V)
 2 -> Vcc (5V)
 9 -> Vcc (5V)
-Shell -> GND
+Shield -> GND
 ```
 Library:
 PS2KeyRaw
