@@ -1,6 +1,7 @@
 # Arduino_X-Arcade_USB-adapter
 
 "Old" PS/2 -version of X-arcade.
+![X-Arcade](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/x-arcade-dual-joystick.jpg)
 
 ```
 D9-connector -> Arduino
