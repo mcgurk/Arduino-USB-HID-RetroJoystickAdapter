@@ -8,7 +8,7 @@ D9-connector -> Arduino
 5 -> 3 (clk)
 6 -> 4 (data)
 1 -> Vcc (5V)
-2 -> Vcc (5V)
+2 -> Vcc (PS/2 mode)
 9 -> Vcc (5V)
 Shield -> GND
 ```
