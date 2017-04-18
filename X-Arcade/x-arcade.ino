@@ -236,19 +236,6 @@ void loop() {
 #define SET(j,d,b) bitSet(Joystick[j].data[d], b); return j
 #define UNSET(j,d,b) bitClear(Joystick[j].data[d], b); return j
 
-//#define L1_V() 0,0,0
-//#define L1_M(ARG)
-//#define multiarg() 0, 1, 0
-
-/*#define L1_M1 Joystick[0].data[1]
-#define L1_M2 0
-#define R1_M1 Joystick[0].data[1]
-#define R1_M2 1
-#define L2_M1 Joystick[1].data[1]
-#define L2_M2 0
-#define R2_M1 Joystick[1].data[1]
-#define R2_M2 1
-*/
 #ifdef COMMANDO
 #define L1_SET SET(1, 1, 0)
 #define L1_UNSET UNSET(1, 1, 0)
