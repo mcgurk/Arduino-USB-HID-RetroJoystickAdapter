@@ -164,6 +164,11 @@ public:
     }
   }
 
+  void updateAndSendState() {
+    translateState(data, state);
+    HID().SendReport(reportId, state, JOYSTICK_STATE_SIZE);
+  }
+
 };
 
 
@@ -226,8 +231,9 @@ void loop() {
     Serial.flush();
     #endif
 
-    Joystick[j].updateState();
-    Joystick[j].sendState();
+    //Joystick[j].updateState();
+    //Joystick[j].sendState();
+    Joystick[j].updateAndSendState();
   }
 
 }
