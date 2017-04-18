@@ -6,7 +6,7 @@
 
 //#define DEBUG
 //#define COMMANDO
-#define DECATHLON
+//#define DECATHLON
 
 #define UP1 0x75
 #define DOWN1 0x72
@@ -196,6 +196,7 @@ void loop() {
   if (keyboard.available()) {
     // read the next key
     int c = keyboard.read();
+    uint8_t j;
 
     if (c == 0xF0) {
       #ifdef DEBUG
@@ -206,38 +207,40 @@ void loop() {
       #ifdef DEBUG
       Serial.print("0x"); Serial.println(c, HEX); 
       #endif
-      clearData(c);
+      j = clearData(c);
     } else {
       #ifdef DEBUG
       Serial.print("0x"); Serial.println(c, HEX); 
       #endif
-      setData(c);
+      j = setData(c);
     }
+
+    #ifdef DEBUG
+    Serial.print(" data0 j1: 0x"); Serial.print(Joystick[0].data[0], HEX);
+    Serial.print(" data1 j1: 0x"); Serial.print(Joystick[0].data[1], HEX);
+    Serial.print(" data2 j1: 0x"); Serial.print(Joystick[0].data[2], HEX);
+    Serial.print(" data0 j2: 0x"); Serial.print(Joystick[1].data[0], HEX);
+    Serial.print(" data1 j2: 0x"); Serial.print(Joystick[1].data[1], HEX);
+    Serial.print(" data2 j2: 0x"); Serial.print(Joystick[1].data[2], HEX);
+    Serial.println();
+    Serial.flush();
+    #endif
+
+    Joystick[j].updateState();
+    Joystick[j].sendState();
   }
 
-
-  #ifdef DEBUG
-  Serial.print(" data0 j1: 0x"); Serial.print(Joystick[0].data[0], HEX);
-  Serial.print(" data1 j1: 0x"); Serial.print(Joystick[0].data[1], HEX);
-  Serial.print(" data2 j1: 0x"); Serial.print(Joystick[0].data[2], HEX);
-  Serial.print(" data0 j2: 0x"); Serial.print(Joystick[1].data[0], HEX);
-  Serial.print(" data1 j2: 0x"); Serial.print(Joystick[1].data[1], HEX);
-  Serial.print(" data2 j2: 0x"); Serial.print(Joystick[1].data[2], HEX);
-  Serial.println();
-  delay(100);
-  Serial.flush();
-  #endif
-
-  Joystick[0].updateState();
-  Joystick[1].updateState();
-  Joystick[0].sendState();
-  Joystick[1].sendState();
-  delayMicroseconds(1000);
-  
 }
 
 
-#define L1_M1 Joystick[0].data[1]
+#define SET(j,d,b) bitSet(Joystick[j].data[d], b); return j
+#define UNSET(j,d,b) bitClear(Joystick[j].data[d], b); return j
+
+//#define L1_V() 0,0,0
+//#define L1_M(ARG)
+//#define multiarg() 0, 1, 0
+
+/*#define L1_M1 Joystick[0].data[1]
 #define L1_M2 0
 #define R1_M1 Joystick[0].data[1]
 #define R1_M2 1
@@ -245,205 +248,182 @@ void loop() {
 #define L2_M2 0
 #define R2_M1 Joystick[1].data[1]
 #define R2_M2 1
-
+*/
 #ifdef COMMANDO
-#define L1_M1 Joystick[1].data[1]
-#define L1_M2 0
-#define R1_M1 Joystick[1].data[1]
-#define R1_M2 1
-#define L2_M1 Joystick[0].data[1]
-#define L2_M2 0
-#define R2_M1 Joystick[0].data[1]
-#define R2_M2 1
+#define L1_SET SET(1, 1, 0)
+#define L1_UNSET UNSET(1, 1, 0)
+#define R1_SET SET(1, 1, 1)
+#define R1_UNSET UNSET(1, 1, 1)
+#define L2_SET SET(0, 1, 0)
+#define L2_UNSET UNSET(0, 1, 0)
+#define R2_SET SET(0, 1, 1)
+#define R2_UNSET UNSET(0, 1, 1)
 #endif
 
 #ifdef DECATHLON
-#define L1_M1 Joystick[0].data[2]
-#define L1_M2 2
-#define R1_M1 Joystick[0].data[2]
-#define R1_M2 3
-#define L2_M1 Joystick[1].data[2]
-#define L2_M2 2
-#define R2_M1 Joystick[1].data[2]
-#define R2_M2 3
+#define L1_SET SET(0, 2, 2)
+#define L1_UNSET UNSET(0, 2, 2)
+#define R1_SET SET(0, 2, 3)
+#define R1_UNSET UNSET(0, 2, 3)
+#define L2_SET SET(1, 2, 2)
+#define L2_UNSET UNSET(1, 2, 2)
+#define R2_SET SET(1, 2, 3)
+#define R2_UNSET UNSET(1, 2, 3)
 #endif
 
-inline void setData(uint8_t c) {
+
+inline uint8_t setData(uint8_t c) {
   switch (c) {
     case A1:
-      bitSet(Joystick[0].data[0], 0);
-      break;
+      SET(0, 0, 0);
     case B1:
-      bitSet(Joystick[0].data[0], 1);
-      break;
+      SET(0, 0, 1);
     case C1:
-      bitSet(Joystick[0].data[0], 2);
-      break;
+      SET(0, 0, 2);
     case X1:
-      bitSet(Joystick[0].data[0], 3);
-      break;
+      SET(0, 0, 3);
     case Y1:
-      bitSet(Joystick[0].data[0], 4);
-      break;
+      SET(0, 0, 4);
     case Z1:
-      bitSet(Joystick[0].data[0], 5);
-      break;
+      SET(0, 0, 5);
     case START1:
-      bitSet(Joystick[0].data[0], 6);
-      break;
+      SET(0, 0, 6);
     case SELECT1:
-      bitSet(Joystick[0].data[0], 7);
-      break;
+      SET(0, 0, 7);
     case L1:
-      bitSet(L1_M1, L1_M2);
-      break;
+      #ifdef L1_SET
+      L1_SET;
+      #else
+      SET(0, 1, 0);
+      #endif
     case R1:
-      bitSet(R1_M1, R1_M2);
-      break;
+      #ifdef R1_SET
+      R1_SET;
+      #else
+      SET(0, 1, 1);
+      #endif
     case UP1:
-      bitSet(Joystick[0].data[2], 0);
-      break;
+      SET(0, 2, 0);
     case DOWN1:
-      bitSet(Joystick[0].data[2], 1);
-      break;
+      SET(0, 2, 1);
     case LEFT1:
-      bitSet(Joystick[0].data[2], 2);
-      break;
+      SET(0, 2, 2);
     case RIGHT1:
-      bitSet(Joystick[0].data[2], 3);
-      break;
+      SET(0, 2, 3);
     case A2:
-      bitSet(Joystick[1].data[0], 0);
-      break;
+      SET(1, 0, 0);
     case B2:
-      bitSet(Joystick[1].data[0], 1);
-      break;
+      SET(1, 0, 1);
     case C2:
-      bitSet(Joystick[1].data[0], 2);
-      break;
+      SET(1, 0, 2);
     case X2:
-      bitSet(Joystick[1].data[0], 3);
-      break;
+      SET(1, 0, 3);
     case Y2:
-      bitSet(Joystick[1].data[0], 4);
-      break;
+      SET(1, 0, 4);
     case Z2:
-      bitSet(Joystick[1].data[0], 5);
-      break;
+      SET(1, 0, 5);
     case START2:
-      bitSet(Joystick[1].data[0], 6);
-      break;
+      SET(1, 0, 6);
     case SELECT2:
-      bitSet(Joystick[1].data[0], 7);
-      break;
+      SET(1, 0, 7);
     case L2:
-      bitSet(L2_M1, L2_M2);
-      break;
+      #ifdef L2_SET
+      L2_SET;
+      #else
+      SET(1, 1, 0);
+      #endif
     case R2:
-      bitSet(R2_M1, R2_M2);
-      break;
+      #ifdef R2_SET
+      R2_SET;
+      #else
+      SET(1, 1, 1);
+      #endif
     case UP2:
-      bitSet(Joystick[1].data[2], 0);
-      break;
+      SET(1, 2, 0);
     case DOWN2:
-      bitSet(Joystick[1].data[2], 1);
-      break;
+      SET(1, 2, 1);
     case LEFT2:
-      bitSet(Joystick[1].data[2], 2);
-      break;
+      SET(1, 2, 2);
     case RIGHT2:
-      bitSet(Joystick[1].data[2], 3);
-      break;
+      SET(1, 2, 3);
   }
 }
 
 
 
-inline void clearData(uint8_t c) {
+inline uint8_t clearData(uint8_t c) {
   switch (c) {
     case A1:
-      bitClear(Joystick[0].data[0], 0);
-      break;
+      UNSET(0, 0, 0);
     case B1:
-      bitClear(Joystick[0].data[0], 1);
-      break;
+      UNSET(0, 0, 1);
     case C1:
-      bitClear(Joystick[0].data[0], 2);
-      break;
+      UNSET(0, 0, 2);
     case X1:
-      bitClear(Joystick[0].data[0], 3);
-      break;
+      UNSET(0, 0, 3);
     case Y1:
-      bitClear(Joystick[0].data[0], 4);
-      break;
+      UNSET(0, 0, 4);
     case Z1:
-      bitClear(Joystick[0].data[0], 5);
-      break;
+      UNSET(0, 0, 5);
     case START1:
-      bitClear(Joystick[0].data[0], 6);
-      break;
+      UNSET(0, 0, 6);
     case SELECT1:
-      bitClear(Joystick[0].data[0], 7);
-      break;
+      UNSET(0, 0, 7);
     case L1:
-      bitClear(L1_M1, L1_M2);
-      break;
+      #ifdef L1_UNSET
+      L1_UNSET;
+      #else
+      UNSET(0, 1, 0);
+      #endif
     case R1:
-      bitClear(R1_M1, R1_M2);
-      break;
+      #ifdef R1_UNSET
+      R1_UNSET;
+      #else
+      UNSET(0, 1, 1);
+      #endif
     case UP1:
-      bitClear(Joystick[0].data[2], 0);
-      break;
+      UNSET(0, 2, 0);
     case DOWN1:
-      bitClear(Joystick[0].data[2], 1);
-      break;
+      UNSET(0, 2, 1);
     case LEFT1:
-      bitClear(Joystick[0].data[2], 2);
-      break;
+      UNSET(0, 2, 2);
     case RIGHT1:
-      bitClear(Joystick[0].data[2], 3);
-      break;
+      UNSET(0, 2, 3);
     case A2:
-      bitClear(Joystick[1].data[0], 0);
-      break;
+      UNSET(1, 0, 0);
     case B2:
-      bitClear(Joystick[1].data[0], 1);
-      break;
+      UNSET(1, 0, 1);
     case C2:
-      bitClear(Joystick[1].data[0], 2);
-      break;
+      UNSET(1, 0, 2);
     case X2:
-      bitClear(Joystick[1].data[0], 3);
-      break;
+      UNSET(1, 0, 3);
     case Y2:
-      bitClear(Joystick[1].data[0], 4);
-      break;
+      UNSET(1, 0, 4);
     case Z2:
-      bitClear(Joystick[1].data[0], 5);
-      break;
+      UNSET(1, 0, 5);
     case START2:
-      bitClear(Joystick[1].data[0], 6);
-      break;
+      UNSET(1, 0, 6);
     case SELECT2:
-      bitClear(Joystick[1].data[0], 7);
-      break;
+      UNSET(1, 0, 7);
     case L2:
-      bitClear(L2_M1, L2_M2);
-      break;
+      #ifdef L2_UNSET
+      L2_UNSET;
+      #else
+      UNSET(1, 1, 0);
+      #endif
     case R2:
-      bitClear(R2_M1, R2_M2);
-      break;
+      #ifdef R2_UNSET
+      R2_UNSET;
+      #else
+      UNSET(1, 1, 1);
+      #endif
     case UP2:
-      bitClear(Joystick[1].data[2], 0);
-      break;
+      UNSET(1, 2, 0);
     case DOWN2:
-      bitClear(Joystick[1].data[2], 1);
-      break;
+      UNSET(1, 2, 1);
     case LEFT2:
-      bitClear(Joystick[1].data[2], 2);
-      break;
+      UNSET(1, 2, 2);
     case RIGHT2:
-      bitClear(Joystick[1].data[2], 3);
-      break;
+      UNSET(1, 2, 3);
   }
 }
