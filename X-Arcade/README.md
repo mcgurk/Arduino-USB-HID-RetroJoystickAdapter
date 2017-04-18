@@ -18,3 +18,5 @@ PS2KeyRaw
 Arduino Pro Micro (select Arduino Leonardo from Arduino IDE).
 
 PS/2 keyboard not needed.
+
+Takes only about 10mA.
