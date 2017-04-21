@@ -4,6 +4,12 @@
 #define DATAPIN 4
 #define IRQPIN  3
 
+//#define DEBUG
+//#define COMMANDO
+//#define DECATHLON
+#define C64
+
+#ifdef C64
 #define oUP1 5
 #define oDOWN1 6
 #define oLEFT1 7
@@ -15,10 +21,7 @@
 #define oLEFT2 14
 #define oRIGHT2 16
 #define oFIRE2 10
-
-//#define DEBUG
-//#define COMMANDO
-//#define DECATHLON
+#endif
 
 #define UP1 0x75
 #define DOWN1 0x72
@@ -201,18 +204,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println( "PS2 Raw Test of PS2 Keyboard codes" );
 
-  /*pinMode(oUP1, OUTPUT); digitalWrite(oUP1, HIGH);
-  pinMode(oDOWN1, OUTPUT); digitalWrite(oDOWN1, HIGH);
-  pinMode(oLEFT1, OUTPUT); digitalWrite(oLEFT1, HIGH);
-  pinMode(oRIGHT1, OUTPUT); digitalWrite(oRIGHT1, HIGH);
-  pinMode(oFIRE1, OUTPUT); digitalWrite(oFIRE1, HIGH);
-
-  pinMode(oUP2, OUTPUT); digitalWrite(oUP2, HIGH);
-  pinMode(oDOWN2, OUTPUT); digitalWrite(oDOWN2, HIGH);
-  pinMode(oLEFT2, OUTPUT); digitalWrite(oLEFT2, HIGH);
-  pinMode(oRIGHT2, OUTPUT); digitalWrite(oRIGHT2, HIGH);
-  pinMode(oFIRE2, OUTPUT); digitalWrite(oFIRE2, HIGH);*/
-
+  #ifdef C64
   pinMode(oUP1, INPUT);
   pinMode(oDOWN1, INPUT);
   pinMode(oLEFT1, INPUT);
@@ -224,6 +216,7 @@ void setup() {
   pinMode(oLEFT2, INPUT);
   pinMode(oRIGHT2, INPUT);
   pinMode(oFIRE2, INPUT);
+  #endif
 
 }
 
@@ -244,13 +237,17 @@ void loop() {
       Serial.print("0x"); Serial.println(c, HEX); 
       #endif
       j = clearData(c);
+      #ifdef C64
       clearDataC64(c);
+      #endif
     } else {
       #ifdef DEBUG
       Serial.print("0x"); Serial.println(c, HEX); 
       #endif
       j = setData(c);
+      #ifdef C64
       setDataC64(c);
+      #endif
     }
 
     #ifdef DEBUG
@@ -269,9 +266,8 @@ void loop() {
 
 }
 
-/*#define SET64(p) digitalWrite(p, LOW); break;
-#define UNSET64(p) digitalWrite(p, HIGH); break;*/
 
+#ifdef C64
 #define SET64(p) pinMode(p, OUTPUT); break;
 #define UNSET64(p) pinMode(p, INPUT); break;
 
@@ -382,7 +378,7 @@ inline void clearDataC64(uint8_t c) {
       UNSET64(oRIGHT2);
   }
 }
-
+#endif
 
 //--------------------------------------------------------------------
 //                     USB
