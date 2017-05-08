@@ -117,8 +117,9 @@ Here is example how to do it with RetrOrangePi 2.5.2:
 - Check with `cat /proc/cmdline`
 
 Lakka 2.0:
-- Make backup of `/boot/boot.scr`
-- Make file `/boot/boot.cmd`:
+- Remount r/w: `mount -o rw,remount /flash`
+- Make backup: `cp /flash/boot.scr /flash/org.boot.scr`
+- Make file `/flash/boot.cmd`:
 ```
 setenv machid 1029
 setenv bootm_boot_mode sec
@@ -127,7 +128,7 @@ fatload mmc 0 0x43000000 script.bin
 fatload mmc 0 0x42000000 KERNEL
 bootm 0x42000000
 ```
-`mkimage -C none -A arm -O u-boot -T script -n "Lakka Boot" -d /boot/boot.cmd /boot/boot.scr`
+`mkimage -C none -A arm -O u-boot -T script -n "Lakka Boot" -d /flash/boot.cmd /flash/boot.scr`
 - (you need to get mkimage from somewhere (e.g. use Armbian), because it is not included in Lakka)
 - Reboot
 - Check with `cat /proc/cmdline`
