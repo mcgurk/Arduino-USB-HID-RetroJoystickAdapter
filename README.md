@@ -116,6 +116,22 @@ Here is example how to do it with RetrOrangePi 2.5.2:
 - Reboot
 - Check with `cat /proc/cmdline`
 
+Lakka 2.0, boot.cmd:
+- Make backup of `/boot/boot.scr`
+- Make file `/boot/boot.cmd`:
+```
+setenv machid 1029
+setenv bootm_boot_mode sec
+setenv bootargs console=ttyS0,115200 boot=/dev/mmcblk0p1 disk=/dev/mmcblk0p2 consoleblank=0 usbhid.quirks=0x2341:0x8036:0x40
+fatload mmc 0 0x43000000 script.bin
+fatload mmc 0 0x42000000 KERNEL
+bootm 0x42000000
+```
+`mkimage -C none -A arm -O u-boot -T script -n "Lakka Boot" -d /boot/boot.cmd /boot/boot.scr`
+- (you need to get mkimage from somewhere (e.g. use Armbian), because it is not included in Lakka)
+- Reboot
+- Check with `cat /proc/cmdline`
+
 ## Tutorial
 There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Tutorial) folder. We tried to make it as clear as possible, so even if you are not familiar with coding, you may can do modifications to it (example add a button).
 
