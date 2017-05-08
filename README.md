@@ -116,7 +116,7 @@ Here is example how to do it with RetrOrangePi 2.5.2:
 - Reboot
 - Check with `cat /proc/cmdline`
 
-Lakka 2.0, boot.cmd:
+Lakka 2.0:
 - Make backup of `/boot/boot.scr`
 - Make file `/boot/boot.cmd`:
 ```
