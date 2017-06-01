@@ -1,8 +1,4 @@
-![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/Arduino_ProMicro.jpg)
-
-![USB Host Shield DuinoFun UHS mini v2](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/USB_Host_Shield_DuinoFun_UHS_mini_v2.jpg)
-
-![Level converter with AMS1117](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Images/Levelconverter_with_AMS1117.jpg)
+## USB -> 1351 (C64) mouse adapter
 
 #### Pin 9 and 10 needed for TIMER1. Move SS and INT of USB host shield away
 
@@ -38,3 +34,9 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - Trace cut from USB Host Shield mini: https://geekhack.org/index.php?topic=80421.0
 
 I used Arduino Pro Micro and module which have AMS1117 3.3V regulator and 8 bidirectional voltage converters.
+
+![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/Arduino_ProMicro.jpg)
+
+![USB Host Shield DuinoFun UHS mini v2](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/USB_Host_Shield_DuinoFun_UHS_mini_v2.jpg)
+
+![Level converter with AMS1117](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Images/Levelconverter_with_AMS1117.jpg)
