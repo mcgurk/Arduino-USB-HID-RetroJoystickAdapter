@@ -206,27 +206,21 @@ inline void startTimers() {
   #endif
   cli();
 
-  // Prepare and start TIMER1
-  TCCR1A = 0;
-  TCCR1B = 0; // Stop TIMER1 (maybe already stopped)
-  // ICF1: Timer/Counter Input Capture Flag
-  // TOV1: Timer/Counter Overflow Flag
-  TIFR1 = 0xff; //clear all pending TIMER1 interrupt flags
+  // Prepare TIMER1
+  //TCCR1A = 0;
+
   // ICIE1: Timer/Counter Input Capture Interrupt Enable, ISR(TIMER1_CAPT_vect)
   // TOIE1: Timer/Counter Overflow Interrupt Enable
-  TIMSK1 = _BV(ICIE1);
+  TIMSK1 = _BV(ICIE1); // ICIE1: Timer/Counter1, Input Capture Interrupt Enable
 
-  // Prepare and start TIMER2
-  TCCR3A = 0;
-  TCCR3B = 0; // Stop TIMER1 (maybe already stopped)
-  TIMSK3 = 0; //Disable all TIMER2 interrupts
-  TIFR3 = 0xff; //clear all pending TIMER2 interrupt flags
+  // Start timer1, Input Capture setup
+  // ICNC1: Input Capture Noise Canceller (Bit 7 of register TCCR1B) 
+  // ICES1: Input Capture Edge Select (Bit 6 of register TCCR1B) 0 = FALLING, 1 = RISING
+  // CS12, CS11, CS10: Set prescaler (CS11 TIMER1: F_CPU/8)
+  //TCCR1B = _BV(ICNC1) | _BV(CS11)
+  TCCR1B = _BV(CS11)
 
-  TCNT1 = 0;
-  TCNT3 = 0;
-  // start timers
-  START_TIMER1;
-  START_TIMER2;
+  TIFR1 = 0xff; // Clear all pending TIMER1 interrupt flags
 
   sei();  
 }
@@ -246,59 +240,45 @@ ISR(TIMER1_CAPT_vect) {
   if (counter == 0) upd = 1;
   #endif
   
-  TCCR1B = 0; //stop timer1
-  //TCCR3B = 0; //stop timer2
-  TIFR1 = 0xff; //clear all timer1 interrupt flags  
-  TIFR3 = 0xff; //clear all timer1 interrupt flags
-
-  // clear OC1A/OC1B:
+  // clear OC1A/OC1B (9 and 10 to LOW):
   // 1. set output compare to clear OC1A/OC1B ("10" in table 37 on page 97)
   TCCR1A = _BV(COM1A1) | _BV(COM1B1); // Clear OC1A / OC1B on Compare Match (Set output to low level).
   // 2. force output compare to make it happen (doesn't raise interrupts)
   TCCR1C |= _BV(FOC1A) | _BV(FOC1B); // FOC1A / FOC1B Force Output Compare A and B (that are in register TCCR1C)
   
-  // Set OC1A/OC1B on Compare Match (Set output to high level) 
-  // WGM13:0 = 00, normal mode: count from BOTTOM to MAX
-  TCCR1A = _BV(COM1A1) | _BV(COM1A0) | _BV(COM1B1) | _BV(COM1B0); // Set OC1A / OC1B on Compare Match (Set output to high level).
-
   // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A, ISR(TIMER1_COMPA_vect)
   TIMSK1 = _BV(OCIE1A);
   
   // init the output compare values 
   //OCR1A = 15625*2; // 16 000 000 / 1024 / 15625 = 1s
   //OCR1B = 15625/2;
-  uint8_t a = ICR1L; // Input Capture Register 1 Low
-  uint8_t b = TCNT3L; // now
-  uint8_t c = b - a;
-  OCR1A = ocr1a_load - c;
-  OCR1B = ocr1b_load - c;
+  OCR1A = ocr1a_load + ICR1;
+  OCR1B = ocr1b_load + ICR1;
   //TEST!
   //OCR1A = ocr1a_load;
   //OCR1B = ocr1b_load;
+
+  // Set OC1A/OC1B on Compare Match (Set output to high level) 
+  // WGM13:0 = 00, normal mode: count from BOTTOM to MAX
+  TCCR1A = _BV(COM1A1) | _BV(COM1A0) | _BV(COM1B1) | _BV(COM1B0); // Set OC1A / OC1B on Compare Match (Set output to high level).
 
   #ifdef DEBUG
   Serial.print(c); Serial.print(" "); Serial.print(a); Serial.print(" "); Serial.println(b);
   Serial.flush();
   #endif
   
-  TCNT1 = 0;
-  TCNT3 = 0;
-  
-  // start timers
-  START_TIMER1;
-  START_TIMER2;
+  TIFR1 = 0xff; //clear all timer1 interrupt flags
 }
 
 ISR(TIMER1_COMPA_vect) {
   // now potx are sent. we don't know if poty is still in progress.
+  // POTX is HIGH from OC1A TIMER1 compare match
   
-  // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A
-  TIMSK1 = 0; // disable TIMER1 interrupts (Compare Match Interrupt A)
-
   #ifdef DEBUG
   Serial.println("TIMER1_COMPA_vect"); Serial.flush();
   #endif
 
-  TIMSK1 = _BV(ICIE1); // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A
+  TIMSK1 = _BV(ICIE1); // ICIE1: Timer/Counter1, Input Capture Interrupt Enable // disable TIMER1 interrupts (Compare Match Interrupt A)
+  TIFR1 = 0xff; //clear all timer1 interrupt flags
 }
 
