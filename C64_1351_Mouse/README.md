@@ -1,4 +1,4 @@
-## USB -> 1351 (C64) mouse adapter
+## USB mouse -> 1351 (C64) mouse adapter
 
 #### Pin 9 and 10 needed for TIMER1 - Move SS and INT of USB host shield library away
 
