@@ -33,6 +33,8 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - http://asdasd.rpg.fi/~svo/%5bm%5douse/
 - https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
 - Trace cut from USB Host Shield mini: https://geekhack.org/index.php?topic=80421.0
+- https://gammon.com.au/interrupts
+- http://www.avrbeginners.net/architecture/timers/timers.html
 
 ### Hardware
 
