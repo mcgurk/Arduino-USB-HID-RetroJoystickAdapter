@@ -29,5 +29,6 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - http://www.zimmers.net/anonftp/pub/cbm/documents/projects/interfaces/mouse/Mouse.html
 - http://asdasd.rpg.fi/~svo/%5bm%5douse/
 - https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
+- Trace cut from USB Host Shield mini: https://geekhack.org/index.php?topic=80421.0
 
 I used Arduino Pro Micro and module which have AMS1117 3.3V regulator and 8 bidirectional voltage converters.
