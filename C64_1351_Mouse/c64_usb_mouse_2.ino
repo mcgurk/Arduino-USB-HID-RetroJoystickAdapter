@@ -191,15 +191,6 @@ void potmouse_movt(int16_t dx, int16_t dy, uint8_t button) {
 }
 
 
-// Start timer1, Input Capture setup
-// ICNC1: Input Capture Noise Canceller (Bit 7 of register TCCR1B) 
-// ICES1: Input Capture Edge Select (Bit 6 of register TCCR1B) 0 = FALLING, 1 = RISING
-// CS12, CS11, CS10: Set prescaler (CS11 TIMER1: F_CPU/8)
-//#define START_TIMER1 TCCR1B = _BV(ICNC1) | _BV(CS11)
-#define START_TIMER1 TCCR1B = _BV(CS11)
-// CS32, CS31, CS30: Set prescaler (CS31 TIMER3: F_CPU/8)
-#define START_TIMER2 TCCR3B = _BV(CS31)
-
 inline void startTimers() {
   #ifdef DEBUG
   Serial.println("startTimers"); Serial.flush();
