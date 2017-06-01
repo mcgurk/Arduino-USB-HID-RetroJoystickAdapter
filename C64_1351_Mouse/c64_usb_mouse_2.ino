@@ -5,7 +5,7 @@
 #include <usbhub.h>
 #endif
 
-#define POTSENSE    4           //ICP1
+#define POTSENSE    4           //ICP1 (Arduino Pro Micro: pin4, Arduino Uno: pin8)
 
 #define POTX        9           ///< X-line, also OC1A
 #define POTY        10          ///< Y-line, also OC1B
@@ -19,8 +19,6 @@ int16_t dy=0;
 uint8_t buttons=0;
 
 uint8_t update = 0;
-#define FIX_START 100
-int32_t fix = FIX_START;
 
 #ifdef USBHOST
 class MouseRptParser : public MouseReportParser {
@@ -57,7 +55,6 @@ void MouseRptParser::OnLeftButtonDown(MOUSEINFO *mi) {
   #endif
   buttons |= 1;
   update = 1;
-  fix++;
 };
 void MouseRptParser::OnRightButtonUp(MOUSEINFO *mi) {
   #ifdef DEBUG
@@ -72,7 +69,6 @@ void MouseRptParser::OnRightButtonDown(MOUSEINFO *mi) {
   #endif
   buttons |= 2;
   update = 1;
-  fix--;
 };
 void MouseRptParser::OnMiddleButtonUp(MOUSEINFO *mi) {
   #ifdef DEBUG
@@ -83,7 +79,6 @@ void MouseRptParser::OnMiddleButtonDown(MOUSEINFO *mi) {
   #ifdef DEBUG
   Serial.println("M Butt Dn");
   #endif
-  fix = FIX_START;
 };
 
 USB Usb;
@@ -170,7 +165,8 @@ void potmouse_movt(int16_t dx, int16_t dy, uint8_t button) {
 
   potmouse_xcounter = (potmouse_xcounter + (dx/2)) & 0177; // modulo 128
   potmouse_ycounter = (potmouse_ycounter - (dy/2)) & 0177;
-  
+
+  //for testing
   //potmouse_xcounter = (millis()>>6) & 077; // modulo 64
   //potmouse_ycounter = (millis()>>6) & 077;
 
