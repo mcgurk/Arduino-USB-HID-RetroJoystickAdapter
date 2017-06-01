@@ -26,6 +26,7 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - GND -> GND
 - VCC -> 3.3V
 - VBUS -> 5V (cut trace from VBUS-pad to resistor!)
+!: MOSI, MISO and CLK pins are wrongly marked in USB Host Shield DuinoFun UHS mini v2!
 
 #### Links
 - http://www.zimmers.net/anonftp/pub/cbm/documents/projects/interfaces/mouse/Mouse.html
