@@ -33,6 +33,8 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
 - Trace cut from USB Host Shield mini: https://geekhack.org/index.php?topic=80421.0
 
+### Hardware
+
 I used Arduino Pro Micro and module which have AMS1117 3.3V regulator and 8 bidirectional voltage converters.
 
 #### Arduino
