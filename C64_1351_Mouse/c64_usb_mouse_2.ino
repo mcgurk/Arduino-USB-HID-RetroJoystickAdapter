@@ -220,7 +220,7 @@ inline void startTimers() {
 
 ISR(TIMER1_CAPT_vect) {
   // Now we little after start of SID reading process
-  // Start moment is in ICR1L and time now is in TCNT2
+  // SID trigger pulse timer value is in ICR1
   #ifdef DEBUG
   Serial.println("TIMER1_CAPT_vect:");
   #endif
@@ -237,7 +237,7 @@ ISR(TIMER1_CAPT_vect) {
   // 2. force output compare to make it happen (doesn't raise interrupts)
   TCCR1C |= _BV(FOC1A) | _BV(FOC1B); // FOC1A / FOC1B Force Output Compare A and B (that are in register TCCR1C)
   
-  // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A, ISR(TIMER1_COMPA_vect)
+  // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A, ISR(TIMER1_COMPA_vect) // disable ICIE1, Input Capture Interrupt
   TIMSK1 = _BV(OCIE1A);
   
   // init the output compare values 
@@ -263,7 +263,7 @@ ISR(TIMER1_CAPT_vect) {
 
 ISR(TIMER1_COMPA_vect) {
   // now potx are sent. we don't know if poty is still in progress.
-  // POTX is HIGH from OC1A TIMER1 compare match
+  // POTX is HIGH from OC1A TIMER1 compare match. POTY is ?.
   
   #ifdef DEBUG
   Serial.println("TIMER1_COMPA_vect"); Serial.flush();
