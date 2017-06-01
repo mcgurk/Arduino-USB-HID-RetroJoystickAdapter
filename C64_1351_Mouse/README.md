@@ -25,8 +25,9 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - VCC -> 3.3V
 - VBUS -> 5V (cut trace from VBUS-pad to resistor!)
 
-http://www.zimmers.net/anonftp/pub/cbm/documents/projects/interfaces/mouse/Mouse.html
-http://asdasd.rpg.fi/~svo/%5bm%5douse/
-https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
+#### Links
+- http://www.zimmers.net/anonftp/pub/cbm/documents/projects/interfaces/mouse/Mouse.html
+- http://asdasd.rpg.fi/~svo/%5bm%5douse/
+- https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
 
 I used Arduino Pro Micro and module which have AMS1117 3.3V regulator and 8 bidirectional voltage converters.
