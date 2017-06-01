@@ -20,7 +20,7 @@ uint8_t buttons=0;
 
 uint8_t update = 0;
 #define FIX_START 100
-int16_t fix = FIX_START;
+int32_t fix = FIX_START;
 
 #ifdef USBHOST
 class MouseRptParser : public MouseReportParser {
@@ -179,10 +179,10 @@ void potmouse_movt(int16_t dx, int16_t dy, uint8_t button) {
             
   // scale should be 2x here, but for this particular chip, 66 counts work better where
   // 64 counds should be. so 66/64=100/96 and times two
-  //a = 320*2 + potmouse_xcounter*2*100/fix;
-  //b = 320*2 + potmouse_ycounter*2*100/fix;
-  //a = 320*2*100/fix + potmouse_xcounter*2;
-  //b = 320*2*100/fix + potmouse_ycounter*2;
+  //a = 320*2 + ((uint32_t)potmouse_xcounter)*200/fix;
+  //b = 320*2 + ((uint32_t)potmouse_ycounter)*200/fix;
+  //a = 320*200/fix + potmouse_xcounter*2;
+  //b = 320*200/fix + potmouse_ycounter*2;
   a = 320*2 + potmouse_xcounter*2;
   b = 320*2 + potmouse_ycounter*2;
 
@@ -208,8 +208,8 @@ inline void startTimers() {
   // ICNC1: Input Capture Noise Canceller (Bit 7 of register TCCR1B) 
   // ICES1: Input Capture Edge Select (Bit 6 of register TCCR1B) 0 = FALLING, 1 = RISING
   // CS12, CS11, CS10: Set prescaler (CS11 TIMER1: F_CPU/8)
-  //TCCR1B = _BV(ICNC1) | _BV(CS11)
-  TCCR1B = _BV(CS11)
+  TCCR1B = _BV(ICNC1) | _BV(CS11);
+  //TCCR1B = _BV(CS11);
 
   TIFR1 = 0xff; // Clear all pending TIMER1 interrupt flags
 
@@ -221,6 +221,9 @@ inline void startTimers() {
 ISR(TIMER1_CAPT_vect) {
   // Now we little after start of SID reading process
   // SID trigger pulse timer value is in ICR1
+
+  uint16_t a = ICR1;
+  
   #ifdef DEBUG
   Serial.println("TIMER1_CAPT_vect:");
   #endif
@@ -241,13 +244,8 @@ ISR(TIMER1_CAPT_vect) {
   TIMSK1 = _BV(OCIE1A);
   
   // init the output compare values 
-  //OCR1A = 15625*2; // 16 000 000 / 1024 / 15625 = 1s
-  //OCR1B = 15625/2;
-  OCR1A = ocr1a_load + ICR1;
-  OCR1B = ocr1b_load + ICR1;
-  //TEST!
-  //OCR1A = ocr1a_load;
-  //OCR1B = ocr1b_load;
+  OCR1A = ocr1a_load + a;
+  OCR1B = ocr1b_load + a;
 
   // Set OC1A/OC1B on Compare Match (Set output to high level) 
   // WGM13:0 = 00, normal mode: count from BOTTOM to MAX
@@ -272,4 +270,3 @@ ISR(TIMER1_COMPA_vect) {
   TIMSK1 = _BV(ICIE1); // ICIE1: Timer/Counter1, Input Capture Interrupt Enable // disable TIMER1 interrupts (Compare Match Interrupt A)
   TIFR1 = 0xff; //clear all timer1 interrupt flags
 }
-
