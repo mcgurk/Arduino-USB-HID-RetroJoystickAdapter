@@ -1,6 +1,6 @@
 ## USB -> 1351 (C64) mouse adapter
 
-#### Pin 9 and 10 needed for TIMER1. Move SS and INT of USB host shield away
+#### Pin 9 and 10 needed for TIMER1 - Move SS and INT of USB host shield library away
 
 C:\Users\xxxxx\Documents\Arduino\libraries\USB_Host_Shield_Library_2.0\UsbCore.h:
 ```
