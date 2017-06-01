@@ -15,12 +15,12 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - 1 (UP) -> 6
 
 #### USB Host Shield (3.3V) -> Arduino
-- SS -> A0 (Arduino Pro Micro) (check UsbCore.h) (3.3V<->5V!)
-- INT -> A1 (Arduino Pro Micro) (check UsbCore.h) (3.3V<->5V!)
-- MOSI -> 11 (Arduino Uno), 16 (Arduino Pro Micro) (3.3V<->5V!)
-- MISO -> 12 (Arduino Uno), 14 (Arduino Pro Micro) (3.3V<->5V!)
-- CLK -> 13 (Arduino Uno), 15 (Arduino Pro Micro) (3.3V<->5V!)
-- RST -> RST (3.3V<->5V!)
+- SS -> A0 (Arduino Pro Micro) (check UsbCore.h) (3.3V!)
+- INT -> A1 (Arduino Pro Micro) (check UsbCore.h) (3.3V!)
+- MOSI -> 11 (Arduino Uno), 16 (Arduino Pro Micro) (3.3V!)
+- MISO -> 12 (Arduino Uno), 14 (Arduino Pro Micro) (3.3V!)
+- CLK -> 13 (Arduino Uno), 15 (Arduino Pro Micro) (3.3V!)
+- RST -> RST (3.3V!)
 - GND -> GND
 - VCC -> 3.3V
 - VBUS -> 5V (cut trace from VBUS-pad to resistor!)
