@@ -1,3 +1,9 @@
+![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/Arduino_ProMicro.jpg)
+
+![USB Host Shield DuinoFun UHS mini v2](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/USB_Host_Shield_DuinoFun_UHS_mini_v2.jpg)
+
+![Level converter with AMS1117](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/Images/Levelconverter_with_AMS1117.jpg)
+
 #### Pin 9 and 10 needed for TIMER1. Move SS and INT of USB host shield away
 
 C:\Users\xxxxx\Documents\Arduino\libraries\USB_Host_Shield_Library_2.0\UsbCore.h:
