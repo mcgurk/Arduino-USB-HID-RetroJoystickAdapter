@@ -6,7 +6,6 @@ C:\Users\xxxxx\Documents\Arduino\libraries\USB_Host_Shield_Library_2.0\UsbCore.h
 //Arduino Pro Micro SS=A0, INT=A1:
 typedef MAX3421e<P18, P19> MAX3421E;
 ```
-https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
 
 #### Joystick port -> Arduino
 - 9 (POTX) -> 1k -> 9 (OC1A)
@@ -15,15 +14,19 @@ https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
 - 6 (FIRE) -> 5
 - 1 (UP) -> 6
 
-#### USB Host Shield -> Arduino
-- SS -> A0 (Arduino Pro Micro) (check UsbCore.h)
-- INT -> A1 (Arduino Pro Micro) (check UsbCore.h)
-- MOSI -> 11 (Arduino Uno), 16 (Arduino Pro Micro)
-- MISO -> 12 (Arduino Uno), 14 (Arduino Pro Micro)
-- CLK -> 13 (Arduino Uno), 15 (Arduino Pro Micro)
-- RST -> RST
+#### USB Host Shield (3.3V) -> Arduino
+- SS -> A0 (Arduino Pro Micro) (check UsbCore.h) (3.3V<->5V!)
+- INT -> A1 (Arduino Pro Micro) (check UsbCore.h) (3.3V<->5V!)
+- MOSI -> 11 (Arduino Uno), 16 (Arduino Pro Micro) (3.3V<->5V!)
+- MISO -> 12 (Arduino Uno), 14 (Arduino Pro Micro) (3.3V<->5V!)
+- CLK -> 13 (Arduino Uno), 15 (Arduino Pro Micro) (3.3V<->5V!)
+- RST -> RST (3.3V<->5V!)
 - GND -> GND
 - VCC -> 3.3V
 - VBUS -> 5V (cut trace from VBUS-pad to resistor!)
 
+http://www.zimmers.net/anonftp/pub/cbm/documents/projects/interfaces/mouse/Mouse.html
+http://asdasd.rpg.fi/~svo/%5bm%5douse/
+https://ist.uwaterloo.ca/~schepers/MJK/pics/joyports.gif
 
+I used Arduino Pro Micro and module which have AMS1117 3.3V regulator and 8 bidirectional voltage converters.
