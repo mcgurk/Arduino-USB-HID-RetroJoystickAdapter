@@ -10,9 +10,9 @@ typedef MAX3421e<P18, P19> MAX3421E;
 ```
 
 #### Joystick port -> Arduino
-- 9 (POTX) -> 1k -> 9 (OC1A)
+- 9 (POTX) -> 10k resistor -> 9 (OC1A)
 - 9 (POTX) -> Arduino Pro Micro: 4, Arduino Uno: 8 (ICP1)
-- 5 (POTY) -> 1k -> 10 (OC1B)
+- 5 (POTY) -> 10k resistor -> 10 (OC1B)
 - 6 (FIRE) -> 5
 - 1 (UP) -> 6
 
