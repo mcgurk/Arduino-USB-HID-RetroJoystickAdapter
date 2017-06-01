@@ -5,7 +5,7 @@
 C:\Users\xxxxx\Documents\Arduino\libraries\USB_Host_Shield_Library_2.0\UsbCore.h:
 ```
 //typedef MAX3421e<P10, P9> MAX3421E;
-//Arduino Pro Micro SS=A0, INT=A1:
+//Arduino Pro Micro SS=A0(P18), INT=A1(P19):
 typedef MAX3421e<P18, P19> MAX3421E;
 ```
 
