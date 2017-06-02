@@ -15,6 +15,7 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - 5 (POTY) -> 10k resistor -> 10 (OC1B)
 - 6 (FIRE, left mouse button) -> 5
 - 1 (UP, right mouse button) -> 6
+- 8 GND -> GND
 
 #### USB Host Shield (3.3V) -> Arduino
 - SS -> A0 (Arduino Pro Micro) (check UsbCore.h) (3.3V!)
