@@ -23,7 +23,7 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - MOSI -> 11 (Arduino Uno), 16 (Arduino Pro Micro) (3.3V!)
 - MISO -> 12 (Arduino Uno), 14 (Arduino Pro Micro) (3.3V!)
 - CLK -> 13 (Arduino Uno), 15 (Arduino Pro Micro) (3.3V!)
-- RST -> RST (3.3V!)
+- RST -> RST (3.3V!) (Pro Micro: beware of GND in place of RST)
 - GND -> GND
 - VCC -> 3.3V
 - VBUS -> 5V (cut trace from VBUS-pad to resistor!)
