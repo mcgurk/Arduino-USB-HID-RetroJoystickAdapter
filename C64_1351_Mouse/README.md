@@ -2,9 +2,11 @@
 
 #### Requirements
 
-- Arduino Pro 16MHz 5V
+- Arduino Pro Micro 16MHz 5V
 - USB Host Shield
 - USB Host Shield Library 2.0 from Arduino IDE Library Manager
+- 2pcs 10k resistors
+- Level shifter for 6 pins
 
 #### Pin 9 and 10 needed for TIMER1 - Move SS and INT of USB host shield library away
 
