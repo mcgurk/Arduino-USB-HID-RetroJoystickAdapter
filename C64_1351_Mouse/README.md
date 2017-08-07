@@ -1,8 +1,10 @@
 ## USB mouse -> 1351 (C64) mouse adapter
 
-#### Library
+#### Requirements
 
-Install USB Host Shield Library 2.0 from Arduino IDE Library Manager.
+- Arduino Pro 16MHz 5V
+- USB Host Shield
+- USB Host Shield Library 2.0 from Arduino IDE Library Manager
 
 #### Pin 9 and 10 needed for TIMER1 - Move SS and INT of USB host shield library away
 
