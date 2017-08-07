@@ -267,6 +267,10 @@ http://www.int03.co.uk/crema/hardware/gamecube/gc-control.htm
 
 https://github.com/NicoHood/Nintendo/wiki/Gamecube
 
+#### PC Engine/Turbografx
+(I don't have this controller, so it is not implemented, but it should be implemented very easily)
+
+https://emu-docs.org/PC%20Engine/tg16cont.html
 
 #### How to reset Arduino (in case of emergency)
 
