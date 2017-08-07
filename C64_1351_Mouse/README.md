@@ -48,6 +48,7 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - https://gammon.com.au/interrupts
 - http://www.avrbeginners.net/architecture/timers/timers.html
 - https://github.com/felis/USB_Host_Shield_2.0/blob/master/avrpins.h
+- https://github.com/felis/USB_Host_Shield_2.0/blob/master/UsbCore.h
 
 ### Hardware
 
