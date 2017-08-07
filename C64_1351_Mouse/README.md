@@ -11,9 +11,11 @@
 
 C:\Users\xxxxx\Documents\Arduino\libraries\USB_Host_Shield_Library_2.0\UsbCore.h:
 ```
-//typedef MAX3421e<P10, P9> MAX3421E;
+//typedef MAX3421e<P10, P9> MAX3421E; // default pin asignments
 //Arduino Pro Micro SS=A0(P18), INT=A1(P19):
 typedef MAX3421e<P18, P19> MAX3421E;
+//Arduino Uno SS=A0(P14), INT=A1(P15):
+//typedef MAX3421e<P14, P15> MAX3421E;
 ```
 
 #### Joystick port -> Arduino
@@ -25,11 +27,11 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - 8 GND -> GND
 
 #### USB Host Shield (3.3V) -> Arduino
-- SS -> A0 (Arduino Pro Micro) (check UsbCore.h) (3.3V!)
-- INT -> A1 (Arduino Pro Micro) (check UsbCore.h) (3.3V!)
-- MOSI -> 11 (Arduino Uno), 16 (Arduino Pro Micro) (3.3V!)
-- MISO -> 12 (Arduino Uno), 14 (Arduino Pro Micro) (3.3V!)
-- CLK -> 13 (Arduino Uno), 15 (Arduino Pro Micro) (3.3V!)
+- SS -> A0 (Arduino Pro Micro), A0 (Arduino Uno) (check UsbCore.h) (3.3V!)
+- INT -> A1 (Arduino Pro Micro), A1 (Arduino Uno) (check UsbCore.h) (3.3V!)
+- MOSI -> 16 (Arduino Pro Micro), 11 (Arduino Uno) (3.3V!)
+- MISO -> 14 (Arduino Pro Micro), 12 (Arduino Uno) (3.3V!)
+- CLK -> 15 (Arduino Pro Micro), 13 (Arduino Uno) (3.3V!)
 - RST -> RST (3.3V!) (Pro Micro: beware of GND in place of RST!)
 - GND -> GND
 - VCC -> 3.3V
