@@ -45,6 +45,7 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - Trace cut from USB Host Shield mini: https://geekhack.org/index.php?topic=80421.0
 - https://gammon.com.au/interrupts
 - http://www.avrbeginners.net/architecture/timers/timers.html
+- https://github.com/felis/USB_Host_Shield_2.0/blob/master/avrpins.h
 
 ### Hardware
 
