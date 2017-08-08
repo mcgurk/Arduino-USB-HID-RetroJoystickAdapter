@@ -76,7 +76,7 @@ void setup() {
   pinMode(POTSENSE, INPUT); // pullup off, hi-biased by OC1A
 
   TIMSK1 = _BV(ICIE1); // ICIE1: Timer/Counter1, Input Capture Interrupt Enable
-  TCCR1B = _BV(ICNC1) | _BV(CS10);
+  TCCR1B = _BV(ICNC1) | _BV(CS10); //CS10: No prescaler, ICNC1: Input Capture Noise Canceller
 }
 
 
@@ -90,7 +90,7 @@ void loop() {
     (buttons & 002) ? pinMode(RBTN, OUTPUT) : pinMode(RBTN, INPUT);
             
     cli();
-    x = (320 + potmouse_xcounter)*16;
+    x = (320 + potmouse_xcounter)*16; //16 clock cycles = 1us
     y = (320 + potmouse_ycounter)*16;
     sei();
     update = 0;
@@ -99,24 +99,23 @@ void loop() {
 }
 
 
-ISR(TIMER1_CAPT_vect) {
+ISR(TIMER1_CAPT_vect) { // ICIE1
   // OC1A/OC1B -> LOW
   TCCR1A = _BV(COM1A1) | _BV(COM1B1); // Clear OC1A / OC1B on Compare Match (Set output to low level)
-  TCCR1C |= _BV(FOC1A) | _BV(FOC1B); // FOC1A / FOC1B Force Output Compare A and B (that are in register TCCR1C)
+  TCCR1C |= _BV(FOC1A) | _BV(FOC1B); // FOC1A / FOC1B Force Output Compare A and B
 
   // init the output compare values
-  OCR1A = ICR1 + x;
+  OCR1A = ICR1 + x; //ICR1: Input Capture Register
   OCR1B = ICR1 + y;
 
   TCCR1A = _BV(COM1A1) | _BV(COM1A0) | _BV(COM1B1) | _BV(COM1B0); // Set OC1A / OC1B on Compare Match (Set output to high level).
-
-  // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A, ISR(TIMER1_COMPA_vect) // disable ICIE1, Input Capture Interrupt
-  TIMSK1 = _BV(OCIE1A);
+  
+  TIMSK1 = _BV(OCIE1A); // OCIE1A: Timer/Counter Output Compare Match Interrupt Enable A // disable other TIMER1 interrupts
   TIFR1 = 0xff; // Clear all pending TIMER1 interrupt flags
 }
 
 
-ISR(TIMER1_COMPA_vect) {
-  TIMSK1 = _BV(ICIE1); // ICIE1: Timer/Counter1, Input Capture Interrupt Enable // disable TIMER1 interrupts (Compare Match Interrupt A)
+ISR(TIMER1_COMPA_vect) { // OCIE1A
+  TIMSK1 = _BV(ICIE1); // ICIE1: Timer/Counter1, Input Capture Interrupt Enable // disable other TIMER1 interrupts
   TIFR1 = 0xff; // Clear all pending TIMER1 interrupt flags
 }
