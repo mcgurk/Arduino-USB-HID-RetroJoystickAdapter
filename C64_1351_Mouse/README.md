@@ -1,4 +1,4 @@
-## USB mouse -> 1351 (C64) mouse adapter
+## USB mouse -> 1351 (C64) mouse adapter (+paddles)
 
 #### Requirements
 
