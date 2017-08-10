@@ -19,12 +19,13 @@ typedef MAX3421e<P18, P19> MAX3421E;
 ```
 
 #### Joystick port -> Arduino
-- 9 (POTX) -> 10k resistor -> 9 (OC1A)
-- 9 (POTX) -> Arduino Pro Micro: 4, Arduino Uno: 8 (ICP1)
-- 5 (POTY) -> 10k resistor -> 10 (OC1B)
-- 6 (FIRE, left mouse button) -> 5
-- 1 (UP, right mouse button) -> 6
-- 8 GND -> GND
+- 9 (POTX) -> 10k resistor -> 9 (OC1A)  (brown)
+- 9 (POTX) -> Arduino Pro Micro: 4, Arduino Uno: 8 (ICP1)  (white)
+- 5 (POTY) -> 10k resistor -> 10 (OC1B)  (orange)
+- 6 (FIRE, left mouse button) -> 5  (yellow)
+- 1 (UP, right mouse button) -> 6  (blue)
+- 8 GND -> GND  (black)
+- 7 5V -> 5V (red)
 
 #### USB Host Shield (3.3V) -> Arduino
 - SS -> A0 (Arduino Pro Micro), A0 (Arduino Uno) (check UsbCore.h) (3.3V!)
