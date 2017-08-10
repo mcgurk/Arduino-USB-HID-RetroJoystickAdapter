@@ -30,7 +30,7 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - 3 (LEFT) (Paddle 1 fire)  -> 7 (grey)
 - 4 (RIGHT) (Paddle 2 fire) -> 8 (purple)
 
-(2 down (green),
+(unconnected: 2 DOWN (green))
 
 #### USB Host Shield (3.3V) -> Arduino
 - SS -> A0 (Arduino Pro Micro), A0 (Arduino Uno) (check UsbCore.h) (3.3V!)
