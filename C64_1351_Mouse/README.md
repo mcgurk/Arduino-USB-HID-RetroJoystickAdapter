@@ -26,7 +26,11 @@ typedef MAX3421e<P18, P19> MAX3421E;
 - 1 (UP, right mouse button) -> 6  (blue)
 - 8 GND -> GND  (black)
 - 7 5V -> 5V (red)
-(2 down (green), 3 (paddle 1 btn) (left) grey -> 7, 4 (paddle 2 btn) (right) purple -> 8)
+##### +Paddles:
+- 3 (LEFT) (Paddle 1 fire)  -> 7 (grey)
+- 4 (RIGHT) (Paddle 2 fire) -> 8 (purple)
+
+(2 down (green),
 
 #### USB Host Shield (3.3V) -> Arduino
 - SS -> A0 (Arduino Pro Micro), A0 (Arduino Uno) (check UsbCore.h) (3.3V!)
