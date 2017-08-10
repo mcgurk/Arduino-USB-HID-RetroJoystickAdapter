@@ -12,7 +12,7 @@ D9-connector -> Arduino
 9 -> Vcc (5V)
 Shield -> GND
 ```
-Library:
+#### Library
 PS2KeyRaw
 
 Arduino Pro Micro (select Arduino Leonardo from Arduino IDE).
