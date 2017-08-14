@@ -29,7 +29,7 @@ Bootloader mode: RST to GND two times. You have couple of seconds to start flash
 
 
 ### Testing/Debugging
-https://www.pjrc.com/teensy/hid_listen.html
+hid_listen.exe: https://www.pjrc.com/teensy/hid_listen.html
 
 ### Settings/Tools
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
