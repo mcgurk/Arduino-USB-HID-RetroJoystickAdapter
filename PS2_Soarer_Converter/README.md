@@ -34,8 +34,11 @@ PS/2 -> Arduino
 - 5V (red) -> 5V
 - GND (black) -> GND
 
-#### Arduino Pro Micro pinout
+##### Arduino Pro Micro pinout
 http://www.pighixxx.com/test/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_red.png
+
+##### PS/2 pinout
+http://ezcontents.org/sites/default/files/ps2_pinout.png
 
 ### Firmware
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
