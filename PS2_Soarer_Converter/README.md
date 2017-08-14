@@ -6,8 +6,11 @@ You need
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
 
 ### Hardware
-- Data -> PD0 (Pro Micro: 3)
-- CLK -> PD1 (Pro Micro: 2)
+PS/2 -> Arduino
+- Data (green) -> PD0 (Pro Micro: 3)
+- CLK (white) -> PD1 (Pro Micro: 2)
+- 5V (red) -> 5V
+- GND (black) -> GND
 https://github.com/iflowfor8hours/6112884-pro-micro-controller
 
 ### Firmware
