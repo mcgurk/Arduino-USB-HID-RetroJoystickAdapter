@@ -15,7 +15,7 @@ https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkr
 - Full NKRO, if the keyboard supports it (even on Macs!)
 - Boot mode support (even with faulty BIOS!)
 - Auto-detection of the keyboard type
-- XT and AT boards are remapped correctly for PrtSc etc. (see Legacy Note below)
+- XT and AT boards are remapped correctly for PrtSc etc.
 - 1000Hz polling using Full Speed USB
 - Suspend and resume support
 - Media and Power key support
