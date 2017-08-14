@@ -1,11 +1,33 @@
 # Soarer PS/2 to USB keyboard converter
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
 
+#### Keyboard protocols supported:
+- XT (scan code set 1)
+- AT (scan code set 2)
+- PS/2 (MF2) (extended scan code set 2)
+- Terminal e.g. 3179/318x/319x (scan code set 3)
+#### Configurable Features: (v0.997+)
+- Remapping
+- Layers
+- Macros
+- On-the-fly Config Selection
+#### Other Features:
+- Full NKRO, if the keyboard supports it (even on Macs!)
+- Boot mode support (even with faulty BIOS!)
+- Auto-detection of the keyboard type
+- XT and AT boards are remapped correctly for PrtSc etc. (see Legacy Note below)
+- 1000Hz polling using Full Speed USB
+- Suspend and resume support
+- Media and Power key support
+- Jump to bootloader function (update firmware without pressing the reset button) (v1.0+)
+
+
+
+### Hardware
 You need
 - ATMega32U4 Microcontroller/Arduino. E.g. Arduino Pro Micro
 - PS/2 female connector
 
-### Hardware
 PS/2 -> Arduino
 - Data (green) -> PD0 (Pro Micro: 3)
 - CLK (white) -> PD1 (Pro Micro: 2)
