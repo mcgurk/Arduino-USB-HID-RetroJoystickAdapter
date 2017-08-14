@@ -74,7 +74,8 @@ remapblock
 	LCTRL	R
 	LALT	T
 	SPACE	Y
-	C	V
+	C	V # "normal"
+	# C	RCTRL # "commando"
 	5	B
 	3	Q
 	1	E
@@ -91,7 +92,8 @@ remapblock
 	A	I
 	S	O
 	Q	P
-	RIGHT_BRACE	N
+	RIGHT_BRACE	N # "normal"
+	# RIGHT_BRACE	SPACE # "commando"
 	6	M
 	2	U
 	4	J
