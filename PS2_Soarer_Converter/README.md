@@ -45,8 +45,9 @@ https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkr
 
 Soarer_Converter_v1.12_update.zip: https://deskthority.net/resources/file/8295
 
-#### Flashing firmware
+#### Flasher
 https://sourceforge.net/projects/winavr/
+#### Flashing
 ```
 avrdude -p m32u4 -b 57600 -P com5 -c avr109 -U flash:w:Soarer_at2usb_v1.12_atmega32u4.hex
 ```
