@@ -70,7 +70,7 @@ Soarer_Converter_v1.10.zip: https://deskthority.net/resources/file/6142
 Soarer_Controller_v1.20_beta4.zip
 
 
-## X-Arcade
+## X-Arcade (xarcade.txt)
 ```
 # scas xarcade.txt xarcade.bin
 # scwr xarcade.bin
