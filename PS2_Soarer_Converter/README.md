@@ -78,6 +78,7 @@ scwr xarcade.bin
 - http://www.computer-engineering.org/ps2protocol/
 - http://www.computer-engineering.org/ps2keyboard/
 - http://www.computer-engineering.org/ps2keyboard/scancodes2.html
+- test: https://www.microsoft.com/appliedsciences/KeyboardGhostingDemo.mspx
 
 ## Keyboard controller
 - https://geekhack.org/index.php?topic=50437.0
