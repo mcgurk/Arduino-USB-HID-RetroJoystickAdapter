@@ -1,9 +1,9 @@
 # Soarer PS/2 to USB keyboard converter
+https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
+
 You need
 - ATMega32U4 Microcontroller/Arduino. E.g. Arduino Pro Micro
 - PS/2 female connector
-
-https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
 
 ### Hardware
 PS/2 -> Arduino
@@ -16,6 +16,8 @@ PS/2 -> Arduino
 http://www.pighixxx.com/test/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_red.png
 
 ### Firmware
+https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
+
 Soarer_Converter_v1.12_update.zip: https://deskthority.net/resources/file/8295
 
 #### Flashing firmware
@@ -30,6 +32,8 @@ Bootloader mode: RST to GND two times. You have couple of seconds to start flash
 https://www.pjrc.com/teensy/hid_listen.html
 
 ### Settings/Tools
+https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
+
 Soarer_Converter_v1.10.zip: https://deskthority.net/resources/file/6142
 
 ## Links
