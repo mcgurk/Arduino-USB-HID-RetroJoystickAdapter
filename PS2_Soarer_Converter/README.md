@@ -68,7 +68,7 @@ Compile text file to binary
 ```
 scas xarcade.txt xarcade.bin
 ```
-Upload config (efective immediately)
+Upload config (effective immediately)
 ```
 scwr xarcade.bin
 ```
