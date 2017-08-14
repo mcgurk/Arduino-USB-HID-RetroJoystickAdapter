@@ -23,7 +23,7 @@ https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkr
 
 
 
-### Hardware
+## Hardware
 You need
 - ATMega32U4 Microcontroller/Arduino. E.g. Arduino Pro Micro
 - PS/2 female connector
@@ -40,7 +40,7 @@ http://www.pighixxx.com/test/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_re
 ##### PS/2 pinout
 http://ezcontents.org/sites/default/files/ps2_pinout.png
 
-### Firmware
+## Firmware
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
 
 Soarer_Converter_v1.12_update.zip: https://deskthority.net/resources/file/8295
@@ -54,10 +54,10 @@ avrdude -p m32u4 -b 57600 -P com5 -c avr109 -U flash:w:Soarer_at2usb_v1.12_atmeg
 Bootloader mode: RST to GND two times. You have couple of seconds to start flashing. Serial port can be different than in normal mode.
 
 
-### Testing/Debugging
+## Testing/Debugging
 hid_listen.exe: https://www.pjrc.com/teensy/hid_listen.html
 
-### Settings/Tools/Docs
+## Settings/Tools/Docs
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
 
 Tools (Soarer_Converter_v1.10.zip): https://deskthority.net/resources/file/6142
