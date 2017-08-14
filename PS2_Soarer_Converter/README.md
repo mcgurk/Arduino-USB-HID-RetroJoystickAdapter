@@ -11,7 +11,9 @@ PS/2 -> Arduino
 - CLK (white) -> PD1 (Pro Micro: 2)
 - 5V (red) -> 5V
 - GND (black) -> GND
-https://github.com/iflowfor8hours/6112884-pro-micro-controller
+
+#### Arduino Pro Micro pinout
+http://www.pighixxx.com/test/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_red.png
 
 ### Firmware
 Soarer_Converter_v1.12_update.zip: https://deskthority.net/resources/file/8295
