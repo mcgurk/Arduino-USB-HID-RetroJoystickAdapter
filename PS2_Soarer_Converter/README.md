@@ -39,6 +39,7 @@ Soarer_Converter_v1.10.zip: https://deskthority.net/resources/file/6142
 ## Links
 - https://geekhack.org/index.php?topic=17458.0
 - http://www.computer-engineering.org/ps2protocol/
+- http://www.computer-engineering.org/ps2keyboard/
 - http://www.computer-engineering.org/ps2keyboard/scancodes2.html
 
 ## Keyboard controller
