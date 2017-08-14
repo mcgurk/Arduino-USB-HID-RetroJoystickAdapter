@@ -60,7 +60,7 @@ hid_listen.exe: https://www.pjrc.com/teensy/hid_listen.html
 ## Settings/Tools/Docs
 https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
 
-Tools (Soarer_Converter_v1.10.zip): https://deskthority.net/resources/file/6142
+Tools and docs (Soarer_Converter_v1.10.zip): https://deskthority.net/resources/file/6142
 
 Key names/codes: docs/codes.html
 
