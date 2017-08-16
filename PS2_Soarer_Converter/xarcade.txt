@@ -1,0 +1,55 @@
+# scas xarcade.txt xarcade.bin
+# scwr xarcade.bin
+force set2ext
+
+# dir1 keypad 8 (75),2 (72),4 (6B),6 (74)
+# sel1 3
+# start1 1
+# A,B,C: vas shift (12),Z,X
+# X,Y,Z: vas ctrl (14),vas alt (11),space (29)
+# alanapit: c,5
+
+remapblock
+# left controller
+	PAD_8	W
+	PAD_2	S
+	PAD_4	A
+	PAD_6	D
+	LSHIFT	SPACE
+	
+	Z	F
+	X	G
+	LCTRL	R
+	LALT	T
+	SPACE	Y
+	C	V # "normal"
+	# C	RCTRL # "commando"
+	5	B
+	3	Q
+	1	E
+
+# right controller
+	R	PAD_8
+	F	PAD_2
+	D	PAD_4
+	G	PAD_6
+	W	RCTRL
+
+	E	K
+	LEFT_BRACE	L
+	A	I
+	S	O
+	Q	P
+	RIGHT_BRACE	N # "normal"
+	# RIGHT_BRACE	SPACE # "commando"
+	6	M
+	2	U
+	4	J
+endblock
+
+# dir2 r,f,d,g
+# sel2 4
+# start2 2
+# A,B,C: w,e,}(å)(54="[")
+# X,Y,Z: a,s,q
+# alanapit: ;(¨)(5B="]"),6
