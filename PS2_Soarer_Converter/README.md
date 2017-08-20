@@ -6,7 +6,7 @@ https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkr
 - AT (scan code set 2)
 - PS/2 (MF2) (extended scan code set 2)
 - Terminal e.g. 3179/318x/319x (scan code set 3)
-#### Configurable Features: (v0.997+)
+#### Configurable Features:
 - Remapping
 - Layers
 - Macros
