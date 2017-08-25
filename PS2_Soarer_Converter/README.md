@@ -29,8 +29,8 @@ You need
 - PS/2 female connector
 
 PS/2 -> Arduino
-- Data (green) -> PD0 (Pro Micro: 3)
-- CLK (white) -> PD1 (Pro Micro: 2)
+- Data (green or blue) -> PD0 (Pro Micro: 3)
+- CLK (white or purple) -> PD1 (Pro Micro: 2)
 - 5V (red) -> 5V
 - GND (black) -> GND
 
