@@ -1,8 +1,8 @@
  
 #include <PS2KeyRaw.h>
 
-#define DATAPIN 4
-#define IRQPIN  3
+#define DATAPIN 3
+#define IRQPIN  2
 
 //#define DEBUG
 //#define COMMANDO
