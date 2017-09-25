@@ -5,11 +5,11 @@
 
 ```
 D9-connector -> Arduino Pro Micro
-6 -> 3 (data)
-5 -> 2 (clk)
-1 -> Vcc (5V)
-2 -> Vcc (PS/2-mode)
-9 -> Vcc (5V)
+6 (data) -> 3
+5 (clk) -> 2
+1 (5V) -> Vcc
+2 (PS/2-mode) -> Vcc
+9 (5V) -> Vcc
 Shield -> GND
 
 Or
