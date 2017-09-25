@@ -14,7 +14,7 @@ Shield -> GND
 
 Or
 
-PS/2 -> Arduino Pro Micro
+PS/2-connector -> Arduino Pro Micro
 Data (green or blue) -> 3
 CLK (white or purple) -> 2
 5V (red) -> 5V
