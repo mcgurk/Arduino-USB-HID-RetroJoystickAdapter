@@ -179,7 +179,7 @@ leonardo.menu.usb_name.leonardo_4.build.usb_product="SNES-adapter"
 ```
 
 ### New board to Arduino IDE
-If you add new board to Arduino IDE, it survives from Arduino IDE updates. Copy board.txt to `{sketchbook folder}\hardware\retroadapter\avr\`.
+If you add new board to Arduino IDE, it survives from Arduino IDE updates. Copy `boards.txt` to `{sketchbook folder}\hardware\retroadapter\avr\`.
 
 ### Arduino Uno R3
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
