@@ -1,0 +1,33 @@
+##############################################################
+
+retroadapter.name=Arduino Pro Micro Retroadapter
+
+retroadapter.upload.tool=arduino:avrdude
+retroadapter.upload.protocol=avr109
+retroadapter.upload.maximum_size=28672
+retroadapter.upload.maximum_data_size=2560
+retroadapter.upload.speed=57600
+retroadapter.upload.disable_flushing=true
+retroadapter.upload.use_1200bps_touch=true
+retroadapter.upload.wait_for_upload_port=true
+
+retroadapter.bootloader.tool=arduino:avrdude
+retroadapter.bootloader.low_fuses=0xff
+retroadapter.bootloader.high_fuses=0xd8
+retroadapter.bootloader.extended_fuses=0xcb
+retroadapter.bootloader.file=arduino:caterina/Caterina-leonardo.hex
+retroadapter.bootloader.unlock_bits=0x3F
+retroadapter.bootloader.lock_bits=0x2F
+
+retroadapter.build.mcu=atmega32u4
+retroadapter.build.f_cpu=16000000L
+retroadapter.build.vid=0x8282
+retroadapter.build.pid=0x3201
+retroadapter.build.usb_product="Arduino Retroadapter"
+retroadapter.build.usb_manufacturer="mcgurk"
+retroadapter.build.board=AVR_LEONARDO
+retroadapter.build.core=arduino:arduino
+retroadapter.build.variant=arduino:leonardo
+retroadapter.build.extra_flags={build.usb_flags}
+
+##############################################################
