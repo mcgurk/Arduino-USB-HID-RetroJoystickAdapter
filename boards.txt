@@ -15,7 +15,7 @@ retroadapter.bootloader.tool=arduino:avrdude
 retroadapter.bootloader.low_fuses=0xff
 retroadapter.bootloader.high_fuses=0xd8
 retroadapter.bootloader.extended_fuses=0xcb
-retroadapter.bootloader.file=arduino:caterina/Caterina-leonardo.hex
+retroadapter.bootloader.file=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\bootloaders\caterina\Caterina-leonardo.hex
 retroadapter.bootloader.unlock_bits=0x3F
 retroadapter.bootloader.lock_bits=0x2F
 
