@@ -181,6 +181,10 @@ leonardo.menu.usb_name.leonardo_4.build.usb_product="SNES-adapter"
 ### New board to Arduino IDE
 If you add new board to Arduino IDE, it survives from Arduino IDE updates. Copy `boards.txt` to `{sketchbook folder}\hardware\retroadapter\avr\`.
 
+Restart Arduino IDE and select Tools -> Board -> Arduino Pro Micro Retroadapter.
+
+It changes VID to 0x8282 and PID to 0x3201 (Keio Retro Adapter).
+
 ### Arduino Uno R3
 Arduino UNO R3 includes ATmega16u2 (along with ATmega328p) and it can be used too, but it needs some extra work (code doesn't work without modifications with UNO):
 https://github.com/NicoHood/HoodLoader2
