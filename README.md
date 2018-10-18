@@ -27,7 +27,7 @@ If you use Linux and want to get more than 1 controller with one Arduino, check 
 - Get ATmega32u4 Arduino board
 - Connect joystick or gamepad to Arduino (in most situations soldering is required)
 - Install Arduino [IDE](https://www.arduino.cc/en/Main/Software)
-- Install Joystick [library](https://github.com/MHeironimus/ArduinoJoystickLibrary) (if needed)
+- Install Joystick [library](https://github.com/MHeironimus/ArduinoJoystickLibrary/tree/version-1.0) (if needed)
 - Open sourcecode to Arduino IDE and select controller by commenting and uncommenting and edit pin-numbers (if needed)
 - Upload
 - Done
@@ -47,7 +47,7 @@ Example of Arduino Pro Micro:
 Arduino IDE works with Windows, OS X and Linux and ARM (beta). If you use small card computer like Rasperry Pi or Orange Pi, you can program adapter even with them (tested with Orange Pi PC and RetrOrangePi 2.0). That way you don't even have to unplug adapter from your emulator/game-platform if you want reprogram adapter.
 
 #### Joystick library for Arduino IDE
-https://github.com/MHeironimus/ArduinoJoystickLibrary
+https://github.com/MHeironimus/ArduinoJoystickLibrary/tree/version-1.0 (note that only version-1.0 works. version-2.0 is incompatible)
 
 #### Joystick(s) or gamepad(s) and way to connect them to Arduino
 Some joystick/gamepads uses their own connectors and original connectors can be very pricey. Sometimes you can find extension cord cheaper than plain connector and you can take cable and plug from that.
@@ -76,7 +76,7 @@ Example of NES-controller wiring:
 
 - Install joystick library (needed only with some controllers - check list at top of this page)
 
-  Go to https://github.com/MHeironimus/ArduinoJoystickLibrary and press `Clone or download -> Download ZIP`.
+  Go to https://github.com/MHeironimus/ArduinoJoystickLibrary/tree/version-1.0 and press `Clone or download -> Download ZIP`.
   Extract Joystick2 folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows) or `~/Arduino/libraries` (Linux).
   
   After extraction check that you have files `%HOMEPATH%\Documents\Arduino\libraries\Joystick2\Joystick2.h and Joystick2.cpp` or `~/Arduino/libraries/Joystick2/Joystick2.h and Joystick2.cpp`.
