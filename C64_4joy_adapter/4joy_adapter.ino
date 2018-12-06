@@ -1,3 +1,26 @@
+// Arduino Pro Micro
+// http://cloud.cbm8bit.com/penfold42/joytester.zip
+// https://arduino.stackexchange.com/questions/8758/arduino-interruption-on-pin-change/8926
+
+#define up1 (~PD & _BV(7)) // 6,PD7
+#define down1 (~PC & _BV(6)) // 5,PC6
+#define left1 (~PD & _BV(4)) // 4,PD4
+#define right1 (~PD & _BV(0)) // 3,PD0
+#define fire1 (~PD & _BV(1)) // 2,PD1
+
+#define up2 (~PF & _BV(7)) // A0,PF7
+#define down2 (~PF & _BV(6)) // A1,PF6
+#define left2 (~PF & _BV(5)) // A2,PF5
+#define right2 (~PF & _BV(4)) // A3,PF4
+#define fire2 (~PE & _BV(6)) // 7,PE6
+
+#define upC 1 // 15,PB1
+#define downC 3 // 14,PB3
+#define leftC 2 // 16,PB2
+#define rightC 6 // 10,PB6
+#define fire1C 4 // 8,PB4
+#define fire2C 5 // 9,PB5
+
 volatile uint8_t output1;
 volatile uint8_t output2;
 
@@ -24,25 +47,6 @@ ISR(INT3_vect, ISR_NAKED) {
 }
 
 ISR(INT3_vect_part_2) {}
-
-#define up1 (~PD & _BV(7)) // 6,PD7
-#define down1 (~PC & _BV(6)) // 5,PC6
-#define left1 (~PD & _BV(4)) // 4,PD4
-#define right1 (~PD & _BV(0)) // 3,PD0
-#define fire1 (~PD & _BV(1)) // 2,PD1
-
-#define up2 (~PF & _BV(7)) // A0,PF7
-#define down2 (~PF & _BV(6)) // A1,PF6
-#define left2 (~PF & _BV(5)) // A2,PF5
-#define right2 (~PF & _BV(4)) // A3,PF4
-#define fire2 (~PE & _BV(6)) // 7,PE6
-
-#define upC 1 // 15,PB1
-#define downC 3 // 14,PB3
-#define leftC 2 // 16,PB2
-#define rightC 6 // 10,PB6
-#define fire1C 4 // 8,PB4
-#define fire2C 5 // 9,PB5
 
 void setup() {
   pinMode(5, INPUT_PULLUP); // pin5 (PC6) is input
