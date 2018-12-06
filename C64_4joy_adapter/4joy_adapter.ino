@@ -1,10 +1,13 @@
+// Protovision 4 player interface / Classical Games adapter (1997)
 // Arduino Pro Micro
+// https://en.wikipedia.org/wiki/Commodore_64_joystick_adapters
+// https://www.protovision.games/hardw/build4player.php?language=en
 // http://cloud.cbm8bit.com/penfold42/joytester.zip
 // https://arduino.stackexchange.com/questions/8758/arduino-interruption-on-pin-change/8926
 // http://www.pighixxx.net/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_red.png
 
 // TXD (INT3,PD3) and RXD (INT2,PD2) together and to userport L
-// INT2(RXD) is used for rising edge and INT3(TXD) for falling edge 
+// INT2(RXD) is used for rising edge and INT3(TXD) for falling edge
 
 
 // Joystick port 3
@@ -90,7 +93,7 @@ void loop() {
   if (right2) bitSet(joy2,rightC);
   if (fire1) { bitSet(joy1,fire1C); bitSet(joy2,fire1C); }
   if (fire2) { bitSet(joy1,fire2C); bitSet(joy2,fire2C); }
-  output1 = joy1; output2 = joy2;
+  output1 = ~joy1; output2 = ~joy2;
   //here should be something that updates even if interrupts doesn't trigger
   //Serial.print(joy1, BIN); Serial.print(" "); Serial.println(joy2, BIN); delay(100);
   //delayMicroseconds(50);
