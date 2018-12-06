@@ -6,7 +6,7 @@
 // https://arduino.stackexchange.com/questions/8758/arduino-interruption-on-pin-change/8926
 // http://www.pighixxx.net/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_red.png
 
-// TXD (INT3,PD3) and RXD (INT2,PD2) together and to userport L
+// TXD (INT3,PD3) and RXD (INT2,PD2) to userport L
 // INT2(RXD) is used for rising edge and INT3(TXD) for falling edge
 
 
