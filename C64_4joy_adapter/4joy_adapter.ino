@@ -39,6 +39,8 @@
 
 volatile uint8_t output1;
 volatile uint8_t output2;
+volatile uint16_t last_interrupt;
+volatile uint8_t mode = 0; // 0 = 3-joystick mode, 1 = 4-joystick mode
 
 ISR(INT2_vect, ISR_NAKED) {
     asm volatile(
@@ -50,7 +52,7 @@ ISR(INT2_vect, ISR_NAKED) {
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)));
 }
 
-ISR(INT2_vect_part_2) {}
+ISR(INT2_vect_part_2) { mode = 1; last_interrupt = TCNT1; }
 
 ISR(INT3_vect, ISR_NAKED) {
     asm volatile(
@@ -62,7 +64,7 @@ ISR(INT3_vect, ISR_NAKED) {
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)));
 }
 
-ISR(INT3_vect_part_2) {}
+ISR(INT3_vect_part_2) { mode = 1; last_interrupt = TCNT1; }
 
 void setup() {
   pinMode(5, INPUT_PULLUP); // pin5 (PC6) is input
@@ -76,25 +78,42 @@ void setup() {
   EIMSK = B1100;  // enable int2 (Bx1xx) and int3 (B1xxx)
 
   //Serial.begin(115200);
+
+  TIMSK1 = 0; // disable timer1 interrupts
+  TCCR1A = 0;
+  TCCR1B = B00000101; // Timer1, normal mode, prescaler 1024. One tick is 64us.
+  TCNT1 = 0;
 }
 
-uint8_t joy1, joy2, PB, PF, PD, PC, PE;
+uint8_t joy1, joy2, PF, PD, PC, PE;
 
 void loop() {
-  PB = PINB; PF = PINF; PD = PIND; PC = PINC; PE = PINE;
-  joy1 = 0; joy2 = 0;
-  if (up1) bitSet(joy1,upC);
-  if (down1) bitSet(joy1,downC);
-  if (left1) bitSet(joy1,leftC);
-  if (right1) bitSet(joy1,rightC);
-  if (up2) bitSet(joy2,upC);
-  if (down2) bitSet(joy2,downC);
-  if (left2) bitSet(joy2,leftC);
-  if (right2) bitSet(joy2,rightC);
-  if (fire1) { bitSet(joy1,fire1C); bitSet(joy2,fire1C); }
-  if (fire2) { bitSet(joy1,fire2C); bitSet(joy2,fire2C); }
-  output1 = ~joy1; output2 = ~joy2;
-  //here should be something that updates even if interrupts doesn't trigger
+  PF = PINF; PD = PIND; PC = PINC; PE = PINE;
+  joy1 = 0xff; joy2 = 0xff;
+  if (up1) bitClear(joy1,upC);
+  if (down1) bitClear(joy1,downC);
+  if (left1) bitClear(joy1,leftC);
+  if (right1) bitClear(joy1,rightC);
+  if (up2) bitClear(joy2,upC);
+  if (down2) bitClear(joy2,downC);
+  if (left2) bitClear(joy2,leftC);
+  if (right2) bitClear(joy2,rightC);
+  if (fire1) { bitClear(joy1,fire1C); bitClear(joy2,fire1C); }
+  if (fire2) { bitClear(joy1,fire2C); bitClear(joy2,fire2C); }
+  if (mode) { bitClear(joy1,0); bitClear(joy2,0); }
+  /*if (now > 50000) {
+    bitSet(joy1,0); bitSet(joy2,0);
+  }*/
+  output1 = joy1; output2 = joy2;
+
+  uint16_t now = TCNT1;
+  if (mode == 1) {
+    if ((now - last_interrupt) > 15625) mode = 0; // if there is no select-signal in 1s, fallback to 3-joystick mode 
+  } else {
+    PORTB = output1;  // 3-joystick mode, update repeatedly and only joystick 3
+  }
+  //PORTB = output1;  // 3-joystick mode, update repeatedly and only joystick 3
   //Serial.print(joy1, BIN); Serial.print(" "); Serial.println(joy2, BIN); delay(100);
+  //Serial.print(mode, BIN); Serial.print(" "); Serial.println(last_interrupt);
   //delayMicroseconds(50);
 }
