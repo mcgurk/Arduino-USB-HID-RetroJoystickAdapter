@@ -1,25 +1,38 @@
 // Arduino Pro Micro
 // http://cloud.cbm8bit.com/penfold42/joytester.zip
 // https://arduino.stackexchange.com/questions/8758/arduino-interruption-on-pin-change/8926
+// http://www.pighixxx.net/wp-content/uploads/2016/07/pro_micro_pinout_v1_0_red.png
 
-#define up1 (~PD & _BV(7)) // 6,PD7
-#define down1 (~PC & _BV(6)) // 5,PC6
-#define left1 (~PD & _BV(4)) // 4,PD4
-#define right1 (~PD & _BV(0)) // 3,PD0
-#define fire1 (~PD & _BV(1)) // 2,PD1
+// TXD (INT3,PD3) and RXD (INT2,PD2) together and to userport L
+// INT2(RXD) is used for rising edge and INT3(TXD) for falling edge 
 
-#define up2 (~PF & _BV(7)) // A0,PF7
-#define down2 (~PF & _BV(6)) // A1,PF6
-#define left2 (~PF & _BV(5)) // A2,PF5
-#define right2 (~PF & _BV(4)) // A3,PF4
-#define fire2 (~PE & _BV(6)) // 7,PE6
 
-#define upC 1 // 15,PB1
-#define downC 3 // 14,PB3
-#define leftC 2 // 16,PB2
-#define rightC 6 // 10,PB6
-#define fire1C 4 // 8,PB4
-#define fire2C 5 // 9,PB5
+// Joystick port 3
+// GND = GND (8)
+#define up1 (~PD & _BV(7)) // 6,PD7 = (1)
+#define down1 (~PC & _BV(6)) // 5,PC6 = (2)
+#define left1 (~PD & _BV(4)) // 4,PD4 = (3)
+#define right1 (~PD & _BV(0)) // 3,PD0 = (4)
+#define fire1 (~PD & _BV(1)) // 2,PD1 = (6)
+
+// Joystick port 4
+// GND = GND (8)
+#define up2 (~PF & _BV(7)) // A0,PF7 = (1)
+#define down2 (~PF & _BV(6)) // A1,PF6 = (2)
+#define left2 (~PF & _BV(5)) // A2,PF5 = (3)
+#define right2 (~PF & _BV(4)) // A3,PF4 = (4)
+#define fire2 (~PE & _BV(6)) // 7,PE6 = (6)
+
+// Arduino <-> Userport
+// VCC = +5V (2)
+// GND = GND (A)
+// TXD+RXD = Select = PB7 (L)
+#define upC 1 // 15,PB1 = PB0 (C) 
+#define downC 3 // 14,PB3 = PB1(D)
+#define leftC 2 // 16,PB2 = PB2 (E)
+#define rightC 6 // 10,PB6 = PB3 (F)
+#define fire1C 4 // 8,PB4 = PB4 (H)
+#define fire2C 5 // 9,PB5 = PB5 (J)
 
 volatile uint8_t output1;
 volatile uint8_t output2;
