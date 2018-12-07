@@ -118,6 +118,6 @@ void loop() {
 
   GPIOR0 = joy1; GPIOR1 = joy2;
 
-  PORTB = *ptr; // is this atomic? probably, because ptr is 6-bit ptr?
+  PORTB = *ptr; // is this atomic? probably, because ptr is 6-bit pointer?
   //delayMicroseconds(10);
 }
