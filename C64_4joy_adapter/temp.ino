@@ -46,7 +46,7 @@
 // RX = D17,PB0
 // TX = -,PD5
 
-volatile uint16_t last_interrupt;
+//volatile uint16_t last_interrupt;
 volatile uint8_t *ptr;
 
 ISR(INT2_vect, ISR_NAKED) { // rising edge, output joystick 3
@@ -59,7 +59,8 @@ ISR(INT2_vect, ISR_NAKED) { // rising edge, output joystick 3
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)), [gpio] "I" (_SFR_IO_ADDR(GPIOR0)));
 }
 
-ISR(INT2_vect_part_2) { ptr = &GPIOR0; last_interrupt = TCNT1; }
+//ISR(INT2_vect_part_2) { ptr = &GPIOR0; last_interrupt = TCNT1; }
+ISR(INT2_vect_part_2) { ptr = &GPIOR0; }
 
 ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
     asm volatile(
@@ -71,7 +72,8 @@ ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)), [gpio] "I" (_SFR_IO_ADDR(GPIOR1)));
 }
 
-ISR(INT3_vect_part_2) { ptr = &GPIOR1; last_interrupt = TCNT1; }
+//ISR(INT3_vect_part_2) { ptr = &GPIOR1; last_interrupt = TCNT1; }
+ISR(INT3_vect_part_2) { ptr = &GPIOR1; }
 
 void setup() {
   ptr = &GPIOR0;
@@ -91,10 +93,10 @@ void setup() {
   //PORTD &= ~_BV(5); // TX-LED on
 
   // We can't use millis() or micros() because Timer0 interrupts are disabled. We use 16-bit Timer1 with 1024 prescaler as "clock".
-  TIMSK1 = 0; // disable timer1 interrupts
+  /*TIMSK1 = 0; // disable timer1 interrupts
   TCCR1A = 0;
   TCCR1B = B00000101; // Timer1, normal mode, prescaler 1024. One tick is 64us.
-  TCNT1 = 0; // reset Timer1 counter
+  TCNT1 = 0; // reset Timer1 counter*/
 }
 
 volatile uint8_t joy1, joy2;
