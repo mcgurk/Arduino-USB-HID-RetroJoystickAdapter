@@ -48,8 +48,7 @@
 volatile uint8_t output1;
 volatile uint8_t output2;
 volatile uint16_t last_interrupt;
-volatile uint8_t mode = 0; // 0 = 3-joystick mode, 1 = 4-joystick mode
-volatile uint8_t last_joystick = 1;
+volatile uint8_t *ptr;
 
 ISR(INT2_vect, ISR_NAKED) { // rising edge, output joystick 3
     asm volatile(
