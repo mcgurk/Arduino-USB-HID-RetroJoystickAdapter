@@ -59,7 +59,6 @@ ISR(INT2_vect, ISR_NAKED) { // rising edge, output joystick 3
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)), [gpio] "I" (_SFR_IO_ADDR(GPIOR0)));
 }
 
-//ISR(INT2_vect_part_2) { ptr = &GPIOR0; last_interrupt = TCNT1; }
 ISR(INT2_vect_part_2) { ptr = &GPIOR0; }
 
 ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
@@ -72,7 +71,6 @@ ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)), [gpio] "I" (_SFR_IO_ADDR(GPIOR1)));
 }
 
-//ISR(INT3_vect_part_2) { ptr = &GPIOR1; last_interrupt = TCNT1; }
 ISR(INT3_vect_part_2) { ptr = &GPIOR1; }
 
 void setup() {
