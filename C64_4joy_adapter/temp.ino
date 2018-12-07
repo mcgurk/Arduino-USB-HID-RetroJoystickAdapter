@@ -46,8 +46,6 @@
 // RX = D17,PB0
 // TX = -,PD5
 
-volatile uint8_t output1;
-volatile uint8_t output2;
 volatile uint16_t last_interrupt;
 volatile uint8_t *ptr;
 
@@ -76,7 +74,7 @@ ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
 ISR(INT3_vect_part_2) { ptr = &GPIOR1; last_interrupt = TCNT1; }
 
 void setup() {
-  ptr = &output1;
+  ptr = &GPIOR0;
   
   pinMode(5, INPUT_PULLUP); // pin5 (PC6) is input
   pinMode(7, INPUT_PULLUP); // pin7 (PE6) is input
