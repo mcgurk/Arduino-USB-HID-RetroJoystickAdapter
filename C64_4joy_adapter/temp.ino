@@ -67,7 +67,7 @@ ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
     asm volatile(
     "    push r0                \n"  // save register r0
     "    lds r0, %[gpio]        \n"  // GPIOR1 address is 42 and out-command works only with 0-31
-    "    out %[pin], r0         \n"  // so we need lds-command
+    "    out %[pin], r0         \n"  // so we need lds-command and r0 register
     "    pop r0                 \n"  // restore previous r0
     "    rjmp INT3_vect_part_2  \n"  // go to part 2 for required prologue and epilogue
     :: [pin] "I" (_SFR_IO_ADDR(PORTB)), [gpio] "I" (_SFR_IO_ADDR(GPIOR1)));
@@ -90,7 +90,7 @@ void setup() {
   EIMSK = B1100;  // enable INT2 (Bx1xx) and INT3 (B1xxx)
 
   //Serial.begin(115200);
-  //PORTD &= ~_BV(5);
+  //PORTD &= ~_BV(5); // TX-LED on
 
   // We can't use millis() or micros() because Timer0 interrupts are disabled. We use 16-bit Timer1 with 1024 prescaler as "clock".
   TIMSK1 = 0; // disable timer1 interrupts
@@ -118,6 +118,6 @@ void loop() {
 
   GPIOR0 = joy1; GPIOR1 = joy2;
 
-  PORTB = *ptr; // can ISR occur while only one byte from 16-bit address is copied? should this be done interrupt off?
+  PORTB = *ptr; // is this atomic? probably, because ptr is 6-bit ptr?
   //delayMicroseconds(10);
 }
