@@ -34,13 +34,13 @@
 // Arduino <-> Userport
 // VCC = +5V (2)
 // GND = GND (A)
-// TXD+RXD = Select = PB7 (L)
 #define upC 1 // 15,PB1 = PB0 (C) 
 #define downC 3 // 14,PB3 = PB1 (D)
 #define leftC 2 // 16,PB2 = PB2 (E)
 #define rightC 6 // 10,PB6 = PB3 (F)
 #define fire1C 4 // 8,PB4 = PB4 (H)
 #define fire2C 5 // 9,PB5 = PB5 (J)
+#define selectC (PIND & _BV(2)) // RXD,PD2(INT2)+TXD,PD3(INT3) = PB7 (L)
 
 // LEDS (inverted):
 // RX = D17,PB0
@@ -74,13 +74,14 @@ ISR(INT3_vect, ISR_NAKED) { // falling edge, output joystick 4
 ISR(INT3_vect_part_2) { ptr = &GPIOR1; }
 
 void setup() {
-  ptr = &GPIOR0;
-  
+  DDRB = 0xff; PORTB = 0xff; //all PB-ports are outputs and high (0xff = zero state, because signals are inverted)
+  DDRF = 0; PORTF = 0xff; // all PF-ports are inputs with pullups
+  DDRD = B00100000; PORTD = B11110011; // all PD-ports are inputs (except PD5) with pullups (PD2,PD3 without pullup)
   pinMode(5, INPUT_PULLUP); // pin5 (PC6) is input
   pinMode(7, INPUT_PULLUP); // pin7 (PE6) is input
-  DDRB = 0xff; //all PB-ports are outputs
-  DDRF = 0; PORTF = 0xff; // all PF-ports are inputs with pullups
-  DDRD = B00100000; PORTD = B11010011; // all PD-ports are inputs (except PD5) with pullups (PD2,PD3 without pullup), TX-LED on
+
+  if (selectC) ptr = &GPIOR0; else ptr = &GPIOR1;
+  GPIOR0 = 0xff; GPIOR1 = 0xff; // start from zero state (signals are inverted)
   
   TIMSK0 = 0; // disable timer0 interrupts (Arduino Uno/Pro Micro millis()/micros() update ISR)
   
@@ -97,12 +98,10 @@ void setup() {
   TCNT1 = 0; // reset Timer1 counter*/
 }
 
-volatile uint8_t joy1, joy2;
-
 void loop() {
   uint8_t PF, PD, PC, PE;
   PF = PINF; PD = PIND; PC = PINC; PE = PINE;
-  joy1 = 0xff; joy2 = 0xff; // all signals are inverted
+  uint8_t joy1 = 0xff; uint8_t joy2 = 0xff; // all signals are inverted
   if (up1) bitClear(joy1,upC);
   if (down1) bitClear(joy1,downC);
   if (left1) bitClear(joy1,leftC);
