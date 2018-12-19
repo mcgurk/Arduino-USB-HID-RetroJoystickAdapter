@@ -16,7 +16,7 @@
 ```
 cli
 mov r31, r1
-mov r30, gpior2
+mov r30, gpior0
 ld	r24, Z
 out	0x05, r24
 sei
