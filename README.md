@@ -283,3 +283,6 @@ https://emu-docs.org/PC%20Engine/tg16cont.html
 
 https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq#ts-revive
 
+#### C64 Mini
+
+https://www.tsb.space/projects/c64-mini-arcade2usb-converter
