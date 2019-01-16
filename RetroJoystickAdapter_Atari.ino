@@ -33,7 +33,6 @@ inline void translateState(uint8_t data, uint8_t *state) {
 #define JOYSTICK_REPORT_ID  0x04
 #define JOYSTICK2_REPORT_ID 0x05
 
-//#define JOYSTICK_DATA_SIZE 1
 #define JOYSTICK_STATE_SIZE 3
 
 
@@ -85,14 +84,12 @@ class Joystick_ {
 private:
   uint8_t joystickId;
   uint8_t reportId;
-  //uint8_t olddata[JOYSTICK_DATA_SIZE];
   uint8_t olddata;
   uint8_t state[JOYSTICK_STATE_SIZE];
   uint8_t flag;
 
 public:
   uint8_t type;
-  //uint8_t data[JOYSTICK_DATA_SIZE];
   uint8_t data;
 
   Joystick_(uint8_t initJoystickId, uint8_t initReportId) {
@@ -109,18 +106,13 @@ public:
     joystickId = initJoystickId;
     reportId = initReportId;
   
-    //data[0] = 0;
-    //data[1] = 0;
     data = 0;
-    //memcpy(olddata, data, JOYSTICK_DATA_SIZE);
     olddata = data;
     translateState(data, state);
     sendState(1);
   }
 
   void updateState() {
-    //if (memcmp(olddata, data, JOYSTICK_DATA_SIZE)) {    
-      //memcpy(olddata, data, JOYSTICK_DATA_SIZE);
     if (olddata != data) {
       olddata = data;
       translateState(data, state);
@@ -153,12 +145,13 @@ Joystick_ Joystick[2] =
 
 
 void setup() {
+  //set all DB9-connector input signal pins as inputs with pullups
   for (uint8_t i = 0; i < 9; i++) {
     if (inputPinsPort1[i] != 0)
       pinMode(inputPinsPort1[i], INPUT_PULLUP);
     if (inputPinsPort2[i] != 0)
       pinMode(inputPinsPort2[i], INPUT_PULLUP);
-  } //without PULLUP every button are read as pressed down if controller is not connected.
+  }
   
   #ifdef DEBUG
   Serial.begin(115200);
@@ -178,10 +171,10 @@ void loop() {
     bitWrite(Joystick[1].data, i, digitalRead(inputPinsPort2[i])); //AXES2
   }
 
-  bitWrite(Joystick[0].data, 4, digitalRead(inputPinsPort1[5]));
-  bitWrite(Joystick[0].data, 5, digitalRead(inputPinsPort1[8]));
-  bitWrite(Joystick[1].data, 4, digitalRead(inputPinsPort2[5]));
-  bitWrite(Joystick[1].data, 5, digitalRead(inputPinsPort2[8]));
+  bitWrite(Joystick[0].data, 4, digitalRead(inputPinsPort1[5])); //JOY1:FIRE1
+  bitWrite(Joystick[0].data, 5, digitalRead(inputPinsPort1[8])); //JOY1:FIRE2
+  bitWrite(Joystick[1].data, 4, digitalRead(inputPinsPort2[5])); //JOY2:FIRE1
+  bitWrite(Joystick[1].data, 5, digitalRead(inputPinsPort2[8])); //JOY2:FIRE2
 
 
   #ifdef DEBUG
