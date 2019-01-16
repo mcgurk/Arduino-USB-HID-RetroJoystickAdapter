@@ -9,7 +9,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 - Nintendo Entertainment System controllers (NES) ²
 - Super Nintendo controllers (SNES) ²
-- [X-Arcade ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
+- [X-Arcade (X-Arcade/x-arcade.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
 - Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (RetroJoystickAdapter_Atari.ino) ² \*
 - [Sega Genesis / Megadrive controllers (3 and 6-button versions) (RetroJoystickAdapter_Megadrive.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/megadrive)
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
