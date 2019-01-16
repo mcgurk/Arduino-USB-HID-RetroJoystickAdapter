@@ -7,7 +7,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 ### Supported controllers
 
-- Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (RetroJoystickAdapter_Atari.ino) ² \*
+- Atari-joysticks (supports controllers with 2-fire buttons) (RetroJoystickAdapter_Atari.ino) ² \*
 - [Sega Genesis / Megadrive controllers (3 and 6-button versions) (RetroJoystickAdapter_Megadrive.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/megadrive)
 - Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
