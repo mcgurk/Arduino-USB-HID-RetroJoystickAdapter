@@ -3,7 +3,7 @@ const uint8_t inputPinsPort1[] =  { 5,  6,  7,  8,  0,  4,  0,  0,  A2};
 const uint8_t inputPinsPort2[] =  {10, 16, 14, 15,  0,  3,  0,  0,  A1};
 //(1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 9 = btn2)
 
-#define DEBUG
+//#define DEBUG
 
 inline void translateState(uint8_t data, uint8_t *state) {
   state[0] = !bitRead(data, 4) | !bitRead(data, 5)<<1;
