@@ -282,6 +282,10 @@ https://github.com/NicoHood/Nintendo/wiki/Gamecube
 
 https://emu-docs.org/PC%20Engine/tg16cont.html
 
+#### MSX
+
+https://www.msx.org/wiki/Joystick_control
+
 #### How to reset Arduino (in case of emergency)
 
 https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq#ts-revive
