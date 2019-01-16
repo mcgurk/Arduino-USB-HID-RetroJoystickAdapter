@@ -1,5 +1,5 @@
 //DB9-connector:
-//Sega Mastersystem: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 9 = btn2, 8 = gnd
+//C64/Sega Mastersystem: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 8 = gnd, 9 = btn2 
 //MSX: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 7 = btn2, 8 = gnd
 
 // define pins of Arduino:          UP, DOWN, LEFT, RIGHT, BTN1, BTN2
