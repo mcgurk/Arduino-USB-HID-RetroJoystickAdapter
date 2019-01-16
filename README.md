@@ -6,16 +6,19 @@ Tested with Windows and Linux desktop computers and ARM based computers like Ras
 ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keyboard device it is easy to make adapter for many mobile devices which don't have gamepad-support out of box. I have tested it with Samsung Galaxy S4 Android phone and Samsung Galaxy Tab 10.1 Android tablet with OTG-USB cable.
 
 ### Supported controllers
-- Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²
+
 - Nintendo Entertainment System controllers (NES) ²
 - Super Nintendo controllers (SNES) ²
-- Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²
+- [X-Arcade ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
+- Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (RetroJoystickAdapter_Atari.ino) ² \*
 - [Sega Genesis / Megadrive controllers (3 and 6-button versions) (RetroJoystickAdapter_Megadrive.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/megadrive)
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
 - Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
 - Wii Nunchuck and Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiExtension.ino) (3.3V!) \*
 - [AT and PS/2 Keyboard](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Keyboard_PS2)
 - [X-Arcade ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
+- (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²)
+- (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²)
 
 ² = 2 controllers supported
 
