@@ -2,7 +2,7 @@
 //Sega Mastersystem: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 9 = btn2, 8 = gnd
 //MSX: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 7 = btn2, 8 = gnd
 
-                                 // UP, DOWN, LEFT, RIGHT, BTN1, BTN2
+// define pins of Arduino:          UP, DOWN, LEFT, RIGHT, BTN1, BTN2
 const uint8_t inputPinsPort1[] =  {  5,    6,    7,     8,    4,   A2};
 const uint8_t inputPinsPort2[] =  { 10,   16,   14,    15,    3,   A1};
 
