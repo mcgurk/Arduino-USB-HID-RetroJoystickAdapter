@@ -1,7 +1,11 @@
-//DB9 (8=GND):                      1   2   3   4   5   6   7   8   9
-const uint8_t inputPinsPort1[] =  { 5,  6,  7,  8,  0,  4,  0,  0,  A2};
-const uint8_t inputPinsPort2[] =  {10, 16, 14, 15,  0,  3,  0,  0,  A1};
-//(1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 9 = btn2)
+//DB9-connector:
+//Sega Mastersystem: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 9 = btn2, 8 = gnd
+//MSX: 1 = up, 2 = down, 3 = left, 4 = right, 6 = btn1, 7 = btn2, 8 = gnd
+
+                                 // UP, DOWN, LEFT, RIGHT, BTN1, BTN2
+const uint8_t inputPinsPort1[] =  {  5,    6,    7,     8,    4,   A2};
+const uint8_t inputPinsPort2[] =  { 10,   16,   14,    15,    3,   A1};
+
 
 //#define DEBUG
 
@@ -146,11 +150,9 @@ Joystick_ Joystick[2] =
 
 void setup() {
   //set all DB9-connector input signal pins as inputs with pullups
-  for (uint8_t i = 0; i < 9; i++) {
-    if (inputPinsPort1[i] != 0)
-      pinMode(inputPinsPort1[i], INPUT_PULLUP);
-    if (inputPinsPort2[i] != 0)
-      pinMode(inputPinsPort2[i], INPUT_PULLUP);
+  for (uint8_t i = 0; i < 6; i++) {
+    pinMode(inputPinsPort1[i], INPUT_PULLUP);
+    pinMode(inputPinsPort2[i], INPUT_PULLUP);
   }
   
   #ifdef DEBUG
@@ -171,10 +173,10 @@ void loop() {
     bitWrite(Joystick[1].data, i, digitalRead(inputPinsPort2[i])); //AXES2
   }
 
-  bitWrite(Joystick[0].data, 4, digitalRead(inputPinsPort1[5])); //JOY1:FIRE1
-  bitWrite(Joystick[0].data, 5, digitalRead(inputPinsPort1[8])); //JOY1:FIRE2
-  bitWrite(Joystick[1].data, 4, digitalRead(inputPinsPort2[5])); //JOY2:FIRE1
-  bitWrite(Joystick[1].data, 5, digitalRead(inputPinsPort2[8])); //JOY2:FIRE2
+  bitWrite(Joystick[0].data, 4, digitalRead(inputPinsPort1[4])); //JOY1:FIRE1
+  bitWrite(Joystick[0].data, 5, digitalRead(inputPinsPort1[5])); //JOY1:FIRE2
+  bitWrite(Joystick[1].data, 4, digitalRead(inputPinsPort2[4])); //JOY2:FIRE1
+  bitWrite(Joystick[1].data, 5, digitalRead(inputPinsPort2[5])); //JOY2:FIRE2
 
 
   #ifdef DEBUG
