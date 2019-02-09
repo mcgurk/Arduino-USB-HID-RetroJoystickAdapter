@@ -32,6 +32,7 @@ C64:
 //   2        N/C
 //   1        11      8 - A8 		PB4		1
 ```
+C64_matrix.sc:
 ```
 	sense			PB6			PB2		PB3			PB1		PF7		PF6		PF5		PF4		PD3
 	strobe	PD1		1			ESC		LCTRL		PAUSE	SPACE	LGUI	Q		2		UNASSIGNED
