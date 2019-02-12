@@ -15,7 +15,8 @@
 ```
 
 ## Setup
-Download configfile. Check pin order to match your setup.
+- Download configfile. Check pin order to match your setup.
+- Compile and upload config file to Arduino Pro Micro
 ```
 .\scas C64_matrix.sc C64_matrix.bin
 .\scwr C64_matrix.bin
