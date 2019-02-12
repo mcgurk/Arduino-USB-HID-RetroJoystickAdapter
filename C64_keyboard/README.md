@@ -1,3 +1,5 @@
+# Poor man's "Keyrah" to connect C64 keyboard to USB
+
 ## Building
 - Solder all keyboard connector pins to Arduino Pro Micro.
 - You can solder Restore key (connector pin "I") paraller to some other pin. I soldered "I" and "G" to Arduino pin A8.
