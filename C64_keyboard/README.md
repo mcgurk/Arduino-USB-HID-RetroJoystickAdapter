@@ -1,13 +1,26 @@
-C64:
-- https://geekhack.org/index.php?topic=50437.0
-- https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
-- Soarer_Controller_v1.20_beta4.zip (26.10.2013)
-- https://www.waitingforfriday.com/wp-content/uploads/2017/01/C64_Keyboard_Schematics_PNG.png
-- http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
-- https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
-- https://github.com/dabonetn/C64USBKey/blob/master/C64USBKeyboard2.ino
-- https://raw.githubusercontent.com/abzman/Keyboard-config-file/master/C64_matrix.sc
+## Building
+- Solder all keyboard connector pins to Arduino Pro Micro.
+- You can solder Restore key (connector pin "I") paraller to some other pin. I soldered "I" and "G" to Arduino pin A8.
 
+## Firmware/flashing
+- Download Soarer controller firmware: https://geekhack.org/index.php?topic=50437.0
+- Install Arduino IDE
+- Connect RST to GND couple of times to get Arduino Pro Micro to programming mode (notice that com-port is different in programming mode in Windows)
+- Flash firmware
+```
+& "C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m32u4 -c avr109 -P COM5 -b 57600 -U flash:w:firmware\Soarer_Controller_v1.20_beta4_atmega32u4.hex:i
+```
+
+
+
+## Setup
+Download configfile. Check pin order to match your setup.
+```
+.\scas C64_matrix.sc C64_matrix.bin
+.\scwr C64_matrix.bin
+```
+
+## Pins I used
 ```
 //KeyBoard Arduino Pro Micro 
 //  Pin     Pin     Label			GPIO	pin (kirjaimet = columns (rivit), numerot = rows (otsikot))
@@ -30,28 +43,13 @@ C64:
 //   4        N/C
 //   3        1       1 - TX		PD3		8
 //   2        N/C
-//   1        11      8 - A8 		PB4		1
-```
-C64_matrix.sc:
-```
-	sense			PB6			PB2		PB3			PB1		PF7		PF6		PF5		PF4		PD3
-	strobe	PD1		1			ESC		LCTRL		PAUSE	SPACE	LGUI	Q		2		UNASSIGNED
-	strobe	PD0		3			W		A			LSHIFT	Z		S		E		4		UNASSIGNED
-	strobe	PD4		5			R		D			X		C		F		T		6		UNASSIGNED
-	strobe	PC6		7			Y		G			V		B		H		U		8		UNASSIGNED
-	strobe	PD7		9			I		J			N		M		K		O		0		UNASSIGNED
-	strobe	PE6		LANG_1		P		L			COMMA	PERIOD	LANG_3	LANG_4	MINUS	UNASSIGNED
-	strobe	PB4		BACKSLASH	LANG_2	SEMICOLON	SLASH	RSHIFT	EQUAL	INSERT	HOME	LANG_5
-	strobe	PB5		BACKSPACE	ENTER	RIGHT		DOWN	F1		F3		F5		F7		UNASSIGNED
-```
-Reset to GND couple of times, then (notice that com-port is different in programming mode):
-```
-& "C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m32u4 -c avr109 -P COM5 -b 57600 -U flash:w:firmware\Soarer_Controller_v1.20_beta4_atmega32u4.hex:i
-```
-```
-.\scas C64_matrix.sc C64_matrix.bin
-.\scwr C64_matrix.bin
-```
-Tallettuu vaikka firmiksen uudelleenflashais!!!
-http://www.keyboardtester.com/tester.html
+//   1        11      8 - A8 		PB4		I
 
+
+## Links
+- https://geekhack.org/index.php?topic=50437.0
+- https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
+- Soarer_Controller_v1.20_beta4.zip (26.10.2013)
+- https://www.waitingforfriday.com/wp-content/uploads/2017/01/C64_Keyboard_Schematics_PNG.png
+- http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
+- I used this as starting point: https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
