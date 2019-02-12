@@ -2,7 +2,8 @@
 
 ## Building
 - Solder all keyboard connector pins to Arduino Pro Micro.
-- You can solder Restore key (connector pin "I") paraller to some other pin. I soldered "I" and "G" to Arduino pin A8.
+- You can solder Restore key (connector pin "I") paraller to some other pin. I soldered "I" and "G" to Arduino pin A8. (this is actually not needed, because there is one free pin left)
+- You can also connect LED of C64 to VCC/GND of Arduino. I used 220ohm resistor.
 
 ## Firmware/flashing
 - Download Soarer controller firmware: https://geekhack.org/index.php?topic=50437.0
@@ -12,8 +13,6 @@
 ```
 & "C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m32u4 -c avr109 -P COM5 -b 57600 -U flash:w:firmware\Soarer_Controller_v1.20_beta4_atmega32u4.hex:i
 ```
-
-
 
 ## Setup
 Download configfile. Check pin order to match your setup.
