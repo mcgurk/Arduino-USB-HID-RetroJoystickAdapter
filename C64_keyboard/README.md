@@ -21,6 +21,8 @@
 .\scas C64_matrix.sc C64_matrix.bin
 .\scwr C64_matrix.bin
 ```
+## Testing
+- https://keycode.info/
 
 ## Pins I used
 ```
