@@ -1,4 +1,4 @@
-# Poor man's "Keyrah" to connect C64 keyboard to USB
+# Poor man's "Keyrah" to connect C64 keyboard to USB (for BMC64)
 
 ## Building
 - Solder all keyboard connector pins to Arduino Pro Micro.
@@ -50,6 +50,9 @@
 //   1        11      8 - A8 		PB4		I
 ```
 
+## Issue
+
+- "+", "-", "£", "@" and "*" doesn't produce GFX-chars when shifted
 
 ## Links
 
