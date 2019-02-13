@@ -1,3 +1,13 @@
+## Building
+- Arduino Pro Micro
+- UP(1) -> 10(PB6)
+- DOWN(2) -> 16(PB2)
+- LEFT(3) -> 14(PB3)
+- RIGHT(4) -> 15(PB1)
+- BTN1(6) -> 9(PB5)
+- BTN2(9, MSX 7) -> 8
+- GND(8) -> GND(PB4)
+
 ## Firmware/flashing
 - Install Arduino IDE
 - Download firmware: https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/C64_joystick_atmelstudio/CLASS_JOYSTICK1.hex
