@@ -60,8 +60,8 @@ PB5,4
 ## Joystick.c
 SetupHardware (before USB_INIT):
 ```
-	DDRB = 0x0; //PORTB=input
-	PORTB = 0xff; //PORTB=pullup
+	DDRB = 0x00; //PB0-7 -> input
+	PORTB = 0xff; //PB0-7 -> pullup
 ```
   
 CALLBACK_HID_Device_CreateHIDReport (before report size):
