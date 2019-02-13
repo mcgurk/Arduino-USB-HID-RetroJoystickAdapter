@@ -1,5 +1,5 @@
 ## Building
-- Arduino Pro Micro
+- 9-pin D-connector -> Arduino Pro Micro
 - UP(1) -> 10(PB6)
 - DOWN(2) -> 16(PB2)
 - LEFT(3) -> 14(PB3)
