@@ -1,4 +1,4 @@
-# Poor man's "Keyrah" to connect C64 keyboard to USB (for BMC64)
+# Poor man's "Keyrah" to connect C64 keyboard to USB (for BMC64 emulator)
 
 ![Controller](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/C64_keyboard/Soarer_controller_for_C64.jpg)
 
