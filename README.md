@@ -18,6 +18,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Nintendo Entertainment System controllers (NES) ²
 - Super Nintendo controllers (SNES) ²
 - [Simple one joystick two button Atari-joystick adapter made with Atmel Studio \(should be very compatible\)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_joystick_atmelstudio)
+- [C64 keyboard adapter for BMC64 made with Soarer's keyboard controller firmware](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_keyboard)
 - (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²)
 - (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²)
 
