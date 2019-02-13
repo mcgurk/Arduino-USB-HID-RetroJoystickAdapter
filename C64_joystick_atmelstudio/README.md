@@ -48,7 +48,7 @@ PB6,2,3,1
 PB5,4
 ```
 ## Joystick.c
-SetupHardware (before USB_INIT();):
+SetupHardware (before USB_INIT):
 ```
 	DDRB = 0x0; //PORTB=input
 	PORTB = 0xff; //PORTB=pullup
