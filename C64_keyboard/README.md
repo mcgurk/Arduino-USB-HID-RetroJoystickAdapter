@@ -62,3 +62,4 @@
 - https://www.waitingforfriday.com/wp-content/uploads/2017/01/C64_Keyboard_Schematics_PNG.png
 - http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
 - I used this as starting point: https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
+- C64-emulator for Raspberry Pi 2/3: http://accentual.com/bmc64/
