@@ -5,7 +5,7 @@
 - LEFT(3) -> 14(PB3)
 - RIGHT(4) -> 15(PB1)
 - BTN1(6) -> 9(PB5)
-- BTN2(9, MSX 7) -> 8(PB4) (optional)
+- BTN2(C64/SMS:9, MSX:7) -> 8(PB4) (optional)
 - GND(8) -> GND
 
 ## Firmware/flashing
