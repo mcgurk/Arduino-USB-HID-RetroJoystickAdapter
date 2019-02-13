@@ -7,24 +7,24 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 ### Supported controllers
 
-- Atari-joysticks (supports controllers with 2-fire buttons) (RetroJoystickAdapter_Atari.ino) ² \*
-- [Sega Genesis / Megadrive controllers (3 and 6-button versions) (RetroJoystickAdapter_Megadrive.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/megadrive)
-- Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino) \*
-- Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
-- Wii Nunchuck and Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiExtension.ino) (3.3V!) \*
-- [X-Arcade (X-Arcade/x-arcade.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
+- Atari-joysticks (supports controllers with 2-fire buttons) (RetroJoystickAdapter_Atari.ino) ²
+- [Sega Genesis / Megadrive controllers (3 and 6-button versions) (RetroJoystickAdapter_Megadrive.ino) ²](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/megadrive)
+- Sony Playstation with Analog and Multitap 4 controllers support (RetroJoystickAdapter_Playstation.ino)
+- Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!) \*
+- Wii Nunchuck and Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiExtension.ino) (3.3V!)
+- [X-Arcade (X-Arcade/x-arcade.ino) ²](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
 - [AT and PS/2 Keyboard to 4 joysticks \(Keyboard_PS2/RetroJoystickAdapter_PS2-keyboard.ino\)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Keyboard_PS2)
 - [Soarer's programmable AT and PS/2 adapter \(works with X-arcade too\) \(PS2_Soarer_Converter/\)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/PS2_Soarer_Converter)
-- Nintendo Entertainment System controllers (NES) (RetroJoystickAdapter.ino) ²
-- Super Nintendo controllers (SNES) (RetroJoystickAdapter.ino) ²
+- Nintendo Entertainment System controllers (NES) (RetroJoystickAdapter.ino) \* ²
+- Super Nintendo controllers (SNES) (RetroJoystickAdapter.ino) \* ²
 - [Simple one joystick two button Atari-joystick adapter made with Atmel Studio \(should be very compatible\) \(C64_joystick_atmelstudio/\)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_joystick_atmelstudio)
 - [C64 keyboard adapter for BMC64 made with Soarer's keyboard controller firmware \(C64_keyboard/\)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_keyboard)
-- (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²)
-- (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ²)
+- (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) \* ²)
+- (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) \* ²)
 
 ² = 2 controllers supported
 
-\* = doesn't need Joystick-library
+\* = needs Joystick-library
 
 If you use Linux and want to get more than 1 controller with one Arduino, check "Linux and more than one controller with one Arduino"-topic in this same page.
 
