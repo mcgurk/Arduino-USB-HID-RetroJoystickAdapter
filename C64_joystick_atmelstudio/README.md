@@ -1,3 +1,13 @@
+## Firmware/flashing
+- Install Arduino IDE
+- Download firmware: https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/C64_joystick_atmelstudio/CLASS_JOYSTICK1.hex
+- Connect RST to GND couple of times to get Arduino Pro Micro to programming mode (notice that com-port is different in programming mode in Windows)
+- Flash firmware
+```
+& "C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m32u4 -c avr109 -P COM5 -b 57600 -U flash:w:CLASS_JOYSTICK1.hex:i
+```
+
+## Muistiinpanoja
 ```
 13.2.2019:
 Koko ATmega32U4 tuntuu puuttuvan...
