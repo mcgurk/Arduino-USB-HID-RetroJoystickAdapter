@@ -13,7 +13,8 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Nintendo 64 controller (RetroJoystickAdapter_N64.ino) (3.3V!)
 - Wii Nunchuck and Classic Controller (and maybe Pro, not tested) (RetroJoystickAdapter_WiiExtension.ino) (3.3V!) \*
 - [X-Arcade (X-Arcade/x-arcade.ino) ² \*](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/X-Arcade)
-- [AT and PS/2 Keyboard (Keyboard_PS2/RetroJoystickAdapter_PS2-keyboard.ino)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Keyboard_PS2)
+- [AT and PS/2 Keyboard to 4 joysticks (Keyboard_PS2/RetroJoystickAdapter_PS2-keyboard.ino)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Keyboard_PS2)
+- [Soarer's programmable AT and PS/2 adapter (works with X-arcade too)](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/PS2_Soarer_Converter)
 - Nintendo Entertainment System controllers (NES) ²
 - Super Nintendo controllers (SNES) ²
 - (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ²)
