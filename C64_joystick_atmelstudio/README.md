@@ -1,3 +1,5 @@
+## Very simple 2 button single Atari-joystick adapter for Arduino Pro Micro (ATmega32U4). Made with Atmel Studio 7 and Lufa.
+
 ## Building
 - 9-pin D-connector -> Arduino Pro Micro
 - UP(1) -> 10(PB6)
