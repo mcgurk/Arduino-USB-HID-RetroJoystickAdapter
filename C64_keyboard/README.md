@@ -17,7 +17,7 @@
 ```
 
 ## Setup
-- Download configfile. Check pin order to match your setup.
+- Download [config file](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/C64_keyboard/C64_matrix.sc). Check pin order to match your setup.
 - Compile and upload config file to Arduino Pro Micro
 ```
 .\scas C64_matrix.sc C64_matrix.bin
