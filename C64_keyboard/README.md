@@ -28,28 +28,27 @@
 
 ## Pins I used
 ```
-//KeyBoard Arduino Pro Micro 
-//  Pin     Pin     Label			GPIO	pin (kirjaimet = columns (rivit), numerot = rows (otsikot))
-//   20       5       2 - SDA		PD1		A
-//   19       6       3 - SCL		PD0		B
-//   18       7       4 - A6		PD4		C
-//   17       8       5			PC6		D
-//   16       9       6 - A7		PD7		E
-//   15       10      7 - 		PE6		F
-//   14       11      8 - A8 		PB4		G
-//   13       12      9 - A9 		PB5		H
-//   12       13      10 - A10 		PB6		0
-//   11       14      16 - MOSI 	PB2		1
-//   10       15      14 - MISO 	PB3		2
-//   9        16      15 - SCLK 	PB1		3
-//   8        17      18 - A0 		PF7		4
-//   7        18      19 - A1 		PF6		5
-//   6        19      20 - A2 		PF5		6
-//   5        20      21 - A3 		PF4		7
+//   Pin    Label
+//   20(A)  2(D2/PD1)
+//   19(B)  3(D3/PD0)
+//   18(C)  4(D4/PD4)
+//   17(D)  5(D5/PC6)
+//   16(E)  6(D6/PD7)
+//   15(F)  7(D7/PE6)
+//   14(G)  8(D8/PB4)
+//   13(H)  9(D9/PB5)
+//   12(0)  10(D10/PB6)
+//   11(1)  16(D16/PB2)
+//   10(2)  14(D14/PB3)
+//   9(3)   15(D15/PB1)
+//   8(4)   18(A0/PF7)
+//   7(5)   19(A1/PF6)
+//   6(6)   20(A2/PF5)
+//   5(7)   21(A3/PF4)
 //   4        N/C
-//   3        1       1 - TX		PD3		8
+//   3(8)   TX(D1/PD3)
 //   2        N/C
-//   1        11      8 - A8 		PB4		I
+//   1(I)   8(D8/PB4)
 ```
 
 ## Issue
