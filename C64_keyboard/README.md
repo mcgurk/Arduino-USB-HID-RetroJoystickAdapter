@@ -59,7 +59,7 @@
 
 - https://geekhack.org/index.php?topic=50437.0
 - https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
-- Soarer_Controller_v1.20_beta4.zip (26.10.2013)
+- Newest I found was Soarer_Controller_v1.20_beta4.zip from 26.10.2013
 - https://www.waitingforfriday.com/wp-content/uploads/2017/01/C64_Keyboard_Schematics_PNG.png
 - http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
 - I used this as starting point: https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
