@@ -4,7 +4,7 @@
 
 ## Building
 - Solder all keyboard connector pins to Arduino Pro Micro.
-- You can solder Restore key (connector pin "I") paraller to some other pin. I soldered "I" and "G" to Arduino pin A8. (this is actually not needed, because there is one free pin left) [Pins I used](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/blob/master/C64_keyboard/README.md#pins-i-used)
+- You can solder Restore key (connector pin "I") paraller to some other pin. I soldered "I" and "G" to Arduino pin A8. (this is actually not needed, because there is one free pin left). [Pins I used](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/blob/master/C64_keyboard/README.md#pins-i-used).
 - You can also connect LED of C64 to VCC/GND of Arduino. I used 220ohm resistor.
 
 ## Firmware/flashing
