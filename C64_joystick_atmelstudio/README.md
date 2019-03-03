@@ -22,11 +22,7 @@
 ## Muistiinpanoja
 ```
 13.2.2019:
-Koko ATmega32U4 tuntuu puuttuvan...
-Löytyy kyllä kun tekee uuden projektin...
-Examplet puuttuu kaikki...
 Tools->Extensions and Updates...->Lufa
-Nyt löytyy.
 Lufa->New Example Project->FourWalledCubicle - Dean Camera->Joystick HID Device Demo (Class Driver APIs) - AVR8 Architecture
 Project->Properties->Change Device...->ATmega32U4 (rutkuttaa jotain, mutta suostuu silti)
 
