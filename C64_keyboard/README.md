@@ -23,6 +23,10 @@
 .\scas C64_matrix.sc C64_matrix.bin
 .\scwr C64_matrix.bin
 ```
+
+## Menu key
+Commodore key + F7 sends F12 (Menu)
+
 ## Testing
 - https://keycode.info/
 
