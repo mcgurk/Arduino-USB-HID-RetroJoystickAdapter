@@ -8,7 +8,8 @@
 - You can also connect LED of C64 to VCC/GND of Arduino. I used 220ohm resistor.
 
 ## Firmware/flashing
-- Download Soarer controller firmware: https://geekhack.org/index.php?topic=50437.0
+- Download Soarer controller firmware (Soarer_Controller_v1.20_beta4.zip): https://geekhack.org/index.php?topic=50437.0 (or https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html)
+- Extract /firmware/Soarer_Controller_v1.20_beta4_atmega32u4.hex from Soarer_Controller_v1.20_beta4.zip
 - Install Arduino IDE
 - Connect RST to GND couple of times to get Arduino Pro Micro to programming mode (notice that com-port is different in programming mode in Windows)
 - Flash firmware
