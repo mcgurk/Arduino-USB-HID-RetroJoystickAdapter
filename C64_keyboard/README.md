@@ -60,6 +60,16 @@ Commodore key + F7 sends F12 (Menu)
 
 - "+", "-", "£", "@" and "*" doesn't produce GFX-chars when shifted
 
+#### "Repair" rpi_sym.vkm?
+- at 5 6 0 -> 5 6 8
+- minus 5 3 0 -> 5 3 8
+- plus 5 0 0 -> 5 0 8
+- sterling 6 0 0 -> 6 0 8
+- asterisk 6 1 0 -> 6 1 8
+```
+sed -i 's/5 6 0/5 6 8/g; s/5 3 0/5 3 8/g; s/5 0 0/5 0 8/g; s/6 0 0/6 0 8/g; s/6 1 0/6 1 8/g' rpi_sym.vkm
+```
+
 ## Links
 
 - https://geekhack.org/index.php?topic=50437.0
