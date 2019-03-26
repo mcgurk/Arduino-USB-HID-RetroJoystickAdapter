@@ -26,7 +26,7 @@
 ```
 
 ## Menu key
-- .crt-files doesn't work with C= + F7, so as workaround SHIFT + F7 is F12.
+- .crt-files doesn't work with C= + F7, so as workaround LSHIFT + F7 is F12.
 
 ## Testing
 - https://keycode.info/
