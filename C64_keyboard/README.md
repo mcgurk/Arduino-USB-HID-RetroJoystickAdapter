@@ -26,7 +26,8 @@
 ```
 
 ## Menu key
-Commodore key + F7 sends F12 (Menu)
+- .crt-files doesn't work with C= + F7, so as workaround SHIFT + F7 is F12.
+- (After problem is fixed, I change back to that Commodore key + F7 sends F12 (Menu))
 
 ## Testing
 - https://keycode.info/
