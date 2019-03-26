@@ -38,7 +38,7 @@ end
 # semicolon (;) = QUOTE
 
 macroblock
-	macro F7 SHIFT		# SHIFT + F7 = F12
+	macro F7 LSHIFT		# LSHIFT + F7 = F12
 		PRESS F12
 		CLEAR_ALL
 	endmacro
