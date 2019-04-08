@@ -37,10 +37,10 @@ end
 # colon (:) = SEMICOLON
 # semicolon (;) = QUOTE
 
-macroblock
-	macro F7 LSHIFT		# LSHIFT + F7 = F12
-		PRESS F12
-		CLEAR_ALL
-	endmacro
-endblock
+# macroblock
+#	macro F7 LSHIFT		# LSHIFT + F7 = F12
+#		PRESS F12
+#		CLEAR_ALL
+#	endmacro
+# endblock
 
