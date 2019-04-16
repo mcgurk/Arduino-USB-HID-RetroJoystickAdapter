@@ -186,8 +186,10 @@ PS2KeyRaw keyboard;
 
 void setup() {
   keyboard.begin(DATAPIN, IRQPIN);
+  #ifdef DEBUG
   Serial.begin(115200);
   Serial.println( "PS2 Raw Test of PS2 Keyboard codes" );
+  #endif
   Joystick[0].data[0] = 0x00;
   Joystick[0].data[1] = 0x00;
   Joystick[0].data[2] = 0x00;
