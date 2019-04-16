@@ -90,13 +90,8 @@ sudo apt install build-essential
 unzip Soarer_Converter_v1.10.zip
 cd tools
 unzip Soarer_sctools_v1.10_source.zip
-cd common
-gcc -c hid_tokens.cpp macro_tokens.cpp
-cd ../scas
-g++ scas.cpp -o scas ../common/hid_tokens.o ../common/macro_tokens.o
-cd ../scwr
-gcc scwr.c -o scwr
-
+cd build/linux
+make
 ```
 
 
