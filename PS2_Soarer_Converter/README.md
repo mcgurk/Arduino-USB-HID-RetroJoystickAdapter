@@ -102,14 +102,16 @@ Soarer_Controller_v1.20_beta4.zip
 ```
 # scas xarcade.txt xarcade.bin
 # scwr xarcade.bin
+
+# important!:
 force set2ext
 
 # dir1 keypad 8 (75),2 (72),4 (6B),6 (74)
 # sel1 3
 # start1 1
-# A,B,C: vas shift (12),Z,X
-# X,Y,Z: vas ctrl (14),vas alt (11),space (29)
-# alanapit: c,5
+# A,B,C: left shift (12),Z,X
+# X,Y,Z: left ctrl (14),left alt (11),space (29)
+# lowerbuttons: c,5
 
 remapblock
 # left controller
@@ -154,5 +156,5 @@ endblock
 # start2 2
 # A,B,C: w,e,}(å)(54="[")
 # X,Y,Z: a,s,q
-# alanapit: ;(¨)(5B="]"),6
+# lowerbuttons: ;(¨)(5B="]"),6
 ```
