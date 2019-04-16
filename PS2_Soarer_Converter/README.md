@@ -84,6 +84,22 @@ scwr xarcade.bin
 
 For deleting all settings, make empty file and assemble and upload it.
 
+### Compile tools with Linux (Raspberry Pi, Orange Pi)
+```
+sudo apt install build-essential
+unzip Soarer_Converter_v1.10.zip
+cd tools
+unzip Soarer_sctools_v1.10_source.zip
+cd common
+gcc -c hid_tokens.cpp macro_tokens.cpp
+cd ../scas
+g++ scas.cpp -o scas ../common/hid_tokens.o ../common/macro_tokens.o
+cd ../scwr
+gcc scwr.c -o scwr
+
+```
+
+
 ## Links
 - https://geekhack.org/index.php?topic=17458.0
 - http://www.computer-engineering.org/ps2protocol/
