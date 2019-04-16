@@ -84,7 +84,7 @@ scwr xarcade.bin
 
 For deleting all settings, make empty file and assemble and upload it.
 
-### Compile tools with Linux (Raspberry Pi, Orange Pi)
+### Compile tools with Linux (e.g. Raspberry Pi, Orange Pi)
 ```
 sudo apt install build-essential
 unzip Soarer_Converter_v1.10.zip
