@@ -58,11 +58,14 @@ Bootloader mode: RST to GND two times. You have couple of seconds to start flash
 hid_listen.exe: https://www.pjrc.com/teensy/hid_listen.html
 
 ## Settings/Tools/Docs
-https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
+Docs (Soarer_Converter_v1.12_docs.zip):
+- https://deskthority.net/workshop-f7/xt-at-ps2-terminal-to-usb-converter-with-nkro-t2510.html
+- https://deskthority.net/download/file.php?id=8833
+- Key names/codes: docs/codes.html
 
-Tools and docs (Soarer_Converter_v1.10.zip): https://deskthority.net/resources/file/6142
-
-Key names/codes: docs/codes.html
+Tools (Soarer_Controller_v1.20_beta4.zip):
+- https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
+- https://deskthority.net/download/file.php?id=9907
 
 Compile text file to binary
 ```
