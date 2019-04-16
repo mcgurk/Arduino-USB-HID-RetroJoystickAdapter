@@ -76,12 +76,15 @@ Upload config (effective immediately)
 scwr xarcade.bin
 ```
 
+For deleting all settings, make empty file and assemble and upload it.
+
 ## Links
 - https://geekhack.org/index.php?topic=17458.0
 - http://www.computer-engineering.org/ps2protocol/
 - http://www.computer-engineering.org/ps2keyboard/
 - http://www.computer-engineering.org/ps2keyboard/scancodes2.html
 - test: https://www.microsoft.com/appliedsciences/KeyboardGhostingDemo.mspx
+- test: https://keycode.info/
 
 ## Keyboard controller
 - https://geekhack.org/index.php?topic=50437.0
