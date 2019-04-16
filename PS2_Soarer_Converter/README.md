@@ -63,9 +63,11 @@ Docs (Soarer_Converter_v1.12_docs.zip):
 - https://deskthority.net/download/file.php?id=8833
 - Key names/codes: docs/codes.html
 
-Tools (Soarer_Controller_v1.20_beta4.zip):
-- https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
-- https://deskthority.net/download/file.php?id=9907
+Tools from Soarer_Controller_v1.20_beta4.zip doesn't work!
+```
+protocol version check: converter=1.00, scwr=1.00: ok
+settings version check: converter=1.01, file=1.03: failed
+```
 
 Compile text file to binary
 ```
