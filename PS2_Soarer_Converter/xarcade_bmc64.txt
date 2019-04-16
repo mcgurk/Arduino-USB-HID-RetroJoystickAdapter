@@ -13,11 +13,11 @@ force set2ext
 
 remapblock
 # left controller
-	# PAD_8 # stick -> up
-	# PAD_2 # stick -> down
-	# PAD_4 # stick -> left
-	# PAD_6 # stick -> right
-	LSHIFT	PAD_5 # A -> fire
+	PAD_8 UP # stick -> up
+	PAD_2 DOWN # stick -> down
+	PAD_4 LEFT # stick -> left
+	PAD_6 RIGHT # stick -> right
+	LSHIFT	LCTRL # A -> fire
 	
 	Z	SPACE # B -> space
 	X	F7 # C -> F7
@@ -25,17 +25,17 @@ remapblock
 	LALT	F3 # Y -> F3
 	SPACE	F5 # Z -> F5
 	C	F12 # bottomleft -> F12
-	5	LCTRL # bottomright -> Commodore
+	5	PAGE_UP # bottomright -> Restore
 	3	ESC # select -> Run-Stop
 	1	ENTER # start -> Return
 
 
 # right controller
-	R	PAD_9 # stick -> up
-	F	PAD_3 # stick -> down
-	D	PAD_7 # stick -> left
-	G	PAD_1 # stick -> right
-	W	PAD_0 # A -> fire
+	R	PAD_8 # stick -> up
+	F	PAD_2 # stick -> down
+	D	PAD_4 # stick -> left
+	G	PAD_6 # stick -> right
+	W	PAD_5 # A -> fire
 
 	E	SPACE # B -> space
 	LEFT_BRACE	1 # C -> 1
