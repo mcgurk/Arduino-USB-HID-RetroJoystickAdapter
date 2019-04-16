@@ -159,7 +159,7 @@ endblock
 # lowerbuttons: ;(¨)(5B="]"),6
 ```
 
-## X-Arcade BMC64 emulator (bmc64.txt)
+## X-Arcade BMC64 emulator (xarcade_bmc64.txt)
 ```
 # scas xarcade.txt xarcade.bin
 # scwr xarcade.bin
