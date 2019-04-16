@@ -10,8 +10,8 @@ https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/PS2_S
 
 ```
 D9-connector -> Arduino Pro Micro
-6 (data) -> 3
-5 (clk) -> 2
+6 (data) -> 3 (PD0)
+5 (clk) -> 2 (PD1)
 1 (5V) -> Vcc
 2 (PS/2-mode) -> Vcc
 9 (5V) -> Vcc
