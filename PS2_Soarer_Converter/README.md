@@ -158,3 +158,63 @@ endblock
 # X,Y,Z: a,s,q
 # lowerbuttons: ;(¨)(5B="]"),6
 ```
+
+## X-Arcade BMC64 emulator (bmc64.txt)
+```
+# scas xarcade.txt xarcade.bin
+# scwr xarcade.bin
+
+# important!:
+force set2ext
+
+# dir1 keypad 8 (75),2 (72),4 (6B),6 (74)
+# sel1 3
+# start1 1
+# A,B,C: left shift (12),Z,X
+# X,Y,Z: left ctrl (14),left alt (11),space (29)
+# lowerbuttons: c,5
+
+remapblock
+# left controller
+	# PAD_8 # stick -> up
+	# PAD_2 # stick -> down
+	# PAD_4 # stick -> left
+	# PAD_6 # stick -> right
+	LSHIFT	PAD_5 # A -> fire
+	
+	Z	SPACE # B -> space
+	X	F7 # C -> F7
+	LCTRL	F1 # X -> F1
+	LALT	F3 # Y -> F3
+	SPACE	F5 # Z -> F5
+	C	F12 # bottomleft -> F12
+	5	LCTRL # bottomright -> Commodore
+	3	ESC # select -> Run-Stop
+	1	ENTER # start -> Return
+
+
+# right controller
+	R	PAD_9 # stick -> up
+	F	PAD_3 # stick -> down
+	D	PAD_7 # stick -> left
+	G	PAD_1 # stick -> right
+	W	PAD_0 # A -> fire
+
+	E	SPACE # B -> space
+	LEFT_BRACE	1 # C -> 1
+	A	2 # X -> 2
+	S	3 # Y -> 3
+	Q	4 # Z -> 4
+	RIGHT_BRACE	5 # bottomleft -> 5
+	6	6 # bottomright -> 6
+	2	7 # select -> 7
+	4	8 # start -> 8
+endblock
+
+# dir2 r,f,d,g
+# sel2 4
+# start2 2
+# A,B,C: w,e,}(å)(54="[")
+# X,Y,Z: a,s,q
+# lowerbuttons: ;(¨)(5B="]"),6
+```
