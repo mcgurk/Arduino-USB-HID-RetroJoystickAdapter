@@ -1,5 +1,8 @@
 # Arduino_X-Arcade_USB-adapter
 
+## Keyboard
+https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/PS2_Soarer_Converter
+
 ## 2 Joysticks
 
 "Old" PS/2 -version of X-arcade.
@@ -32,5 +35,4 @@ PS/2 keyboard not needed.
 
 Takes only about 10mA.
 
-## Keyboard
-https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/PS2_Soarer_Converter
+
