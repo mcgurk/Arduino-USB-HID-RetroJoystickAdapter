@@ -27,6 +27,7 @@ sei
 - https://forum.arduino.cc/index.php?topic=43760.5
 - http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_regbind
 - volatile register unsigned char my_register asm("r2");
+- https://www.avrfreaks.net/forum/binding-variable-register
 
 ## running code from ram
 - https://forum.arduino.cc/index.php?topic=425962.0
