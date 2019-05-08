@@ -27,3 +27,7 @@ sei
 - https://forum.arduino.cc/index.php?topic=43760.5
 - http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_regbind
 - volatile register unsigned char my_register asm("r2");
+
+## running code from ram
+- https://forum.arduino.cc/index.php?topic=425962.0
+- "AVRs are Harvard architecture CPUs, so they CANNOT run code out of RAM, so that directive can't possibly do anything of any value whatsoever."
