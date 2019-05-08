@@ -4,7 +4,7 @@
 
 ```
  cli // 1 clock
- PORTB = *ptr; // is this atomic? probably, because ptr is 6-bit pointer.
+ PORTB = *ptr; // is this atomic? probably, because ptr is 6-bit pointer. nope...
  f98:	e0 91 26 01 	lds	r30, 0x0126	; 0x800126 <__data_end> // 2 clocks
  f9c:	f0 91 27 01 	lds	r31, 0x0127	; 0x800127 <__data_end+0x1> // 2 clocks
  fa0:	80 81       	ld	r24, Z // 1 clock
