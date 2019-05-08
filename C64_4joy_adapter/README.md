@@ -30,4 +30,6 @@ sei
 
 ## running code from ram
 - https://forum.arduino.cc/index.php?topic=425962.0
+- https://forum.arduino.cc/index.php?topic=470631.0
 - "AVRs are Harvard architecture CPUs, so they CANNOT run code out of RAM, so that directive can't possibly do anything of any value whatsoever."
+- "Yes, Harvard IS the reason.  A Harvard CPU, by definition, has separate code and data memory spaces.  They execute code from one memory, and fetch data from a different memory.  What you're seeing is most likely the compiler pretending the directive can do what you want, but the linker doing the only thing it can do - putting that code in FLASH."
