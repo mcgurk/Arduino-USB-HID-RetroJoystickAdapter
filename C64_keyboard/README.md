@@ -75,7 +75,8 @@ sed -i 's/5 6 0/5 6 8/g; s/5 3 0/5 3 8/g; s/5 0 0/5 0 8/g; s/6 0 0/6 0 8/g; s/6 
 - https://geekhack.org/index.php?topic=50437.0
 - https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
 - Newest I found was Soarer_Controller_v1.20_beta4.zip from 26.10.2013
-- Soarer configfile documentation: https://deskthority.net/download/file.php?id=8833 (Soarer_Converter_v1.12_docs.zip)
+- Soarer config file documentation: https://deskthority.net/download/file.php?id=8833 (Soarer_Converter_v1.12_docs.zip)
+- Keynames used in config file from https://deskthority.net/download/file.php?id=8833 (Soarer_Converter_v1.12_docs.zip): /docs/codes.html
 - https://www.waitingforfriday.com/wp-content/uploads/2017/01/C64_Keyboard_Schematics_PNG.png
 - http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
 - I used this as starting point: https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
