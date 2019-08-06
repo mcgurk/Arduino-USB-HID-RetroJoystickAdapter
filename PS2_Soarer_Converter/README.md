@@ -51,7 +51,7 @@ https://sourceforge.net/projects/winavr/
 ```
 avrdude -p m32u4 -b 57600 -P com5 -c avr109 -U flash:w:Soarer_at2usb_v1.12_atmega32u4.hex
 ```
-If you have Windows 10 and installed Arduino IDE:
+If you have Windows 10 and installed Arduino IDE you can flash directly from PowerShell:
 ```
 & "C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avrdude.exe" -C "C:\Program Files (x86)\Arduino\hardware\tools\avr\etc\avrdude.conf" -p m32u4 -b 57600 -P com5 -c avr109 -U flash:w:Soarer_at2usb_v1.12_atmega32u4.hex
 ```
