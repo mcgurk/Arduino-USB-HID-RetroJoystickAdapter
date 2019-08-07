@@ -25,8 +25,6 @@
 .\scwr C64_matrix.bin
 ```
 
-## Menu key
-- .crt-files doesn't work with C= + F7, so as workaround LSHIFT + F7 is F12.
 
 ## Testing
 - https://keycode.info/
@@ -56,7 +54,12 @@
 //   1(I)   8(D8/PB4)
 ```
 
-## Issue (fixed in newer BCM64 versions)
+## Issues
+
+### Issue with Menu key (fixed in newer BCM64 versions)
+- .crt-files doesn't work with C= + F7, so as workaround LSHIFT + F7 is F12.
+
+### Issue with shift (fixed in newer BCM64 versions)
 
 - "+", "-", "£", "@" and "*" doesn't produce GFX-chars when shifted
 
