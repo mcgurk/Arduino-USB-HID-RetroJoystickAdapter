@@ -56,7 +56,7 @@
 //   1(I)   8(D8/PB4)
 ```
 
-## Issue
+## Issue (fixed in newer BCM64 versions)
 
 - "+", "-", "£", "@" and "*" doesn't produce GFX-chars when shifted
 
