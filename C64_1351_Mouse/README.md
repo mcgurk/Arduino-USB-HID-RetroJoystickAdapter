@@ -3,7 +3,7 @@
 #### Requirements
 
 - Arduino Pro Micro 16MHz 5V (or Arduino Uno 16MHz 5V)
-- USB Host Shield (USB Host Shield Library 2.0 from Arduino IDE Library Manager)
+- USB Host Shield MAX3421EE (USB Host Shield Library 2.0 from Arduino IDE Library Manager)
 - 2pcs 10k resistors
 - Level shifter for 6 pins
 
