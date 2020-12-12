@@ -1,8 +1,10 @@
 
-#define DATA1 2
-#define CMD1 3
-#define ATT1 4
-#define CLK1 5
+// 5V (red)
+// GND (black)
+#define DATA1 2 // (brown)
+#define CMD1 3 // (orange)
+#define ATT1 4 // (yellow)
+#define CLK1 5 // (blue)
 
 /*#define DATA2 6
 #define CMD2 7
