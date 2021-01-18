@@ -54,10 +54,11 @@
 #define PS_O (data[1] & ( 1 << 5 ))
 #define PS_X (data[1] & ( 1 << 6 ))
 #define PS_S (data[1] & ( 1 << 7 ))
-#define PS_LX ((data[4]-128)*256)
-#define PS_LY ((-data[5]+127)*256)
-#define PS_RX ((data[2]-128)*256)
-#define PS_RY ((-data[3]+127)*256)
+
+#define PS_LX (((uint16_t)data[4]*257)-32768) // 0..255 -> -32768..32767
+#define PS_LY (((255-(uint16_t)data[5])*257)-32768) // 0..255 -> 32767..-32768
+#define PS_RX (((uint16_t)data[2]*257)-32768) // 0..255 -> -32768..32767
+#define PS_RY (((255-(uint16_t)data[3])*257)-32768) // 0..255 -> 32767..-32768
 
 uint8_t head;
 uint8_t type;
