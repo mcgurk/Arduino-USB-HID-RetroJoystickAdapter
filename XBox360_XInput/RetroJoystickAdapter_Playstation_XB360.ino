@@ -54,7 +54,6 @@
 #define PS_O (data[1] & ( 1 << 5 ))
 #define PS_X (data[1] & ( 1 << 6 ))
 #define PS_S (data[1] & ( 1 << 7 ))
-
 #define PS_LX (((uint16_t)data[4]*257)-32768) // 0..255 -> -32768..32767
 #define PS_LY (((255-(uint16_t)data[5])*257)-32768) // 0..255 -> 32767..-32768
 #define PS_RX (((uint16_t)data[2]*257)-32768) // 0..255 -> -32768..32767
@@ -66,98 +65,6 @@ uint8_t padding;
 uint8_t data[JOYSTICK_STATE_SIZE];
 uint8_t olddata[JOYSTICK_STATE_SIZE];
 uint8_t flag;
-
-/*
-void setup() {
-  XInput.begin();
-}
-
-void loop() {
-  XInput.press(BUTTON_A);
-  delay(1000);
-  
-  XInput.release(BUTTON_A);
-  delay(1000);
-}*/
-
-
-
-
-/*
-class Joystick_ {
-
-private:
-  uint8_t joystickId;
-  uint8_t reportId;
-  uint8_t olddata[JOYSTICK_STATE_SIZE];
-  uint8_t flag;
-
-public:
-  uint8_t type;
-  uint8_t data[JOYSTICK_STATE_SIZE];
-
-  Joystick_(uint8_t initJoystickId, uint8_t initReportId) {
-    // Setup HID report structure
-    static bool usbSetup = false;
-  
-    if (!usbSetup) {
-      static HIDSubDescriptor node(hidReportDescriptor, sizeof(hidReportDescriptor));
-      HID().AppendDescriptor(&node);
-      usbSetup = true;
-    }
-    
-    // Initalize State
-    joystickId = initJoystickId;
-    reportId = initReportId;
-  
-    data[0] = 0;
-    data[1] = 0;
-    data[2] = 127;
-    data[3] = 127;
-    data[4] = 127;
-    data[5] = 127;
-    memcpy(olddata, data, JOYSTICK_STATE_SIZE);
-    sendState(1);
-  }
-
-  void updateState() {
-    if (type != 0x73 && type != 0x53) {
-      data[2] = 127;
-      data[3] = 127;
-      data[4] = 127;
-      data[5] = 127;
-    }
-    if (type == 0x41 || type == 0x73 || type == 0x53) {
-      if (memcmp(olddata, data, JOYSTICK_STATE_SIZE)) {    
-        memcpy(olddata, data, JOYSTICK_STATE_SIZE);
-        flag = 1;
-      }
-    }
-    //sendState();
-  }
-
-  void sendState(uint8_t force = 0) {
-    if (flag || force) {
-      // HID().SendReport(Report number, array of values in same order as HID descriptor, length)
-      HID().SendReport(reportId, data, JOYSTICK_STATE_SIZE);
-      flag = 0;
-    }
-  }
-
-};
-
-
-Joystick_ Joystick[4] =
-{
-    Joystick_(0, JOYSTICK_REPORT_ID),
-    Joystick_(1, JOYSTICK2_REPORT_ID),
-    Joystick_(2, JOYSTICK3_REPORT_ID),
-    Joystick_(3, JOYSTICK4_REPORT_ID)
-};*/
-
-
-
-
 
 uint8_t shift(uint8_t _dataOut) // Does the actual shifting, both in and out simultaneously
 {
@@ -237,20 +144,20 @@ void loop() {
 
   #ifdef XINPUT
   if (data[0] != olddata[0]) {
-    if (PS_select) XInput.press(BUTTON_BACK); else XInput.release(BUTTON_BACK); //7
-    if (PS_start) XInput.press(BUTTON_START); else XInput.release(BUTTON_START); //8
-    if (PS_L3) XInput.press(BUTTON_L3); else XInput.release(BUTTON_L3); //9
-    if (PS_R3) XInput.press(BUTTON_R3); else XInput.release(BUTTON_R3); //10
+    if (PS_select) XInput.press(BUTTON_BACK); else XInput.release(BUTTON_BACK); //btn_7
+    if (PS_start) XInput.press(BUTTON_START); else XInput.release(BUTTON_START); //btn_8
+    if (PS_L3) XInput.press(BUTTON_L3); else XInput.release(BUTTON_L3); //btn_9
+    if (PS_R3) XInput.press(BUTTON_R3); else XInput.release(BUTTON_R3); //btn_10
     XInput.setDpad(PS_up, PS_down, PS_left, PS_right);
     olddata[0] = data[0];
   }
   if (data[1] != olddata[1]) {
-    if (PS_X) XInput.press(BUTTON_A); else XInput.release(BUTTON_A); //1
-    if (PS_O) XInput.press(BUTTON_B); else XInput.release(BUTTON_B); //2
-    if (PS_S) XInput.press(BUTTON_X); else XInput.release(BUTTON_X); //3
-    if (PS_T) XInput.press(BUTTON_Y); else XInput.release(BUTTON_Y); //4
-    if (PS_L1) XInput.press(BUTTON_LB); else XInput.release(BUTTON_LB); //5
-    if (PS_R1) XInput.press(BUTTON_RB); else XInput.release(BUTTON_RB); //6
+    if (PS_X) XInput.press(BUTTON_A); else XInput.release(BUTTON_A); //btn_1
+    if (PS_O) XInput.press(BUTTON_B); else XInput.release(BUTTON_B); //btn_2
+    if (PS_S) XInput.press(BUTTON_X); else XInput.release(BUTTON_X); //btn_3
+    if (PS_T) XInput.press(BUTTON_Y); else XInput.release(BUTTON_Y); //btn_4
+    if (PS_L1) XInput.press(BUTTON_LB); else XInput.release(BUTTON_LB); //btn_5
+    if (PS_R1) XInput.press(BUTTON_RB); else XInput.release(BUTTON_RB); //btn_6
     if (PS_L2) XInput.setTrigger(TRIGGER_LEFT, 255); else XInput.setTrigger(TRIGGER_LEFT, 0);
     if (PS_R2) XInput.setTrigger(TRIGGER_RIGHT, 255); else XInput.setTrigger(TRIGGER_RIGHT, 0);
     olddata[1] = data[1];
