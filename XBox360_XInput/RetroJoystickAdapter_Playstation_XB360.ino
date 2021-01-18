@@ -105,6 +105,7 @@ void setup() {
   #endif
 
   #ifdef XINPUT
+  XInput.setAutoSend(false);
   XInput.begin();
   #endif
 
@@ -166,6 +167,7 @@ void loop() {
   XInput.setJoystick(JOY_RIGHT, PS_RX, PS_RY); //left-right: -32768..32767, down-up: 32767..-32768
   #endif
 
+  XInput.send();
 
   delayMicroseconds(1000);
 
