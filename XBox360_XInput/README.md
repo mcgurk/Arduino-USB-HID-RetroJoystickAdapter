@@ -11,3 +11,7 @@ XInput by David Madison
 Game Controller Tester
 
 - Doesn't go to flashing mode automatically. Connect RST to GND to get Arduino Pro Micro to programming mode.
+
+
+- Arduino Pro Micro needs PB0/SS-pin to work. And it is not broken out. So no SPI I guess? 
+https://forum.arduino.cc/index.php?topic=427828.0
