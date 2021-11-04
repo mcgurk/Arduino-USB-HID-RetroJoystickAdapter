@@ -26,7 +26,7 @@ CLK (white or purple) -> 2 (PD1)
 GND (black) -> GND
 
 ```
-#### Library
+### Library
 PS2KeyRaw
 
 Arduino Pro Micro (select Arduino Leonardo from Arduino IDE).
@@ -36,3 +36,6 @@ PS/2 keyboard not needed.
 Takes only about 10mA.
 
 
+## Linux: keyboard -> joystick
+- https://github.com/dmadison/ArduinoXInput
+- https://superuser.com/questions/837464/treat-usb-keyboard-as-gamepad
