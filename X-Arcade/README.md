@@ -39,3 +39,4 @@ Takes only about 10mA.
 ## Linux: keyboard -> joystick
 - https://github.com/dmadison/ArduinoXInput
 - https://superuser.com/questions/837464/treat-usb-keyboard-as-gamepad
+- https://wiki.archlinux.org/title/Gamepad#Mimic_Xbox_360_controller_with_other_controllers
