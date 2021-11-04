@@ -40,3 +40,6 @@ Takes only about 10mA.
 - https://github.com/dmadison/ArduinoXInput
 - https://superuser.com/questions/837464/treat-usb-keyboard-as-gamepad
 - https://wiki.archlinux.org/title/Gamepad#Mimic_Xbox_360_controller_with_other_controllers
+
+## RetroPie / Keyboard
+- https://retropie.org.uk/forum/topic/8987/guide-setting-up-a-retropie-controls-using-ipac2-controller-extensive-tutorial-preconfigured-files
