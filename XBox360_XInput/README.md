@@ -10,6 +10,8 @@ XInput by David Madison
 - Tester from Windows Store:
 Game Controller Tester
 
+- Online tester: https://gamepad-tester.com/
+
 - Doesn't go to flashing mode automatically. Connect RST to GND to get Arduino Pro Micro to programming mode.
 
 ## PsxNewLib
