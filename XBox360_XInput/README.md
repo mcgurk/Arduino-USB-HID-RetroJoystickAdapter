@@ -24,7 +24,7 @@ https://forum.arduino.cc/index.php?topic=427828.0
 
 PSX | SPI | Uno | Pro Micro
 --- | --- | --- | ---
-DATA/2 (brown ![#brown](https://via.placeholder.com/15/c68c53/000000?text=+)) | MISO | D12 (PB4) | D14 (PB3)
+DATA/2 (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO | D12 (PB4) | D14 (PB3)
 CMD/3 (orange ![#orange](https://via.placeholder.com/10/ff8000/000000?text=+)) | MOSI | D11 (PB3) | D16 (PB2)
 CLK/5 (blue ![#blue](https://via.placeholder.com/10/0000ff/000000?text=+)) | SCK | D13 (PB5) | D15 (PB1)
 ATT/4 (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | SS | D10 (PB2) | D17 (PB0/RX_LED)
