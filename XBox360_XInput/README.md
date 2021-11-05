@@ -37,9 +37,9 @@ PSX | SPI | Uno | Pro Micro
 9 ACK (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | |
  | | | |
 1 VCC (3.3V) | | |
-2 SCL | | |
+2 SCL | | A5 (PC5) | D3 (PD0)
 3 Detect device (3.3V) | - | - | -
 4 NC | | |
-5 SDA | | |
+5 SDA | | A4 (PC4) | D2 (PD1)
 6 GND | | |
 
