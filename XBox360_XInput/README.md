@@ -35,4 +35,11 @@ PSX | SPI | Uno | Pro Micro
 7 CLK (blue ![#blue](https://via.placeholder.com/10/0000ff/000000?text=+)) | SCK | D13 (PB5) | D15 (PB1)
 8 unknown (white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | |
 9 ACK (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | |
+ | | | |
+1 VCC (3.3V) | | |
+2 SCL | | |
+3 Detect device (3.3V) | - | - | -
+4 NC | | |
+5 SDA | | |
+6 GND | | |
 
