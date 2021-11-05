@@ -39,7 +39,7 @@ PSX | SPI | Uno | Pro Micro | notes
 Wii | | | | |
 1 VCC (3.3V) | | | |
 2 SCL | | A5 (PC5) | D3 (PD0) |
-3 Detect device (3.3V) | - | - | - |
+3 Detect device (3.3V) | | | |
 4 NC | | | |
 5 SDA | | A4 (PC4) | D2 (PD1) |
 6 GND | | | |
