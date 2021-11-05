@@ -24,12 +24,13 @@ https://forum.arduino.cc/index.php?topic=427828.0
 
 PSX | SPI | Uno | Pro Micro
 --- | --- | --- | ---
-DATA/2 (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO | D12 (PB4) | D14 (PB3)
-CMD/3 (orange ![#orange](https://via.placeholder.com/10/ff8000/000000?text=+)) | MOSI | D11 (PB3) | D16 (PB2)
-CLK/5 (blue ![#blue](https://via.placeholder.com/10/0000ff/000000?text=+)) | SCK | D13 (PB5) | D15 (PB1)
-ATT/4 (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | SS | D10 (PB2) | D17 (PB0/RX_LED)
-(red ![#red](https://via.placeholder.com/10/ff0000/000000?text=+)) | | |
-GND (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | |
-(green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | |
-(white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | |
+1 DATA (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO | D12 (PB4) | D14 (PB3)
+2 CMD (orange ![#orange](https://via.placeholder.com/10/ff8000/000000?text=+)) | MOSI | D11 (PB3) | D16 (PB2)
+3 Vibration power (7.2-9V) | | |
+4 GND (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | |
+5 VCC (3.3V) (red ![#red](https://via.placeholder.com/10/ff0000/000000?text=+)) | | |
+6 ATT (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | SS | D10 (PB2) | D17 (PB0/RX_LED)
+7 CLK (blue ![#blue](https://via.placeholder.com/10/0000ff/000000?text=+)) | SCK | D13 (PB5) | D15 (PB1)
+8 unknown (white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | |
+9 ACK (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | |
 
