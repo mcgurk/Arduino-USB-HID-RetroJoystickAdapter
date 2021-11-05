@@ -21,6 +21,7 @@ https://forum.arduino.cc/index.php?topic=427828.0
 - https://github.com/SukkoPera/PsxNewLib
 - https://github.com/SukkoPera/PsxControllerShield
 - https://github.com/SukkoPera/PsxControllerShield/blob/master/doc/schematics.pdf
+- (my green dualshock analog controller: SCPH-1200)
 
 PSX | SPI | Uno | Pro Micro
 --- | --- | --- | ---
