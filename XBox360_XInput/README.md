@@ -26,7 +26,7 @@ PSX | SPI | Uno | Pro Micro
 --- | --- | --- | ---
 1 DATA (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO | D12 (PB4) | D14 (PB3)
 2 CMD (orange ![#orange](https://via.placeholder.com/10/ff8000/000000?text=+)) | MOSI | D11 (PB3) | D16 (PB2)
-3 Vibration power (7.2-9V) | | |
+3 Vibration power (7.2-9V) (grey ![#grey](https://via.placeholder.com/10/999999/000000?text=+)) | | |
 4 GND (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | |
 5 VCC (3.3V) (red ![#red](https://via.placeholder.com/10/ff0000/000000?text=+)) | | |
 6 ATT (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | SS | D10 (PB2) | D17 (PB0/RX_LED)
