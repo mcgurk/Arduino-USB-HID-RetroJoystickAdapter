@@ -26,7 +26,7 @@ https://forum.arduino.cc/index.php?topic=427828.0
 - https://github.com/SukkoPera/PsxNewLib/issues/12
 
 PSX | SPI | Uno | Pro Micro | notes
---- | --- | --- | ---
+--- | --- | --- | --- | ---
 1 DATA (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO &rightarrow; | D12 (PB4) | D14 (PB3) |
 2 CMD (orange ![#orange](https://via.placeholder.com/10/ff8000/000000?text=+)) | MOSI &leftarrow; | D11 (PB3) | D16 (PB2) |
 3 Vibration power (7.2-9V) (grey ![#grey](https://via.placeholder.com/10/999999/000000?text=+)) | | | |
