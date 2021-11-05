@@ -32,7 +32,7 @@ PSX | SPI | Uno | Pro Micro | notes
 3 Vibration power (7.2-9V) (grey ![#grey](https://via.placeholder.com/10/999999/000000?text=+)) | | | |
 4 GND (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | GND | GND |
 5 VCC (3.3V) (red ![#red](https://via.placeholder.com/10/ff0000/000000?text=+)) | | VCC | VCC |
-6 ATT (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | SS &leftarrow; | D10 (PB2) | D10 | (pro micro: SS would be D17 (PB0/RX_LED), but there is no pin D17)
+6 ATT (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | SS &leftarrow; | D10 (PB2) | D10 | <sub><sup>(pro micro: SS would be D17 (PB0/RX_LED), but there is no pin D17)</sub></sup>
 7 CLK (blue ![#blue](https://via.placeholder.com/10/0000ff/000000?text=+)) | SCK &leftarrow; | D13 (PB5) | D15 (PB1) |
 8 unknown (white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | | |
 9 ACK (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | | | (when this is needed?)
