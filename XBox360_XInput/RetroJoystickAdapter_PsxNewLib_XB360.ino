@@ -303,28 +303,8 @@ void loop () {
     dirty = false;
   }
   #endif
-  delayMicroseconds(1000);
-
-  /*#ifdef XINPUT
-  if (data[0] != olddata[0]) {
-    if (PS_select) XInput.press(BUTTON_BACK); else XInput.release(BUTTON_BACK); //btn_7
-    if (PS_start) XInput.press(BUTTON_START); else XInput.release(BUTTON_START); //btn_8
-    if (PS_L3) XInput.press(BUTTON_L3); else XInput.release(BUTTON_L3); //btn_9
-    if (PS_R3) XInput.press(BUTTON_R3); else XInput.release(BUTTON_R3); //btn_10
-    XInput.setDpad(PS_up, PS_down, PS_left, PS_right);
-    olddata[0] = data[0];
-  }
-  if (data[1] != olddata[1]) {
-    if (PS_X) XInput.press(BUTTON_A); else XInput.release(BUTTON_A); //btn_1
-    if (PS_O) XInput.press(BUTTON_B); else XInput.release(BUTTON_B); //btn_2
-    if (PS_S) XInput.press(BUTTON_X); else XInput.release(BUTTON_X); //btn_3
-    if (PS_T) XInput.press(BUTTON_Y); else XInput.release(BUTTON_Y); //btn_4
-    if (PS_L1) XInput.press(BUTTON_LB); else XInput.release(BUTTON_LB); //btn_5
-    if (PS_R1) XInput.press(BUTTON_RB); else XInput.release(BUTTON_RB); //btn_6
-    if (PS_L2) XInput.setTrigger(TRIGGER_LEFT, 255); else XInput.setTrigger(TRIGGER_LEFT, 0);
-    if (PS_R2) XInput.setTrigger(TRIGGER_RIGHT, 255); else XInput.setTrigger(TRIGGER_RIGHT, 0);
-    olddata[1] = data[1];
-  }
-  #endif*/
+  
+  //delayMicroseconds(1000);
+  delay(10);
 
 }
