@@ -22,7 +22,7 @@ Game Controller Tester
 
 PSX | SPI | Uno | Pro Micro | notes
 --- | --- | --- | --- | ---
-1 DATA (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO &rightarrow; | D12 (PB4) | D14 (PB3) |
+1 DATA (brown ![#brown](https://via.placeholder.com/10/c68c53/000000?text=+)) | MISO &rightarrow; | D12 (PB4) | D14 (PB3) | Use 1k pullup resistor to 3.3V line!
 2 CMD (orange ![#orange](https://via.placeholder.com/10/ff8000/000000?text=+)) | MOSI &leftarrow; | D11 (PB3) | D16 (PB2) |
 3 Vibration power (7.2-9V) (grey ![#grey](https://via.placeholder.com/10/999999/000000?text=+)) | | | |
 4 GND (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | GND | GND |
