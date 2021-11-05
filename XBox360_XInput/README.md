@@ -12,11 +12,6 @@ Game Controller Tester
 
 - Doesn't go to flashing mode automatically. Connect RST to GND to get Arduino Pro Micro to programming mode.
 
-
-- Arduino Pro Micro needs PB0/SS-pin to work. And it is not broken out. So no SPI for PSX-controller I guess? 
-https://forum.arduino.cc/index.php?topic=427828.0
-- It could be used as pin 17 in code, if led could be disabled?
-
 ## PsxNewLib
 - https://github.com/SukkoPera/PsxNewLib
 - https://github.com/SukkoPera/PsxControllerShield
