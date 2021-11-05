@@ -43,3 +43,4 @@ Wii | | | | |
 
 ### TODO
 - Analog triggers for Dualshock 2
+- Name in Windows: Controller (Arduino Leonardo), with real XB360 controller: Controller (Xbox 360 Controller for Windows)? Can it be changed in C:\Program Files (x86)\Arduino\hardware\xinput\avr\boards.txt?
