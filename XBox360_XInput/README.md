@@ -41,3 +41,5 @@ Wii | | | | |
 5 SDA | | A4 (PC4) | D2 (PD1) |
 6 GND | | | |
 
+### TODO
+- Analog triggers for Dualshock 2
