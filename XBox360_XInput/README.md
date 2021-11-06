@@ -19,6 +19,7 @@ Game Controller Tester
 - https://github.com/SukkoPera/PsxControllerShield
 - https://github.com/SukkoPera/PsxControllerShield/blob/master/doc/schematics.pdf
 - (my green dualshock analog controller: SCPH-1200)
+- (my black dualshock 2 controller: SCPH-10010)
 - https://store.curiousinventor.com/guides/PS2
 - https://github.com/SukkoPera/PsxNewLib/issues/12
 
