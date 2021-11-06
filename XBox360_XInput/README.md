@@ -18,8 +18,8 @@ Game Controller Tester
 - https://github.com/SukkoPera/PsxNewLib (from Arduino IDE library manager 6.11.2021: 0.4.0)
 - https://github.com/SukkoPera/PsxControllerShield
 - https://github.com/SukkoPera/PsxControllerShield/blob/master/doc/schematics.pdf
-- (my green dualshock analog controller: SCPH-1200)
-- (my black dualshock 2 controller: SCPH-10010)
+- (my green dualshock analog controller: SCPH-1200) (Controller Type is: Guitar Hero)?
+- (my black dualshock 2 controller: SCPH-10010) (Controller Type is: Dual Shock)
 - https://store.curiousinventor.com/guides/PS2
 - https://github.com/SukkoPera/PsxNewLib/issues/12
 
