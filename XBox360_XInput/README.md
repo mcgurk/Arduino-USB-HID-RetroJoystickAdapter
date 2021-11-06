@@ -22,6 +22,7 @@ Game Controller Tester
 - (my black dualshock 2 controller: SCPH-10010) (Controller Type is: Dual Shock)
 - https://store.curiousinventor.com/guides/PS2
 - https://github.com/SukkoPera/PsxNewLib/issues/12
+- https://github.com/dmadison/NintendoExtensionCtrl
 
 PSX | SPI | Uno | Pro Micro | notes
 --- | --- | --- | --- | ---
