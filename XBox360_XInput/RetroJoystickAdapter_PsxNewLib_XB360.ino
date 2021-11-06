@@ -212,7 +212,7 @@ void setup () {
 }
  
 void loop () {
-  static byte slx, sly, srx, sry;
+  static byte slx, sly, srx, sry, sl2, sr2;
   fastDigitalWrite (PIN_HAVECONTROLLER, haveController);
   
   if (!haveController) {
@@ -292,6 +292,27 @@ void loop () {
         srx = rx;
         sry = ry;
       }
+
+      byte l2 = psx.getAnalogButton(PSAB_L2);
+      if (l2 != 0 && l2 != sl2) {
+        #ifdef DEBUG
+        Serial.println(l2);
+        #endif
+        XInput.setTrigger(TRIGGER_LEFT, l2);
+        dirty = true;
+        sl2 = l2;
+      }
+
+      byte r2 = psx.getAnalogButton(PSAB_R2);
+      if (r2 != 0 && r2 != sr2) {
+        #ifdef DEBUG
+        Serial.println(r2);
+        #endif
+        XInput.setTrigger(TRIGGER_RIGHT, r2);
+        dirty = true;
+        sr2 = r2;
+      }
+      
     }
   }
 
