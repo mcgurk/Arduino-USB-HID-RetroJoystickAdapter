@@ -37,7 +37,7 @@ PSX | SPI | Uno | Pro Micro | notes
 **Wii** | | | | |
 1 VCC (3.3V) (red ![#red](https://via.placeholder.com/10/ff0000/000000?text=+)) | | | |
 2 SCL (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | | A5 (PC5) | D3 (PD0) |
-3 Detect device (3.3V) (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | | D4 (PD4) |
+3 Detect device (3.3V) (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | | D4 (PD4) | Use 10k pulldown resistor to GND!
 4 NC | | | |
 5 SDA (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | A4 (PC4) | D2 (PD1) |
 6 GND (white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | | |
