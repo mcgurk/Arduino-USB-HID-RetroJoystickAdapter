@@ -35,12 +35,12 @@ PSX | SPI | Uno | Pro Micro | notes
 8 unknown (white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | | |
 9 ACK (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | | | (when this is needed?)
 **Wii** | | | | |
-1 VCC (3.3V) | | | |
-2 SCL | | A5 (PC5) | D3 (PD0) |
-3 Detect device (3.3V) | | | |
+1 VCC (3.3V) (red ![#red](https://via.placeholder.com/10/ff0000/000000?text=+)) | | | |
+2 SCL (yellow ![#yellow](https://via.placeholder.com/10/ffff00/000000?text=+)) | | A5 (PC5) | D3 (PD0) |
+3 Detect device (3.3V) (black ![#black](https://via.placeholder.com/10/000000/000000?text=+)) | | | |
 4 NC | | | |
-5 SDA | | A4 (PC4) | D2 (PD1) |
-6 GND | | | |
+5 SDA (green ![#green](https://via.placeholder.com/10/00ff00/000000?text=+)) | | A4 (PC4) | D2 (PD1) |
+6 GND (white ![#white](https://via.placeholder.com/10/ffffff/000000?text=+)) | | | |
 
 ### TODO
 - Analog triggers for Dualshock 2
