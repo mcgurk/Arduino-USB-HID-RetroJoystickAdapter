@@ -15,7 +15,7 @@ Game Controller Tester
 - Doesn't go to flashing mode automatically. Connect RST to GND to get Arduino Pro Micro to programming mode.
 
 ## PsxNewLib
-- https://github.com/SukkoPera/PsxNewLib
+- https://github.com/SukkoPera/PsxNewLib (from Arduino IDE library manager 6.11.2021: 0.4.0)
 - https://github.com/SukkoPera/PsxControllerShield
 - https://github.com/SukkoPera/PsxControllerShield/blob/master/doc/schematics.pdf
 - (my green dualshock analog controller: SCPH-1200)
