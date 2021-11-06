@@ -1,4 +1,5 @@
 // https://github.com/SukkoPera/PsxNewLib
+// https://github.com/dmadison/NintendoExtensionCtrl
 // https://github.com/dmadison/ArduinoXInput
 
 #define XINPUT
