@@ -30,6 +30,9 @@ sei
 - Compiler can detect what space is used and uses correct address?
 - in/out is 1 cycle? lds 2 cycles?
 
+## avr asm
+- http://www.nongnu.org/avr-libc/user-manual/inline_asm.html
+
 ## register as variable
 - https://forum.arduino.cc/index.php?topic=43760.5
 - http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_regbind
