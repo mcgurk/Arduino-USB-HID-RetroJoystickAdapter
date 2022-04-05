@@ -24,7 +24,8 @@ sei
 375ns
 
 ## using i/o space
-- Can be used with in/out or lds?
+- Can be used with in/out (i/o space) or lds (data space = i/o address+0x20)?
+- Compiler can detect what space is used and uses correct address?
 - in/out is 1 cycle? lds 2 cycles?
 
 ## register as variable
