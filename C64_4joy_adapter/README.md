@@ -41,6 +41,7 @@ sei
 
 ## atomic
 - https://groups.google.com/a/arduino.cc/g/developers/c/cmu0Qy32zxY
+- http://www.gammon.com.au/forum/?id=11488
 
 ## register as variable
 - https://forum.arduino.cc/index.php?topic=43760.5
