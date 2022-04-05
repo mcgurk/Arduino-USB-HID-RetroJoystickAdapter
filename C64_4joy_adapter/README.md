@@ -32,7 +32,7 @@ sei
 - out can write from register to io
 - only one io/data address space access within one instruction?
 - lds/sts takes 2 cycles and in/out takes 1 cycle? ldi takes 1 cycle?
-- lds/sts: "M" \_SFR_MEM_ADDR(GPIOR2), in/out: "I" \SFR_IO_ADDR(GPIOR0)
+- lds/sts: "M" \_SFR_MEM_ADDR(GPIOR2), in/out: "I" \_SFR_IO_ADDR(GPIOR0)
 
 ## avr asm
 - http://www.nongnu.org/avr-libc/user-manual/inline_asm.html
