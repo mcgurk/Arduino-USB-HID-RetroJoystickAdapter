@@ -35,6 +35,7 @@ sei
 
 ## avr asm
 - http://www.nongnu.org/avr-libc/user-manual/inline_asm.html
+- https://ucexperiment.wordpress.com/2016/03/04/arduino-inline-assembly-tutorial-1/
 
 ## register as variable
 - https://forum.arduino.cc/index.php?topic=43760.5
