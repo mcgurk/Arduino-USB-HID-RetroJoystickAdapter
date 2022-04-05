@@ -25,10 +25,12 @@ sei
 ``` 
 375ns
 
-## using i/o space
-- Can be used with in/out (i/o space) or lds (data space = i/o address+0x20)?
-- Compiler can detect what space is used and uses correct address?
-- in/out is 1 cycle? lds 2 cycles?
+## using data/i/o space
+- lds can load from io (if +0x20 added to address) or data space
+- sts can store from register to io (if +0x20 added to address) or data space
+- in can load from io to register
+- out can write from register to io
+- only one io/data address space access within one instruction?
 
 ## avr asm
 - http://www.nongnu.org/avr-libc/user-manual/inline_asm.html
