@@ -1,7 +1,7 @@
 - https://www.protovision.games/hardw/4_player.php?language=en
 
 ```
-& 'C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avr-objdump.exe' -S "C:\\Users\\Lehtinen\\AppData\\Local\\Temp\\arduino_build_119176/test.ino.elf" > c:\temp\koe.txt
+& 'C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\avr-objdump.exe' -S "C:\\Users\\lehti\\AppData\\Local\\Temp\\arduino_build_208947/c64_4joystick-adapter.ino.elf" > c:\temp\koe.txt
 ```
 
 ```
