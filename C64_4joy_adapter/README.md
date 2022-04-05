@@ -23,6 +23,10 @@ sei
 ``` 
 375ns
 
+## using i/o space
+- Can be used with in/out or lds?
+- in/out is 1 cycle? lds 2 cycles?
+
 ## register as variable
 - https://forum.arduino.cc/index.php?topic=43760.5
 - http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_regbind
