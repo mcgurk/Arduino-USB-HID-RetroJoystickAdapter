@@ -39,6 +39,9 @@ sei
 - https://ucexperiment.wordpress.com/2016/03/04/arduino-inline-assembly-tutorial-1/
 - https://ucexperiment.wordpress.com/2016/03/11/arduino-inline-assembly-tutorial-5-2/
 
+## atomic
+- https://groups.google.com/a/arduino.cc/g/developers/c/cmu0Qy32zxY
+
 ## register as variable
 - https://forum.arduino.cc/index.php?topic=43760.5
 - http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_regbind
