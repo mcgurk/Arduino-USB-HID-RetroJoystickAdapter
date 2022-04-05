@@ -42,6 +42,7 @@ sei
 ## atomic
 - https://groups.google.com/a/arduino.cc/g/developers/c/cmu0Qy32zxY
 - http://www.gammon.com.au/forum/?id=11488
+- https://home.csulb.edu/~hill/ee346/Lectures/10%20ATmega32U4%20Interrupts.pdf
 
 ## register as variable
 - https://forum.arduino.cc/index.php?topic=43760.5
