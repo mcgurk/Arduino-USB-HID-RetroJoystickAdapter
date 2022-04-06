@@ -45,11 +45,12 @@ sei
 ```
 This is from the datasheet for the AT90USB82 processor; things in parenthesis are from me...
 
-The interrupt execution response for all the enabled AVR interrupts is five clock cycles minimum (the processor is fixin' to execute the interrupt)
-The vector is normally a jump to the interrupt routine, and this jump takes three clock cycles (the processor jumps to the ISR)
-SREG must be saved and restored (the processor doesn't do this for us and SREG is important)
-A return from an interrupt handling routine takes three clock cycles
-When the AVR exits from an interrupt, it will always return to the main program and execute one more instruction before any pending interrupt is served
+-The interrupt execution response for all the enabled AVR interrupts is five clock cycles minimum (the processor is fixin' to execute the interrupt)
+-The vector is normally a jump to the interrupt routine, and this jump takes three clock cycles (the processor jumps to the ISR)
+-SREG must be saved and restored (the processor doesn't do this for us and SREG is important)
+-A return from an interrupt handling routine takes three clock cycles
+-When the AVR exits from an interrupt, it will always return to the main program and execute one more instruction before any pending interrupt is served
+
 Those are the things necessary just to get the ISR called. We have not yet added the application stuff (incrementing an unsigned long in BetterSense's case).
 
 Adding those up gives us 5+3+2+3+1 = 14. The absolute maximum number of interrupts per second that can be handled by the AT90USB82 is 16 million instructions per second / 14 instructions per interrupt = 1,142,857 interrupts per second.
