@@ -25,6 +25,11 @@ sei
 ``` 
 375ns
 
+## avr
+- https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf
+- https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
+- http://ww1.microchip.com/downloads/en/devicedoc/atmel-0856-avr-instruction-set-manual.pdf
+
 ## using data/i/o space
 - lds can load from io (if +0x20 added to address) or data space
 - sts can store from register to io (if +0x20 added to address) or data space
