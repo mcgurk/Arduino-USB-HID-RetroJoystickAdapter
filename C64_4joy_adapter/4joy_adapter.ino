@@ -173,14 +173,13 @@ void loop() {
 Arduino Pro Micro
 (led/no pin: PB0, PD5)
 
- x    -    PD0  -    -  
+ L    -    PD0  -    -  
  PB1  -    PD1  -    -
- PB2  -    PD2  -    -
- PB3  -    PD3  -    -
+ PB2  -    i    -    -
+ PB3  -    i    -    -
  PB4  -    PD4  -    PF4
- PB5  -    x    -    PF5
+ PB5  -    L    -    PF5
  PB6  PC6  -    PE6  PF6
  -    -    PD7  -    PF7
  
-
  */
