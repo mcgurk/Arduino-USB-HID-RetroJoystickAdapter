@@ -151,7 +151,7 @@ https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
 
 In these instructions, USB_VENDOR_ID_MOJO 0x8282, USB_DEVICE_ID_RETRO_ADAPTER 0x3201 are used.
 
-Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
+Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (update 26.7.2022: `C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5`) or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
 ```
 # leonardo.build.vid=0x2341
 # leonardo.build.pid=0x8036
@@ -167,7 +167,7 @@ There is possibility that serial port is not recognized after VID/PID change. We
 If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and we don't know how to force full recompile.
 
 ### Menu for multiple adapter names
-Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt`. You can even add sub menu to tools-menu by adding these lines (after editing boards.txt, you have to close and reopen Arduino IDE):
+Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (update 26.7.2022: `C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5`). You can even add sub menu to tools-menu by adding these lines (after editing boards.txt, you have to close and reopen Arduino IDE):
 
 ```
 menu.usb_name=USB Product Name
