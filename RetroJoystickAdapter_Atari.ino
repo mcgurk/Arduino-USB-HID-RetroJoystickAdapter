@@ -6,7 +6,6 @@
 const uint8_t inputPinsPort1[] =  {  5,    6,    7,     8,    4,   A2};
 const uint8_t inputPinsPort2[] =  { 10,   16,   14,    15,    3,   A1};
 
-
 //#define DEBUG
 
 inline void translateState(uint8_t data, uint8_t *state) {
@@ -19,20 +18,7 @@ inline void translateState(uint8_t data, uint8_t *state) {
   if (!bitRead(data, 3)) state[1] = 255; /* right */
 }
 
-
 #include "HID.h"
-
-#if ARDUINO < 10606
-#error The Joystick2 library requires Arduino IDE 1.6.6 or greater. Please update your IDE.
-#endif
-
-#if !defined(USBCON)
-#error The Joystick2 library can only be used with a USB MCU (e.g. Arduino Leonardo, Arduino Micro, etc.).
-#endif
-
-#if !defined(_USING_HID)
-#error "legacy HID core (non pluggable)"
-#endif
 
 #define JOYSTICK_REPORT_ID  0x04
 #define JOYSTICK2_REPORT_ID 0x05
@@ -73,8 +59,6 @@ inline void translateState(uint8_t data, uint8_t *state) {
     0x81, 0x02,               /*     INPUT (Data,Var,Abs) */ \
     0xc0,                     /*   END_COLLECTION */ \
     0xc0                      /* END_COLLECTION */
-
-
 
 
 static const uint8_t hidReportDescriptor[] PROGMEM = {
@@ -144,10 +128,6 @@ Joystick_ Joystick[2] =
 //================================================================================
 //================================================================================
 
-
-
-
-
 void setup() {
   //set all DB9-connector input signal pins as inputs with pullups
   for (uint8_t i = 0; i < 6; i++) {
@@ -160,7 +140,6 @@ void setup() {
   #endif
 
 }
-
 
 
 void loop() {
@@ -192,6 +171,5 @@ void loop() {
   Joystick[0].sendState();
   Joystick[1].sendState();
   delayMicroseconds(500);
-
 
 }
