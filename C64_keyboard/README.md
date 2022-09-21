@@ -84,4 +84,4 @@ sed -i 's/5 6 0/5 6 8/g; s/5 3 0/5 3 8/g; s/5 0 0/5 0 8/g; s/6 0 0/6 0 8/g; s/6 
 - http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
 - I used this as starting point: https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
 - C64-emulator for Raspberry Pi 2/3: http://accentual.com/bmc64/
-- For bigger matrices use Arduino Micro (24 usable IO pins) https://www.40percent.club/2017/10/green-arduino-micro.html
+- For bigger matrices use Arduino Micro (24 usable IO pins) https://www.40percent.club/2017/10/green-arduino-micro.html (The largest matrix you can do with a Pro Micro with its 18 pins is 9x9, 81 keys.)
