@@ -32,7 +32,6 @@ matrix
 	unstrobed -PB1 E
 	unstrobed -PF5 F
 	unstrobed -PF4 G
-
 end
 
 # example, press a-button to CAPS_LOCK = toggle underglowleds
