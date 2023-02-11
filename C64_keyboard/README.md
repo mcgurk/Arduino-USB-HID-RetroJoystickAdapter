@@ -70,10 +70,10 @@ endblock
 
 ## Issues
 
-### Issue with Menu key (fixed in newer BCM64 versions)
+### Issue with Menu key (fixed in newer BMC64 versions)
 - .crt-files doesn't work with C= + F7, so as workaround LSHIFT + F7 is F12.
 
-### Issue with shift (fixed in newer BCM64 versions)
+### Issue with shift (fixed in newer BMC64 versions)
 
 - "+", "-", "£", "@" and "*" doesn't produce GFX-chars when shifted
 
