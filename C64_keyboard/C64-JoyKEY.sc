@@ -14,6 +14,8 @@
 # PB6(D10) sysled
 # PB5(D9) powerled
 
+# '-' prefix = on at startup
+# '+' prefix = off at startup
 led caps -PD7
 led num -PB6
 led scroll -PB5
@@ -33,14 +35,38 @@ matrix
 
 end
 
-macroblock
-  macro A -ALL
-    #SET_META LSHIFT
-    #PRESS A
-    #CLEAR_ALL
-    SCROLL_LOCK
-  endmacro
-endblock
+# example, press a-button to CAPS_LOCK = toggle underglowleds
+#macroblock
+#  macro A -ALL
+#    PRESS CAPS_LOCK
+#    CLEAR_ALL
+#  endmacro
+#endblock
+
+# example, press b-button to NUM_LOCK = toggle SYS-led
+#macroblock
+#  macro B -ALL
+#    PRESS NUM_LOCK
+#    CLEAR_ALL
+#  endmacro
+#endblock
+
+# example, press c-button to SCROLL_LOCK = toggle PWR-led
+#macroblock
+#  macro C -ALL
+#    PRESS SCROLL_LOCK
+#    CLEAR_ALL
+#  endmacro
+#endblock
+
+# example, press d-button to get shifted D
+#macroblock
+#  macro D -ALL
+#    SET_META LSHIFT
+#    PRESS D
+#    CLEAR_ALL
+#  endmacro
+#endblock
 
 #
 # unstrobed
