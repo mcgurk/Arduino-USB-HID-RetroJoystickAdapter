@@ -14,8 +14,8 @@
 # PB6(D10) sysled
 # PB5(D9) powerled
 
-# '-' prefix = off at startup
-# '+' prefix = on at startup
+# '+' prefix = off at startup
+# '-' prefix = on at startup
 led caps -PD7
 led num +PB6
 led scroll -PB5
