@@ -14,7 +14,9 @@
 - Connect RST to GND couple of times to get Arduino Pro Micro to programming mode (notice that com-port is different in programming mode in Windows)
 - Flash firmware
 ```
-& "C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m32u4 -c avr109 -P COM5 -b 57600 -U flash:w:firmware\Soarer_Controller_v1.20_beta4_atmega32u4.hex:i
+# old: & "C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" -C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -p m32u4 -c avr109 -P COM5 -b 57600 -U flash:w:firmware\Soarer_Controller_v1.20_beta4_atmega32u4.hex:i
+# 11.2.2023:
+& "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin\avrdude.exe" -C"$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\etc\avrdude.conf" -v -p m32u4 -c avr109 -P COM9 -b 57600 -U flash:w:firmware\Soarer_Controller_v1.20_beta4_atmega32u4.hex:i
 ```
 
 ## Setup
