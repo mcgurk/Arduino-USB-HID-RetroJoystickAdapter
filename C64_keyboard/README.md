@@ -56,6 +56,18 @@
 //   1(I)   8(D8/PB4)
 ```
 
+## Macro without modifier key
+Even though modifier key is mandatory, it can be replaced with unpressed modifier. This writes shifted A when only a-key is pressed:
+´´´
+macroblock
+  macro A -LALT
+    SET_META LSHIFT
+	PRESS A
+	CLEAR_ALL
+  endmacro
+endblock
+´´´
+
 ## Issues
 
 ### Issue with Menu key (fixed in newer BCM64 versions)
