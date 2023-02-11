@@ -1,6 +1,7 @@
 # https://github.com/tebl/C64-JoyKEY
 # https://github.com/tebl/C64-JoyKEY/blob/main/documentation/schematic/C64%20Joykey.pdf
 #
+# http://kookye.com/wp-content/uploads/2016/02/Pinout-ProMicro.jpg
 # https://deskthority.net/wiki/Arduino_Pro_Micro
 #
 # PD1(D2) fire1
