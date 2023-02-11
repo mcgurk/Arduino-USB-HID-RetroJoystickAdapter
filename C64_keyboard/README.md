@@ -69,10 +69,10 @@
 - For bigger matrices use Arduino Micro (24 usable IO pins) https://www.40percent.club/2017/10/green-arduino-micro.html (The largest matrix you can do with a Pro Micro with its 18 pins is 9x9, 81 keys.)
 
 ## Macro without modifier key
-Even though modifier key is mandatory, it can be replaced with unpressed modifier. This writes shifted A when only a-key is pressed:
+Even though modifier key is mandatory, it can be replaced with unpressed modifiers. This writes shifted A when only a-key is pressed:
 ```
 macroblock
-  macro A -LALT
+  macro A -ALL
     SET_META LSHIFT
 	PRESS A
 	CLEAR_ALL
