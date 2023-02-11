@@ -10,6 +10,13 @@
 # PB1(D15) down
 # PF5(D18) right
 # PF4(D19) up
+# PD7(D6) underglowleds
+# PB6(D10) sysled
+# PB5(D9) powerled
+
+led caps -PD7
+led num -PB6
+led scroll -PB5
 
 matrix
 	scanrate 1
@@ -25,6 +32,15 @@ matrix
 	unstrobed -PF4 G
 
 end
+
+macroblock
+  macro A -ALL
+    #SET_META LSHIFT
+    #PRESS A
+    #CLEAR_ALL
+    SCROLL_LOCK
+  endmacro
+endblock
 
 #
 # unstrobed
