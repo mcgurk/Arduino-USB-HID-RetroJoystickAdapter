@@ -58,7 +58,7 @@
 
 ## Macro without modifier key
 Even though modifier key is mandatory, it can be replaced with unpressed modifier. This writes shifted A when only a-key is pressed:
-´´´
+```
 macroblock
   macro A -LALT
     SET_META LSHIFT
@@ -66,7 +66,7 @@ macroblock
 	CLEAR_ALL
   endmacro
 endblock
-´´´
+```
 
 ## Issues
 
