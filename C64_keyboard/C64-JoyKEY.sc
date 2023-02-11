@@ -16,13 +16,19 @@ matrix
 	debounce 5
 	blocking 1
 
-	sense		PB6		PB2		PB3		PB1		PF7		PF6		PF5		PF4	PD3
-	strobe	PD1	1		BACK_QUOTE	TAB		ESC		SPACE		LCTRL		Q		2	UNASSIGNED
-	strobe	PD0	3		W		A		LSHIFT		Z		S		E		4	UNASSIGNED
-	strobe	PD4	5		R		D		X		C		F		T		6	UNASSIGNED
-	strobe	PC6	7		Y		G		V		B		H		U		8	UNASSIGNED
-	strobe	PD7	9		I		J		N		M		K		O		0	UNASSIGNED
-	strobe	PE6	MINUS		P		L		COMMA		PERIOD		SEMICOLON	LEFT_BRACE	EQUAL	UNASSIGNED
-	strobe	PB4	INSERT		RIGHT_BRACE	QUOTE		SLASH		RSHIFT		BACKSLASH	DELETE		HOME	PAGE_UP
-	strobe	PB5	BACKSPACE	ENTER		RIGHT		DOWN		F1		F3		F5		F7	UNASSIGNED
+	unstrobed -PD1 A
+	unstrobed -PD0 B
+	unstrobed -PD4 C
+	unstrobed -PB3 D
+	unstrobed -PB1 E
+	unstrobed -PF5 F
+	unstrobed -PF4 G
+
 end
+
+#
+# unstrobed
+# Specifies a single pin to read and the corresponding HID code.
+# This is intended for a single switch which can be wired with the other side of the switch permanently connected to either ground or +5V. If the other side of the switch is at +5V, a pull-down resistor must be added between the pin and ground.
+# Example:
+# unstrobed -PF1 LSHIFT
