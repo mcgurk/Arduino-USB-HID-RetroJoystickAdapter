@@ -17,7 +17,7 @@
 # '-' prefix = on at startup
 # '+' prefix = off at startup
 led caps -PD7
-led num -PB6
+led num +PB6
 led scroll -PB5
 
 matrix
