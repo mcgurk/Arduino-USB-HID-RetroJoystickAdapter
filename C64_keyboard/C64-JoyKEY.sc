@@ -26,13 +26,13 @@ matrix
 	debounce 5
 	blocking 1
 
-	unstrobed -PD1 A
-	unstrobed -PD0 B
-	unstrobed -PD4 C
-	unstrobed -PB3 D
-	unstrobed -PB1 E
-	unstrobed -PF7 F
-	unstrobed -PF6 G
+	unstrobed -PD1 1
+	unstrobed -PD0 2
+	unstrobed -PD4 3
+	unstrobed -PB3 L
+	unstrobed -PB1 D
+	unstrobed -PF7 R
+	unstrobed -PF6 U
 end
 
 # example, press a-button to CAPS_LOCK = toggle underglowleds
