@@ -9,8 +9,8 @@
 # PD4(D4) fire3
 # PB3(D14) left
 # PB1(D15) down
-# PF5(D18) right
-# PF4(D19) up
+# PF7(D16) right # (PF5(D18) in schematics!)
+# PF6(D17) up # (PF4(D19) in schematics!)
 # PD7(D6) underglowleds
 # PB6(D10) sysled
 # PB5(D9) powerled
@@ -31,8 +31,8 @@ matrix
 	unstrobed -PD4 C
 	unstrobed -PB3 D
 	unstrobed -PB1 E
-	unstrobed -PF5 F
-	unstrobed -PF4 G
+	unstrobed -PF7 F
+	unstrobed -PF6 G
 end
 
 # example, press a-button to CAPS_LOCK = toggle underglowleds
