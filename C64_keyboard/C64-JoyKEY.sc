@@ -9,8 +9,8 @@
 # PD4(D4) fire3
 # PB3(D14) left
 # PB1(D15) down
-# PF7(D16) right # (PF5(D18) in schematics!)
-# PF6(D17) up # (PF4(D19) in schematics!)
+# PF7(A0/D18) right
+# PF6(A1/D19) up
 # PD7(D6) underglowleds
 # PB6(D10) sysled
 # PB5(D9) powerled
