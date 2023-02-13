@@ -38,15 +38,15 @@ end
 # example, reset
 macroblock
   macro 3 -ALL
-    MAKE LSHIFT
-    MAKE LALT
     MAKE LGUI
+    MAKE LALT
+    MAKE LSHIFT
+    DELAY 50
     PRESS LCTRL
-    DELAY 100
-    BREAK LGUI
-    BREAK LALT
+    DELAY 50
     BREAK LSHIFT
-    CLEAR_ALL
+    BREAK LALT
+    BREAK LGUI
   endmacro
 endblock
 
