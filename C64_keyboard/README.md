@@ -99,3 +99,17 @@ endblock
 sed -i 's/5 6 0/5 6 8/g; s/5 3 0/5 3 8/g; s/5 0 0/5 0 8/g; s/6 0 0/6 0 8/g; s/6 1 0/6 1 8/g' rpi_sym.vkm
 ```
 
+## Stuff
+```
+F9 = shift+return
+F10 = Ultimate menu
+F11 = Freeze
+F12 = Restore
+LCTRL = Control
+LWIN = CBM
+INS = Inst
+HOME = Clr/home
+PAUSE = run/stop
+SCROLL_LOCK = Ultimate menu
+BACKSPACE = Inst/del
+```
