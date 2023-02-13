@@ -35,6 +35,17 @@ matrix
 	unstrobed -PF6 U
 end
 
+# example, reset
+macroblock
+  macro 1 -ALL
+    SET_META LSHIFT
+    SET_META LALT
+    SET_META LCTRL
+    SET_META LGUI
+    CLEAR_ALL
+  endmacro
+endblock
+
 # example, press a-button to CAPS_LOCK = toggle underglowleds
 #macroblock
 #  macro A -ALL
