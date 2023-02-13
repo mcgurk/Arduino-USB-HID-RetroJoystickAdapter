@@ -114,4 +114,6 @@ PAUSE = run/stop
 SCROLL_LOCK = Ultimate menu
 BACKSPACE = Inst/del
 LSHIFT+LCTRL+LWIN+LALT = Reset
+
+Buttons: Freeze-Menu-Reset
 ```
