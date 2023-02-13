@@ -67,6 +67,7 @@
 - I used this as starting point: https://github.com/abzman/Keyboard-config-file/blob/master/C64_matrix.sc
 - C64-emulator for Raspberry Pi 2/3: http://accentual.com/bmc64/
 - For bigger matrices use Arduino Micro (24 usable IO pins) https://www.40percent.club/2017/10/green-arduino-micro.html (The largest matrix you can do with a Pro Micro with its 18 pins is 9x9, 81 keys.)
+- Example macros: https://sharktastica.co.uk/guides/soarers_2
 
 ## Macro without modifier key
 Even though modifier key is mandatory, it can be replaced with unpressed modifiers. This writes shifted A when only a-key is pressed:
