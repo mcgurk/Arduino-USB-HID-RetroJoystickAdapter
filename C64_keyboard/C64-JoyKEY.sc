@@ -40,8 +40,12 @@ macroblock
   macro 3 -ALL
     MAKE LSHIFT
     MAKE LALT
-    MAKE LCTRL
     MAKE LGUI
+    PRESS LCTRL
+    DELAY 100
+    BREAK LGUI
+    BREAK LALT
+    BREAK LSHIFT
     CLEAR_ALL
   endmacro
 endblock
