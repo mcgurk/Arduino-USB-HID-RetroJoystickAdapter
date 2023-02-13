@@ -38,10 +38,10 @@ end
 # example, reset
 macroblock
   macro 3 -ALL
-    SET_META LSHIFT
-    SET_META LALT
-    SET_META LCTRL
-    SET_META LGUI
+    PRESS LSHIFT
+    PRESS LALT
+    PRESS LCTRL
+    PRESS LGUI
     CLEAR_ALL
   endmacro
 endblock
