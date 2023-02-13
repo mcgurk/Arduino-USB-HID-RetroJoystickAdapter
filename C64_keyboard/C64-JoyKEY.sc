@@ -35,7 +35,7 @@ matrix
 	unstrobed -PF6 U
 end
 
-# example, reset
+# fire 3 = reset:
 macroblock
   macro 3 -ALL
     MAKE LGUI
