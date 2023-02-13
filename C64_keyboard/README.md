@@ -100,6 +100,7 @@ sed -i 's/5 6 0/5 6 8/g; s/5 3 0/5 3 8/g; s/5 0 0/5 0 8/g; s/6 0 0/6 0 8/g; s/6 
 ```
 
 ## Stuff
+Ultimate keybindings?
 ```
 F9 = shift+return
 F10 = Ultimate menu
