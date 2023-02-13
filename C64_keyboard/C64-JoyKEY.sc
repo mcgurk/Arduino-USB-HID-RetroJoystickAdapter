@@ -37,7 +37,7 @@ end
 
 # example, reset
 macroblock
-  macro 1 -ALL
+  macro 3 -ALL
     SET_META LSHIFT
     SET_META LALT
     SET_META LCTRL
