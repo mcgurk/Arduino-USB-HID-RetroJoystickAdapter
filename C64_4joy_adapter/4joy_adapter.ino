@@ -107,14 +107,9 @@ void setup() {
   EICRA = B10110000;  // INT2 – rising edge on RXD (Bxx11xxxx), INT3 - falling edge on TXD (B10xxxxxx)
   EIMSK = B1100;  // enable INT2 (Bx1xx) and INT3 (B1xxx)
 
-  //Serial.begin(115200);
+  //Serial.begin(115200); //Can't use serial port; RX and TX is dedicated for interrupts
   //PORTD &= ~_BV(5); // TX-LED on
 
-  // We can't use millis() or micros() because Timer0 interrupts are disabled. We use 16-bit Timer1 with 1024 prescaler as "clock".
-  /*TIMSK1 = 0; // disable timer1 interrupts
-  TCCR1A = 0;
-  TCCR1B = B00000101; // Timer1, normal mode, prescaler 1024. One tick is 64us.
-  TCNT1 = 0; // reset Timer1 counter*/
 }
 
 void loop() {
@@ -146,25 +141,6 @@ void loop() {
   //ece: 85 b9         out 0x05, r24 ; 5
   interrupts();
  
-  /*asm volatile(
-  " clr r31            \n"   //Z is r31:r30. Z is pointer.
-  " cli                \n"
-  " lds r30, %[gpio]   \n"
-  " ld __tmp_reg__, Z  \n"
-  " sts %[pin], __tmp_reg__  \n"
-  " sei                \n"
-  :: [pin] "M" (_SFR_MEM_ADDR(PORTB)), [gpio] "M" (_SFR_MEM_ADDR(GPIOR2)) : "r30", "r31");*/
-  //ed2: ff 27         eor r31, r31
-  //ed4: f8 94         cli
-  //ed6: e0 91 4b 00   lds r30, 0x004B ; 0x80004b <__TEXT_REGION_LENGTH__+0x7e004b>
-  //eda: 00 80         ld  r0, Z
-  //edc: 00 92 25 00   sts 0x0025, r0  ; 0x800025 <__TEXT_REGION_LENGTH__+0x7e0025>
-  //ee0: 78 94         sei
- 
-  //delayMicroseconds(10);
-  //uint16_t koe = ptr;
-  //Serial.println(koe, HEX);
-  //delayMicroseconds(10000);
 }
 
 
