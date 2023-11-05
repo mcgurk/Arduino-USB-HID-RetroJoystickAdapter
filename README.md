@@ -64,13 +64,13 @@ Example of NES-controller wiring:
 
 ![NES wiring](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Hardware/nes.png)
 
-### Setup ⚙️
+### ⚙️ Setup
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
 - `Tools->Board->Arduino Leonardo`
 
-  In Arduino IDE you have to select board. In my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transfered to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring. Connect now your board ATmega32u4 through USB, the RX and TX leds should blink (if not, try another USB port).
+  In Arduino IDE you have to select board. In my case some reason "Arduino Leonardo" selections works better than "Arduino/Genuino Micro". With Leonardo-setting RX and TX leds are normally off and blinks when data is transferred to/from USB. With Micro-setting LED's are normally on and they blinks to off when data is transferring. Connect now your board ATmega32u4 through USB, the RX and TX leds should blink (if not, try another USB port).
 
 - `Tools->Port->COMx`
 
@@ -83,7 +83,7 @@ Example of NES-controller wiring:
 - Install joystick library (needed only with some controllers - check list at top of this page)
 
   Go to https://github.com/MHeironimus/ArduinoJoystickLibrary/tree/version-1.0 and press `Clone or download -> Download ZIP`.
-  Extract Joystick2 folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows), `~/Arduino/libraries` (Linux) or `~/Library/Arduino15/libraries` (MacOS).
+  Extract `Joystick2` folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows), `~/Arduino/libraries` (Linux) or `~/Library/Arduino15/libraries` (MacOS).
 
   After extraction check that you have files `%HOMEPATH%\Documents\Arduino\libraries\Joystick2\Joystick2.h and Joystick2.cpp`, `~/Arduino/libraries/Joystick2/Joystick2.h and Joystick2.cpp` or `~/Library/Arduino15/libraries/Joystick2/Joystick2.h and Joystick2.cpp`.
 
@@ -99,13 +99,17 @@ Example of NES-controller wiring:
 
 - If you got the message "all done" and no errors, your done here.
 
-### Time to Enjoy
+### 🎉 Time to Enjoy
+
+https://hardwaretester.com/gamepad
+
 
 #### MS Windows
 - You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device. Right click on `Gamepad controller definitions` > double click in one of the options (1st is the controller one, and the 2nd is the controller two) and you can now test the buttons.
 
-  > [!NOTE]
-  > If you move adapter to other Windows machine, you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Device Manager > Unknown devices` > right click > `Update Driver Software > Browse my computer for software > Browse...` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
+##### Notice With Windows!
+
+If you move adapter to other Windows machine, you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Device Manager > Unknown devices` > right click > `Update Driver Software > Browse my computer for software > Browse...` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
 
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
@@ -147,11 +151,11 @@ There is simple tutorial in [Tutorial](https://github.com/mcgurk/Arduino-USB-HID
 
 ### Changing VID/PID so Windows and Linux works without drivers or quirks
 
-Linux problem with multiple controllers are solved with changing VID and PID to something that already has HID_QUIRK_MULTI_INPUT (0x40) activated in kernel.
+Linux problem with multiple controllers are solved with changing VID and PID to something that already has `HID_QUIRK_MULTI_INPUT (0x40)` activated in kernel.
 Here you can see what quirks are activated to different VID/PIDs:
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
 
-In these instructions, USB_VENDOR_ID_MOJO 0x8282, USB_DEVICE_ID_RETRO_ADAPTER 0x3201 are used.
+In these instructions, `USB_VENDOR_ID_MOJO 0x8282`, `USB_DEVICE_ID_RETRO_ADAPTER 0x3201` are used.
 
 Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (update 26.7.2022: `C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5`) or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
 ```
@@ -167,10 +171,10 @@ leonardo.build.usb_product="Retro Joystick Adapter"
 > There is possibility that serial port is not recognized after VID/PID change. We have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting it rapidly two times in a row (grab a wire and make a shunt with RST->GND, they are located between A3, VCC and RAW) and then upload sketch (example blink.ino) with <b>normal Arduino VID/PID</b>. Be quick, because <b>you have only 8 seconds</b> to start uploading (try to hit `Send` button before make the reset).
 
 ### Changing number of buttons in joystick-library
-If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and we don't know how to force full recompile.
+If you want that less than 16 buttons are shown in joystick-settings, edit `Joystick.cpp/Joystick2.cpp/Joystick3.cpp` "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and we don't know how to force full recompile.
 
 ### Menu for multiple adapter names
-Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (update 26.7.2022: `C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5`). You can even add sub menu to tools-menu by adding these lines (after editing boards.txt, you have to close and reopen Arduino IDE):
+Adapter shows as "Arduino Leonardo", but if you want it to show some other name, edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (update 26.7.2022: `C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5`). You can even add sub menu to tools-menu by adding these lines (after editing `boards.txt`, you have to close and reopen Arduino IDE):
 
 ```
 menu.usb_name=USB Product Name
