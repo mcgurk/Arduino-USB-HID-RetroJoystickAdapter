@@ -63,7 +63,7 @@ Example of NES-controller wiring:
 
 ![NES wiring](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Hardware/nes.png)
 
-### Setup
+### Setup ⚙️
 
 - Download and install Arduino IDE: https://www.arduino.cc/en/Main/Software
 
@@ -82,13 +82,14 @@ Example of NES-controller wiring:
 - Install joystick library (needed only with some controllers - check list at top of this page)
 
   Go to https://github.com/MHeironimus/ArduinoJoystickLibrary/tree/version-1.0 and press `Clone or download -> Download ZIP`.
-  Extract Joystick2 folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows) or `~/Arduino/libraries` (Linux).
-  
-  After extraction check that you have files `%HOMEPATH%\Documents\Arduino\libraries\Joystick2\Joystick2.h and Joystick2.cpp` or `~/Arduino/libraries/Joystick2/Joystick2.h and Joystick2.cpp`.
-  Close and start Arduino IDE again so it searches and finds library.
+  Extract Joystick2 folder from zip to `%HOMEPATH%\Documents\Arduino\libraries` (Windows), `~/Arduino/libraries` (Linux) or `~/Library/Arduino15/libraries` (MacOS).
+
+  After extraction check that you have files `%HOMEPATH%\Documents\Arduino\libraries\Joystick2\Joystick2.h and Joystick2.cpp`, `~/Arduino/libraries/Joystick2/Joystick2.h and Joystick2.cpp` or `~/Library/Arduino15/libraries/Joystick2/Joystick2.h and Joystick2.cpp`.
 
   Playstation analog controller `RetroJoystickAdapter_PlaystationAnalog.ino` needs `Joystick\Joystick.h` and `Joystick\Joystick.cpp`.
-  
+
+- Close and start Arduino IDE again so it searches and finds library.
+
 - Load `RetroJoystickAdapter.ino` to Arduino IDE (check right filename from list at top of this page)
 
   Select controller by commenting and uncommenting and edit pin-numbers (if needed).
@@ -97,7 +98,7 @@ Example of NES-controller wiring:
 
 - If you got the message "all done" and no errors, your done here.
 
-### Time to Enjoy
+### Time to Enjoy 🕹️
 
 #### MS Windows
 - You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device. Right click on `Gamepad controller definitions` > double click in one of the options (1st is the controller one, and the 2nd is the controller two) and you can now test the buttons.
@@ -111,8 +112,8 @@ If you move adapter to other Windows machine, you may have to install the arduin
 ##### Notice With Linux!
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features.
 
-You have to give parameter 
-`quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module. 
+You have to give parameter
+`quirks=0x2341:0x8036:0x40` (first numbers are VID and PID of Arduino) to usbhid-module.
 
 Here is example how to do it with RetrOrangePi 2.5.2:
 - Make backup of `/boot/boot-retro.cmd` and `/boot/boot.scr`
@@ -160,8 +161,9 @@ leonardo.build.pid=0x3201
 # leonardo.build.usb_product="Arduino Leonardo"
 leonardo.build.usb_product="Retro Joystick Adapter"
 ```
-#### WARNING!
-There is possibility that serial port is not recognized after VID/PID change. We have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting it rapidly two times in a row (grab a wire and make a shunt with RST->GND, they are located between A3, VCC and RAW) and then upload sketch (example blink.ino) with <b>normal Arduino VID/PID</b>. Be quick, because <b>you have only 8 seconds</b> to start uploading (try to hit `Send` button before make the reset).
+
+> **warning**
+> There is possibility that serial port is not recognized after VID/PID change. We have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting it rapidly two times in a row (grab a wire and make a shunt with RST->GND, they are located between A3, VCC and RAW) and then upload sketch (example blink.ino) with <b>normal Arduino VID/PID</b>. Be quick, because <b>you have only 8 seconds</b> to start uploading (try to hit `Send` button before make the reset).
 
 ### Changing number of buttons in joystick-library
 If you want that less than 16 buttons are shown in joystick-settings, edit Joystick.cpp/Joystick2.cpp/Joystick3.cpp "USAGE_MAXIMUM"-line (0x10 = 16). You may to have create new project after that, because all libraries are not recompiled every time and we don't know how to force full recompile.
