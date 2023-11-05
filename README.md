@@ -104,7 +104,7 @@ Example of NES-controller wiring:
 #### MS Windows
 - You should go now to `Control Panel -> All Control Panel Items > Devices and Printers (some Windows versions in Game Controllers)` and try to find `Arduino Leonardo` device. Right click on `Gamepad controller definitions` > double click in one of the options (1st is the controller one, and the 2nd is the controller two) and you can now test the buttons.
 
-  > **note**
+  > [!NOTE]
   > If you move adapter to other Windows machine, you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Device Manager > Unknown devices` > right click > `Update Driver Software > Browse my computer for software > Browse...` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
 
 #### Linux
@@ -163,7 +163,7 @@ leonardo.build.pid=0x3201
 leonardo.build.usb_product="Retro Joystick Adapter"
 ```
 
-> **warning**
+> [!WARNING]
 > There is possibility that serial port is not recognized after VID/PID change. We have tested with two Windows 10 machine and Linux with no problems. If you "brick" your Arduino, you get it back to life with resetting it rapidly two times in a row (grab a wire and make a shunt with RST->GND, they are located between A3, VCC and RAW) and then upload sketch (example blink.ino) with <b>normal Arduino VID/PID</b>. Be quick, because <b>you have only 8 seconds</b> to start uploading (try to hit `Send` button before make the reset).
 
 ### Changing number of buttons in joystick-library
