@@ -144,7 +144,7 @@ Linux problem with multiple controllers are solved with changing VID and PID to 
 Here you can see what quirks are activated to different VID/PIDs:
 https://github.com/torvalds/linux/blob/master/drivers/hid/usbhid/hid-quirks.c
 
-In these instructions, `USB_VENDOR_ID_MOJO 0x8282`, `USB_DEVICE_ID_RETRO_ADAPTER 0x3201` are used.
+In these instructions, `USB_VENDOR_ID_MOJO=0x8282`, `USB_DEVICE_ID_RETRO_ADAPTER=0x3201` are used.
 
 Edit `C:\Program Files (x86)\Arduino\hardware\arduino\avr\boards.txt` (update 26.7.2022: `C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5`) or in linux `arduino-x.x.xx/hardware/arduino/avr/boards.txt` (close Arduino IDE before editing):
 ```
