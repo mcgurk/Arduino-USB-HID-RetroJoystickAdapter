@@ -9,11 +9,9 @@
 
 ## Schematics and pinout
 
-You sholud print this schema to guide you during the soldering process.
+You should print this schema to guide you during the soldering process.
 
-![megadrive-adapter](https://raw.githubusercontent.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/master/megadrive/pinout.jpg)
-
-
+![megadrive-adapter](pinout.jpg)
 
 ## Final product
 

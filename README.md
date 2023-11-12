@@ -230,8 +230,8 @@ Wii extensions are 3.3V, but I have used Wii Nunchuck and Classic Controller wit
 ### Konami code
 You can also enable or disable Konami-code-shortcut with some controllers. For now it works only with Genesis 6-button controller (X+Y+Z+UP (or DOWN)), SNES-controller (X+Y+R1+UP (or DOWN)) and PSX-controller (rectangle+circle+triangle+UP (or DOWN)). "UP"-version is normal and "DOWN"-version swaps A and B. Some games demands that not other buttons are pressed before code and that's why only last pressed button can be button which have some function in emulator.
 
-https://en.wikipedia.org/wiki/Konami_Code
-https://en.wikipedia.org/wiki/List_of_Konami_code_games
+* https://en.wikipedia.org/wiki/Konami_Code
+* https://en.wikipedia.org/wiki/List_of_Konami_code_games
 
 ### Other ideas
 Of course Arduino can be used many other ways. Add a PIR motion detector module from Ebay (under $2) and your computer wakes up from sleep when you walk to room. Just read PIR-sensor data pin and if it is 1, send some keyboard button (which normally does nothing) to computer so it wakes up. Or make info-board to your kitchen or hallway wall from old Android tablet and it turns on backlight only when someone goes to kitchen.
