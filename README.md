@@ -23,9 +23,8 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ¹ ²)
 - (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ¹ ²)
 
-¹ = needs Joystick-library
-
-² = 2 controllers supported
+* ¹ = needs Joystick-library
+* ² = 2 controllers supported
 
 
 If you use Linux and want to get more than 1 controller with one Arduino, check "Linux and more than one controller with one Arduino"-topic in this same page.
