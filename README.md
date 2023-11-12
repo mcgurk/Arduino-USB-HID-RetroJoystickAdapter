@@ -238,65 +238,29 @@ Of course Arduino can be used many other ways. Add a PIR motion detector module 
 
 ## Links
 
-#### Arduino
-http://playground.arduino.cc/Main/InterfacingWithHardware
-
-#### NES
-http://www.mit.edu/~tarvizo/nes-controller.html
-
-#### SNES
-http://wiki.superfamicom.org/snes/show/Schematics,+Ports,+and+Pinouts
-
-https://github.com/burks10/Arduino-SNES-Controller
-
-#### Sega Megadrive / Genesis
-https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
-
-https://jonthysell.com/2014/07/26/reading-sega-genesis-controllers-with-arduino/
-
-#### Playstation
-
-http://www.gamesx.com/controldata/psxcont/psxcont.htm
-
-http://playground.arduino.cc/Main/PSXLibrary
-
-http://problemkaputt.de/psx-spx.htm#controllersandmemorycards
-
-#### Playstation Dualshock:
-
-https://gist.github.com/scanlime/5042071
-
-#### Nintendo 64 / Gamecube:
-
-https://github.com/NicoHood/Nintendo
-
-https://github.com/brownan/Gamecube-N64-Controller
-
-#### Wii Classic Controller:
-
-https://github.com/robotgeek/WiiClassy
-
-http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Classic_Controller
-
-#### Gamecube / N64
-
-http://www.int03.co.uk/crema/hardware/gamecube/gc-control.htm
-
-https://github.com/NicoHood/Nintendo/wiki/Gamecube
-
-#### PC Engine/Turbografx
-(I don't have this controller, so it is not implemented, but it should be implemented very easily)
-
-https://emu-docs.org/PC%20Engine/tg16cont.html
-
-#### MSX
-
-https://www.msx.org/wiki/Joystick_control
-
-#### How to reset Arduino (in case of emergency)
-
-https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq#ts-revive
-
-#### C64 Mini
-
-https://www.tsb.space/projects/c64-mini-arcade2usb-converter
+* Arduino: http://playground.arduino.cc/Main/InterfacingWithHardware
+* NES: http://www.mit.edu/~tarvizo/nes-controller.html
+* SNES:
+  * http://wiki.superfamicom.org/snes/show/Schematics,+Ports,+and+Pinouts
+  * https://github.com/burks10/Arduino-SNES-Controller
+* Sega Megadrive / Genesis:
+  * https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
+  * https://jonthysell.com/2014/07/26/reading-sega-genesis-controllers-with-arduino/
+* Playstation:
+  * http://www.gamesx.com/controldata/psxcont/psxcont.htm
+  * http://playground.arduino.cc/Main/PSXLibrary
+  * http://problemkaputt.de/psx-spx.htm#controllersandmemorycards
+* Playstation Dualshock: https://gist.github.com/scanlime/5042071
+* Nintendo 64 / Gamecube:
+  * https://github.com/NicoHood/Nintendo
+  * https://github.com/brownan/Gamecube-N64-Controller
+* Wii Classic Controller:
+  * https://github.com/robotgeek/WiiClassy
+  * http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Classic_Controller
+* Gamecube / N64:
+  * http://www.int03.co.uk/crema/hardware/gamecube/gc-control.htm
+  * https://github.com/NicoHood/Nintendo/wiki/Gamecube
+* PC Engine/Turbografx (I don't have this controller, so it is not implemented, but it should be implemented very easily): https://emu-docs.org/PC%20Engine/tg16cont.html
+* MSX: https://www.msx.org/wiki/Joystick_control
+* How to reset Arduino (in case of emergency): https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq#ts-revive
+* C64 Mini: https://www.tsb.space/projects/c64-mini-arcade2usb-converter
