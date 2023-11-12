@@ -24,6 +24,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ¹ ²)
 
 ¹ = needs Joystick-library
+
 ² = 2 controllers supported
 
 
