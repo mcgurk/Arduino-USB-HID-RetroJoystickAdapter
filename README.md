@@ -8,9 +8,9 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 ### Supported controllers
 
-- [Atari-joysticks (supports controllers with 2-fire buttons): RetroJoystickAdapter_Atari.ino ²](RetroJoystickAdapter_Atari.ino)
-- [Sega Genesis / Megadrive controllers (3 and 6-button versions): RetroJoystickAdapter_Megadrive.ino ²](megadrive)
-- [Sony Playstation with Analog and Multitap 4 controllers support : RetroJoystickAdapter_Playstation.ino](RetroJoystickAdapter_Playstation.ino)
+- [Atari-joysticks (supports controllers with 2-fire buttons): RetroJoystickAdapter_Atari.ino ²](RetroJoystickAdapter_Atari.ino), [hardware](atari)
+- [Sega Genesis / Megadrive controllers (3 and 6-button versions): RetroJoystickAdapter_Megadrive.ino ²](RetroJoystickAdapter_Megadrive.ino), [hardware](megadrive)
+- [Sony Playstation with Analog and Multitap 4 controllers support : RetroJoystickAdapter_Playstation.ino](RetroJoystickAdapter_Playstation.ino), [hardware](playstation)
 - [Nintendo 64 controller (⚠️ 3.3V!): RetroJoystickAdapter_N64.ino\*](RetroJoystickAdapter_N64.ino)
 - [Wii Nunchuck and Classic Controller (and maybe Pro, not tested): RetroJoystickAdapter_WiiExtension.ino (3.3V!)](RetroJoystickAdapter_WiiExtension.ino)
 - [X-Arcade (X-Arcade/x-arcade.ino) ²](X-Arcade)
