@@ -112,7 +112,7 @@ If you move adapter to other Windows machine, you may have to install the arduin
 #### Linux
 Just connect, open your command line and test whit `jstest /dev/input/js0`.
 
-##### Notice With Linux!
+##### ⚠️ Notice With Linux!
 Linux usbhid-module doesn't support out of box multiple controllers with one USB without USB-hub-features.
 
 You have to give parameter
