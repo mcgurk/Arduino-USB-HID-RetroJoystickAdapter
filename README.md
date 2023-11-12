@@ -8,18 +8,18 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 
 ### Supported controllers
 
-- Atari-joysticks (supports controllers with 2-fire buttons) ²: [RetroJoystickAdapter_Atari.ino](RetroJoystickAdapter_Atari.ino), [hardware](atari/README.md)
-- Sega Genesis / Megadrive controllers (3 and 6-button versions) ²: [RetroJoystickAdapter_Megadrive.ino](RetroJoystickAdapter_Megadrive.ino), [hardware](megadrive/README.md)
-- Sony Playstation with Analog and Multitap 4 controllers support: [RetroJoystickAdapter_Playstation.ino](RetroJoystickAdapter_Playstation.ino), [hardware](playstation/README.md)
+- Atari-joysticks (supports controllers with 2-fire buttons) ²: [RetroJoystickAdapter_Atari.ino](RetroJoystickAdapter_Atari.ino), [hardware](atari)
+- Sega Genesis / Megadrive controllers (3 and 6-button versions) ²: [RetroJoystickAdapter_Megadrive.ino](RetroJoystickAdapter_Megadrive.ino), [hardware](megadrive)
+- Sony Playstation with Analog and Multitap 4 controllers support: [RetroJoystickAdapter_Playstation.ino](RetroJoystickAdapter_Playstation.ino), [hardware](playstation)
 - Nintendo 64 controller ¹ (⚠️ 3.3V!): [RetroJoystickAdapter_N64.ino](RetroJoystickAdapter_N64.ino)
 - Wii Nunchuck and Classic Controller (and maybe Pro, not tested) (⚠️ 3.3V!): [RetroJoystickAdapter_WiiExtension.ino](RetroJoystickAdapter_WiiExtension.ino)
 - X-Arcade ²: [hardware](X-Arcade/README.md)
-- AT and PS/2 Keyboard to 4 joysticks: [hardware](Keyboard_PS2/README.md)
-- Soarer's programmable AT and PS/2 adapter (works with X-arcade too): [PS2_Soarer_Converter](PS2_Soarer_Converter)
+- AT and PS/2 Keyboard to 4 joysticks: [hardware](Keyboard_PS2)
+- Soarer's programmable AT and PS/2 adapter (works with X-arcade too): [hardware](PS2_Soarer_Converter)
 - Nintendo Entertainment System controllers (NES) ¹ ²: [RetroJoystickAdapter.ino](RetroJoystickAdapter.ino)
 - Super Nintendo controllers (SNES) ¹ ²: [RetroJoystickAdapter.ino](RetroJoystickAdapter.ino)
 - Simple one joystick two button Atari-joystick adapter made with Atmel Studio (should be very compatible): [hardware](C64_joystick_atmelstudio)
-- C64 keyboard adapter for BMC64 made with Soarer's keyboard controller firmware: [hardware](C64_keyboard/README.md)
+- C64 keyboard adapter for BMC64 made with Soarer's keyboard controller firmware: [hardware](C64_keyboard)
 - (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ¹ ²)
 - (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ¹ ²)
 
