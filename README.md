@@ -11,7 +11,7 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Atari-joysticks (supports controllers with 2-fire buttons) ²: [RetroJoystickAdapter_Atari.ino](RetroJoystickAdapter_Atari.ino), [hardware](atari)
 - Sega Genesis / Megadrive controllers (3 and 6-button versions) ²: [RetroJoystickAdapter_Megadrive.ino](RetroJoystickAdapter_Megadrive.ino), [hardware](megadrive)
 - Sony Playstation with Analog and Multitap 4 controllers support: [RetroJoystickAdapter_Playstation.ino](RetroJoystickAdapter_Playstation.ino), [hardware](playstation)
-- Nintendo 64 controller ¹ (⚠️ 3.3V!): [RetroJoystickAdapter_N64.ino](RetroJoystickAdapter_N64.ino)
+- Nintendo 64 controller ¹ (⚠️ 3.3V!): [RetroJoystickAdapter_N64.ino](RetroJoystickAdapter_N64.ino), [hardware](nes)
 - Wii Nunchuck and Classic Controller (and maybe Pro, not tested) (⚠️ 3.3V!): [RetroJoystickAdapter_WiiExtension.ino](RetroJoystickAdapter_WiiExtension.ino)
 - X-Arcade ²: [hardware](X-Arcade/README.md)
 - AT and PS/2 Keyboard to 4 joysticks: [hardware](Keyboard_PS2)
@@ -44,11 +44,6 @@ If you use Linux and want to get more than 1 controller with one Arduino, check 
 
 #### Arduino board
 Starting point is ATmega32u4 based Arduino board. There is two versions of ATmega32u4, IO-logic with 5V or 3.3V. Many controllers (like basic Atari-controller) doesn't include any logic, so 5V and 3.3V versions are fine. Most of controllers with some logic needs 5V (NES, SNES, Genesis) and some rare ones needs 3.3V (N64/Gamecube) (5V is 16MHz and 3.3V 8MHz, so timings are different and 16MHz code doesn't work for N64/Gamecube with 3.3V version). Make sure that Arduino includes USB-port. There are some versions which doesn't include USB-port and then you have to add USB-connector for it. Arduino Leonardo includes ATmega32u4, but cheapest and smallest ones are named Pro Micro. Arduino Pro Micro and ATmega32u4 are good words to use when searching from Ebay etc. Cheapest starts from about $4.
-
-Example of Arduino Pro Micro:
-
-![Arduino Pro Micro](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Images/Arduino_ProMicro.jpg)
-
 
 #### Computer with Arduino IDE
 Arduino IDE works with Windows, OS X and Linux and ARM (beta). If you use small card computer like Rasperry Pi or Orange Pi, you can program adapter even with them (tested with Orange Pi PC and RetrOrangePi 2.0). That way you don't even have to unplug adapter from your emulator/game-platform if you want reprogram adapter.
