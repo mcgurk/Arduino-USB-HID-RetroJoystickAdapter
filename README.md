@@ -108,7 +108,7 @@ You should go now to `Control Panel -> All Control Panel Items > Devices and Pri
 
 **Notice With Windows!**
 
-If you move adapter to other Windows machine, you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Device Manager > Unknown devices` > right click > `Update Driver Software > Browse my computer for software > Browse...` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
+  If you move adapter to other Windows machine, you may have to install the arduino drivers. To have the last updated ones, just download the file `Windows ZIP file for non admin install` from the page https://www.arduino.cc/en/Main/Software. After the download, unzip the folder. Go to the `Computer` > right click > `Manage > Device Manager > Unknown devices` > right click > `Update Driver Software > Browse my computer for software > Browse...` > and try to find the folder `\arduino-1.6.xx\drivers` inside the folder you unziped before. Click `Next` and Windows should install the driver. Arduino would apper as the name `Arduino Leonardo` inside `Ports (COM and LPT)` with an associated COM port (like `COM9` for example).
 
 #### Linux
 - Just connect, open your command line and test whit `jstest /dev/input/js0`.
