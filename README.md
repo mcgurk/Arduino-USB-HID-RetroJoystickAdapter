@@ -54,11 +54,6 @@ https://github.com/MHeironimus/ArduinoJoystickLibrary/tree/version-1.0 (note tha
 #### Joystick(s) or gamepad(s) and way to connect them to Arduino
 Some joystick/gamepads uses their own connectors and original connectors can be very pricey. Sometimes you can find extension cord cheaper than plain connector and you can take cable and plug from that.
 You can use any IO-pins, but try to avoid pins 0 and 1. They are serial port TX and RX pins and even though they are not used right now, they are handy for debugging and other uses.
-Example in [Hardware](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/Hardware) folder.
-
-Example of NES-controller wiring:
-
-![NES wiring](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/master/Hardware/nes.png)
 
 ### ⚙️ Setup
 
