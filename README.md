@@ -11,21 +11,21 @@ ATmega32u4 can be easily changed to act as keyboard and/or mouse too. With keybo
 - Atari-joysticks (supports controllers with 2-fire buttons) ²: [RetroJoystickAdapter_Atari.ino](RetroJoystickAdapter_Atari.ino), [hardware](atari)
 - Sega Genesis / Megadrive controllers (3 and 6-button versions) ²: [RetroJoystickAdapter_Megadrive.ino](RetroJoystickAdapter_Megadrive.ino), [hardware](megadrive)
 - Sony Playstation with Analog and Multitap 4 controllers support: [RetroJoystickAdapter_Playstation.ino](RetroJoystickAdapter_Playstation.ino), [hardware](playstation)
-- Nintendo 64 controller\* (⚠️ 3.3V!): [RetroJoystickAdapter_N64.ino](RetroJoystickAdapter_N64.ino)
+- Nintendo 64 controller ¹ (⚠️ 3.3V!): [RetroJoystickAdapter_N64.ino](RetroJoystickAdapter_N64.ino)
 - Wii Nunchuck and Classic Controller (and maybe Pro, not tested): [RetroJoystickAdapter_WiiExtension.ino (3.3V!)](RetroJoystickAdapter_WiiExtension.ino)
 - X-Arcade ²: [hardware](X-Arcade)
 - AT and PS/2 Keyboard to 4 joysticks: [hardware](Keyboard_PS2)
 - Soarer's programmable AT and PS/2 adapter (works with X-arcade too): [PS2_Soarer_Converter](PS2_Soarer_Converter)
-- Nintendo Entertainment System controllers (NES)\* ²: [RetroJoystickAdapter.ino](RetroJoystickAdapter.ino)
-- Super Nintendo controllers (SNES) \* ²: [RetroJoystickAdapter.ino](RetroJoystickAdapter.ino)
+- Nintendo Entertainment System controllers (NES) ¹ ²: [RetroJoystickAdapter.ino](RetroJoystickAdapter.ino)
+- Super Nintendo controllers (SNES) ¹ ²: [RetroJoystickAdapter.ino](RetroJoystickAdapter.ino)
 - Simple one joystick two button Atari-joystick adapter made with Atmel Studio (should be very compatible): [hardware](C64_joystick_atmelstudio)
 - C64 keyboard adapter for BMC64 made with Soarer's keyboard controller firmware: [hardware](C64_keyboard)
-- (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) \* ²)
-- (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) \* ²)
+- (old, don't use: Atari-joysticks (supports Sega Master System controller with 2-fire buttons) (ATARI) ¹ ²)
+- (old, don't use: Sony Playstation 1/2 controllers (doesn't support Dualshock or analog features) (PSX) ¹ ²)
 
+¹ = needs Joystick-library
 ² = 2 controllers supported
 
-\* = needs Joystick-library
 
 If you use Linux and want to get more than 1 controller with one Arduino, check "Linux and more than one controller with one Arduino"-topic in this same page.
 
