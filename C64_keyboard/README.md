@@ -98,7 +98,7 @@ CTRL 15
 RESTORE 104
 INS/DEL 14
 ```
-It goes to /usr/lib/vice/C64/theC64-sym-CLASSIC.vkm in ext4 partition of firmware-image. (THEC64_for_OPI.img or THE_VIC_20_for_OPI.img)
+Copy theC64-sym-CLASSIC.vkm to /usr/lib/vice/C64/theC64-sym-CLASSIC.vkm in ext4 partition of firmware-image. (THEC64_for_OPI.img or THE_VIC_20_for_OPI.img)
 
 ## OBSOLETE: Issues (all issues are fixed in newer BMC64 versions)
 
