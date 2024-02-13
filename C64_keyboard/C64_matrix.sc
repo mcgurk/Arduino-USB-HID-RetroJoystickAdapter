@@ -37,10 +37,12 @@ end
 # colon (:) = SEMICOLON
 # semicolon (;) = QUOTE
 
-# macroblock
-#	macro F7 LSHIFT		# LSHIFT + F7 = F12
-#		PRESS F12
-#		CLEAR_ALL
-#	endmacro
-# endblock
+# circumvent TheC64 LSHIFT-LEFTARROW Menu-problem
+macroblock
+	macro BACK_QUOTE LSHIFT
+		CLEAR_META LSHIFT
+		DELAY 100
+		PRESS PAD_PERIOD
+	endmacro
+endblock
 
