@@ -81,7 +81,26 @@ macroblock
 endblock
 ```
 
-## Issues (all issues are fixed in newer BMC64 versions)
+## TheC64 Maxi Orange Pi PC
+Buttons that needs modification:
+```
++ 12
+- 13
+@ 26
+* 27
+^ 111
+: 39
+; 40
+= 43
+£ 110
+C= 29
+CTRL 15
+RESTORE 104
+INS/DEL 14
+```
+Copy theC64-sym-CLASSIC.vkm to /usr/lib/vice/C64/theC64-sym-CLASSIC.vkm in ext4 partition of firmware-image. (THEC64_for_OPI.img or THE_VIC_20_for_OPI.img)
+
+## OBSOLETE: Issues (all issues are fixed in newer BMC64 versions)
 
 ### Issue with Menu key (fixed in newer BMC64 versions)
 - .crt-files doesn't work with C= + F7, so as workaround LSHIFT + F7 is F12.
