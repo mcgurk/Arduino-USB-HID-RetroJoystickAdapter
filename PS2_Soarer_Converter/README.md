@@ -170,5 +170,33 @@ endblock
 # lowerbuttons: ;(¨)(5B="]"),6
 ```
 
+
 ## X-Arcade BMC64 emulator
 - xarcade_bmc64.txt
+
+## IBM model F XT
+
+Colors: https://geekhack.org/index.php?topic=17458.msg616598#msg616598
+```
+Brown = Vcc
+Red = Ground
+White = Data
+Black = Clock
+```
+
+Soarer_Converter_v1.12_docs/docs/hardware.html/hardware.html
+```
+GND	GND
+Vcc/+5V	VCC
+Data	PD0
+Clock	PD1
+```
+
+Conlusion:
+```
+Brown = Vcc (5) -> VCC
+Red = Ground (4) -> GND
+White = Data (2) -> PD0 (Pro Micro: 3)
+Black = Clock (1) -> PD1 (Pro Micro: 2)
+```
+
