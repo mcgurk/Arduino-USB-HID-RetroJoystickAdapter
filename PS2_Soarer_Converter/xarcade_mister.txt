@@ -5,17 +5,19 @@
 # important!:
 force set2ext
 
-# /media/fat/MiSTer.ini
+# https://mister-devel.github.io/MkDocs_MiSTer/advanced/diy2parcade/
+# /media/fat/MiSTer.ini:
 # jamma_vid=16C0
 # jamma_pid=047D
 
 # VID = 16C0, PID = 047D.
-# https://mister-devel.github.io/MkDocs_MiSTer/advanced/diy2parcade/
 # Connect your modded arcade keyboard to USB and start Menu core, then go to Define Joystick buttons. 
 # Press any button, and you will see "Keyboard ID: XXXX:YYYY" where XXXX:YYYY is HW identifier of the keyboard. Press ESC to ext from this dialog.
 # Now open MiSTer.ini and add following options there:
 # jamma_vid=XXXX
 # jamma_pid=YYYY
+
+# X-Arcade:
 
 # UP1 = PAD_8 (0x75)
 # DOWN1 = PAD_2 (0x72)
@@ -46,6 +48,15 @@ force set2ext
 # Z2 = Q (0x15)
 # L2 = RIGHT_BRACE (0x5b)
 # R2 = 6 (0x36)
+
+# not enough buttons to support these:
+#        9,         Test
+#        TAB,       Tab (shift + 1P right)
+#        ENTER,     Enter (shift + 1P left)
+#        P,         P (pause) (shift + 1P down)
+#        F1,        Service
+#        F2,        Test
+#        F3,        Tilt
 
 remapblock
 	# left controller
