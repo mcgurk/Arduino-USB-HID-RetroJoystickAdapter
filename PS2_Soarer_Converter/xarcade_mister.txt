@@ -1,6 +1,6 @@
 
-# scas xarcade.txt xarcade.bin
-# scwr xarcade.bin
+# scas xarcade_mister.txt xarcade_mister.bin
+# scwr xarcade_mister.bin
 
 # important!:
 force set2ext
@@ -48,35 +48,34 @@ remapblock
 	# left controller
 	3 	5		# SELECT1 -> 1P coin
 	#1 	1		# START1 -> 1P start (shift key)
-	PAD_8 	UP 		# UP1 -> 1P up
-	PAD_2 	DOWN 		# DOWN1 -> 1P down
-	PAD_4 	LEFT 		# LEFT1 -> 1P left
-	PAD_6 	RIGHT 		# RIGHT1 -> 1P right
-	LSHIFT	LCTRL 		# A1 -> 1P button 1
-	Z	LALT 		# B1 -> 1P button 2
-	X	SPACE 		# C1 -> 1P button 3
-	LCTRL	LSHIFT 		# X1 -> 1P button 4
+	PAD_8 	UP		# UP1 -> 1P up
+	PAD_2 	DOWN		# DOWN1 -> 1P down
+	PAD_4 	LEFT		# LEFT1 -> 1P left
+	PAD_6 	RIGHT		# RIGHT1 -> 1P right
+	LSHIFT	LCTRL		# A1 -> 1P button 1
+	Z	LALT		# B1 -> 1P button 2
+	X	SPACE		# C1 -> 1P button 3
+	LCTRL	LSHIFT		# X1 -> 1P button 4
 	LALT	Z		# Y1 -> 1P button 5
-	SPACE	X 		# Z1 -> 1P button 6
-	C	C 		# L1 -> 1P button 7
+	SPACE	X		# Z1 -> 1P button 6
+	C	C		# L1 -> 1P button 7
 	5	V	 	# R1 -> 1P button 8
 
-
 # right controller
-	2	7 		# SELECT2 -> 2P coin
-	4	8 		# START2 -> 2P start (shift key)
-	R	PAD_8 		# UP2 -> 2P up
-	F	PAD_2 		# DOWN2 -> 2P down
-	D	PAD_4 		# LEFT2 -> 2P left
-	G	PAD_6 		# RIGHT2 -> 2P right
-	W	PAD_5 		# A2 -> 2P button 1
-	E	SPACE 		# B2 -> 2P button 2
-	LEFT_BRACE	1 	# C2 -> 2P button 3
-	A	2 		# X2 -> 2P button 4
-	S	3 		# Y2 -> 2P button 5
-	Q	4 		# Z2 -> 2P button 6
-	RIGHT_BRACE	5 	# L2 -> 2P button 7
-	6	6 		# R2 -> 2P button 8
+	2	6		# SELECT2 -> 2P coin
+	4	2		# START2 -> 2P start (shift key)
+	#R	R		# UP2 -> 2P up
+	#F	F		# DOWN2 -> 2P down
+	#D	D		# LEFT2 -> 2P left
+	#G	G		# RIGHT2 -> 2P right
+	W	A		# A2 -> 2P button 1
+	E	S		# B2 -> 2P button 2
+	LEFT_BRACE Q	 	# C2 -> 2P button 3
+	A	W		# X2 -> 2P button 4
+	S	I		# Y2 -> 2P button 5
+	Q	K		# Z2 -> 2P button 6
+	RIGHT_BRACE J	 	# L2 -> 2P button 7
+	6	L		# R2 -> 2P button 8
 endblock
 
 
