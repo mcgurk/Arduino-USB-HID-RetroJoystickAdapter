@@ -202,4 +202,4 @@ Black = Clock (1) -> PD1 (Pro Micro: 2)
 
 ## X-Arcade With Mister FPGA
 - xarcade_mister.txt
-
+[xarcade_mister.txt](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/blob/master/PS2_Soarer_Converter/xarcade_mister.txt)
