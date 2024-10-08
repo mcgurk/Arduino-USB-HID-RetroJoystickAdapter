@@ -24,10 +24,21 @@ force set2ext
 # L1 = C (0x21)
 # R1 = 5 (0x2e)
 
+# UP2 = R (0x2d)
+# DOWN2 = F (0x2b)
+# LEFT2 = D (0x23)
+# RIGHT2 = G (0x34)
+# SELECT2 = 4 (0x25)
+# START2 = 2 (0x1e)
+# A2 = W (0x1d)
+# B2 = E (0x24)
+# C2 = LEFT_BRACE (0x54)
+# X2 = A (0x1c)
+# Y2 = S (0x1b)
+# Z2 = Q (0x15)
+# L2 = RIGHT_BRACE (0x5b)
+# R2 = 6 (0x36)
 
-# dir2 r,f,d,g
-# sel2 4
-# start2 2
 # A,B,C: w,e,}(å)(54="[")
 # X,Y,Z: a,s,q
 # lowerbuttons: ;(¨)(5B="]"),6
