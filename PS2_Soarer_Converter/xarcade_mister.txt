@@ -1,1 +1,73 @@
 
+# scas xarcade.txt xarcade.bin
+# scwr xarcade.bin
+
+# important!:
+force set2ext
+
+# VID = 16C0, PID = 047D.
+
+# https://mister-devel.github.io/MkDocs_MiSTer/advanced/diy2parcade/
+
+# UP1 = PAD_8 (0x75)
+# DOWN1 = PAD_2 (0x72)
+# LEFT1 = PAD_4 (0x6b)
+# RIGHT1 = PAD_6 (0x74)
+# SELECT1 (left "flipper" button) = 3 (0x26)
+# START1 (button with one human figure) = 1 (0x16)
+# A1 = LSHIFT (0x12)
+# B1 = Z (0x1a)
+# C1 = X (0x22)
+# X1 = LCTRL (0x14)
+# Y1 = LALT (0x11)
+# Z1 = SPACE (0x29)
+# L1 = C (0x21)
+# R1 = 5 (0x2e)
+
+
+# dir2 r,f,d,g
+# sel2 4
+# start2 2
+# A,B,C: w,e,}(å)(54="[")
+# X,Y,Z: a,s,q
+# lowerbuttons: ;(¨)(5B="]"),6
+
+remapblock
+# left controller
+	PAD_8 UP # stick -> up
+	PAD_2 DOWN # stick -> down
+	PAD_4 LEFT # stick -> left
+	PAD_6 RIGHT # stick -> right
+	LSHIFT	LCTRL # A -> fire
+	
+	Z	SPACE # B -> space
+	X	F7 # C -> F7
+	LCTRL	F1 # X -> F1
+	LALT	F3 # Y -> F3
+	SPACE	F5 # Z -> F5
+	C	F12 # bottomleft -> F12
+	5	PAGE_UP # bottomright -> Restore
+	3	ESC # select -> Run-Stop
+	1	ENTER # start -> Return
+
+
+# right controller
+	R	PAD_8 # stick -> up
+	F	PAD_2 # stick -> down
+	D	PAD_4 # stick -> left
+	G	PAD_6 # stick -> right
+	W	PAD_5 # A -> fire
+
+	E	SPACE # B -> space
+	LEFT_BRACE	1 # C -> 1
+	A	2 # X -> 2
+	S	3 # Y -> 3
+	Q	4 # Z -> 4
+	RIGHT_BRACE	5 # bottomleft -> 5
+	6	6 # bottomright -> 6
+	2	7 # select -> 7
+	4	8 # start -> 8
+endblock
+
+
+
