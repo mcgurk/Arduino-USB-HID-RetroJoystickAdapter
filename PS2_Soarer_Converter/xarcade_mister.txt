@@ -44,45 +44,39 @@ force set2ext
 # L2 = RIGHT_BRACE (0x5b)
 # R2 = 6 (0x36)
 
-# A,B,C: w,e,}(å)(54="[")
-# X,Y,Z: a,s,q
-# lowerbuttons: ;(¨)(5B="]"),6
-
 remapblock
-# left controller
-	PAD_8 UP # stick -> up
-	PAD_2 DOWN # stick -> down
-	PAD_4 LEFT # stick -> left
-	PAD_6 RIGHT # stick -> right
-	LSHIFT	LCTRL # A -> fire
-	
-	Z	SPACE # B -> space
-	X	F7 # C -> F7
-	LCTRL	F1 # X -> F1
-	LALT	F3 # Y -> F3
-	SPACE	F5 # Z -> F5
-	C	F12 # bottomleft -> F12
-	5	PAGE_UP # bottomright -> Restore
-	3	ESC # select -> Run-Stop
-	1	ENTER # start -> Return
+	# left controller
+	3 	5		# SELECT1 -> 1P coin
+	#1 	1		# START1 -> 1P start (shift key)
+	PAD_8 	UP 		# UP1 -> 1P up
+	PAD_2 	DOWN 		# DOWN1 -> 1P down
+	PAD_4 	LEFT 		# LEFT1 -> 1P left
+	PAD_6 	RIGHT 		# RIGHT1 -> 1P right
+	LSHIFT	LCTRL 		# A1 -> 1P button 1
+	Z	LALT 		# B1 -> 1P button 2
+	X	SPACE 		# C1 -> 1P button 3
+	LCTRL	LSHIFT 		# X1 -> 1P button 4
+	LALT	Z		# Y1 -> 1P button 5
+	SPACE	X 		# Z1 -> 1P button 6
+	C	C 		# L1 -> 1P button 7
+	5	V	 	# R1 -> 1P button 8
 
 
 # right controller
-	R	PAD_8 # stick -> up
-	F	PAD_2 # stick -> down
-	D	PAD_4 # stick -> left
-	G	PAD_6 # stick -> right
-	W	PAD_5 # A -> fire
-
-	E	SPACE # B -> space
-	LEFT_BRACE	1 # C -> 1
-	A	2 # X -> 2
-	S	3 # Y -> 3
-	Q	4 # Z -> 4
-	RIGHT_BRACE	5 # bottomleft -> 5
-	6	6 # bottomright -> 6
-	2	7 # select -> 7
-	4	8 # start -> 8
+	2	7 		# SELECT2 -> 2P coin
+	4	8 		# START2 -> 2P start (shift key)
+	R	PAD_8 		# UP2 -> 2P up
+	F	PAD_2 		# DOWN2 -> 2P down
+	D	PAD_4 		# LEFT2 -> 2P left
+	G	PAD_6 		# RIGHT2 -> 2P right
+	W	PAD_5 		# A2 -> 2P button 1
+	E	SPACE 		# B2 -> 2P button 2
+	LEFT_BRACE	1 	# C2 -> 2P button 3
+	A	2 		# X2 -> 2P button 4
+	S	3 		# Y2 -> 2P button 5
+	Q	4 		# Z2 -> 2P button 6
+	RIGHT_BRACE	5 	# L2 -> 2P button 7
+	6	6 		# R2 -> 2P button 8
 endblock
 
 
