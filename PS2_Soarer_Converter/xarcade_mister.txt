@@ -15,8 +15,8 @@ force set2ext
 # X-Arcade:
 
 # my button layout (doesn't matter how layout is here, because buttons are defined again in MiSTer anyway)
-# X Y Z
-# A B C
+#  X Y Z
+#  A B C
 # L R
 
 # UP1 = PAD_8 (0x75)
