@@ -200,3 +200,6 @@ White = Data (2) -> PD0 (Pro Micro: 3)
 Black = Clock (1) -> PD1 (Pro Micro: 2)
 ```
 
+## X-Arcade With Mister FPGA
+- xarcade_mister.txt
+
