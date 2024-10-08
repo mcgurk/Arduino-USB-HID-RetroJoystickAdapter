@@ -14,10 +14,18 @@ force set2ext
 
 # X-Arcade:
 
-# my button layout (doesn't matter how layout is here, because buttons are defined again in MiSTer anyway)
+# this file uses this X-Arcade button layout (doesn't matter how layout is here, because buttons are defined again in MiSTer anyway)
 #  X Y Z
 #  A B C
 # L R
+
+# layout I set to MiSTer "Define Joystick buttons":
+#  X Y MENU
+#  A B OK
+# L R
+# LEFT SIDE BUTTON = SELECT
+# BUTTON WITH ONE HUMAN FIGURE = START
+# (B works as BACK, so MiSTer menu can be used with MENU, OK and B)
 
 # UP1 = PAD_8 (0x75)
 # DOWN1 = PAD_2 (0x72)
