@@ -83,7 +83,7 @@ remapblock
 	C	C		# L1 -> 1P button 7
 	5	V	 	# R1 -> 1P button 8
 
-# right controller
+	# right controller
 	4	6		# SELECT2 -> 2P coin
 	#2	2		# START2 -> 2P start (shift key)
 	#R	R		# UP2 -> 2P up
