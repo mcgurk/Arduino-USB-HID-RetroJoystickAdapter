@@ -12,11 +12,6 @@ force set2ext
 # then from main menu: "Define Joystick buttons"
 # (P2 buttons will be automatically assigned the same as for P1)
 
-# this file uses this X-Arcade button layout (doesn't matter how layout is here, because buttons are defined again in MiSTer anyway)
-#  X Y Z
-#  A B C
-# L R
-
 # layout I set to MiSTer "Define Joystick buttons":
 #  X Y MENU
 #  A B OK
@@ -26,6 +21,10 @@ force set2ext
 # (B works as BACK, so MiSTer menu can be used with MENU, OK and B)
 
 # X-Arcade:
+#  Letters used in X-Arcade layout:
+#	  X Y Z
+#	  A B C
+#	 L R
 #  Left side:
 #	UP1 = PAD_8 (0x75)
 #	DOWN1 = PAD_2 (0x72)
