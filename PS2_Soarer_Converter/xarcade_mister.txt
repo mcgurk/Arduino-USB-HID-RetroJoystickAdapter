@@ -8,6 +8,11 @@ force set2ext
 # VID = 16C0, PID = 047D.
 
 # https://mister-devel.github.io/MkDocs_MiSTer/advanced/diy2parcade/
+# Connect your modded arcade keyboard to USB and start Menu core, then go to Define Joystick buttons. 
+# Press any button, and you will see "Keyboard ID: XXXX:YYYY" where XXXX:YYYY is HW identifier of the keyboard. Press ESC to ext from this dialog.
+# Now open MiSTer.ini and add following options there:
+# jamma_vid=XXXX
+# jamma_pid=YYYY
 
 # UP1 = PAD_8 (0x75)
 # DOWN1 = PAD_2 (0x72)
