@@ -84,8 +84,8 @@ remapblock
 	5	V	 	# R1 -> 1P button 8
 
 # right controller
-	2	6		# SELECT2 -> 2P coin
-	4	2		# START2 -> 2P start (shift key)
+	4	6		# SELECT2 -> 2P coin
+	#2	2		# START2 -> 2P start (shift key)
 	#R	R		# UP2 -> 2P up
 	#F	F		# DOWN2 -> 2P down
 	#D	D		# LEFT2 -> 2P left
