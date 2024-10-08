@@ -1,5 +1,5 @@
-# scas xarcade.txt xarcade.bin
-# scwr xarcade.bin
+# scas xarcade_bmc64.txt xarcade_bmc64.bin
+# scwr xarcade_bmc64.bin
 
 # important!:
 force set2ext
