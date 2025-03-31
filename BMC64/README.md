@@ -8,6 +8,10 @@
 ```
 & "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin\avrdude.exe" -C "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\etc\avrdude.conf" -v -patmega32u4 -c avr109 -U flash:w:"CD32ControllerUSB.ino.with_bootloader.bin":r -P com7
 ```
+- If CDC is already disabled, you have to put Arduino flashing mode manually:
+```
+Connect RST to GND couple of times to get Arduino Pro Micro to programming mode (notice that COM-port is different in programming mode in Windows)
+```
 
 ## I'm gathering stuff for BMC64 emulator USB input devices here.
 
