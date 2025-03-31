@@ -5,7 +5,7 @@
 - (if you are not going to use CD32-controller, you can leave 220Ω resistor out and you don't have to connect pin5 from D9-connector)
 - Get avrdude.exe (if you have installed Arduino IDE, you already have that)
 - Download [CD32ControllerUSB.ino.with_bootloader.bin](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/refs/heads/master/BMC64/CD32ControllerUSB.ino.with_bootloader.bin)
-- Check what COM-port you have and flash firmware to Arduino Pro Micro:
+- Check what COM-port you have and flash firmware to Arduino Pro Micro from PowerShell:
 ```
 & "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin\avrdude.exe" -C "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\etc\avrdude.conf" -v -patmega32u4 -c avr109 -U flash:w:"CD32ControllerUSB.ino.with_bootloader.bin":r -P com7
 ```
