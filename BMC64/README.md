@@ -1,6 +1,15 @@
 # Objective: USB-adapter for Atari Joysticks for BMC64 with two fire support
 
-I'm gathering stuff for BMC64 emulator USB input devices here.
+## TL;DR
+- Read this and build hardware: https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
+- Get avrdude.exe (if you have installed Arduino IDE, you already have that)
+- Download "CD32ControllerUSB.ino.with_bootloader.bin"
+- Check what COM-port you have and flash firmware to Arduino Pro Micro:
+```
+& "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\bin\avrdude.exe" -C "$ENV:LOCALAPPDATA\Arduino15\packages\arduino\tools\avrdude\6.3.0-arduino17\etc\avrdude.conf" -v -patmega32u4 -c avr109 -U flash:w:"CD32ControllerUSB.ino.with_bootloader.bin":r -P com7
+```
+
+## I'm gathering stuff for BMC64 emulator USB input devices here.
 
 ```
 If you use Arduino IDE, CDC device must be disabled or device doesn't work.
