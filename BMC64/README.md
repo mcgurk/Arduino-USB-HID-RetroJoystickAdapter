@@ -13,6 +13,11 @@
 
 Connect RST to GND couple of times to get Arduino Pro Micro to programming mode (notice that COM-port is different in programming mode in Windows)
 
+## Compiling yourself (works 31.3.2025 with Arduino IDE 2.3.4)
+- Install Arduino IDE
+- Download Arduino IDE project files from here: https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
+- Add `#define CDC_DISABLED` beginning of this file: %LocalAppData%\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\USBDesc.h
+
 
 ## I'm gathering stuff for BMC64 emulator USB input devices here.
 
