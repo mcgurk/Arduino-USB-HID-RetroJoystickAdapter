@@ -23,6 +23,7 @@ Another version of CD32ControllerUSB. Some differences, but I don't know if they
 https://github.com/MickGyver/DaemonBite-CD32-USB
 Pinout and connections is front of source file:
 https://github.com/MickGyver/DaemonBite-CD32-USB/blob/master/CD32ControllerUSB/CD32ControllerUSB.ino
+(might support two controllers with one Arduino Pro Micro, but I haven't tested that with BMC64)
 
 Another possibility is use theC64mini (this adapter works with theC64mini too):
 https://github.com/rainisto/arcade2usb-converter
