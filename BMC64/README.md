@@ -1,4 +1,4 @@
-# Objective: USB-adapter for Atari Joysticks for BMC64 with two fire support
+# Objective: USB-adapter for Atari Joysticks for BMC64 with +5V and two fire support
 
 ## TL;DR
 - Read this and build hardware: https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
