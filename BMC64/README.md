@@ -1,7 +1,7 @@
 # Objective: USB-adapter for Atari Joysticks for BMC64 with +5V and two fire support
 
 ## TL;DR
-- Read this and build hardware: https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
+- Build hardware: https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
 - (if you are not going to use CD32-controller, you can leave 220Ω resistor out and you don't have to connect pin5 from D9-connector)
 - Get avrdude.exe (if you have installed Arduino IDE, you already have that)
 - Download [CD32ControllerUSB.ino.with_bootloader.bin](https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/raw/refs/heads/master/BMC64/CD32ControllerUSB.ino.with_bootloader.bin)
