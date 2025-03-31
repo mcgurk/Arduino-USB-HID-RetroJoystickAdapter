@@ -13,13 +13,16 @@ C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\core
 Add line to start of file:
 #define CDC_DISABLED
 
+I used this:
 Adapter that works with original CD32-controller (works with normal joysticks too with 1 or 2 fires):
+https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
+Pinout and connections is front of source file:
+https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/blob/master/CD32ControllerUSB/CD32ControllerUSB.ino
+
+Another version of CD32ControllerUSB. Some differences, but I don't know if they are important:
 https://github.com/MickGyver/DaemonBite-CD32-USB
 Pinout and connections is front of source file:
 https://github.com/MickGyver/DaemonBite-CD32-USB/blob/master/CD32ControllerUSB/CD32ControllerUSB.ino
-
-Another version of CD32ControllerUSB. Some differences, but I don't know if they are important:
-https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
 
 Another possibility is use theC64mini (this adapter works with theC64mini too):
 https://github.com/rainisto/arcade2usb-converter
