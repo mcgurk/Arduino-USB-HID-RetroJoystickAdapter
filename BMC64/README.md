@@ -2,7 +2,7 @@
 
 I'm gathering stuff for BMC64 emulator USB input devices here.
 
-´´´
+```
 If you use Arduino IDE, CDC device must be disabled or device doesn't work.
 
 Second fire uses pin 9: https://wiki.icomp.de/wiki/DE-9_Joystick
@@ -23,7 +23,7 @@ https://github.com/rainisto/arcade2usb-converter
 Pinout and connections is front of source file:
 https://github.com/rainisto/arcade2usb-converter/blob/master/source/c64mini-arcade2usb-converter/c64mini-arcade2usb-converter.ino
 
-´´´
+```
 
 BMC64/theC64maxi/theVICmaxi compatible keyboard from Commodore keyboard:
 https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_keyboard
