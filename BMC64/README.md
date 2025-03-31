@@ -10,7 +10,7 @@ Second fire uses pin 9: https://wiki.icomp.de/wiki/DE-9_Joystick
 Disabling CDC (IMPORTANT!):
 (works 31.3.2025 with Arduino IDE 2.3.4)
 C:\Users\[USER]\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino\USBDesc.h
-Add line to start of file:
+Add this line to start of file:
 #define CDC_DISABLED
 
 I used this:
