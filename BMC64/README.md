@@ -20,11 +20,14 @@ Connect RST to GND couple of times to get Arduino Pro Micro to programming mode 
 
 
 ## I'm gathering stuff for BMC64 emulator USB input devices here.
-
+- BMC64/theC64maxi/theVICmaxi compatible keyboard from Commodore keyboard:
+https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_keyboard
+- Second fire uses pin 9: https://wiki.icomp.de/wiki/DE-9_Joystick
+- https://github.com/MiSTer-devel/Retro-Controllers-USB-MiSTer/tree/master/CD32ControllerUSB
+- https://github.com/MickGyver/DaemonBite-CD32-USB
+- https://github.com/rainisto/arcade2usb-converter
 ```
 If you use Arduino IDE, CDC device must be disabled or device doesn't work.
-
-Second fire uses pin 9: https://wiki.icomp.de/wiki/DE-9_Joystick
 
 Disabling CDC (IMPORTANT!):
 (works 31.3.2025 with Arduino IDE 2.3.4)
@@ -51,6 +54,5 @@ https://github.com/rainisto/arcade2usb-converter/blob/master/source/c64mini-arca
 
 ```
 
-BMC64/theC64maxi/theVICmaxi compatible keyboard from Commodore keyboard:
-https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_keyboard
+
 
