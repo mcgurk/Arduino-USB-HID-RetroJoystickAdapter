@@ -1,4 +1,4 @@
-# Objective: USB-adapter for BMC64 with two fire support
+# Objective: USB-adapter for Atari Joysticks for BMC64 with two fire support
 
 I'm gathering stuff for BMC64 emulator USB input devices here.
 
