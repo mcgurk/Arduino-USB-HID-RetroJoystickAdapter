@@ -2,7 +2,7 @@
 https://www.thesycon.de/eng/usb_descriptordumper.shtml
 
 
-## USB descriptor from workin adapter
+## USB descriptor from working adapter
 ```
 Information for device Arduino Leonardo (VID=0x2341 PID=0x8036):
 
@@ -103,7 +103,7 @@ Running on: Windows 10 or greater (Build Version 19045)
 Brought to you by TDD v2.19.0, Dec  5 2023, 12:08:38
 ```
 
-## Not working descriptor
+##  USB descriptor from NON working adapter
 ```
 Information for device McGurk Retro Joystick Adapter (VID=0x8282 PID=0x3201):
 
