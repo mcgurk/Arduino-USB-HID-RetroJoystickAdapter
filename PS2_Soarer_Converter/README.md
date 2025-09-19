@@ -72,6 +72,7 @@ Tools from Soarer_Controller_v1.20_beta4.zip doesn't work!:
 protocol version check: converter=1.00, scwr=1.00: ok
 settings version check: converter=1.01, file=1.03: failed
 ```
+### Example for X-Arcade controller
 
 Compile text file to binary
 ```
