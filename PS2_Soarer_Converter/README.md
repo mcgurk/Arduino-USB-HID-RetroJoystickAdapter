@@ -108,6 +108,7 @@ make
 - https://geekhack.org/index.php?topic=50437.0
 - https://deskthority.net/workshop-f7/soarer-s-keyboard-controller-firmware-t6767.html
 Soarer_Controller_v1.20_beta4.zip
+- https://github.com/mcgurk/Arduino-USB-HID-RetroJoystickAdapter/tree/master/C64_keyboard
 
 
 ## X-Arcade (xarcade.txt)
