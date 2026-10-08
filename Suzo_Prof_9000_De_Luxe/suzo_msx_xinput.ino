@@ -85,7 +85,7 @@ void loop() {
 
   digitalWrite(PIN_LED, ((IOB >> 3)&1) );
 
-  delay(10);
+  //delay(10);
 
   //Serial.print(PINF, BIN); Serial.print(", "); Serial.println(PINB, BIN);
 
