@@ -9,6 +9,7 @@
   https://allpinouts.org/pinouts/connectors/input_device/joystick-msx-9-pin/
   https://repairbas.file-hunter.com/new-doc/nederlands_BAS%2304_Arcade%20joysticks%20repareren.pdf
   https://generation-msx.nl/hardware/suzo/suzo-prof-competition-9000-deluxe/1185
+  
 */
 
 #include <Joystick.h>
@@ -32,6 +33,9 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,
 #define PIN_B2    16  // DB9(7), PB2
 #define PIN_OUTPUT 8  // DB9(8), PB4
 #define PIN_GND    9  // DB9(9), PB5
+#define PIN_OPTION 2  // jumper 2<->GND, PD1
+//#define PIN_LED   30  // TX led (invert), PD5
+#define PIN_LED   17  // RX led (invert), PB0
 
 void setup() {
 
@@ -47,31 +51,38 @@ void setup() {
   pinMode(PIN_B2, INPUT_PULLUP);
   pinMode(PIN_OUTPUT, OUTPUT);
   pinMode(PIN_GND, OUTPUT);
+  pinMode(PIN_OPTION, INPUT_PULLUP);
+  pinMode(PIN_LED, OUTPUT);
 
   digitalWrite(PIN_5V, HIGH);
   digitalWrite(PIN_OUTPUT, LOW);
   digitalWrite(PIN_GND, LOW);
+  digitalWrite(PIN_LED, HIGH);
 
 }
 
-void loop() {
-  uint8_t I1 = PINF;
-  uint8_t I2 = PINB;
+#define IOF PINF
+#define IOB PINB
+#define IOD PIND
 
-  if (((I1 >> 4)&1)^1) Joystick.setYAxis(0);
-  else if (((I1 >> 5)&1)^1) Joystick.setYAxis(1023);
+void loop() {
+  if (((IOF >> 4)&1)^1) Joystick.setYAxis(0);
+  else if (((IOF >> 5)&1)^1) Joystick.setYAxis(1023);
   else Joystick.setYAxis(512);
-  if (((I1 >> 6)&1)^1) Joystick.setXAxis(0);
-  else if (((I1 >> 7)&1)^1) Joystick.setXAxis(1023);
+  if (((IOF >> 6)&1)^1) Joystick.setXAxis(0);
+  else if (((IOF >> 7)&1)^1) Joystick.setXAxis(1023);
   else Joystick.setXAxis(512);
 
-  Joystick.setButton(0, (((I2 >> 3)&1)^1));
-  Joystick.setButton(1, (((I2 >> 2)&1)^1));
+  digitalWrite(PIN_LED, ((IOB >> 3)&1) );
+  if ((IOD >> 1)&1) {
+    Joystick.setButton(0, (((IOB >> 3)&1)^1)); // autofire
+    Joystick.setButton(1, (((IOB >> 2)&1)^1));
+  } else {
+    Joystick.setButton(1, (((IOB >> 3)&1)^1)); // autofire
+    Joystick.setButton(0, (((IOB >> 2)&1)^1));
+  }
 
   delay(10);
 
-  //Serial.print(PINF, BIN);
-  //Serial.print(", ");
-  //Serial.println(PINB, BIN);
-
+  //Serial.print(PINF, BIN); Serial.print(", "); Serial.println(PINB, BIN);
 }
