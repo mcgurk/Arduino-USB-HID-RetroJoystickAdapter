@@ -24,7 +24,7 @@
 #define PIN_OUTPUT 8      // DB9(8), PB4
 #define PIN_GND    9      // DB9(9), PB5
 #define PIN_OPT1   0      // jumper 0<->GND, PD2 -> separate fires
-#define PIN_OPT2   2      // jumper 2<->GND, PD1 -> swap buttons (needs separate fires)
+#define PIN_OPT2   2      // jumper 2<->GND, PD1 -> separate fires, swapped buttons
 //#define PIN_LED   30  // TX led (invert), PD5
 #define PIN_LED   17      // RX led (invert), PB0
 
@@ -66,28 +66,26 @@ void setup() {
 void loop() {
   /*int16_t X = 0;
   int16_t Y = 0;
-
   if (STATE_UP) Y = 32767;
   	else if (STATE_DOWN) Y = -32768;
   		else Y = 0;
   if (STATE_LEFT) X = -32768;
   	else if (STATE_RIGHT) X = 32767;
   		else X = 0;
-
   XInput.setJoystick(JOY_LEFT,  X, Y);*/
 
   XInput.setDpad(STATE_UP, STATE_DOWN, STATE_LEFT, STATE_RIGHT);
 
+  if (!STATE_OPT1 && !STATE_OPT2) {
+      XInput.setButton(BUTTON_A, STATE_BTN1 | STATE_BTN2);
+  }
   if (STATE_OPT1) {
-    if (STATE_OPT2) {
       XInput.setButton(BUTTON_A, STATE_BTN1); // autofire
       XInput.setButton(BUTTON_B, STATE_BTN2);
-    } else {
+  }
+  if (STATE_OPT2) {
       XInput.setButton(BUTTON_B, STATE_BTN1); // autofire
       XInput.setButton(BUTTON_A, STATE_BTN2);
-    }
-  } else {
-      XInput.setButton(BUTTON_A, STATE_BTN1 | STATE_BTN2);
   }
 
   XInput.send();
