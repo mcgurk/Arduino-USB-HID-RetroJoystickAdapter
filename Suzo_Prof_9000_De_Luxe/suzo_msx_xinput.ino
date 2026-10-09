@@ -92,18 +92,21 @@ void loop() {
   XInput.setDpad(STATE_UP, STATE_DOWN, STATE_LEFT, STATE_RIGHT);
 
   if (!STATE_OPT1 && !STATE_OPT2) {
-      XInput.setButton(BUTTON_A, STATE_BTN1 | STATE_BTN2);
+    XInput.setButton(BUTTON_A, STATE_BTN1 | STATE_BTN2);
   }
   if (STATE_OPT1) {
-      XInput.setButton(BUTTON_A, STATE_BTN1); // autofire
-      XInput.setButton(BUTTON_B, STATE_BTN2);
+    XInput.setButton(BUTTON_A, STATE_BTN1); // autofire
+    XInput.setButton(BUTTON_B, STATE_BTN2);
   }
   if (STATE_OPT2) {
-      XInput.setButton(BUTTON_B, STATE_BTN1); // autofire
-      XInput.setButton(BUTTON_A, STATE_BTN2);
+    XInput.setButton(BUTTON_B, STATE_BTN1); // autofire
+    XInput.setButton(BUTTON_A, STATE_BTN2);
   }
 
   XInput.send();
+
+
+
 
   if (STATE_BTN1) // for autofire speed indication led
     //digitalWrite(PIN_LED, LOW); 
@@ -117,8 +120,18 @@ void loop() {
   if (STATE_DOWN) shadow_DDRB |= BIT_DOWN;
   if (STATE_LEFT) shadow_DDRB |= BIT_LEFT;
   if (STATE_RIGHT) shadow_DDRB |= BIT_RIGHT;
-  if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;
-  if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
+  if (!STATE_OPT1 && !STATE_OPT2) {
+    if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;                     // autofire
+    if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
+  }
+  if (STATE_OPT1) {
+    if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;                     // autofire
+    if (STATE_BTN2) PORTB |= BIT_FIRE2; else PORTB &= ~BIT_FIRE2;
+  }
+  if (STATE_OPT2) {
+    if (STATE_BTN1) PORTB |= BIT_FIRE2; else PORTB &= ~BIT_FIRE2;  // autofire
+    if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
+  }
   DDRB = shadow_DDRB | BIT_LED | BIT_FIRE2; // keep BIT_LED and BIT_FIRE2 as output
 
   //delay(10);
