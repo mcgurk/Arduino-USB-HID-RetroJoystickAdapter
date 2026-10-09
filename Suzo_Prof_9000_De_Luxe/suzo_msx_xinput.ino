@@ -118,6 +118,7 @@ void loop() {
   if (STATE_LEFT) shadow_DDRB |= BIT_LEFT;
   if (STATE_RIGHT) shadow_DDRB |= BIT_RIGHT;
   if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;
+  if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
   DDRB = shadow_DDRB | BIT_LED | BIT_FIRE2; // keep BIT_LED and BIT_FIRE2 as output
 
   //delay(10);
