@@ -37,10 +37,10 @@
 #define STATE_OPT1 !(*portInputRegister(digitalPinToPort(PIN_OPT1)) & digitalPinToBitMask(PIN_OPT1))
 #define STATE_OPT2 !(*portInputRegister(digitalPinToPort(PIN_OPT2)) & digitalPinToBitMask(PIN_OPT2))
 
-// Output wiring, PORT B, OUTPUTS
+// PORT B, OUTPUTS
 #define BIT_LED digitalPinToBitMask(17)       // PB0 (RX led (inverted)) (output!)
 
-// Output wiring
+// PORT B, OUTPUTS / Output wiring
 #define BIT_UP digitalPinToBitMask(15)        // PB1, DB9: blue 1
 #define BIT_DOWN digitalPinToBitMask(14)      // PB3, DB9: green 2
 #define BIT_LEFT digitalPinToBitMask(16)      // PB2, DB9: grey 3
