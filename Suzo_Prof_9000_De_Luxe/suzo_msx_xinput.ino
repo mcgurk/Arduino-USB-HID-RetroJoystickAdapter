@@ -18,9 +18,9 @@
 #define PIN_DOWN  A2      // DB9(2/green) , PF5(20)
 #define PIN_LEFT  A1      // DB9(3/yellow), PF6(19)
 #define PIN_RIGHT A0      // DB9(4/orange), PF7(18)
-#define PIN_5V    7 //15  // DB9(5/red)   , PB1
-#define PIN_BTN1  3 //14  // DB9(6/brown) , PB3 // autofire
-#define PIN_BTN2  4 //16  // DB9(7/black) , PB2
+#define PIN_5V     7 //15 // DB9(5/red)   , PB1
+#define PIN_BTN1   3 //14 // DB9(6/brown) , PB3 // autofire
+#define PIN_BTN2   4 //16 // DB9(7/black) , PB2
 #define PIN_OUTPUT 6 //8  // DB9(8/white) , PB4
 #define PIN_GND    5 //9  // DB9(9/grey)  , PB5
 #define PIN_OPT1   0      // jumper 0<->GND, PD2 -> separate fires
