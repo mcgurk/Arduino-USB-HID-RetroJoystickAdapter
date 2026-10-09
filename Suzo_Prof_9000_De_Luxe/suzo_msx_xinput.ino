@@ -49,6 +49,7 @@
 #define BIT_FIRE2 digitalPinToBitMask(8)      // PB4, DB9: brown 9 (output!)
                                               // 5V,  DB9: red 7
                                               // GND, DB9: black 8
+#define DB9_5 1 // PD3, DB9: orange 5 // not used
 
 void setup() {
   //Serial.begin(115200);
@@ -66,6 +67,8 @@ void setup() {
   pinMode(PIN_GND, OUTPUT);
   pinMode(PIN_OPT1, INPUT_PULLUP);
   pinMode(PIN_OPT2, INPUT_PULLUP);
+
+  pinMode(DB9_5, INPUT); // not used
 
   digitalWrite(PIN_5V, HIGH);
   digitalWrite(PIN_OUTPUT, LOW);
