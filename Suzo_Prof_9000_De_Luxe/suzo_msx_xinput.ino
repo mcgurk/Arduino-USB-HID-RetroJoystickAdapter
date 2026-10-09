@@ -92,7 +92,10 @@ void loop() {
 
   XInput.send();
 
-  digitalWrite(PIN_LED, ~STATE_BTN1); // for autofire indication
+  if (STATE_BTN1) // for autofire speed indication led
+    digitalWrite(PIN_LED, LOW); 
+  else
+    digitalWrite(PIN_LED, HIGH);
 
   //delay(10);
 
