@@ -31,6 +31,7 @@
 // PORT B, OUTPUTS
 #define BIT_LED digitalPinToBitMask(PIN_LED)  // PB0 (RX led (inverted)) (output!)
 
+/*
 // PORT B, OUTPUTS / Output wiring
 #define BIT_UP digitalPinToBitMask(15)        // PB1, DB9: blue 1
 #define BIT_DOWN digitalPinToBitMask(14)      // PB3, DB9: green 2
@@ -40,7 +41,19 @@
 #define BIT_FIRE2 digitalPinToBitMask(8)      // PB4, DB9: brown 9 (output!)
                                               // 5V,  DB9: red 7
                                               // GND, DB9: black 8
-#define DB9_5 1 // PD3, DB9: orange 5 // not used
+*/
+
+// PORT B, OUTPUTS / Output wiring
+#define BIT_UP digitalPinToBitMask(15)        // PB1, DB9: blue 1
+#define BIT_DOWN digitalPinToBitMask(14)      // PB3, DB9: green 2
+#define BIT_LEFT digitalPinToBitMask(16)      // PB2, DB9: yellow 3
+#define BIT_RIGHT digitalPinToBitMask(10)     // PB6, DB9: orange 4
+#define DB9_5 1                               // PD3, DB9: red 5 // not used
+#define BIT_FIRE1 digitalPinToBitMask(9)      // PB5, DB9: brown 6
+                                              // 5V,  DB9: black 7
+                                              // GND, DB9: white 8
+#define BIT_FIRE2 digitalPinToBitMask(8)      // PB4, DB9: grey 9 (output!)
+
 
 
 #define NUM_PORT_SLOTS 13  // covers port IDs 0 (NOT_A_PORT) through PL (12)
@@ -77,16 +90,6 @@ static inline void updatePortSnapshots() {
 #define STATE_OPT1  STATE_PIN(PIN_OPT1)
 #define STATE_OPT2  STATE_PIN(PIN_OPT2)
 
-/*#define STATE_UP !(*portInputRegister(digitalPinToPort(PIN_UP)) & digitalPinToBitMask(PIN_UP))
-#define STATE_DOWN !(*portInputRegister(digitalPinToPort(PIN_DOWN)) & digitalPinToBitMask(PIN_DOWN))
-#define STATE_LEFT !(*portInputRegister(digitalPinToPort(PIN_LEFT)) & digitalPinToBitMask(PIN_LEFT))
-#define STATE_RIGHT !(*portInputRegister(digitalPinToPort(PIN_RIGHT)) & digitalPinToBitMask(PIN_RIGHT))
-#define STATE_BTN1 !(*portInputRegister(digitalPinToPort(PIN_BTN1)) & digitalPinToBitMask(PIN_BTN1))
-#define STATE_BTN2 !(*portInputRegister(digitalPinToPort(PIN_BTN2)) & digitalPinToBitMask(PIN_BTN2))
-#define STATE_OPT1 !(*portInputRegister(digitalPinToPort(PIN_OPT1)) & digitalPinToBitMask(PIN_OPT1))
-#define STATE_OPT2 !(*portInputRegister(digitalPinToPort(PIN_OPT2)) & digitalPinToBitMask(PIN_OPT2))*/
-
-
 void setup() {
   //Serial.begin(115200);
   XInput.setAutoSend(false);  // Wait for all controls before sending
@@ -109,54 +112,56 @@ void setup() {
   digitalWrite(PIN_5V, HIGH);
   digitalWrite(PIN_OUTPUT, LOW);
   digitalWrite(PIN_GND, LOW);
+  pinMode(PIN_LED, OUTPUT);
+  digitalWrite(PIN_LED, HIGH);
 
-  //pinMode(PIN_LED, OUTPUT);
-  //digitalWrite(PIN_LED, HIGH);
-  DDRB = BIT_LED | BIT_FIRE2;  // 0 = input/highz, 1 = output, clears other bits
-  PORTB = BIT_LED; // 0 = low/no pullup, 1 = high/with pullup, clears other bits
-
-  for (uint8_t i = 0; i < 20; i++) {
+  for (uint8_t i = 0; i < 10; i++) {
     if (XInput.connected()) break;
+    digitalWrite(PIN_LED, LOW);
+    delay(100);
+    digitalWrite(PIN_LED, HIGH);
     delay(100);
   }
 
-  if (!XInput.connected()) {
-    noInterrupts();
-    while (true) {
-      // C64 mode
-      updatePortSnapshots();
-      if (STATE_UP) shadow_DDRB = BIT_UP;
-      if (STATE_DOWN) shadow_DDRB |= BIT_DOWN;
-      if (STATE_LEFT) shadow_DDRB |= BIT_LEFT;
-      if (STATE_RIGHT) shadow_DDRB |= BIT_RIGHT;
-      if (!STATE_OPT1 && !STATE_OPT2) {
-        if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;                     // autofire
-        if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
-      }
-      if (STATE_OPT1) {
-        if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;                     // autofire
-        if (STATE_BTN2) PORTB |= BIT_FIRE2; else PORTB &= ~BIT_FIRE2;
-      }
-      if (STATE_OPT2) {
-        if (STATE_BTN1) PORTB |= BIT_FIRE2; else PORTB &= ~BIT_FIRE2;  // autofire
-        if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
-      }
-      DDRB = shadow_DDRB | BIT_LED | BIT_FIRE2; // keep BIT_LED and BIT_FIRE2 as output
-
-      if (STATE_BTN1) // for autofire speed indication led
-        PORTB &= ~BIT_LED;
-      else
-        PORTB |= BIT_LED;
-      // ^^^^^^^^
-    }
-  }
-
+  if (!XInput.connected()) c64mode();
 
 }
 
+void c64mode() {
+  DDRB = BIT_LED | BIT_FIRE2;  // 0 = input/highz, 1 = output, clears other bits
+  PORTB = BIT_LED; // 0 = low/no pullup, 1 = high/with pullup, clears other bits
+  noInterrupts();
+  while (true) {
+    // C64 mode
+    updatePortSnapshots();
+    shadow_DDRB = BIT_LED | BIT_FIRE2; // keep BIT_LED and BIT_FIRE2 as output;
+    if (STATE_UP) shadow_DDRB |= BIT_UP;
+    if (STATE_DOWN) shadow_DDRB |= BIT_DOWN;
+    if (STATE_LEFT) shadow_DDRB |= BIT_LEFT;
+    if (STATE_RIGHT) shadow_DDRB |= BIT_RIGHT;
+    if (!STATE_OPT1 && !STATE_OPT2) {
+      if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;                     // autofire
+      if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
+    }
+    if (STATE_OPT1) {
+      if (STATE_BTN1) shadow_DDRB |= BIT_FIRE1;                     // autofire
+      if (STATE_BTN2) PORTB |= BIT_FIRE2; else PORTB &= ~BIT_FIRE2;
+    }
+    if (STATE_OPT2) {
+      if (STATE_BTN1) PORTB |= BIT_FIRE2; else PORTB &= ~BIT_FIRE2;  // autofire
+      if (STATE_BTN2) shadow_DDRB |= BIT_FIRE1;
+    }
+    DDRB = shadow_DDRB;
+
+    if (STATE_BTN1) // for autofire speed indication led
+      PORTB &= ~BIT_LED;
+    else
+      PORTB |= BIT_LED;
+    // ^^^^^^^^
+  }
+}
 
 void loop() {
-
   updatePortSnapshots();
   /*int16_t X = 0;
   int16_t Y = 0;
